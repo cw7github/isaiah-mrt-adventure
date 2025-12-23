@@ -1,0 +1,25 @@
+{
+  "stationCount": 15,
+  "stationIds": [
+    "bakery",
+    "bubbletea",
+    "burger",
+    "cheese",
+    "chicken",
+    "drink",
+    "fishshop",
+    "fruit",
+    "icecream",
+    "noodle",
+    "pizza",
+    "redbean",
+    "smoothie",
+    "sushi",
+    "teahouse"
+  ],
+  "bySeverity": {
+    "FAIL": 0,
+    "WARN": 0
+  },
+  "issues": []
+}

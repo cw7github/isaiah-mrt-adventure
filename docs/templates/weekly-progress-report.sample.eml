@@ -1,0 +1,401 @@
+From: Isaiah School App <noreply@isaiah.school>
+To: Parent <parent@example.com>
+Subject: Weekly Progress Report — Sample Student
+Date: Mon, 22 Dec 2025 22:00:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Isaiah_WeeklyReport_Boundary_SAMPLE_001"
+
+------=_Isaiah_WeeklyReport_Boundary_SAMPLE_001
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+Weekly Progress Report — Sample Student
+Week: Dec 16–Dec 22, 2025
+
+Snapshot
+- Sessions: 7
+- Question accuracy: 50/60 (83%)
+- Stations completed: 3
+- Sight words tapped: 24
+
+Top needs (practice next)
+- Syllables: Count: Emerging • 42% • 12 tries
+- Categories: Developing • 61% • 10 tries
+- Supporting Details: Developing • 68% • 14 tries
+
+Review due (keep it fresh)
+- Setting: Review due • 81% • 16 tries • overdue 2d
+- First Letter: Review due • 86% • 11 tries • overdue 1d
+
+Strengths (great progress)
+- Rhyming: Mastered • 95% • 18 tries
+- End Marks: Mastered • 92% • 12 tries
+- Main Idea: Mastered • 90% • 15 tries
+
+Suggested 10-minute session
+1) Warm review: Setting
+2) Story station: Bakery
+3) Target practice: Syllables: Count
+
+Optional offline tips
+- Syllables: clap the parts in a word (ti-ger = 2).
+- Sounds: say the word slowly and listen for first/middle/last sound.
+- WH questions: ask Who/What/Where/When/Why and point to the sentence that proves it.
+
+Note: mastery scores are estimated from first-try answers. Answers with support count less.
+
+— Isaiah School App
+
+------=_Isaiah_WeeklyReport_Boundary_SAMPLE_001
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weekly Progress Report</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f4f7fb;">
+    <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;font-size:1px;line-height:1px;">
+      Weekly progress for Sample Student. Accuracy 83%. Top need: Syllables.
+    </div>
+
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f4f7fb;padding:24px 0;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="width:640px;max-width:640px;">
+            <tr>
+              <td style="padding:0 16px;">
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#0b3a53;border-radius:18px;overflow:hidden;">
+                  <tr>
+                    <td style="padding:18px 20px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#d9f2ff;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;">
+                            Isaiah School App
+                          </td>
+                          <td align="right" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#bfe8ff;font-size:12px;">
+                            Dec 16–Dec 22, 2025
+                          </td>
+                        </tr>
+                      </table>
+
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#ffffff;font-size:26px;line-height:1.2;font-weight:800;margin-top:10px;">
+                        Weekly Progress: Sample Student
+                      </div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#bfe8ff;font-size:14px;line-height:1.45;margin-top:8px;">
+                        Clear next steps based on performance and spaced review.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;">
+                  <tr>
+                    <td style="background:#ffffff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;">
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:16px;font-weight:800;">
+                        Snapshot
+                      </div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:13px;line-height:1.45;margin-top:6px;">
+                        Numbers below reflect overall activity; skill cards show an estimated mastery score.
+                      </div>
+
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                        <tr>
+                          <td width="50%" valign="top" style="padding:0;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
+                              <tr><td style="padding:12px 12px;">
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;">Sessions</div>
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;margin-top:4px;">7</div>
+                              </td></tr>
+                            </table>
+                          </td>
+                          <td width="12"></td>
+                          <td width="50%" valign="top" style="padding:0;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
+                              <tr><td style="padding:12px 12px;">
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;">Accuracy</div>
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;margin-top:4px;">83%</div>
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#94a3b8;font-size:12px;margin-top:2px;">50/60 questions</div>
+                              </td></tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr><td height="12" colspan="3"></td></tr>
+                        <tr>
+                          <td width="50%" valign="top" style="padding:0;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
+                              <tr><td style="padding:12px 12px;">
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;">Stations</div>
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;margin-top:4px;">3</div>
+                              </td></tr>
+                            </table>
+                          </td>
+                          <td width="12"></td>
+                          <td width="50%" valign="top" style="padding:0;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
+                              <tr><td style="padding:12px 12px;">
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;">Sight words</div>
+                                <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;margin-top:4px;">24</div>
+                              </td></tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;background:#eef6ff;border-radius:14px;border:1px solid #bfdbfe;">
+                        <tr>
+                          <td style="padding:14px 14px;">
+                            <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:14px;font-weight:800;">
+                              Suggested next session (10 minutes)
+                            </div>
+                            <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#475569;font-size:13px;line-height:1.45;margin-top:8px;">
+                              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr><td style="padding:0 0 10px 0;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="22" height="22" align="center" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#2563eb;border-radius:999px;color:#ffffff;font-size:12px;font-weight:800;">1</td>
+                                      <td style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding-left:10px;color:#0f172a;font-size:13px;"><b>Warm review:</b> Setting</td>
+                                    </tr>
+                                  </table>
+                                </td></tr>
+                                <tr><td style="padding:0 0 10px 0;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="22" height="22" align="center" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#2563eb;border-radius:999px;color:#ffffff;font-size:12px;font-weight:800;">2</td>
+                                      <td style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding-left:10px;color:#0f172a;font-size:13px;"><b>Story station:</b> Bakery</td>
+                                    </tr>
+                                  </table>
+                                </td></tr>
+                                <tr><td style="padding:0;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="22" height="22" align="center" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#2563eb;border-radius:999px;color:#ffffff;font-size:12px;font-weight:800;">3</td>
+                                      <td style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding-left:10px;color:#0f172a;font-size:13px;"><b>Target practice:</b> Syllables: Count</td>
+                                    </tr>
+                                  </table>
+                                </td></tr>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;">
+                  <tr>
+                    <td style="background:#ffffff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;border-top:4px solid #3b82f6;">
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:16px;font-weight:800;">Top needs</div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:13px;line-height:1.45;margin-top:6px;">Practice these first for the biggest impact on reading right now.</div>
+                      <div style="margin-top:12px;">
+
+                        <!-- Skill card (example) -->
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                          <tr>
+                            <td style="padding:0;background:#ffffff;border-radius:16px;border:1px solid #e2e8f0;overflow:hidden;">
+                              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td style="padding:14px 14px 12px 14px;">
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td valign="top" style="padding-right:12px;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:15px;font-weight:800;line-height:1.25;">Syllables: Count</div>
+                                          <div style="margin-top:8px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;line-height:1.35;">
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:inline-block;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;">Emerging</span>
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;">&nbsp;&nbsp;•&nbsp;&nbsp;12 tries • support used 40% • last 2 days ago</span>
+                                          </div>
+                                        </td>
+                                        <td align="right" valign="top" style="white-space:nowrap;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:0.10em;">Mastery</div>
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;line-height:1;margin-top:2px;">42%</div>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+                                      <tr>
+                                        <td style="background:#e2e8f0;border-radius:999px;height:8px;line-height:8px;font-size:0;overflow:hidden;">
+                                          <table role="presentation" width="42%" cellspacing="0" cellpadding="0" style="width:42%;max-width:100%;">
+                                            <tr><td style="background:#f97316;height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                          <tr>
+                            <td style="padding:0;background:#ffffff;border-radius:16px;border:1px solid #e2e8f0;overflow:hidden;">
+                              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td style="padding:14px 14px 12px 14px;">
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td valign="top" style="padding-right:12px;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:15px;font-weight:800;line-height:1.25;">Categories</div>
+                                          <div style="margin-top:8px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;line-height:1.35;">
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;">Developing</span>
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;">&nbsp;&nbsp;•&nbsp;&nbsp;10 tries • last today</span>
+                                          </div>
+                                        </td>
+                                        <td align="right" valign="top" style="white-space:nowrap;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:0.10em;">Mastery</div>
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;line-height:1;margin-top:2px;">61%</div>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+                                      <tr>
+                                        <td style="background:#e2e8f0;border-radius:999px;height:8px;line-height:8px;font-size:0;overflow:hidden;">
+                                          <table role="presentation" width="61%" cellspacing="0" cellpadding="0" style="width:61%;max-width:100%;">
+                                            <tr><td style="background:#3b82f6;height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;">
+                  <tr>
+                    <td style="background:#ffffff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;border-top:4px solid #db2777;">
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:16px;font-weight:800;">Review due</div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:13px;line-height:1.45;margin-top:6px;">Short review keeps mastered skills from fading.</div>
+                      <div style="margin-top:12px;">
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                          <tr>
+                            <td style="padding:0;background:#ffffff;border-radius:16px;border:1px solid #e2e8f0;overflow:hidden;">
+                              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td style="padding:14px 14px 12px 14px;">
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td valign="top" style="padding-right:12px;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:15px;font-weight:800;line-height:1.25;">Setting</div>
+                                          <div style="margin-top:8px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;line-height:1.35;">
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:inline-block;background:#fdf2f8;border:1px solid #fbcfe8;color:#9d174d;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;">Review due</span>
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;">&nbsp;&nbsp;•&nbsp;&nbsp;16 tries • overdue 2d • last 8 days ago</span>
+                                          </div>
+                                        </td>
+                                        <td align="right" valign="top" style="white-space:nowrap;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:0.10em;">Mastery</div>
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;line-height:1;margin-top:2px;">81%</div>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+                                      <tr>
+                                        <td style="background:#e2e8f0;border-radius:999px;height:8px;line-height:8px;font-size:0;overflow:hidden;">
+                                          <table role="presentation" width="81%" cellspacing="0" cellpadding="0" style="width:81%;max-width:100%;">
+                                            <tr><td style="background:#db2777;height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;">
+                  <tr>
+                    <td style="background:#ffffff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;border-top:4px solid #10b981;">
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:16px;font-weight:800;">Strengths</div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:13px;line-height:1.45;margin-top:6px;">Celebrate these wins and revisit occasionally to keep momentum.</div>
+                      <div style="margin-top:12px;">
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                          <tr>
+                            <td style="padding:0;background:#ffffff;border-radius:16px;border:1px solid #e2e8f0;overflow:hidden;">
+                              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td style="padding:14px 14px 12px 14px;">
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td valign="top" style="padding-right:12px;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:15px;font-weight:800;line-height:1.25;">Rhyming</div>
+                                          <div style="margin-top:8px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;line-height:1.35;">
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:inline-block;background:#ecfdf5;border:1px solid #a7f3d0;color:#047857;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;">Mastered</span>
+                                            <span style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:12px;">&nbsp;&nbsp;•&nbsp;&nbsp;18 tries • last 1 day ago</span>
+                                          </div>
+                                        </td>
+                                        <td align="right" valign="top" style="white-space:nowrap;">
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:0.10em;">Mastery</div>
+                                          <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:22px;font-weight:800;line-height:1;margin-top:2px;">95%</div>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+                                      <tr>
+                                        <td style="background:#e2e8f0;border-radius:999px;height:8px;line-height:8px;font-size:0;overflow:hidden;">
+                                          <table role="presentation" width="95%" cellspacing="0" cellpadding="0" style="width:95%;max-width:100%;">
+                                            <tr><td style="background:#10b981;height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:14px;">
+                  <tr>
+                    <td style="background:#ffffff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;">
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0f172a;font-size:16px;font-weight:800;">Optional offline tips</div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#64748b;font-size:13px;line-height:1.45;margin-top:6px;">A few quick ways to practice without screens.</div>
+                      <ul style="margin:10px 0 0 18px;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#334155;font-size:13px;line-height:1.55;">
+                        <li><b>Syllables:</b> clap the parts in a word (ti-ger = 2).</li>
+                        <li><b>Sounds:</b> say the word slowly and listen for first/middle/last sound.</li>
+                        <li><b>WH questions:</b> ask Who/What/Where/When/Why and point to the sentence that proves it.</li>
+                      </ul>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#94a3b8;font-size:12px;line-height:1.45;margin-top:12px;">
+                        Note: mastery scores are estimated from first-try answers. Answers with support count less.
+                      </div>
+                      <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#94a3b8;font-size:12px;margin-top:8px;">
+                        Sent by Isaiah School App • Dec 22, 2025
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+------=_Isaiah_WeeklyReport_Boundary_SAMPLE_001--

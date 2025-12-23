@@ -1,0 +1,2069 @@
+{
+  "nbt_count_to_120": {
+    "name": "Train Number Station",
+    "icon": "🔢",
+    "level": 1,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.A.1"],
+    "mathFocus": ["counting sequence", "reading numbers", "writing numbers to 120"],
+    "previewConcepts": [
+      {
+        "concept": "Count to 120",
+        "icon": "🔢",
+        "example": "100, 101, 102..."
+      },
+      {
+        "concept": "Read numbers",
+        "icon": "👀",
+        "example": "See 115, say one hundred fifteen"
+      },
+      {
+        "concept": "What comes next",
+        "icon": "➡️",
+        "example": "After 99 comes 100"
+      }
+    ],
+    "stickers": ["🔢", "🚂", "⭐", "🎯"],
+    "manipulatives": ["number line", "hundreds chart"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the train number station. I see train numbers on the platform. The trains have big numbers from 1 to 120.",
+        "mathConcept": "We can count all the way to 120.",
+        "mathTip": "Numbers go in order. Each number is one more than the last.",
+        "image": "🚂🔢",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 1,
+            "end": 20,
+            "highlight": [1, 2, 3, 4, 5],
+            "jumperIcon": "🚂",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_count_120_q1",
+        "skillId": "count_sequence_to_20",
+        "difficulty": 1,
+        "checklistTargets": ["1.NBT.A.1"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number comes after 19?",
+        "mathContext": "I count the trains. I see train 19. What is the next train number?",
+        "mathHint": "Count up. After 19 comes the next number.",
+        "answers": [
+          {"name": "20"},
+          {"name": "18"},
+          {"name": "21"}
+        ],
+        "correctAnswerName": "20",
+        "successMessage": "Yes! After 19 comes 20. You counted up!"
+      },
+      {
+        "type": "read",
+        "sentence": "I count past 99. After 99 comes 100. One hundred! Then 101, 102, 103. The numbers keep going.",
+        "mathConcept": "After 99 comes 100. Then we count 101, 102, 103.",
+        "mathTip": "100 is a big number. It is 10 tens. After 100, we keep counting.",
+        "teachNumber": {
+          "number": 100,
+          "representation": "10 tens rods",
+          "highlight": "one hundred"
+        },
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 100
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_count_120_q2",
+        "skillId": "count_sequence_past_100",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.A.1"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number comes after 99?",
+        "mathContext": "I see train 99 pull into the station. The next train arrives. What number is it?",
+        "mathHint": "After 99, we reach one hundred. That is 100.",
+        "answers": [
+          {"name": "100"},
+          {"name": "98"},
+          {"name": "90"}
+        ],
+        "correctAnswerName": "100",
+        "successMessage": "Great! After 99 comes 100. That is one hundred!"
+      },
+      {
+        "type": "read",
+        "sentence": "I practice counting. 108, 109, 110. I read each number out loud. One hundred eight. One hundred nine. One hundred ten.",
+        "mathConcept": "We can read numbers over 100.",
+        "mathTip": "Say the hundreds part first. Then the tens and ones.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 105,
+            "end": 115,
+            "highlight": [108, 109, 110],
+            "jumperIcon": "🔢",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your train snack!",
+        "menuStory": "The snack cart comes by. I am hungry. I pick a snack to eat on my train ride.",
+        "items": [
+          {
+            "name": "Rice Ball",
+            "icon": "🍙",
+            "description": "Round and yummy"
+          },
+          {
+            "name": "Dumplings",
+            "icon": "🥟",
+            "description": "Warm and tasty"
+          },
+          {
+            "name": "Fruit Cup",
+            "icon": "🍇",
+            "description": "Sweet and fresh"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_count_120_q3",
+        "skillId": "count_sequence_110s",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.A.1"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What comes after 110?",
+        "mathContext": "I count the train cars. I count 110 cars. Then I count one more. What number?",
+        "mathHint": "Count up from 110. The next number is 111.",
+        "answers": [
+          {"name": "111"},
+          {"name": "109"},
+          {"name": "120"}
+        ],
+        "correctAnswerName": "111",
+        "successMessage": "Perfect! After 110 comes 111. You are counting past 100!"
+      },
+      {
+        "type": "read",
+        "sentence": "I count train 115, train 116, train 117. I am getting close to 120! The last train is train 120.",
+        "mathConcept": "120 is a big number. We can count all the way there.",
+        "mathTip": "Practice counting. Say the numbers in order.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 115,
+            "end": 120,
+            "highlight": [115, 116, 117, 118, 119, 120],
+            "jumperIcon": "⭐",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_count_120_q4",
+        "skillId": "missing_number_sequence",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.A.1"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number is missing? 117, ___, 119",
+        "mathContext": "One train number is covered with steam. I see 117 and 119. What number is in the middle?",
+        "mathHint": "Count from 117. What comes before 119?",
+        "numberSentence": "117, ___, 119",
+        "answers": [
+          {"name": "118"},
+          {"name": "116"},
+          {"name": "120"}
+        ],
+        "correctAnswerName": "118",
+        "successMessage": "Yes! 118 comes between 117 and 119!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_count_120_q5",
+        "skillId": "count_to_120",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.A.1"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number comes right before 120?",
+        "mathContext": "Train 120 is the last train. What train comes right before it?",
+        "mathHint": "Count back one from 120. What is one less than 120?",
+        "answers": [
+          {"name": "119"},
+          {"name": "121"},
+          {"name": "110"}
+        ],
+        "correctAnswerName": "119",
+        "successMessage": "Great work! 119 comes right before 120!"
+      }
+    ]
+  },
+  "nbt_tens_and_ones": {
+    "name": "Dumpling Counting Shop",
+    "icon": "🥟",
+    "level": 2,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.B.2", "1.NBT.B.2.A"],
+    "mathFocus": ["tens and ones", "place value", "making tens", "understanding 10 ones equals 1 ten"],
+    "previewConcepts": [
+      {
+        "concept": "Tens and ones",
+        "icon": "📦",
+        "example": "23 is 2 tens and 3 ones"
+      },
+      {
+        "concept": "What is a ten",
+        "icon": "🔟",
+        "example": "10 ones make 1 ten"
+      },
+      {
+        "concept": "Trade ones for tens",
+        "icon": "🔄",
+        "example": "Bundle 10 into 1 group"
+      }
+    ],
+    "stickers": ["🥟", "📦", "⭐", "🔟"],
+    "manipulatives": ["base-ten blocks", "tens frames", "counters"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the dumpling shop. Dumplings come in boxes of 10. I can count the boxes and the extra dumplings.",
+        "mathConcept": "Numbers have tens and ones.",
+        "mathTip": "A ten is a group of 10 ones.",
+        "image": "🥟📦",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 25
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I have 10 dumplings. I put them in one box. 10 ones equal 1 ten! The box has 10 dumplings inside.",
+        "mathConcept": "10 ones make 1 ten.",
+        "mathTip": "When you have 10 ones, you can trade them for 1 ten.",
+        "teachNumber": {
+          "number": 10,
+          "representation": "10 ones = 1 ten",
+          "highlight": "10 ones equal 1 ten"
+        },
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 10,
+            "groupOf": 10,
+            "style": "blocks",
+            "icon": "📦"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_ones_q1",
+        "skillId": "understand_ten",
+        "difficulty": 1,
+        "checklistTargets": ["1.NBT.B.2.A"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many ones make 1 ten?",
+        "mathContext": "The shop worker fills a box. How many dumplings go in the box to make 1 ten?",
+        "mathHint": "Think: 10 ones equal 1 ten.",
+        "answers": [
+          {"name": "10"},
+          {"name": "5"},
+          {"name": "20"}
+        ],
+        "correctAnswerName": "10",
+        "successMessage": "Yes! 10 ones make 1 ten!"
+      },
+      {
+        "type": "read",
+        "sentence": "I count my dumplings. I have 2 boxes and 3 extra dumplings. That is 2 tens and 3 ones. The number is 23.",
+        "mathConcept": "We write numbers using tens and ones.",
+        "mathTip": "The tens digit shows how many tens. The ones digit shows how many ones.",
+        "teachNumber": {
+          "number": 23,
+          "representation": "2 tens, 3 ones",
+          "highlight": "23 = 2 tens + 3 ones"
+        },
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 23
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_ones_q2",
+        "skillId": "identify_tens_ones",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "I have 2 tens and 3 ones. What number is that?",
+        "mathContext": "I count 2 boxes of dumplings and 3 extra dumplings. What number do I have?",
+        "mathHint": "2 tens and 3 ones make 23.",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 23
+          }
+        },
+        "answers": [
+          {"name": "23"},
+          {"name": "32"},
+          {"name": "5"}
+        ],
+        "correctAnswerName": "23",
+        "successMessage": "Perfect! 2 tens and 3 ones is 23!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your dumpling flavor!",
+        "menuStory": "The shop has many flavors. I choose my favorite kind of dumplings.",
+        "items": [
+          {
+            "name": "Pork Dumplings",
+            "icon": "🥟",
+            "description": "Savory and juicy"
+          },
+          {
+            "name": "Veggie Dumplings",
+            "icon": "🥬",
+            "description": "Fresh and light"
+          },
+          {
+            "name": "Shrimp Dumplings",
+            "icon": "🦐",
+            "description": "Sweet and tender"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I see 35 dumplings. How many tens? How many ones? I count 3 tens and 5 ones. 35 has 3 tens and 5 ones.",
+        "mathConcept": "Every two-digit number has a tens digit and a ones digit.",
+        "mathTip": "The first digit shows tens. The second digit shows ones.",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 35
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_ones_q3",
+        "skillId": "count_tens_ones",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many tens are in 35?",
+        "mathContext": "I have 35 dumplings. I count the boxes of 10. How many tens?",
+        "mathHint": "Look at the tens digit. 35 has 3 tens.",
+        "answers": [
+          {"name": "3"},
+          {"name": "5"},
+          {"name": "8"}
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Great! 35 has 3 tens!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_ones_q4",
+        "skillId": "count_ones_digit",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many ones are in 35?",
+        "mathContext": "I have 35 dumplings. I count the extra dumplings not in a box. How many ones?",
+        "mathHint": "Look at the ones digit. 35 has 5 ones.",
+        "answers": [
+          {"name": "5"},
+          {"name": "3"},
+          {"name": "35"}
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Yes! 35 has 5 ones!"
+      },
+      {
+        "type": "read",
+        "sentence": "The worker bundles 10 dumplings into a new box. I watch the trade. 10 ones become 1 ten. That is how we make tens!",
+        "mathConcept": "We can trade 10 ones for 1 ten.",
+        "mathTip": "When you have 10 or more ones, make a new ten.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 20,
+            "groupOf": 10,
+            "style": "blocks",
+            "icon": "🥟"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_ones_q5",
+        "skillId": "build_number_blocks",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.2"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "I have 4 tens and 6 ones. What number?",
+        "mathContext": "I build a number with base-ten blocks. I use 4 tens rods and 6 ones cubes. What number did I make?",
+        "mathHint": "Put the tens digit first, then the ones digit. 4 tens and 6 ones is 46.",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 46
+          }
+        },
+        "answers": [
+          {"name": "46"},
+          {"name": "64"},
+          {"name": "10"}
+        ],
+        "correctAnswerName": "46",
+        "successMessage": "Excellent! 4 tens and 6 ones make 46!"
+      }
+    ]
+  },
+  "nbt_teen_numbers": {
+    "name": "Boba Tea Counter",
+    "icon": "🧋",
+    "level": 2,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.B.2.B"],
+    "mathFocus": ["teen numbers", "11-19 as ten and ones", "place value of teens"],
+    "previewConcepts": [
+      {
+        "concept": "Teen numbers",
+        "icon": "🔟",
+        "example": "13 is 1 ten and 3 ones"
+      },
+      {
+        "concept": "10 and some more",
+        "icon": "➕",
+        "example": "15 is 10 + 5"
+      },
+      {
+        "concept": "All teens have 1 ten",
+        "icon": "1️⃣",
+        "example": "Every number 11-19 has 1 ten"
+      }
+    ],
+    "stickers": ["🧋", "🔟", "⭐", "🎯"],
+    "manipulatives": ["ten frames", "base-ten blocks", "counters"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the boba tea shop. I count the boba pearls. Teen numbers are special. They all have 1 ten and some ones.",
+        "mathConcept": "Teen numbers are 11, 12, 13, 14, 15, 16, 17, 18, and 19.",
+        "mathTip": "Every teen number has 1 ten. Then we add the extra ones.",
+        "image": "🧋🔟",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "count": 13,
+            "style": "dots",
+            "showEquation": true
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I count 13 boba pearls. 13 is 1 ten and 3 ones. I fill one ten frame. Then I have 3 more pearls.",
+        "mathConcept": "13 equals 10 plus 3.",
+        "mathTip": "Teen numbers are 10 and some more ones.",
+        "teachNumber": {
+          "number": 13,
+          "representation": "1 ten, 3 ones",
+          "highlight": "13 = 10 + 3"
+        },
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "count": 13,
+            "style": "dots",
+            "showEquation": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_teen_q1",
+        "skillId": "teen_as_ten_plus_ones",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.B"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "13 is the same as 10 plus what?",
+        "mathContext": "I have 13 boba pearls. I know 10 fill one cup. How many extra pearls do I have?",
+        "mathHint": "13 is 10 plus 3. Think: 1 ten and 3 ones.",
+        "numberSentence": "13 = 10 + ___",
+        "answers": [
+          {"name": "3"},
+          {"name": "13"},
+          {"name": "1"}
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Perfect! 13 is 10 plus 3!"
+      },
+      {
+        "type": "read",
+        "sentence": "I make 15. I put 10 pearls in a cup. Then I add 5 more pearls. 15 is 1 ten and 5 ones. All teen numbers work this way!",
+        "mathConcept": "15 equals 10 plus 5.",
+        "mathTip": "Find the ten first. Then add the extra ones.",
+        "teachNumber": {
+          "number": 15,
+          "representation": "1 ten, 5 ones",
+          "highlight": "15 = 10 + 5"
+        },
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "count": 15,
+            "style": "dots",
+            "showEquation": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_teen_q2",
+        "skillId": "teen_decompose",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.B"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many tens are in 15?",
+        "mathContext": "I count 15 boba pearls. How many groups of 10 do I have?",
+        "mathHint": "All teen numbers have 1 ten.",
+        "answers": [
+          {"name": "1"},
+          {"name": "5"},
+          {"name": "15"}
+        ],
+        "correctAnswerName": "1",
+        "successMessage": "Yes! 15 has 1 ten!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your boba flavor!",
+        "menuStory": "The boba shop has yummy drinks. I pick my favorite flavor to drink.",
+        "items": [
+          {
+            "name": "Taro Boba",
+            "icon": "💜",
+            "description": "Purple and sweet"
+          },
+          {
+            "name": "Mango Boba",
+            "icon": "🥭",
+            "description": "Yellow and fruity"
+          },
+          {
+            "name": "Milk Tea Boba",
+            "icon": "🧋",
+            "description": "Brown and creamy"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I practice teen numbers. 11 is 10 and 1. 12 is 10 and 2. 17 is 10 and 7. 19 is 10 and 9. They all have 1 ten!",
+        "mathConcept": "All numbers from 11 to 19 have 1 ten and some ones.",
+        "mathTip": "Teen numbers always start with 1 ten.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "count": 17,
+            "style": "dots",
+            "showEquation": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_teen_q3",
+        "skillId": "teen_ones_count",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.B"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "17 is 10 plus what number?",
+        "mathContext": "I have 17 pearls. I fill one cup with 10. How many pearls are left?",
+        "mathHint": "17 is 1 ten and 7 ones. So 17 = 10 + 7.",
+        "numberSentence": "17 = 10 + ___",
+        "answers": [
+          {"name": "7"},
+          {"name": "1"},
+          {"name": "17"}
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Great! 17 is 10 plus 7!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_teen_q4",
+        "skillId": "teen_build_from_parts",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.B"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "What number is 1 ten and 4 ones?",
+        "mathContext": "I build a number. I use 1 ten rod and 4 ones cubes. What number is it?",
+        "mathHint": "1 ten and 4 ones make 14.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "count": 14,
+            "style": "dots",
+            "showEquation": true
+          }
+        },
+        "answers": [
+          {"name": "14"},
+          {"name": "41"},
+          {"name": "5"}
+        ],
+        "correctAnswerName": "14",
+        "successMessage": "Excellent! 1 ten and 4 ones is 14!"
+      },
+      {
+        "type": "read",
+        "sentence": "The biggest teen number is 19. 19 is 1 ten and 9 ones. After 19 comes 20. 20 has 2 tens and 0 ones!",
+        "mathConcept": "19 is the last teen number. Then comes 20.",
+        "mathTip": "After the teens, we get numbers with 2 tens, 3 tens, and more.",
+        "teachNumber": {
+          "number": 19,
+          "representation": "1 ten, 9 ones",
+          "highlight": "19 = 10 + 9"
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_teen_q5",
+        "skillId": "teen_to_twenty",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.2.B"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "I have 1 ten and 9 ones. What number?",
+        "mathContext": "I count my boba pearls. I have 1 full cup of 10 and 9 extra pearls. What number is that?",
+        "mathHint": "1 ten and 9 ones is 19.",
+        "answers": [
+          {"name": "19"},
+          {"name": "91"},
+          {"name": "10"}
+        ],
+        "correctAnswerName": "19",
+        "successMessage": "Perfect! 1 ten and 9 ones is 19!"
+      }
+    ]
+  },
+  "nbt_count_by_tens": {
+    "name": "Egg Tart Tower",
+    "icon": "🥧",
+    "level": 2,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.B.2.C"],
+    "mathFocus": ["counting by tens", "skip counting", "multiples of 10", "tens have zero ones"],
+    "previewConcepts": [
+      {
+        "concept": "Count by tens",
+        "icon": "🔟",
+        "example": "10, 20, 30, 40..."
+      },
+      {
+        "concept": "Tens end in zero",
+        "icon": "0️⃣",
+        "example": "All tens: 10, 20, 30, 40"
+      },
+      {
+        "concept": "Skip count fast",
+        "icon": "⚡",
+        "example": "Jump by 10 each time"
+      }
+    ],
+    "stickers": ["🥧", "🔟", "⭐", "0️⃣"],
+    "manipulatives": ["tens rods", "number line", "hundreds chart"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the egg tart tower. The tarts come in trays of 10. I can count by tens. 10, 20, 30!",
+        "mathConcept": "We can skip count by tens.",
+        "mathTip": "Count by tens: 10, 20, 30, 40. Each time we add 10 more.",
+        "image": "🥧🔟",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 30,
+            "groupOf": 10,
+            "style": "blocks",
+            "icon": "🥧"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I count the trays. 10, 20, 30, 40, 50. Five trays is 50 tarts! When I count by tens, I add 10 each time.",
+        "mathConcept": "Counting by tens means adding 10 each time.",
+        "mathTip": "10, 20, 30, 40, 50. Notice: they all end in zero!",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 0,
+            "end": 60,
+            "highlight": [10, 20, 30, 40, 50],
+            "jumperIcon": "🐰",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_q1",
+        "skillId": "count_by_tens_sequence",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.C"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Count by tens. What comes after 30?",
+        "mathContext": "I count the trays. 10, 20, 30, and then what?",
+        "mathHint": "Count by tens. After 30 comes 40.",
+        "answers": [
+          {"name": "40"},
+          {"name": "31"},
+          {"name": "20"}
+        ],
+        "correctAnswerName": "40",
+        "successMessage": "Yes! When counting by tens, after 30 comes 40!"
+      },
+      {
+        "type": "read",
+        "sentence": "All tens end in zero. 10 has a 0. 20 has a 0. 30, 40, 50, 60, 70, 80, 90. They all end in 0! That is how we know they are tens.",
+        "mathConcept": "Numbers that are only tens end in 0.",
+        "mathTip": "When a number ends in 0, it has 0 ones. Only tens!",
+        "teachNumber": {
+          "number": 50,
+          "representation": "5 tens, 0 ones",
+          "highlight": "50 = 5 tens + 0 ones"
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_q2",
+        "skillId": "tens_end_zero",
+        "difficulty": 1,
+        "checklistTargets": ["1.NBT.B.2.C"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many ones are in 50?",
+        "mathContext": "I have 50 egg tarts in trays. All trays are full. How many extra tarts not in a tray?",
+        "mathHint": "50 is 5 tens and 0 ones. So there are 0 ones.",
+        "answers": [
+          {"name": "0"},
+          {"name": "5"},
+          {"name": "50"}
+        ],
+        "correctAnswerName": "0",
+        "successMessage": "Perfect! 50 has 0 ones. It is all tens!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your pastry!",
+        "menuStory": "The bakery has fresh treats. I choose a yummy pastry to eat.",
+        "items": [
+          {
+            "name": "Egg Tart",
+            "icon": "🥧",
+            "description": "Creamy and flaky"
+          },
+          {
+            "name": "Pineapple Bun",
+            "icon": "🍞",
+            "description": "Sweet and crispy"
+          },
+          {
+            "name": "Red Bean Bun",
+            "icon": "🫘",
+            "description": "Soft and warm"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I keep counting by tens. 60, 70, 80, 90, 100! I can count all the way to 100 by tens. That is 10 tens!",
+        "mathConcept": "10 tens equal 100.",
+        "mathTip": "Count by tens to reach 100 quickly.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 100,
+            "groupOf": 10,
+            "style": "blocks",
+            "icon": "🥧"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_q3",
+        "skillId": "count_tens_to_100",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.2.C"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Count by tens. What comes after 70?",
+        "mathContext": "I count the trays. 10, 20, 30, 40, 50, 60, 70, and then?",
+        "mathHint": "Keep counting by tens. After 70 comes 80.",
+        "answers": [
+          {"name": "80"},
+          {"name": "71"},
+          {"name": "60"}
+        ],
+        "correctAnswerName": "80",
+        "successMessage": "Great! After 70 comes 80 when counting by tens!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_q4",
+        "skillId": "how_many_tens",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.2.C"],
+        "questionType": "placeValue",
+        "questionMode": "multipleChoice",
+        "question": "How many tens are in 70?",
+        "mathContext": "I have 70 egg tarts. They are all in trays of 10. How many trays?",
+        "mathHint": "70 is 7 tens and 0 ones. Count the tens: 7.",
+        "answers": [
+          {"name": "7"},
+          {"name": "70"},
+          {"name": "0"}
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Excellent! 70 has 7 tens!"
+      },
+      {
+        "type": "read",
+        "sentence": "Counting by tens is fast! I do not count one by one. I jump by tens. 10, 20, 30, 40. I can count many things quickly!",
+        "mathConcept": "Skip counting by tens is faster than counting by ones.",
+        "mathTip": "Use tens to count large groups quickly.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 0,
+            "end": 100,
+            "highlight": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            "jumperIcon": "⚡",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_tens_q5",
+        "skillId": "missing_ten_sequence",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.2.C"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number is missing? 40, 50, ___, 70",
+        "mathContext": "One tray number is hidden. I see 40, 50, blank, 70. What is the missing number?",
+        "mathHint": "Count by tens. After 50 comes 60.",
+        "numberSentence": "40, 50, ___, 70",
+        "answers": [
+          {"name": "60"},
+          {"name": "55"},
+          {"name": "80"}
+        ],
+        "correctAnswerName": "60",
+        "successMessage": "Perfect! 60 comes between 50 and 70!"
+      }
+    ]
+  },
+  "nbt_compare_numbers": {
+    "name": "Noodle Length Shop",
+    "icon": "🍜",
+    "level": 3,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.B.3"],
+    "mathFocus": ["comparing two-digit numbers", "greater than", "less than", "equal to", "use place value to compare"],
+    "previewConcepts": [
+      {
+        "concept": "Compare numbers",
+        "icon": "⚖️",
+        "example": "47 is greater than 32"
+      },
+      {
+        "concept": "Greater and less",
+        "icon": "↕️",
+        "example": "65 > 58"
+      },
+      {
+        "concept": "Check tens first",
+        "icon": "🔟",
+        "example": "Compare tens, then ones"
+      }
+    ],
+    "stickers": ["🍜", "⚖️", "⭐", "🎯"],
+    "manipulatives": ["base-ten blocks", "number line", "comparison symbols"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the noodle shop. Noodles come in different bowl sizes. I can compare the numbers to see which is greater.",
+        "mathConcept": "We can compare two numbers to see which is greater or less.",
+        "mathTip": "Greater means bigger. Less means smaller.",
+        "image": "🍜⚖️",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 25
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I compare 35 and 42. I check the tens first. 35 has 3 tens. 42 has 4 tens. 4 tens is more than 3 tens. So 42 is greater than 35.",
+        "mathConcept": "To compare numbers, check the tens digit first.",
+        "mathTip": "The number with more tens is greater.",
+        "teachNumber": {
+          "number": 42,
+          "representation": "4 tens > 3 tens",
+          "highlight": "42 > 35"
+        },
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 35
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_compare_q1",
+        "skillId": "compare_different_tens",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.3"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which number is greater, 27 or 54?",
+        "mathContext": "I see two noodle bowls. One has 27 noodles. One has 54 noodles. Which bowl has more?",
+        "mathHint": "Compare tens first. 27 has 2 tens. 54 has 5 tens. 5 tens is more.",
+        "answers": [
+          {"name": "54"},
+          {"name": "27"},
+          {"name": "They are equal"}
+        ],
+        "correctAnswerName": "54",
+        "successMessage": "Yes! 54 is greater than 27 because 5 tens is more than 2 tens!"
+      },
+      {
+        "type": "read",
+        "sentence": "Sometimes the tens are the same. Then I check the ones. 43 and 47 both have 4 tens. But 47 has 7 ones and 43 has 3 ones. 7 ones is more than 3 ones. So 47 is greater.",
+        "mathConcept": "When tens are equal, compare the ones.",
+        "mathTip": "Same tens? Check which has more ones.",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 43
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_compare_q2",
+        "skillId": "compare_same_tens",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.3"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which is greater, 62 or 68?",
+        "mathContext": "Two bowls both have 6 tens. One has 2 ones, one has 8 ones. Which is greater?",
+        "mathHint": "The tens are the same. Check the ones. 8 ones is more than 2 ones.",
+        "answers": [
+          {"name": "68"},
+          {"name": "62"},
+          {"name": "They are equal"}
+        ],
+        "correctAnswerName": "68",
+        "successMessage": "Perfect! 68 is greater than 62 because 8 ones is more than 2 ones!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your noodle type!",
+        "menuStory": "The noodle shop has many kinds. I choose my favorite noodles to eat.",
+        "items": [
+          {
+            "name": "Ramen",
+            "icon": "🍜",
+            "description": "Long and curly"
+          },
+          {
+            "name": "Udon",
+            "icon": "🥢",
+            "description": "Thick and chewy"
+          },
+          {
+            "name": "Rice Noodles",
+            "icon": "🍚",
+            "description": "Flat and smooth"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I use the symbols to compare. The symbol for greater than is the greater than sign. The symbol for less than is the less than sign. 56 is greater than 34. 34 is less than 56.",
+        "mathConcept": "We use symbols to show comparisons: greater than, less than, equal to.",
+        "mathTip": "The greater than sign points to the smaller number. The less than sign points to the bigger number.",
+        "teachNumber": {
+          "number": 56,
+          "representation": "56 > 34",
+          "highlight": "56 is greater than 34"
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_compare_q3",
+        "skillId": "compare_less_than",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.3"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which number is less, 71 or 89?",
+        "mathContext": "I compare two numbers. Which one is smaller?",
+        "mathHint": "Less means smaller. 71 has 7 tens, 89 has 8 tens. 71 is less.",
+        "answers": [
+          {"name": "71"},
+          {"name": "89"},
+          {"name": "They are equal"}
+        ],
+        "correctAnswerName": "71",
+        "successMessage": "Great! 71 is less than 89!"
+      },
+      {
+        "type": "read",
+        "sentence": "Sometimes two numbers are equal. 45 equals 45. They are the same! When numbers are equal, we use the equal sign.",
+        "mathConcept": "When two numbers are the same, they are equal.",
+        "mathTip": "Equal means exactly the same amount.",
+        "teachNumber": {
+          "number": 45,
+          "representation": "45 = 45",
+          "highlight": "45 equals 45"
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_compare_q4",
+        "skillId": "identify_equal",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.B.3"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Is 52 greater than, less than, or equal to 52?",
+        "mathContext": "I have two bowls. Each has 52 noodles. How do the numbers compare?",
+        "mathHint": "52 and 52 are the same number. They are equal.",
+        "answers": [
+          {"name": "Equal to"},
+          {"name": "Greater than"},
+          {"name": "Less than"}
+        ],
+        "correctAnswerName": "Equal to",
+        "successMessage": "Yes! 52 equals 52. They are the same!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_compare_q5",
+        "skillId": "compare_strategy",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.B.3"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which is greater, 38 or 41?",
+        "mathContext": "I compare 38 and 41. Which number is bigger?",
+        "mathHint": "Check tens first. 38 has 3 tens, 41 has 4 tens. 41 is greater.",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 38
+          }
+        },
+        "answers": [
+          {"name": "41"},
+          {"name": "38"},
+          {"name": "They are equal"}
+        ],
+        "correctAnswerName": "41",
+        "successMessage": "Excellent! 41 is greater than 38!"
+      }
+    ]
+  },
+  "nbt_add_no_regroup": {
+    "name": "Fruit Stand Addition",
+    "icon": "🍎",
+    "level": 2,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.C.4"],
+    "mathFocus": ["add two-digit numbers", "no regrouping", "add ones then tens", "use place value"],
+    "previewConcepts": [
+      {
+        "concept": "Add ones first",
+        "icon": "1️⃣",
+        "example": "23 + 5: add 3 + 5 = 8"
+      },
+      {
+        "concept": "Add tens next",
+        "icon": "🔟",
+        "example": "23 + 5 = 28"
+      },
+      {
+        "concept": "No regrouping",
+        "icon": "✅",
+        "example": "Ones stay under 10"
+      }
+    ],
+    "stickers": ["🍎", "➕", "⭐", "🎯"],
+    "manipulatives": ["base-ten blocks", "place value chart"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the fruit stand. I buy apples and oranges. I can add the numbers together. I add ones first, then tens.",
+        "mathConcept": "To add two-digit numbers, add the ones first, then add the tens.",
+        "mathTip": "Line up the tens and ones. Add each place separately.",
+        "image": "🍎🍊",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 23
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I have 23 apples. I buy 5 more apples. How many apples do I have now? I add the ones. 3 plus 5 equals 8 ones. The tens stay 2 tens. 23 plus 5 equals 28.",
+        "mathConcept": "When adding, start with the ones place.",
+        "mathTip": "23 + 5: Add ones 3 + 5 = 8. Keep the tens. Answer: 28.",
+        "numberSentence": "23 + 5 = 28",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 23,
+            "operator": "+",
+            "right": 5,
+            "result": 28,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_no_reg_q1",
+        "skillId": "add_ones_only",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 23 + 5?",
+        "mathContext": "I have 23 apples. I add 5 more apples. How many apples in all?",
+        "mathHint": "Add the ones. 3 + 5 = 8. The tens stay 2. So 23 + 5 = 28.",
+        "numberSentence": "23 + 5 = ___",
+        "answers": [
+          {"name": "28"},
+          {"name": "33"},
+          {"name": "18"}
+        ],
+        "correctAnswerName": "28",
+        "successMessage": "Perfect! 23 + 5 = 28. You added the ones!"
+      },
+      {
+        "type": "read",
+        "sentence": "Now I try adding tens and ones together. I have 34 fruits. I buy 21 more fruits. I add ones first. 4 plus 1 equals 5 ones. Then I add tens. 3 tens plus 2 tens equals 5 tens. 34 plus 21 equals 55.",
+        "mathConcept": "Add ones, then add tens.",
+        "mathTip": "34 + 21: Ones 4 + 1 = 5. Tens 30 + 20 = 50. Answer: 55.",
+        "numberSentence": "34 + 21 = 55",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 34,
+            "operator": "+",
+            "right": 21,
+            "result": 55,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_no_reg_q2",
+        "skillId": "add_two_digit_no_regroup",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 34 + 21?",
+        "mathContext": "I count 34 apples and 21 oranges. How many fruits in total?",
+        "mathHint": "Add ones: 4 + 1 = 5. Add tens: 30 + 20 = 50. Total: 55.",
+        "numberSentence": "34 + 21 = ___",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 34
+          }
+        },
+        "answers": [
+          {"name": "55"},
+          {"name": "45"},
+          {"name": "65"}
+        ],
+        "correctAnswerName": "55",
+        "successMessage": "Excellent! 34 + 21 = 55. You added ones then tens!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your fruit!",
+        "menuStory": "The fruit stand has fresh fruit. I choose my favorite kind to buy.",
+        "items": [
+          {
+            "name": "Apples",
+            "icon": "🍎",
+            "description": "Red and crispy"
+          },
+          {
+            "name": "Oranges",
+            "icon": "🍊",
+            "description": "Orange and juicy"
+          },
+          {
+            "name": "Grapes",
+            "icon": "🍇",
+            "description": "Purple and sweet"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I practice more addition. 52 plus 33. Ones: 2 plus 3 equals 5. Tens: 5 tens plus 3 tens equals 8 tens. 52 plus 33 equals 85!",
+        "mathConcept": "Always add ones first, then tens.",
+        "mathTip": "Use base-ten blocks to see the tens and ones clearly.",
+        "numberSentence": "52 + 33 = 85",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 52,
+            "operator": "+",
+            "right": 33,
+            "result": 85,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_no_reg_q3",
+        "skillId": "add_two_digit_larger",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 52 + 33?",
+        "mathContext": "I have 52 fruits in one basket and 33 fruits in another. How many fruits in all?",
+        "mathHint": "Ones: 2 + 3 = 5. Tens: 50 + 30 = 80. Total: 85.",
+        "numberSentence": "52 + 33 = ___",
+        "answers": [
+          {"name": "85"},
+          {"name": "75"},
+          {"name": "95"}
+        ],
+        "correctAnswerName": "85",
+        "successMessage": "Great! 52 + 33 = 85. You used the add ones then tens strategy!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_no_reg_q4",
+        "skillId": "add_with_zero_ones",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 40 + 26?",
+        "mathContext": "I buy 40 apples and 26 oranges. How many fruits do I have?",
+        "mathHint": "Ones: 0 + 6 = 6. Tens: 40 + 20 = 60. Total: 66.",
+        "numberSentence": "40 + 26 = ___",
+        "answers": [
+          {"name": "66"},
+          {"name": "46"},
+          {"name": "76"}
+        ],
+        "correctAnswerName": "66",
+        "successMessage": "Yes! 40 + 26 = 66!"
+      },
+      {
+        "type": "read",
+        "sentence": "Adding is easy when I follow the steps. Add ones. Add tens. Check my answer. I can add any two numbers this way!",
+        "mathConcept": "Use a strategy: add ones, then add tens.",
+        "mathTip": "Practice makes addition faster and easier!",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 14,
+            "operator": "+",
+            "right": 32,
+            "result": 46,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_no_reg_q5",
+        "skillId": "add_practice",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 14 + 32?",
+        "mathContext": "I count 14 red apples and 32 green apples. How many apples in total?",
+        "mathHint": "Ones: 4 + 2 = 6. Tens: 10 + 30 = 40. Total: 46.",
+        "numberSentence": "14 + 32 = ___",
+        "answers": [
+          {"name": "46"},
+          {"name": "56"},
+          {"name": "36"}
+        ],
+        "correctAnswerName": "46",
+        "successMessage": "Perfect! 14 + 32 = 46!"
+      }
+    ]
+  },
+  "nbt_add_with_regroup": {
+    "name": "Steamed Bun Kitchen",
+    "icon": "🥟",
+    "level": 3,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.C.4"],
+    "mathFocus": ["add with regrouping", "make a new ten", "ones overflow", "trade 10 ones for 1 ten"],
+    "previewConcepts": [
+      {
+        "concept": "Make a new ten",
+        "icon": "🔟",
+        "example": "When ones reach 10, trade"
+      },
+      {
+        "concept": "Regrouping",
+        "icon": "🔄",
+        "example": "10 ones = 1 new ten"
+      },
+      {
+        "concept": "Add with overflow",
+        "icon": "➕",
+        "example": "27 + 8 = 35"
+      }
+    ],
+    "stickers": ["🥟", "🔄", "⭐", "🔟"],
+    "manipulatives": ["base-ten blocks", "place value chart"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the steamed bun kitchen. Sometimes when I add, I get 10 or more ones. Then I need to make a new ten! This is called regrouping.",
+        "mathConcept": "When ones add up to 10 or more, we regroup and make a new ten.",
+        "mathTip": "Watch for when ones reach 10. Trade 10 ones for 1 ten.",
+        "image": "🥟🔄",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 28
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I have 27 buns. I add 8 more buns. First I add the ones. 7 plus 8 equals 15. That is 1 ten and 5 ones! I trade 10 ones for 1 new ten. Now I have 3 tens and 5 ones. 27 plus 8 equals 35.",
+        "mathConcept": "When ones equal 10 or more, regroup to make a new ten.",
+        "mathTip": "7 + 8 = 15. That is 1 ten and 5 ones. Regroup!",
+        "numberSentence": "27 + 8 = 35",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 27,
+            "operator": "+",
+            "right": 8,
+            "result": 35,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_reg_q1",
+        "skillId": "add_with_regroup_simple",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 27 + 8?",
+        "mathContext": "I have 27 buns in baskets. I add 8 more buns. How many buns now?",
+        "mathHint": "Add ones: 7 + 8 = 15. That is 1 ten and 5 ones. Regroup! 2 tens + 1 ten = 3 tens. Answer: 35.",
+        "numberSentence": "27 + 8 = ___",
+        "answers": [
+          {"name": "35"},
+          {"name": "25"},
+          {"name": "45"}
+        ],
+        "correctAnswerName": "35",
+        "successMessage": "Excellent! 27 + 8 = 35. You regrouped 15 ones into 1 ten and 5 ones!"
+      },
+      {
+        "type": "read",
+        "sentence": "I try another one. 36 plus 17. Ones: 6 plus 7 equals 13. That is 1 ten and 3 ones. I regroup! Tens: 3 tens plus 1 ten plus the new ten equals 5 tens. 36 plus 17 equals 53.",
+        "mathConcept": "Add ones, regroup if needed, then add all the tens.",
+        "mathTip": "6 + 7 = 13. Regroup to 1 ten and 3 ones. Then add tens: 3 + 1 + 1 = 5 tens.",
+        "numberSentence": "36 + 17 = 53",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 36,
+            "operator": "+",
+            "right": 17,
+            "result": 53,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_reg_q2",
+        "skillId": "add_two_digit_regroup",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 36 + 17?",
+        "mathContext": "I make 36 buns in the morning and 17 buns in the afternoon. How many buns in total?",
+        "mathHint": "Ones: 6 + 7 = 13. Regroup to 1 ten and 3 ones. Tens: 3 + 1 + 1 = 5. Answer: 53.",
+        "numberSentence": "36 + 17 = ___",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 36
+          }
+        },
+        "answers": [
+          {"name": "53"},
+          {"name": "43"},
+          {"name": "63"}
+        ],
+        "correctAnswerName": "53",
+        "successMessage": "Great work! 36 + 17 = 53. You regrouped correctly!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your bun filling!",
+        "menuStory": "The kitchen makes different buns. I choose my favorite filling.",
+        "items": [
+          {
+            "name": "Pork Bun",
+            "icon": "🥟",
+            "description": "Juicy meat filling"
+          },
+          {
+            "name": "Red Bean Bun",
+            "icon": "🫘",
+            "description": "Sweet bean paste"
+          },
+          {
+            "name": "Veggie Bun",
+            "icon": "🥬",
+            "description": "Fresh vegetables"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "Regrouping happens when the ones add up to 10 or more. I always check. Do I have 10 or more ones? If yes, I make a new ten!",
+        "mathConcept": "Check if ones equal 10 or more. If yes, regroup.",
+        "mathTip": "When ones reach 10, trade for 1 ten. Then add the tens.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 12,
+            "groupOf": 10,
+            "style": "circles",
+            "icon": "🥟"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_reg_q3",
+        "skillId": "add_regroup_identify",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 48 + 26?",
+        "mathContext": "I have 48 buns on one tray and 26 buns on another. How many buns in all?",
+        "mathHint": "Ones: 8 + 6 = 14. Regroup to 1 ten and 4 ones. Tens: 4 + 2 + 1 = 7. Answer: 74.",
+        "numberSentence": "48 + 26 = ___",
+        "answers": [
+          {"name": "74"},
+          {"name": "64"},
+          {"name": "84"}
+        ],
+        "correctAnswerName": "74",
+        "successMessage": "Perfect! 48 + 26 = 74. You regrouped 14 ones!"
+      },
+      {
+        "type": "read",
+        "sentence": "I practice more. 29 plus 15. Ones: 9 plus 5 equals 14. Regroup to 1 ten and 4 ones. Tens: 2 plus 1 plus 1 equals 4 tens. 29 plus 15 equals 44.",
+        "mathConcept": "Practice regrouping to build skill.",
+        "mathTip": "Follow the steps: add ones, regroup if needed, add tens.",
+        "numberSentence": "29 + 15 = 44"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_reg_q4",
+        "skillId": "add_regroup_practice",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 29 + 15?",
+        "mathContext": "The baker makes 29 buns in the first batch and 15 in the second. How many total?",
+        "mathHint": "Ones: 9 + 5 = 14. Regroup. Tens: 2 + 1 + 1 = 4. Answer: 44.",
+        "numberSentence": "29 + 15 = ___",
+        "answers": [
+          {"name": "44"},
+          {"name": "34"},
+          {"name": "54"}
+        ],
+        "correctAnswerName": "44",
+        "successMessage": "Yes! 29 + 15 = 44. Great regrouping!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_add_reg_q5",
+        "skillId": "add_regroup_challenge",
+        "difficulty": 4,
+        "checklistTargets": ["1.NBT.C.4"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 57 + 38?",
+        "mathContext": "I count 57 pork buns and 38 veggie buns. How many buns in total?",
+        "mathHint": "Ones: 7 + 8 = 15. Regroup to 1 ten and 5 ones. Tens: 5 + 3 + 1 = 9. Answer: 95.",
+        "numberSentence": "57 + 38 = ___",
+        "answers": [
+          {"name": "95"},
+          {"name": "85"},
+          {"name": "105"}
+        ],
+        "correctAnswerName": "95",
+        "successMessage": "Excellent! 57 + 38 = 95. You are a regrouping expert!"
+      }
+    ]
+  },
+  "nbt_ten_more_less": {
+    "name": "Elevator Number Buttons",
+    "icon": "🛗",
+    "level": 2,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.C.5"],
+    "mathFocus": ["mentally find 10 more", "mentally find 10 less", "tens place changes", "ones stay the same"],
+    "previewConcepts": [
+      {
+        "concept": "10 more",
+        "icon": "⬆️",
+        "example": "42 → 52"
+      },
+      {
+        "concept": "10 less",
+        "icon": "⬇️",
+        "example": "67 → 57"
+      },
+      {
+        "concept": "Tens change, ones stay",
+        "icon": "🔟",
+        "example": "Only the tens digit changes"
+      }
+    ],
+    "stickers": ["🛗", "⬆️", "⬇️", "⭐"],
+    "manipulatives": ["number line", "base-ten blocks", "hundreds chart"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the elevator. The buttons go up and down. I can go 10 floors up or 10 floors down. This helps me practice 10 more and 10 less.",
+        "mathConcept": "Adding 10 means going up 10. Subtracting 10 means going down 10.",
+        "mathTip": "When you add or subtract 10, only the tens digit changes.",
+        "image": "🛗🔼",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 20,
+            "end": 50,
+            "highlight": [25, 35, 45],
+            "jumperIcon": "🛗",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I am on floor 34. I press the up button. The elevator goes up 10 floors. 34 plus 10 equals 44. I am now on floor 44. The tens changed from 3 to 4. The ones stayed 4.",
+        "mathConcept": "10 more than a number means add 1 to the tens digit.",
+        "mathTip": "To find 10 more, add 1 ten. The ones stay the same.",
+        "teachNumber": {
+          "number": 44,
+          "representation": "34 + 10 = 44",
+          "highlight": "10 more than 34 is 44"
+        },
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 34,
+            "operator": "+",
+            "right": 10,
+            "result": 44,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_ten_more_q1",
+        "skillId": "ten_more_mental",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.5"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 more than 34?",
+        "mathContext": "I am on floor 34. I go up 10 floors. What floor am I on now?",
+        "mathHint": "Add 1 to the tens digit. 34 becomes 44.",
+        "numberSentence": "34 + 10 = ___",
+        "answers": [
+          {"name": "44"},
+          {"name": "35"},
+          {"name": "24"}
+        ],
+        "correctAnswerName": "44",
+        "successMessage": "Yes! 10 more than 34 is 44!"
+      },
+      {
+        "type": "read",
+        "sentence": "Now I press the down button. I am on floor 56. I go down 10 floors. 56 minus 10 equals 46. The tens changed from 5 to 4. The ones stayed 6.",
+        "mathConcept": "10 less than a number means subtract 1 from the tens digit.",
+        "mathTip": "To find 10 less, subtract 1 ten. The ones stay the same.",
+        "teachNumber": {
+          "number": 46,
+          "representation": "56 - 10 = 46",
+          "highlight": "10 less than 56 is 46"
+        },
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 56,
+            "operator": "-",
+            "right": 10,
+            "result": 46,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_ten_more_q2",
+        "skillId": "ten_less_mental",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.5"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 less than 56?",
+        "mathContext": "I am on floor 56. I go down 10 floors. What floor am I on?",
+        "mathHint": "Subtract 1 from the tens digit. 56 becomes 46.",
+        "numberSentence": "56 - 10 = ___",
+        "answers": [
+          {"name": "46"},
+          {"name": "55"},
+          {"name": "66"}
+        ],
+        "correctAnswerName": "46",
+        "successMessage": "Perfect! 10 less than 56 is 46!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your elevator music!",
+        "menuStory": "The elevator plays music. I choose which song I want to hear.",
+        "items": [
+          {
+            "name": "Piano Music",
+            "icon": "🎹",
+            "description": "Soft and calm"
+          },
+          {
+            "name": "Jazz Music",
+            "icon": "🎷",
+            "description": "Smooth and cool"
+          },
+          {
+            "name": "Classical Music",
+            "icon": "🎻",
+            "description": "Beautiful and relaxing"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I can do this in my head! I do not need to write it down. I just think about the tens digit. 10 more than 72? The tens goes from 7 to 8. That is 82!",
+        "mathConcept": "We can find 10 more or 10 less mentally.",
+        "mathTip": "Mental math means doing math in your head. It is fast!",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 60,
+            "end": 90,
+            "highlight": [72, 82],
+            "jumperIcon": "⬆️",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_ten_more_q3",
+        "skillId": "ten_more_practice",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.5"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 more than 72?",
+        "mathContext": "I am on floor 72. The elevator goes up 10 floors. What floor now?",
+        "mathHint": "Think: 7 tens becomes 8 tens. 72 + 10 = 82.",
+        "answers": [
+          {"name": "82"},
+          {"name": "73"},
+          {"name": "62"}
+        ],
+        "correctAnswerName": "82",
+        "successMessage": "Great! 10 more than 72 is 82!"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_ten_more_q4",
+        "skillId": "ten_less_practice",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.5"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 less than 83?",
+        "mathContext": "I start on floor 83. I go down 10 floors. Where am I?",
+        "mathHint": "Think: 8 tens becomes 7 tens. 83 - 10 = 73.",
+        "answers": [
+          {"name": "73"},
+          {"name": "82"},
+          {"name": "93"}
+        ],
+        "correctAnswerName": "73",
+        "successMessage": "Yes! 10 less than 83 is 73!"
+      },
+      {
+        "type": "read",
+        "sentence": "I ride the elevator all day. Up 10, down 10. The pattern is easy. Only the tens digit changes. The ones stay exactly the same every time!",
+        "mathConcept": "The ones digit never changes when adding or subtracting 10.",
+        "mathTip": "Look for the pattern. This makes mental math easier!",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 15,
+            "end": 78,
+            "highlight": [15, 25, 35, 58, 68, 78],
+            "jumperIcon": "⬇️",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_ten_more_q5",
+        "skillId": "ten_more_challenge",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.5"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 more than 91?",
+        "mathContext": "I am on floor 91. I press the up button to go up 10 floors. What floor?",
+        "mathHint": "9 tens plus 1 ten equals 10 tens. That is 100! 91 + 10 = 101.",
+        "answers": [
+          {"name": "101"},
+          {"name": "92"},
+          {"name": "81"}
+        ],
+        "correctAnswerName": "101",
+        "successMessage": "Excellent! 10 more than 91 is 101. You went past 100!"
+      }
+    ]
+  },
+  "nbt_subtract_tens": {
+    "name": "Rice Ball Subtraction",
+    "icon": "🍙",
+    "level": 3,
+    "line": "NBT",
+    "checklistTargets": ["1.NBT.C.6"],
+    "mathFocus": ["subtract multiples of 10", "take away tens", "use place value", "mental strategies"],
+    "previewConcepts": [
+      {
+        "concept": "Subtract tens",
+        "icon": "➖",
+        "example": "60 - 20 = 40"
+      },
+      {
+        "concept": "Take away ten rods",
+        "icon": "🔟",
+        "example": "Remove groups of 10"
+      },
+      {
+        "concept": "Mental math",
+        "icon": "🧠",
+        "example": "Think in tens"
+      }
+    ],
+    "stickers": ["🍙", "➖", "⭐", "🎯"],
+    "manipulatives": ["base-ten blocks", "number line"],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the rice ball shop. Rice balls come in packs of 10. I can subtract tens to find how many are left.",
+        "mathConcept": "We can subtract multiples of 10 from two-digit numbers.",
+        "mathTip": "Subtract tens just like subtracting ones, but in the tens place.",
+        "image": "🍙➖",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 60,
+            "groupOf": 10,
+            "style": "blocks",
+            "icon": "🍙"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I have 60 rice balls. That is 6 packs of 10. I give away 20 rice balls. That is 2 packs. I take away 2 tens. 6 tens minus 2 tens equals 4 tens. 60 minus 20 equals 40.",
+        "mathConcept": "To subtract multiples of 10, subtract the tens.",
+        "mathTip": "6 tens - 2 tens = 4 tens. So 60 - 20 = 40.",
+        "numberSentence": "60 - 20 = 40",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 60,
+            "operator": "-",
+            "right": 20,
+            "result": 40,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_sub_tens_q1",
+        "skillId": "subtract_multiples_10",
+        "difficulty": 2,
+        "checklistTargets": ["1.NBT.C.6"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 60 - 20?",
+        "mathContext": "I have 60 rice balls. I sell 20 rice balls. How many do I have left?",
+        "mathHint": "Think tens. 6 tens - 2 tens = 4 tens. So 60 - 20 = 40.",
+        "numberSentence": "60 - 20 = ___",
+        "answers": [
+          {"name": "40"},
+          {"name": "80"},
+          {"name": "50"}
+        ],
+        "correctAnswerName": "40",
+        "successMessage": "Perfect! 60 - 20 = 40. You subtracted tens!"
+      },
+      {
+        "type": "read",
+        "sentence": "Now I try a harder one. I have 84 rice balls. I give away 30. I look at the tens. 8 tens minus 3 tens equals 5 tens. The ones stay 4. 84 minus 30 equals 54.",
+        "mathConcept": "When subtracting tens, the ones digit stays the same.",
+        "mathTip": "Subtract only the tens. Keep the ones the same.",
+        "numberSentence": "84 - 30 = 54",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 84,
+            "operator": "-",
+            "right": 30,
+            "result": 54,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_sub_tens_q2",
+        "skillId": "subtract_tens_keep_ones",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.6"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 84 - 30?",
+        "mathContext": "I count 84 rice balls. I give 30 to my friends. How many left?",
+        "mathHint": "Tens: 8 - 3 = 5. Ones stay 4. Answer: 54.",
+        "numberSentence": "84 - 30 = ___",
+        "visual": {
+          "type": "placeValue",
+          "data": {
+            "number": 84
+          }
+        },
+        "answers": [
+          {"name": "54"},
+          {"name": "51"},
+          {"name": "64"}
+        ],
+        "correctAnswerName": "54",
+        "successMessage": "Great! 84 - 30 = 54. The ones stayed the same!"
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your rice ball filling!",
+        "menuStory": "The rice ball shop has different flavors. I pick my favorite filling.",
+        "items": [
+          {
+            "name": "Salmon Rice Ball",
+            "icon": "🐟",
+            "description": "Pink and yummy"
+          },
+          {
+            "name": "Tuna Rice Ball",
+            "icon": "🍙",
+            "description": "Savory and good"
+          },
+          {
+            "name": "Veggie Rice Ball",
+            "icon": "🥒",
+            "description": "Fresh and light"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I can subtract tens in my head. I think about the tens place. 75 minus 40? 7 tens minus 4 tens equals 3 tens. The ones stay 5. So 75 minus 40 equals 35!",
+        "mathConcept": "Use mental math to subtract multiples of 10.",
+        "mathTip": "Focus on the tens digit. The ones do not change.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 35,
+            "end": 75,
+            "highlight": [35, 45, 55, 65, 75],
+            "jumperIcon": "🍙",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_sub_tens_q3",
+        "skillId": "subtract_tens_mental",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.6"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 75 - 40?",
+        "mathContext": "I start with 75 rice balls. I pack 40 into boxes. How many rice balls are not packed?",
+        "mathHint": "Tens: 7 - 4 = 3. Ones stay 5. Answer: 35.",
+        "numberSentence": "75 - 40 = ___",
+        "answers": [
+          {"name": "35"},
+          {"name": "45"},
+          {"name": "31"}
+        ],
+        "correctAnswerName": "35",
+        "successMessage": "Excellent! 75 - 40 = 35!"
+      },
+      {
+        "type": "read",
+        "sentence": "I practice more. 92 minus 50. Tens: 9 minus 5 equals 4 tens. Ones: 2 stays 2. 92 minus 50 equals 42. I am getting fast at this!",
+        "mathConcept": "Practice makes subtracting tens automatic.",
+        "mathTip": "The more you practice, the easier it gets!",
+        "numberSentence": "92 - 50 = 42"
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_sub_tens_q4",
+        "skillId": "subtract_tens_practice",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.6"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 92 - 50?",
+        "mathContext": "The shop has 92 rice balls. They sell 50 rice balls. How many are left?",
+        "mathHint": "Tens: 9 - 5 = 4. Ones stay 2. Answer: 42.",
+        "numberSentence": "92 - 50 = ___",
+        "answers": [
+          {"name": "42"},
+          {"name": "52"},
+          {"name": "40"}
+        ],
+        "correctAnswerName": "42",
+        "successMessage": "Yes! 92 - 50 = 42. Great work!"
+      },
+      {
+        "type": "read",
+        "sentence": "Subtracting tens is a useful skill. I can solve problems quickly. I just think about tens and ones separately. Easy!",
+        "mathConcept": "Understanding place value makes subtraction easier.",
+        "mathTip": "Always think: what are the tens doing? What are the ones doing?",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 67,
+            "operator": "-",
+            "right": 20,
+            "result": 47,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "nbt_sub_tens_q5",
+        "skillId": "subtract_tens_challenge",
+        "difficulty": 3,
+        "checklistTargets": ["1.NBT.C.6"],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 67 - 20?",
+        "mathContext": "I have 67 rice balls. I give 20 to the lunch program. How many do I keep?",
+        "mathHint": "Tens: 6 - 2 = 4. Ones stay 7. Answer: 47.",
+        "numberSentence": "67 - 20 = ___",
+        "answers": [
+          {"name": "47"},
+          {"name": "87"},
+          {"name": "45"}
+        ],
+        "correctAnswerName": "47",
+        "successMessage": "Perfect! 67 - 20 = 47. You are a subtraction star!"
+      }
+    ]
+  }
+}

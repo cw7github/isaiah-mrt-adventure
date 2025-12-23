@@ -1,0 +1,1522 @@
+{
+  "md_compare_lengths": {
+    "name": "Noodle House",
+    "icon": "🍜",
+    "level": 1,
+    "line": "MD",
+    "checklistTargets": ["1.MD.A.1"],
+    "mathFocus": ["comparing", "longer", "shorter", "length", "order"],
+    "previewConcepts": [
+      {
+        "concept": "Compare lengths",
+        "icon": "📏",
+        "example": "Which noodle is longer?"
+      },
+      {
+        "concept": "Order by length",
+        "icon": "🔢",
+        "example": "Longest to shortest"
+      },
+      {
+        "concept": "Use words: longer, shorter",
+        "icon": "💬",
+        "example": "This one is longer"
+      }
+    ],
+    "stickers": ["🍜", "🥢", "⭐", "🚂"],
+    "manipulatives": ["visual comparison", "ordering strips"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the noodle house. The chef makes noodles. Some noodles are long. Some noodles are short.",
+        "image": "🍜🥢",
+        "mathConcept": "Comparing lengths",
+        "mathTip": "Look at how long each object is.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 8,
+            "right": 3,
+            "icon": "🍜",
+            "labels": ["long noodle", "short noodle"]
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q1",
+        "skillId": "md.compare.direct",
+        "difficulty": 1,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which noodle is longer?",
+        "mathContext": "I see two noodles. One is long. One is short.",
+        "mathHint": "Look at both noodles. Find the one that goes farther.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 7,
+            "right": 4,
+            "icon": "🍜",
+            "labels": ["Noodle A", "Noodle B"],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Noodle A", "icon": "🍜"},
+          {"name": "Noodle B", "icon": "🍜"},
+          {"name": "Both the same", "icon": "="}
+        ],
+        "correctAnswerName": "Noodle A",
+        "successMessage": "Yes! You found the longer noodle."
+      },
+      {
+        "type": "read",
+        "sentence": "I see breadsticks too. I put them next to each other. Now I can compare them.",
+        "image": "🥖📏",
+        "mathConcept": "Lining up to compare",
+        "mathTip": "Line up objects at one end to compare lengths.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 6,
+            "right": 5,
+            "icon": "🥖",
+            "labels": ["breadstick 1", "breadstick 2"],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q2",
+        "skillId": "md.compare.aligned",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which breadstick is shorter?",
+        "mathContext": "Two breadsticks are lined up at the left. I can see which is shorter.",
+        "mathHint": "Look for the one that ends first. That one is shorter.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 8,
+            "right": 5,
+            "icon": "🥖",
+            "labels": ["Green breadstick", "Brown breadstick"],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Green breadstick", "icon": "🥖"},
+          {"name": "Brown breadstick", "icon": "🥖"},
+          {"name": "Both the same", "icon": "="}
+        ],
+        "correctAnswerName": "Brown breadstick",
+        "successMessage": "Great! You found the shorter breadstick."
+      },
+      {
+        "type": "read",
+        "sentence": "The train has three cars. Car A is long. Car B is longer. Car C is the longest.",
+        "image": "🚂🚃",
+        "mathConcept": "Ordering by length",
+        "mathTip": "You can put objects in order from shortest to longest.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Car A"},
+              {"length": 6, "label": "Car B"},
+              {"length": 8, "label": "Car C"}
+            ],
+            "icon": "🚃",
+            "ordered": true
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your noodle dish!",
+        "menuStory": "The chef asks what I want. I look at the menu. I choose my favorite.",
+        "items": [
+          {"name": "Beef Noodle Soup", "icon": "🍜", "description": "Hot broth with long noodles"},
+          {"name": "Dan Dan Noodles", "icon": "🥢", "description": "Spicy noodles with sauce"},
+          {"name": "Cold Sesame Noodles", "icon": "🥗", "description": "Cool noodles with sesame"}
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q3",
+        "skillId": "md.order.three",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which train car is the longest?",
+        "mathContext": "I see three train cars. They have different lengths.",
+        "mathHint": "Look at all three. Find the one that goes the farthest.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 5, "label": "Red car"},
+              {"length": 9, "label": "Blue car"},
+              {"length": 6, "label": "Green car"}
+            ],
+            "icon": "🚃",
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Red car", "icon": "🚃"},
+          {"name": "Blue car", "icon": "🚃"},
+          {"name": "Green car", "icon": "🚃"}
+        ],
+        "correctAnswerName": "Blue car",
+        "successMessage": "Yes! The blue car is the longest."
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q4",
+        "skillId": "md.order.shortest",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Which chopstick is the shortest?",
+        "mathContext": "Three chopsticks are on the table. I need to find the shortest one.",
+        "mathHint": "Look for the chopstick that is the smallest. It ends first.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 7, "label": "Chopstick 1"},
+              {"length": 4, "label": "Chopstick 2"},
+              {"length": 6, "label": "Chopstick 3"}
+            ],
+            "icon": "🥢",
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Chopstick 1", "icon": "🥢"},
+          {"name": "Chopstick 2", "icon": "🥢"},
+          {"name": "Chopstick 3", "icon": "🥢"}
+        ],
+        "correctAnswerName": "Chopstick 2",
+        "successMessage": "Nice work! Chopstick 2 is the shortest."
+      },
+      {
+        "type": "read",
+        "sentence": "I can put noodles in order. First the shortest. Then longer. Last the longest.",
+        "image": "📊🍜",
+        "mathConcept": "Ordering from shortest to longest",
+        "mathTip": "Start with the smallest. End with the biggest.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "short"},
+              {"length": 6, "label": "medium"},
+              {"length": 9, "label": "long"}
+            ],
+            "icon": "🍜",
+            "ordered": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q5",
+        "skillId": "md.order.sequence",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Put the noodles in order from shortest to longest. Which comes first?",
+        "mathContext": "I have noodle A, noodle B, and noodle C. I need to order them.",
+        "mathHint": "Find the shortest noodle. That one comes first.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 8, "label": "Noodle A"},
+              {"length": 5, "label": "Noodle B"},
+              {"length": 7, "label": "Noodle C"}
+            ],
+            "icon": "🍜",
+            "aligned": false
+          }
+        },
+        "answers": [
+          {"name": "Noodle A", "icon": "🍜"},
+          {"name": "Noodle B", "icon": "🍜"},
+          {"name": "Noodle C", "icon": "🍜"}
+        ],
+        "correctAnswerName": "Noodle B",
+        "successMessage": "Excellent! Noodle B is shortest, so it comes first."
+      },
+      {
+        "type": "question",
+        "itemId": "md_compare_lengths_q6",
+        "skillId": "md.vocabulary.longer",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.1"],
+        "questionType": "comparison",
+        "questionMode": "multipleChoice",
+        "question": "Spoon A is 6 units long. Spoon B is 4 units long. Which spoon is longer?",
+        "mathContext": "Two spoons have different lengths. I compare them.",
+        "mathHint": "Longer means bigger. Which number is bigger, 6 or 4?",
+        "numberSentence": "6 or 4",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 6,
+            "right": 4,
+            "icon": "🥄",
+            "labels": ["Spoon A", "Spoon B"]
+          }
+        },
+        "answers": [
+          {"name": "Spoon A", "icon": "🥄"},
+          {"name": "Spoon B", "icon": "🥄"},
+          {"name": "Both the same", "icon": "="}
+        ],
+        "correctAnswerName": "Spoon A",
+        "successMessage": "Yes! 6 is more than 4, so Spoon A is longer."
+      }
+    ]
+  },
+  "md_measure_length": {
+    "name": "Cookie Shop",
+    "icon": "🍪",
+    "level": 2,
+    "line": "MD",
+    "checklistTargets": ["1.MD.A.2"],
+    "mathFocus": ["measure", "units", "length", "count", "whole numbers"],
+    "previewConcepts": [
+      {
+        "concept": "Measure with units",
+        "icon": "📏",
+        "example": "Use cookies to measure"
+      },
+      {
+        "concept": "Count the units",
+        "icon": "🔢",
+        "example": "How many cookies long?"
+      },
+      {
+        "concept": "No gaps or overlaps",
+        "icon": "✅",
+        "example": "Line them up carefully"
+      }
+    ],
+    "stickers": ["🍪", "📏", "⭐", "🚂"],
+    "manipulatives": ["counters", "unit strips", "measuring objects"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, clear"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the cookie shop. I see cookies of the same size. I can use cookies to measure things.",
+        "image": "🍪📏",
+        "mathConcept": "Using same-size units to measure",
+        "mathTip": "To measure, use objects that are all the same size.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 5
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q1",
+        "skillId": "md.measure.count_units",
+        "difficulty": 1,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "How many cookies long is the tray?",
+        "mathContext": "I line up cookies along the tray. I count them to measure.",
+        "mathHint": "Count the cookies. How many cookies fit?",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 4,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 4
+          }
+        },
+        "answers": [
+          {"name": "3 cookies", "icon": "🍪"},
+          {"name": "4 cookies", "icon": "🍪"},
+          {"name": "5 cookies", "icon": "🍪"}
+        ],
+        "correctAnswerName": "4 cookies",
+        "successMessage": "Yes! The tray is 4 cookies long."
+      },
+      {
+        "type": "read",
+        "sentence": "I need to line up the cookies carefully. No gaps between them. No overlaps. Then I count.",
+        "image": "✅📏",
+        "mathConcept": "Measuring without gaps or overlaps",
+        "mathTip": "Put units side by side with no spaces and no overlaps.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 5
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q2",
+        "skillId": "md.measure.identify_correct",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Which way of measuring is correct?",
+        "mathContext": "I see three ways to measure. Only one has no gaps and no overlaps.",
+        "mathHint": "Look for units that touch but do not overlap. No spaces between them.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 5
+          }
+        },
+        "answers": [
+          {"name": "Units with gaps", "icon": "❌"},
+          {"name": "Units touching", "icon": "✅"},
+          {"name": "Units overlapping", "icon": "❌"}
+        ],
+        "correctAnswerName": "Units touching",
+        "successMessage": "Great! Units should touch with no gaps or overlaps."
+      },
+      {
+        "type": "read",
+        "sentence": "I can use crackers to measure too. The bench is 6 crackers long. I counted 6 crackers.",
+        "image": "🍘📐",
+        "mathConcept": "Measuring with different units",
+        "mathTip": "You can measure with any same-size objects.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 6,
+            "icon": "🍘",
+            "groupSize": 1,
+            "groups": 6
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your favorite cookie!",
+        "menuStory": "The baker shows me the cookie tray. They all look delicious. I choose one.",
+        "items": [
+          {"name": "Chocolate Chip Cookie", "icon": "🍪", "description": "Sweet with chocolate chips"},
+          {"name": "Sugar Cookie", "icon": "🥠", "description": "Plain and sweet"},
+          {"name": "Oatmeal Cookie", "icon": "🍪", "description": "Chewy with oats"}
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q3",
+        "skillId": "md.measure.read_measurement",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "How many crackers long is the box?",
+        "mathContext": "A box is measured with crackers. I count the crackers.",
+        "mathHint": "Count all the crackers from one end to the other.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "icon": "🍘",
+            "groupSize": 1,
+            "groups": 5
+          }
+        },
+        "answers": [
+          {"name": "4 crackers", "icon": "🍘"},
+          {"name": "5 crackers", "icon": "🍘"},
+          {"name": "6 crackers", "icon": "🍘"}
+        ],
+        "correctAnswerName": "5 crackers",
+        "successMessage": "Correct! The box is 5 crackers long."
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q4",
+        "skillId": "md.measure.apply",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The counter is 7 cookies long. How many cookies did I use?",
+        "mathContext": "I measured the counter with cookies. It is 7 cookies long.",
+        "mathHint": "If it is 7 cookies long, I used 7 cookies.",
+        "numberSentence": "7 cookies",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 7,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 7
+          }
+        },
+        "answers": [
+          {"name": "6 cookies", "icon": "🍪"},
+          {"name": "7 cookies", "icon": "🍪"},
+          {"name": "8 cookies", "icon": "🍪"}
+        ],
+        "correctAnswerName": "7 cookies",
+        "successMessage": "Yes! You need 7 cookies to measure 7 cookies long."
+      },
+      {
+        "type": "read",
+        "sentence": "The shelf is 9 napkins wide. I used napkins to measure the shelf width.",
+        "image": "📏🧻",
+        "mathConcept": "Measuring different dimensions",
+        "mathTip": "You can measure length, width, or height with units.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 9,
+            "icon": "🧻",
+            "groupSize": 1,
+            "groups": 9
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q5",
+        "skillId": "md.measure.compare_measurements",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Plate A is 3 spoons long. Plate B is 5 spoons long. Which plate is longer?",
+        "mathContext": "Two plates are measured with spoons. I compare the measurements.",
+        "mathHint": "Which number is bigger, 3 or 5? That plate is longer.",
+        "numberSentence": "3 or 5",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 3,
+            "right": 5,
+            "icon": "🥄",
+            "labels": ["Plate A (3 spoons)", "Plate B (5 spoons)"]
+          }
+        },
+        "answers": [
+          {"name": "Plate A", "icon": "🍽️"},
+          {"name": "Plate B", "icon": "🍽️"},
+          {"name": "Both the same", "icon": "="}
+        ],
+        "correctAnswerName": "Plate B",
+        "successMessage": "Excellent! 5 is more than 3, so Plate B is longer."
+      },
+      {
+        "type": "question",
+        "itemId": "md_measure_length_q6",
+        "skillId": "md.measure.word_problem",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.A.2"],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "The baker measures the rolling pin. It is 8 cookies long. How many cookies did she use?",
+        "mathContext": "The rolling pin is measured using cookies as units.",
+        "mathHint": "The measurement is 8 cookies. So she used 8 cookies.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 8,
+            "icon": "🍪",
+            "groupSize": 1,
+            "groups": 8
+          }
+        },
+        "answers": [
+          {"name": "7 cookies", "icon": "🍪"},
+          {"name": "8 cookies", "icon": "🍪"},
+          {"name": "9 cookies", "icon": "🍪"}
+        ],
+        "correctAnswerName": "8 cookies",
+        "successMessage": "Yes! If it is 8 cookies long, she used 8 cookies."
+      }
+    ]
+  },
+  "md_tell_time": {
+    "name": "Train Schedule Station",
+    "icon": "🕐",
+    "level": 2,
+    "line": "MD",
+    "checklistTargets": ["1.MD.B.3"],
+    "mathFocus": ["time", "hour", "half hour", "clock", "analog", "digital"],
+    "previewConcepts": [
+      {
+        "concept": "Tell time to the hour",
+        "icon": "🕐",
+        "example": "3 o'clock"
+      },
+      {
+        "concept": "Tell time to the half hour",
+        "icon": "🕜",
+        "example": "Half past 3"
+      },
+      {
+        "concept": "Read clocks",
+        "icon": "⏰",
+        "example": "Analog and digital"
+      }
+    ],
+    "stickers": ["🕐", "⏰", "⭐", "🚂"],
+    "manipulatives": ["analog clock", "digital clock display"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, clear"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the train station. I look at the big clock. The clock tells me what time it is.",
+        "image": "🚂🕐",
+        "mathConcept": "Reading clocks to tell time",
+        "mathTip": "Clocks have an hour hand and a minute hand.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 3,
+            "minute": 0
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q1",
+        "skillId": "md.time.hour",
+        "difficulty": 1,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "What time is it?",
+        "mathContext": "The clock shows the hour hand on 2. The minute hand is on 12.",
+        "mathHint": "When the minute hand points to 12, we say o'clock. Look at the hour hand.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 2,
+            "minute": 0
+          }
+        },
+        "answers": [
+          {"name": "1 o'clock", "icon": "🕐"},
+          {"name": "2 o'clock", "icon": "🕑"},
+          {"name": "3 o'clock", "icon": "🕒"}
+        ],
+        "correctAnswerName": "2 o'clock",
+        "successMessage": "Yes! It is 2 o'clock."
+      },
+      {
+        "type": "read",
+        "sentence": "When the minute hand points to 12, we say o'clock. The hour hand shows which hour.",
+        "image": "🕐📚",
+        "mathConcept": "Understanding o'clock",
+        "mathTip": "Minute hand on 12 means o'clock. Hour hand tells the hour.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 5,
+            "minute": 0
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q2",
+        "skillId": "md.time.hour_recognize",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The train leaves at 7 o'clock. Which clock shows 7 o'clock?",
+        "mathContext": "I need to find the clock that shows 7 o'clock.",
+        "mathHint": "Look for the hour hand on 7 and the minute hand on 12.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 7,
+            "minute": 0
+          }
+        },
+        "answers": [
+          {"name": "Clock showing 6 o'clock", "icon": "🕕"},
+          {"name": "Clock showing 7 o'clock", "icon": "🕖"},
+          {"name": "Clock showing 8 o'clock", "icon": "🕗"}
+        ],
+        "correctAnswerName": "Clock showing 7 o'clock",
+        "successMessage": "Correct! That clock shows 7 o'clock."
+      },
+      {
+        "type": "read",
+        "sentence": "Sometimes the minute hand points to 6. That means half past the hour. It is 30 minutes past.",
+        "image": "🕜⏰",
+        "mathConcept": "Understanding half past",
+        "mathTip": "When the minute hand points to 6, say half past.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 3,
+            "minute": 30
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your snack for the train ride!",
+        "menuStory": "The snack cart arrives. I can pick something to eat on the train.",
+        "items": [
+          {"name": "Tea Egg", "icon": "🥚", "description": "Savory boiled egg"},
+          {"name": "Pineapple Cake", "icon": "🍰", "description": "Sweet little cake"},
+          {"name": "Rice Ball", "icon": "🍙", "description": "Triangle shaped rice"}
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q3",
+        "skillId": "md.time.half_hour",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "What time is it?",
+        "mathContext": "The hour hand is between 4 and 5. The minute hand points to 6.",
+        "mathHint": "The minute hand on 6 means half past. The hour hand shows 4.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 4,
+            "minute": 30
+          }
+        },
+        "answers": [
+          {"name": "4 o'clock", "icon": "🕓"},
+          {"name": "Half past 4", "icon": "🕟"},
+          {"name": "5 o'clock", "icon": "🕔"}
+        ],
+        "correctAnswerName": "Half past 4",
+        "successMessage": "Yes! It is half past 4."
+      },
+      {
+        "type": "read",
+        "sentence": "Digital clocks show time with numbers. 3 colon 00 means 3 o'clock. 3 colon 30 means half past 3.",
+        "image": "🔢⏰",
+        "mathConcept": "Reading digital time",
+        "mathTip": "Numbers after the colon show minutes. 00 is o'clock. 30 is half past.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 3,
+            "minute": 30
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q4",
+        "skillId": "md.time.digital_hour",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The digital clock shows 6 colon 00. What time is it?",
+        "mathContext": "I see a digital clock. It says 6 colon 00.",
+        "mathHint": "The number before the colon is the hour. 00 means o'clock.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 6,
+            "minute": 0
+          }
+        },
+        "answers": [
+          {"name": "5 o'clock", "icon": "🕔"},
+          {"name": "6 o'clock", "icon": "🕕"},
+          {"name": "Half past 6", "icon": "🕡"}
+        ],
+        "correctAnswerName": "6 o'clock",
+        "successMessage": "Great! 6 colon 00 is 6 o'clock."
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q5",
+        "skillId": "md.time.digital_half",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "What time does this digital clock show?",
+        "mathContext": "The digital clock displays 8 colon 30.",
+        "mathHint": "30 means half past. The hour is 8.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 8,
+            "minute": 30
+          }
+        },
+        "answers": [
+          {"name": "8 o'clock", "icon": "🕗"},
+          {"name": "Half past 8", "icon": "🕣"},
+          {"name": "Half past 9", "icon": "🕤"}
+        ],
+        "correctAnswerName": "Half past 8",
+        "successMessage": "Excellent! 8 colon 30 is half past 8."
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q6",
+        "skillId": "md.time.match_analog_digital",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The analog clock shows half past 5. What will the digital clock say?",
+        "mathContext": "I need to match analog time to digital time.",
+        "mathHint": "Half past 5 means 5 colon 30.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 5,
+            "minute": 30
+          }
+        },
+        "answers": [
+          {"name": "5 colon 00", "icon": "🔢"},
+          {"name": "5 colon 30", "icon": "🔢"},
+          {"name": "6 colon 00", "icon": "🔢"}
+        ],
+        "correctAnswerName": "5 colon 30",
+        "successMessage": "Yes! Half past 5 is 5 colon 30."
+      },
+      {
+        "type": "question",
+        "itemId": "md_tell_time_q7",
+        "skillId": "md.time.word_problem",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.B.3"],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "The train arrives at 9 o'clock. What time does it arrive?",
+        "mathContext": "The schedule says the train comes at 9 o'clock.",
+        "mathHint": "9 o'clock means the hour hand is on 9 and the minute hand is on 12.",
+        "visual": {
+          "type": "clock",
+          "data": {
+            "hour": 9,
+            "minute": 0
+          }
+        },
+        "answers": [
+          {"name": "8 o'clock", "icon": "🕗"},
+          {"name": "9 o'clock", "icon": "🕘"},
+          {"name": "Half past 9", "icon": "🕤"}
+        ],
+        "correctAnswerName": "9 o'clock",
+        "successMessage": "Correct! The train arrives at 9 o'clock."
+      }
+    ]
+  },
+  "md_organize_data": {
+    "name": "Snack Survey Station",
+    "icon": "📊",
+    "level": 2,
+    "line": "MD",
+    "checklistTargets": ["1.MD.C.4"],
+    "mathFocus": ["data", "organize", "sort", "categories", "graph", "tally", "count"],
+    "previewConcepts": [
+      {
+        "concept": "Sort into categories",
+        "icon": "📋",
+        "example": "Group similar things"
+      },
+      {
+        "concept": "Make a graph",
+        "icon": "📊",
+        "example": "Show data with pictures"
+      },
+      {
+        "concept": "Count in each group",
+        "icon": "🔢",
+        "example": "How many in each?"
+      }
+    ],
+    "stickers": ["📊", "📋", "⭐", "🚂"],
+    "manipulatives": ["sorting bins", "picture graph", "tally marks"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am doing a snack survey. I ask friends what snack they like best. I write down their answers.",
+        "image": "📊🍎",
+        "mathConcept": "Collecting data",
+        "mathTip": "Data is information we collect and organize.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "icon": "🍎",
+            "groupSize": 1,
+            "groups": 5
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q1",
+        "skillId": "md.data.sort",
+        "difficulty": 1,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "I collected snack data. Apple, banana, apple, orange. How many chose apple?",
+        "mathContext": "The list shows: apple, banana, apple, orange. I need to count apples.",
+        "mathHint": "Count how many times apple appears in the list.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 2,
+            "icon": "🍎",
+            "groupSize": 1,
+            "groups": 2
+          }
+        },
+        "answers": [
+          {"name": "1", "icon": "1️⃣"},
+          {"name": "2", "icon": "2️⃣"},
+          {"name": "3", "icon": "3️⃣"}
+        ],
+        "correctAnswerName": "2",
+        "successMessage": "Yes! Apple appears 2 times."
+      },
+      {
+        "type": "read",
+        "sentence": "I can sort the data into groups. All the apples go together. All the bananas go together. All the oranges go together.",
+        "image": "🍎🍌🍊",
+        "mathConcept": "Organizing data into categories",
+        "mathTip": "Put things that are the same into groups.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "Apple", "icon": "🍎"},
+              {"length": 2, "label": "Banana", "icon": "🍌"},
+              {"length": 1, "label": "Orange", "icon": "🍊"}
+            ],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q2",
+        "skillId": "md.data.categories",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "I sorted snacks. 3 apples, 2 bananas, 1 orange. How many categories did I make?",
+        "mathContext": "The snacks are sorted into apple group, banana group, and orange group.",
+        "mathHint": "Count the different groups. Apple is one group. Banana is another. Orange is another.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "Apple", "icon": "🍎"},
+              {"length": 2, "label": "Banana", "icon": "🍌"},
+              {"length": 1, "label": "Orange", "icon": "🍊"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "2 categories", "icon": "2️⃣"},
+          {"name": "3 categories", "icon": "3️⃣"},
+          {"name": "6 categories", "icon": "6️⃣"}
+        ],
+        "correctAnswerName": "3 categories",
+        "successMessage": "Correct! There are 3 categories: apple, banana, orange."
+      },
+      {
+        "type": "read",
+        "sentence": "I make a picture graph. Each picture stands for one person. I can see the data easily now.",
+        "image": "📊📈",
+        "mathConcept": "Representing data with a graph",
+        "mathTip": "A picture graph shows data with pictures. Each picture is one.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "Apple", "icon": "🍎"},
+              {"length": 2, "label": "Banana", "icon": "🍌"},
+              {"length": 1, "label": "Orange", "icon": "🍊"}
+            ],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Vote for your favorite snack!",
+        "menuStory": "I am taking a survey. What is your favorite snack? Your vote will be added to the graph.",
+        "items": [
+          {"name": "Apple", "icon": "🍎", "description": "Red and crunchy"},
+          {"name": "Banana", "icon": "🍌", "description": "Yellow and sweet"},
+          {"name": "Grapes", "icon": "🍇", "description": "Purple and juicy"}
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q3",
+        "skillId": "md.data.read_graph",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Look at the graph. How many people chose banana?",
+        "mathContext": "The picture graph shows banana has 2 banana pictures.",
+        "mathHint": "Count the banana pictures. Each picture is one person.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "Apple", "icon": "🍎"},
+              {"length": 2, "label": "Banana", "icon": "🍌"},
+              {"length": 1, "label": "Orange", "icon": "🍊"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "1", "icon": "1️⃣"},
+          {"name": "2", "icon": "2️⃣"},
+          {"name": "3", "icon": "3️⃣"}
+        ],
+        "correctAnswerName": "2",
+        "successMessage": "Yes! There are 2 banana pictures, so 2 people chose banana."
+      },
+      {
+        "type": "read",
+        "sentence": "I can use tally marks too. Each line is one. When I get to 5, I draw a line across.",
+        "image": "📝✏️",
+        "mathConcept": "Using tally marks to organize data",
+        "mathTip": "Tally marks are a way to keep count. 5 makes a group.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 3,
+            "icon": "|",
+            "groupSize": 5,
+            "groups": 1
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q4",
+        "skillId": "md.data.tally",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The tally marks show 3 lines for apple. How many people chose apple?",
+        "mathContext": "Tally marks for apple: 3 lines. Each line is one person.",
+        "mathHint": "Count the tally marks. Each mark is one person.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 3,
+            "icon": "|",
+            "groupSize": 5,
+            "groups": 1
+          }
+        },
+        "answers": [
+          {"name": "2", "icon": "2️⃣"},
+          {"name": "3", "icon": "3️⃣"},
+          {"name": "4", "icon": "4️⃣"}
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Correct! 3 tally marks means 3 people."
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q5",
+        "skillId": "md.data.create_category",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "I have data: cookie, cracker, cookie, cookie, cracker. What are the categories?",
+        "mathContext": "The data has cookies and crackers. I need to identify the groups.",
+        "mathHint": "Look at what types appear. Cookie is one type. Cracker is another type.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 3, "label": "Cookie", "icon": "🍪"},
+              {"length": 2, "label": "Cracker", "icon": "🍘"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Cookie and cracker", "icon": "📋"},
+          {"name": "Only cookie", "icon": "🍪"},
+          {"name": "5 categories", "icon": "5️⃣"}
+        ],
+        "correctAnswerName": "Cookie and cracker",
+        "successMessage": "Yes! The two categories are cookie and cracker."
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q6",
+        "skillId": "md.data.count_total",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "The graph shows 4 votes for rice, 3 votes for noodles, and 2 votes for bread. How many people voted in all?",
+        "mathContext": "I need to add all the votes together.",
+        "mathHint": "Add all the groups together. 4 plus 3 plus 2.",
+        "numberSentence": "4 + 3 + 2 = ___",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Rice", "icon": "🍚"},
+              {"length": 3, "label": "Noodles", "icon": "🍜"},
+              {"length": 2, "label": "Bread", "icon": "🍞"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "7", "icon": "7️⃣"},
+          {"name": "9", "icon": "9️⃣"},
+          {"name": "10", "icon": "🔟"}
+        ],
+        "correctAnswerName": "9",
+        "successMessage": "Excellent! 4 plus 3 plus 2 equals 9 people voted."
+      },
+      {
+        "type": "question",
+        "itemId": "md_organize_data_q7",
+        "skillId": "md.data.organize_problem",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "I asked 6 friends. 2 like tea, 3 like juice, 1 likes milk. How should I organize this data?",
+        "mathContext": "I have drink preferences from 6 friends. I need to organize them.",
+        "mathHint": "Make groups for each drink type: tea, juice, and milk.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 2, "label": "Tea", "icon": "🍵"},
+              {"length": 3, "label": "Juice", "icon": "🧃"},
+              {"length": 1, "label": "Milk", "icon": "🥛"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Put all 6 together", "icon": "❌"},
+          {"name": "Make 3 groups by drink", "icon": "✅"},
+          {"name": "Make 6 groups by person", "icon": "❌"}
+        ],
+        "correctAnswerName": "Make 3 groups by drink",
+        "successMessage": "Yes! Organize by categories: tea, juice, and milk."
+      }
+    ]
+  },
+  "md_interpret_data": {
+    "name": "Food Court Data",
+    "icon": "🍱",
+    "level": 3,
+    "line": "MD",
+    "checklistTargets": ["1.MD.C.4"],
+    "mathFocus": ["interpret", "analyze", "compare", "data", "most", "least", "how many more"],
+    "previewConcepts": [
+      {
+        "concept": "Answer questions about data",
+        "icon": "❓",
+        "example": "Which has the most?"
+      },
+      {
+        "concept": "Compare amounts",
+        "icon": "⚖️",
+        "example": "How many more?"
+      },
+      {
+        "concept": "Find most and least",
+        "icon": "🏆",
+        "example": "Which is most popular?"
+      }
+    ],
+    "stickers": ["🍱", "📊", "⭐", "🚂"],
+    "manipulatives": ["picture graph", "bar graph", "comparison tools"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, thoughtful"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the food court. I see a graph of favorite foods. The graph shows data. I can answer questions by reading the graph.",
+        "image": "🍱📊",
+        "mathConcept": "Interpreting data from graphs",
+        "mathTip": "Look at the graph carefully. Count to find answers.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Sushi", "icon": "🍣"},
+              {"length": 3, "label": "Ramen", "icon": "🍜"},
+              {"length": 2, "label": "Rice", "icon": "🍚"}
+            ],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q1",
+        "skillId": "md.interpret.read_count",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "How many people chose sushi?",
+        "mathContext": "The graph shows sushi has 4 pictures. Each picture is one person.",
+        "mathHint": "Count the sushi pictures in the graph.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Sushi", "icon": "🍣"},
+              {"length": 3, "label": "Ramen", "icon": "🍜"},
+              {"length": 2, "label": "Rice", "icon": "🍚"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "3", "icon": "3️⃣"},
+          {"name": "4", "icon": "4️⃣"},
+          {"name": "5", "icon": "5️⃣"}
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Yes! 4 people chose sushi."
+      },
+      {
+        "type": "read",
+        "sentence": "I can compare the data. Sushi has the most. Rice has the least. Ramen is in the middle.",
+        "image": "🏆📊",
+        "mathConcept": "Comparing data: most and least",
+        "mathTip": "Most means the biggest amount. Least means the smallest amount.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Sushi", "icon": "🍣"},
+              {"length": 3, "label": "Ramen", "icon": "🍜"},
+              {"length": 2, "label": "Rice", "icon": "🍚"}
+            ],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q2",
+        "skillId": "md.interpret.most",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Which food is most popular?",
+        "mathContext": "I look at the graph. Most popular means it has the most votes.",
+        "mathHint": "Find the category with the most pictures. That is most popular.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Sushi", "icon": "🍣"},
+              {"length": 3, "label": "Ramen", "icon": "🍜"},
+              {"length": 2, "label": "Rice", "icon": "🍚"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Sushi", "icon": "🍣"},
+          {"name": "Ramen", "icon": "🍜"},
+          {"name": "Rice", "icon": "🍚"}
+        ],
+        "correctAnswerName": "Sushi",
+        "successMessage": "Correct! Sushi has the most, so it is most popular."
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q3",
+        "skillId": "md.interpret.least",
+        "difficulty": 2,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Which food has the least votes?",
+        "mathContext": "I need to find which food has the smallest number.",
+        "mathHint": "Look for the category with the fewest pictures.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 4, "label": "Sushi", "icon": "🍣"},
+              {"length": 3, "label": "Ramen", "icon": "🍜"},
+              {"length": 2, "label": "Rice", "icon": "🍚"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Sushi", "icon": "🍣"},
+          {"name": "Ramen", "icon": "🍜"},
+          {"name": "Rice", "icon": "🍚"}
+        ],
+        "correctAnswerName": "Rice",
+        "successMessage": "Yes! Rice has the least with only 2 votes."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your lunch!",
+        "menuStory": "I am at the food court. So many good choices. I pick what I want to eat.",
+        "items": [
+          {"name": "Bento Box", "icon": "🍱", "description": "Rice, fish, and vegetables"},
+          {"name": "Dumplings", "icon": "🥟", "description": "Steamed pork dumplings"},
+          {"name": "Stir Fry", "icon": "🍲", "description": "Vegetables and noodles"}
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I can find the difference. Sushi has 4. Rice has 2. Sushi has 2 more than rice.",
+        "image": "➖📊",
+        "mathConcept": "Finding how many more in data",
+        "mathTip": "Subtract to find how many more. The bigger number minus the smaller number.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 4,
+            "right": 2,
+            "icon": "⭕",
+            "labels": ["Sushi (4)", "Rice (2)"]
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q4",
+        "skillId": "md.interpret.how_many_more",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Sushi has 4 votes. Ramen has 3 votes. How many more people chose sushi than ramen?",
+        "mathContext": "I compare sushi and ramen. I need to find the difference.",
+        "mathHint": "Subtract. 4 minus 3 equals how many more.",
+        "numberSentence": "4 - 3 = ___",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 4,
+            "right": 3,
+            "icon": "⭕",
+            "labels": ["Sushi (4)", "Ramen (3)"]
+          }
+        },
+        "answers": [
+          {"name": "1 more", "icon": "1️⃣"},
+          {"name": "2 more", "icon": "2️⃣"},
+          {"name": "7 more", "icon": "7️⃣"}
+        ],
+        "correctAnswerName": "1 more",
+        "successMessage": "Excellent! 4 minus 3 equals 1. Sushi has 1 more vote."
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q5",
+        "skillId": "md.interpret.how_many_fewer",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Rice has 2 votes. Ramen has 3 votes. How many fewer people chose rice than ramen?",
+        "mathContext": "I compare rice and ramen. Fewer means less.",
+        "mathHint": "Subtract the smaller from the bigger. 3 minus 2.",
+        "numberSentence": "3 - 2 = ___",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 2,
+            "right": 3,
+            "icon": "⭕",
+            "labels": ["Rice (2)", "Ramen (3)"]
+          }
+        },
+        "answers": [
+          {"name": "1 fewer", "icon": "1️⃣"},
+          {"name": "2 fewer", "icon": "2️⃣"},
+          {"name": "5 fewer", "icon": "5️⃣"}
+        ],
+        "correctAnswerName": "1 fewer",
+        "successMessage": "Yes! 3 minus 2 equals 1. Rice has 1 fewer vote."
+      },
+      {
+        "type": "read",
+        "sentence": "A new graph shows drinks. Tea has 5 votes. Juice has 3 votes. Milk has 4 votes.",
+        "image": "🧃📊",
+        "mathConcept": "Reading and interpreting new data",
+        "mathTip": "Each new graph tells a different story. Read it carefully.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 5, "label": "Tea", "icon": "🍵"},
+              {"length": 3, "label": "Juice", "icon": "🧃"},
+              {"length": 4, "label": "Milk", "icon": "🥛"}
+            ],
+            "aligned": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q6",
+        "skillId": "md.interpret.multiple_comparison",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "Look at the drinks graph. Which drink is most popular?",
+        "mathContext": "Tea has 5, juice has 3, milk has 4. I need to find which is most.",
+        "mathHint": "Compare all three numbers. Which is biggest? 5, 3, or 4?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 5, "label": "Tea", "icon": "🍵"},
+              {"length": 3, "label": "Juice", "icon": "🧃"},
+              {"length": 4, "label": "Milk", "icon": "🥛"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "Tea", "icon": "🍵"},
+          {"name": "Juice", "icon": "🧃"},
+          {"name": "Milk", "icon": "🥛"}
+        ],
+        "correctAnswerName": "Tea",
+        "successMessage": "Correct! Tea has 5 votes, which is the most."
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q7",
+        "skillId": "md.interpret.total_count",
+        "difficulty": 3,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "measurement",
+        "questionMode": "multipleChoice",
+        "question": "How many people voted for drinks in total?",
+        "mathContext": "Tea has 5, juice has 3, milk has 4. I add them all.",
+        "mathHint": "Add all three categories. 5 plus 3 plus 4.",
+        "numberSentence": "5 + 3 + 4 = ___",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "items": [
+              {"length": 5, "label": "Tea", "icon": "🍵"},
+              {"length": 3, "label": "Juice", "icon": "🧃"},
+              {"length": 4, "label": "Milk", "icon": "🥛"}
+            ],
+            "aligned": true
+          }
+        },
+        "answers": [
+          {"name": "10", "icon": "🔟"},
+          {"name": "11", "icon": "1️⃣1️⃣"},
+          {"name": "12", "icon": "1️⃣2️⃣"}
+        ],
+        "correctAnswerName": "12",
+        "successMessage": "Excellent! 5 plus 3 plus 4 equals 12 people total."
+      },
+      {
+        "type": "question",
+        "itemId": "md_interpret_data_q8",
+        "skillId": "md.interpret.word_problem",
+        "difficulty": 4,
+        "checklistTargets": ["1.MD.C.4"],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "The graph shows 6 people like dumplings and 4 people like spring rolls. How many more people like dumplings?",
+        "mathContext": "I need to compare dumplings and spring rolls to find the difference.",
+        "mathHint": "Subtract to find how many more. 6 minus 4.",
+        "numberSentence": "6 - 4 = ___",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 6,
+            "right": 4,
+            "icon": "🥟",
+            "labels": ["Dumplings (6)", "Spring rolls (4)"]
+          }
+        },
+        "answers": [
+          {"name": "1 more", "icon": "1️⃣"},
+          {"name": "2 more", "icon": "2️⃣"},
+          {"name": "10 more", "icon": "🔟"}
+        ],
+        "correctAnswerName": "2 more",
+        "successMessage": "Yes! 6 minus 4 equals 2. Dumplings has 2 more votes."
+      }
+    ]
+  }
+}

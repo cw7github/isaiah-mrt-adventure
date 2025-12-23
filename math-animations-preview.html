@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Animations Preview - Isaiah's MRT Food Adventure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="manim-animations.css">
+  <link rel="stylesheet" href="mrt-visual-integration.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #f8f9fa;
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #ffd93d;
+      text-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #a29bfe;
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 24px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-number {
+      background: linear-gradient(135deg, #ff6b6b, #fd79a8);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .card-type {
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.9rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(78, 205, 196, 0.2);
+      color: #4ecdc4;
+    }
+
+    .card-line {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-left: auto;
+    }
+
+    .card-line.oa { background: #ff6b6b33; color: #ff6b6b; }
+    .card-line.nbt { background: #74b9ff33; color: #74b9ff; }
+    .card-line.md { background: #00b89433; color: #00b894; }
+    .card-line.g { background: #fdcb6e33; color: #fdcb6e; }
+
+    .visual-container {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .content-text {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sentence {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #f8f9fa;
+      margin-bottom: 8px;
+    }
+
+    .question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffd93d;
+      margin-bottom: 8px;
+    }
+
+    .math-context {
+      font-size: 0.95rem;
+      color: #a29bfe;
+      font-style: italic;
+    }
+
+    .number-sentence {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.3rem;
+      color: #4ecdc4;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .answers {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .answer-btn {
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .answer-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .answer-btn.correct {
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      border-color: #00b894;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .legend-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.oa { background: #ff6b6b; }
+    .legend-dot.nbt { background: #74b9ff; }
+    .legend-dot.md { background: #00b894; }
+    .legend-dot.g { background: #fdcb6e; }
+  </style>
+</head>
+<body>
+  <h1>Math Animations Preview</h1>
+  <p class="subtitle">Isaiah's MRT Food Adventure - Grade 1 Math Visualizations</p>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot oa"></div> OA - Operations & Algebraic</div>
+    <div class="legend-item"><div class="legend-dot nbt"></div> NBT - Number & Base Ten</div>
+    <div class="legend-item"><div class="legend-dot md"></div> MD - Measurement & Data</div>
+    <div class="legend-item"><div class="legend-dot g"></div> G - Geometry</div>
+  </div>
+
+  <div class="grid" id="animationsGrid"></div>
+
+  <script src="manim-animations.js"></script>
+  <script>
+    // Sample animations data extracted from content-pack
+    const animations = [
+      // 1. Number Line - Counting Up
+      {
+        id: 1,
+        type: 'numberLine',
+        line: 'OA',
+        station: 'Counting Train Platform',
+        sentence: 'I start at five. I count up. Five, six, seven. I moved up by one each time.',
+        mathConcept: 'Counting up means adding one',
+        visual: { type: 'numberLine', data: { start: 0, end: 10, highlight: [5, 6, 7] } }
+      },
+      // 2. Number Line - Counting Down
+      {
+        id: 2,
+        type: 'numberLine',
+        line: 'OA',
+        station: 'Counting Train Platform',
+        sentence: 'I stand at ten. I count down. Ten, nine, eight.',
+        mathConcept: 'Counting down means subtracting one',
+        visual: { type: 'numberLine', data: { start: 5, end: 15, highlight: [10, 9, 8] } }
+      },
+      // 3. Counters - Addition
+      {
+        id: 3,
+        type: 'counters',
+        line: 'OA',
+        station: 'Fruit Stand Addition',
+        sentence: 'I have three apples in my bag. I pick two more apples. Now I have five apples.',
+        mathConcept: 'Joining numbers together is addition',
+        visual: { type: 'counters', data: { count: 5, icon: '🍎' } }
+      },
+      // 4. Ten Frame
+      {
+        id: 4,
+        type: 'tenFrame',
+        line: 'NBT',
+        station: 'Teen Numbers Tunnel',
+        sentence: 'I see a ten frame. It has all ten spots filled. That is one full ten!',
+        mathConcept: 'Ten ones make one ten',
+        visual: { type: 'tenFrame', data: { count: 10, showEquation: true } }
+      },
+      // 5. Ten Frame - 7
+      {
+        id: 5,
+        type: 'tenFrame',
+        line: 'NBT',
+        station: 'Teen Numbers Tunnel',
+        sentence: 'This ten frame has seven dots. I see five on top and two on the bottom.',
+        mathConcept: '7 = 5 + 2',
+        visual: { type: 'tenFrame', data: { count: 7, showEquation: true } }
+      },
+      // 6. Equation - Addition
+      {
+        id: 6,
+        type: 'equation',
+        line: 'OA',
+        station: 'Fruit Stand Addition',
+        question: 'What is 3 + 2?',
+        numberSentence: '3 + 2 = ____',
+        answers: ['5', '4', '6'],
+        correct: '5',
+        visual: { type: 'equation', data: { left: 3, operator: '+', right: 2, result: 5, showResult: false } }
+      },
+      // 7. Addition Visual
+      {
+        id: 7,
+        type: 'addition',
+        line: 'OA',
+        station: 'Fruit Stand Addition',
+        sentence: 'I have four oranges. I get three more. Now I have seven oranges!',
+        mathConcept: '4 + 3 = 7',
+        visual: { type: 'addition', data: { left: 4, right: 3, icon: '🍊' } }
+      },
+      // 8. Comparison
+      {
+        id: 8,
+        type: 'comparison',
+        line: 'NBT',
+        station: 'Compare Numbers Crossing',
+        sentence: 'I compare five and three. Five is greater than three.',
+        mathConcept: 'Use > < = to compare',
+        visual: { type: 'comparison', data: { left: 5, right: 3, icon: '🔵' } }
+      },
+      // 9. Comparison - Equal
+      {
+        id: 9,
+        type: 'comparison',
+        line: 'NBT',
+        station: 'Compare Numbers Crossing',
+        sentence: 'Both sides have four. They are equal!',
+        mathConcept: 'Equal means the same amount',
+        visual: { type: 'comparison', data: { left: 4, right: 4, icon: '⭐' } }
+      },
+      // 10. 2D Shapes
+      {
+        id: 10,
+        type: 'shapes',
+        line: 'G',
+        station: 'Shape Detective Station',
+        sentence: 'I see different shapes. Each shape has a special name.',
+        mathConcept: 'Shapes have names and attributes',
+        visual: { type: 'shapes', data: { shapes: ['circle', 'square', 'triangle', 'rectangle'] } }
+      },
+      // 11. 3D Cube
+      {
+        id: 11,
+        type: '3dShape',
+        line: 'G',
+        station: '3D Shape Gallery',
+        sentence: 'A cube has six flat faces. Each face is a square.',
+        mathConcept: '3D shapes have faces, edges, and vertices',
+        visual: { type: '3dShape', data: { shape: 'cube', showFaces: true } }
+      },
+      // 12. 3D Sphere
+      {
+        id: 12,
+        type: '3dShape',
+        line: 'G',
+        station: '3D Shape Gallery',
+        sentence: 'A sphere is round like a ball. It can roll in any direction.',
+        mathConcept: 'A sphere has no flat faces',
+        visual: { type: '3dShape', data: { shape: 'sphere' } }
+      },
+      // 13. Clock - Hour
+      {
+        id: 13,
+        type: 'clock',
+        line: 'MD',
+        station: 'Time Tower',
+        sentence: 'The short hand points to 3. The long hand points to 12. It is 3 o\'clock.',
+        mathConcept: 'Hour hand shows the hour',
+        visual: { type: 'clock', data: { hour: 3, minute: 0 } }
+      },
+      // 14. Clock - Half Hour
+      {
+        id: 14,
+        type: 'clock',
+        line: 'MD',
+        station: 'Time Tower',
+        sentence: 'The long hand points to 6. It is half past 7.',
+        mathConcept: 'Half past = 30 minutes',
+        visual: { type: 'clock', data: { hour: 7, minute: 30 } }
+      },
+      // 15. Place Value Blocks
+      {
+        id: 15,
+        type: 'placeValue',
+        line: 'NBT',
+        station: 'Tens and Ones Terminal',
+        sentence: 'I see two tens and five ones. That is twenty-five!',
+        mathConcept: '25 = 2 tens + 5 ones',
+        visual: { type: 'placeValue', data: { tens: 2, ones: 5 } }
+      },
+      // 16. Place Value - Teen Number
+      {
+        id: 16,
+        type: 'placeValue',
+        line: 'NBT',
+        station: 'Teen Numbers Tunnel',
+        sentence: 'Fourteen has one ten and four ones.',
+        mathConcept: '14 = 10 + 4',
+        visual: { type: 'placeValue', data: { tens: 1, ones: 4 } }
+      },
+      // 17. Counters with Groups
+      {
+        id: 17,
+        type: 'counters',
+        line: 'OA',
+        station: 'Add Three Numbers Station',
+        sentence: 'I count the cookies. There are twelve cookies in groups of four.',
+        mathConcept: 'Grouping helps us count',
+        visual: { type: 'counters', data: { count: 12, groupOf: 4, style: 'cookies' } }
+      },
+      // 18. Subtraction Equation
+      {
+        id: 18,
+        type: 'equation',
+        line: 'OA',
+        station: 'Cookie Subtraction Kitchen',
+        question: 'What is 9 - 4?',
+        numberSentence: '9 - 4 = ____',
+        answers: ['5', '4', '6'],
+        correct: '5',
+        visual: { type: 'equation', data: { left: 9, operator: '-', right: 4, result: 5, showResult: false } }
+      },
+      // 19. More Shapes
+      {
+        id: 19,
+        type: 'shapes',
+        line: 'G',
+        station: 'Shape Detective Station',
+        question: 'Which shape has 3 sides?',
+        answers: ['Triangle', 'Square', 'Circle'],
+        correct: 'Triangle',
+        visual: { type: 'shapes', data: { shapes: ['triangle', 'square', 'circle'], highlight: 'triangle' } }
+      },
+      // 20. 3D Cylinder
+      {
+        id: 20,
+        type: '3dShape',
+        line: 'G',
+        station: '3D Shape Gallery',
+        sentence: 'A cylinder has two flat circle faces and one curved surface.',
+        mathConcept: 'Cylinders can roll and stack',
+        visual: { type: '3dShape', data: { shape: 'cylinder' } }
+      },
+      // 21. Number Line - Addition Jump
+      {
+        id: 21,
+        type: 'numberLine',
+        line: 'OA',
+        station: 'Counting Train Platform',
+        question: 'What is 6 + 3?',
+        mathContext: 'Start at 6, jump 3 spaces forward.',
+        numberSentence: '6 + 3 = ____',
+        visual: { type: 'numberLine', data: { start: 0, end: 12, highlight: [6, 7, 8, 9] } }
+      },
+      // 22. CPA Transition
+      {
+        id: 22,
+        type: 'cpa',
+        line: 'NBT',
+        station: 'Learning Journey',
+        sentence: 'We learn math in three stages: objects, pictures, then numbers.',
+        mathConcept: 'Concrete → Pictorial → Abstract',
+        visual: { type: 'cpa', data: { stage: 'pictorial', concept: 'addition' } }
+      },
+      // 23. Addition with Stars
+      {
+        id: 23,
+        type: 'addition',
+        line: 'OA',
+        station: 'Star Addition Station',
+        sentence: 'I see two stars. Three more stars appear. Now there are five stars!',
+        mathConcept: '2 + 3 = 5',
+        visual: { type: 'addition', data: { left: 2, right: 3, icon: '⭐' } }
+      },
+      // 24. Comparison - Less Than
+      {
+        id: 24,
+        type: 'comparison',
+        line: 'NBT',
+        station: 'Compare Numbers Crossing',
+        question: 'Which symbol goes in the blank? 3 ___ 7',
+        answers: ['<', '>', '='],
+        correct: '<',
+        visual: { type: 'comparison', data: { left: 3, right: 7, icon: '🔴' } }
+      }
+    ];
+
+    // Render all animations
+    const grid = document.getElementById('animationsGrid');
+
+    animations.forEach(anim => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="card-number">${anim.id}</div>
+          <span class="card-type">${anim.type}</span>
+          <span class="card-line ${anim.line.toLowerCase()}">${anim.line}</span>
+        </div>
+        <div class="visual-container" id="visual-${anim.id}"></div>
+        <div class="content-text">
+          ${anim.sentence ? `<p class="sentence">${anim.sentence}</p>` : ''}
+          ${anim.question ? `<p class="question">${anim.question}</p>` : ''}
+          ${anim.mathContext ? `<p class="math-context">${anim.mathContext}</p>` : ''}
+          ${anim.mathConcept ? `<p class="math-context">Concept: ${anim.mathConcept}</p>` : ''}
+          ${anim.numberSentence ? `<p class="number-sentence">${anim.numberSentence}</p>` : ''}
+        </div>
+        ${anim.answers ? `
+          <div class="answers">
+            ${anim.answers.map(a => `
+              <button class="answer-btn ${a === anim.correct ? 'correct' : ''}">${a}</button>
+            `).join('')}
+          </div>
+        ` : ''}
+      `;
+      grid.appendChild(card);
+
+      // Render the visual
+      const visualContainer = document.getElementById(`visual-${anim.id}`);
+      renderVisual(anim.visual, visualContainer);
+    });
+
+    function renderVisual(visual, container) {
+      if (!visual || !container || typeof ManimEngine === 'undefined') {
+        container.innerHTML = '<p style="color: #888;">Visual loading...</p>';
+        return;
+      }
+
+      const { type, data } = visual;
+
+      switch (type) {
+        case 'numberLine':
+          ManimEngine.renderNumberLine(container, data);
+          break;
+        case 'counters':
+          ManimEngine.renderCounters(container, data);
+          break;
+        case 'tenFrame':
+          ManimEngine.renderTenFrame(container, data);
+          break;
+        case 'shapes':
+          ManimEngine.renderShapes2D(container, data);
+          break;
+        case '3dShape':
+          ManimEngine.render3DShape(container, data);
+          break;
+        case 'equation':
+          ManimEngine.renderEquation(container, data);
+          break;
+        case 'addition':
+          ManimEngine.renderAddition(container, data);
+          break;
+        case 'comparison':
+          ManimEngine.renderComparison(container, data);
+          break;
+        case 'clock':
+          ManimEngine.renderClock(container, data);
+          break;
+        case 'placeValue':
+          ManimEngine.renderPlaceValue(container, data);
+          break;
+        case 'cpa':
+          ManimEngine.renderCPATransition(container, data);
+          break;
+        default:
+          container.innerHTML = `<p style="color: #888;">Unknown visual type: ${type}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1273 @@
+{
+  "bySeverity": {
+    "FAIL": 52
+  },
+  "stations": [
+    {
+      "stationId": "bakery",
+      "name": "Bakery",
+      "level": 1,
+      "pages": 9,
+      "menuPages": 1,
+      "readPages": 4,
+      "questionPages": 4,
+      "rareContentWordsUnder3": 34,
+      "rareContentSample": [
+        [
+          "air",
+          1
+        ],
+        [
+          "basket",
+          1
+        ],
+        [
+          "best",
+          1
+        ],
+        [
+          "bite",
+          1
+        ],
+        [
+          "bread",
+          1
+        ],
+        [
+          "bun",
+          1
+        ],
+        [
+          "door",
+          1
+        ],
+        [
+          "fresh",
+          1
+        ],
+        [
+          "happy",
+          1
+        ],
+        [
+          "help",
+          1
+        ],
+        [
+          "mmm",
+          1
+        ],
+        [
+          "open",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "drink",
+      "name": "Drink Bar",
+      "level": 1,
+      "pages": 10,
+      "menuPages": 1,
+      "readPages": 4,
+      "questionPages": 5,
+      "rareContentWordsUnder3": 22,
+      "rareContentSample": [
+        [
+          "bar",
+          1
+        ],
+        [
+          "better",
+          1
+        ],
+        [
+          "big",
+          1
+        ],
+        [
+          "blue",
+          1
+        ],
+        [
+          "feel",
+          1
+        ],
+        [
+          "happy",
+          1
+        ],
+        [
+          "have",
+          1
+        ],
+        [
+          "hold",
+          1
+        ],
+        [
+          "juice",
+          1
+        ],
+        [
+          "little",
+          1
+        ],
+        [
+          "not",
+          1
+        ],
+        [
+          "now",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "fruit",
+      "name": "Fruit Stand",
+      "level": 1,
+      "pages": 9,
+      "menuPages": 1,
+      "readPages": 4,
+      "questionPages": 4,
+      "rareContentWordsUnder3": 25,
+      "rareContentSample": [
+        [
+          "belly",
+          1
+        ],
+        [
+          "bin",
+          1
+        ],
+        [
+          "bite",
+          1
+        ],
+        [
+          "drips",
+          1
+        ],
+        [
+          "food",
+          1
+        ],
+        [
+          "hand",
+          1
+        ],
+        [
+          "happy",
+          1
+        ],
+        [
+          "hold",
+          1
+        ],
+        [
+          "hungry",
+          1
+        ],
+        [
+          "juice",
+          1
+        ],
+        [
+          "long",
+          1
+        ],
+        [
+          "round",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "redbean",
+      "name": "Red Bean Bread",
+      "level": 1,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 16,
+      "rareContentSample": [
+        [
+          "big",
+          1
+        ],
+        [
+          "bite",
+          1
+        ],
+        [
+          "fresh",
+          1
+        ],
+        [
+          "lot",
+          1
+        ],
+        [
+          "pick",
+          1
+        ],
+        [
+          "shelf",
+          1
+        ],
+        [
+          "shop",
+          1
+        ],
+        [
+          "smells",
+          1
+        ],
+        [
+          "soft",
+          1
+        ],
+        [
+          "take",
+          1
+        ],
+        [
+          "yum",
+          1
+        ],
+        [
+          "bean",
+          2
+        ]
+      ]
+    },
+    {
+      "stationId": "bubbletea",
+      "name": "Bubble Tea",
+      "level": 2,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 23,
+      "rareContentSample": [
+        [
+          "big",
+          1
+        ],
+        [
+          "bottom",
+          1
+        ],
+        [
+          "cold",
+          1
+        ],
+        [
+          "cup",
+          1
+        ],
+        [
+          "cups",
+          1
+        ],
+        [
+          "drink",
+          1
+        ],
+        [
+          "fun",
+          1
+        ],
+        [
+          "hand",
+          1
+        ],
+        [
+          "has",
+          1
+        ],
+        [
+          "inside",
+          1
+        ],
+        [
+          "look",
+          1
+        ],
+        [
+          "many",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "burger",
+      "name": "Burger Joint",
+      "level": 2,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 20,
+      "rareContentSample": [
+        [
+          "also",
+          1
+        ],
+        [
+          "bite",
+          1
+        ],
+        [
+          "crispy",
+          1
+        ],
+        [
+          "golden",
+          1
+        ],
+        [
+          "good",
+          1
+        ],
+        [
+          "hands",
+          1
+        ],
+        [
+          "have",
+          1
+        ],
+        [
+          "joint",
+          1
+        ],
+        [
+          "juicy",
+          1
+        ],
+        [
+          "melty",
+          1
+        ],
+        [
+          "menu",
+          1
+        ],
+        [
+          "mmm",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "icecream",
+      "name": "Ice Cream",
+      "level": 2,
+      "pages": 9,
+      "menuPages": 1,
+      "readPages": 4,
+      "questionPages": 4,
+      "rareContentWordsUnder3": 61,
+      "rareContentSample": [
+        [
+          "best",
+          1
+        ],
+        [
+          "better",
+          1
+        ],
+        [
+          "bright",
+          1
+        ],
+        [
+          "brown",
+          1
+        ],
+        [
+          "chocolate",
+          1
+        ],
+        [
+          "choose",
+          1
+        ],
+        [
+          "colorful",
+          1
+        ],
+        [
+          "colors",
+          1
+        ],
+        [
+          "cool",
+          1
+        ],
+        [
+          "cooler",
+          1
+        ],
+        [
+          "creamy",
+          1
+        ],
+        [
+          "delicious",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "pizza",
+      "name": "Pizza Place",
+      "level": 2,
+      "pages": 9,
+      "menuPages": 1,
+      "readPages": 4,
+      "questionPages": 4,
+      "rareContentWordsUnder3": 52,
+      "rareContentSample": [
+        [
+          "amazing",
+          1
+        ],
+        [
+          "baking",
+          1
+        ],
+        [
+          "best",
+          1
+        ],
+        [
+          "bubbles",
+          1
+        ],
+        [
+          "cannot",
+          1
+        ],
+        [
+          "circles",
+          1
+        ],
+        [
+          "counter",
+          1
+        ],
+        [
+          "covers",
+          1
+        ],
+        [
+          "each",
+          1
+        ],
+        [
+          "empty",
+          1
+        ],
+        [
+          "even",
+          1
+        ],
+        [
+          "ever",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "chicken",
+      "name": "Chicken Hut",
+      "level": 3,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 16,
+      "rareContentSample": [
+        [
+          "best",
+          1
+        ],
+        [
+          "big",
+          1
+        ],
+        [
+          "bite",
+          1
+        ],
+        [
+          "choices",
+          1
+        ],
+        [
+          "cooking",
+          1
+        ],
+        [
+          "each",
+          1
+        ],
+        [
+          "golden",
+          1
+        ],
+        [
+          "hut",
+          1
+        ],
+        [
+          "munch",
+          1
+        ],
+        [
+          "piece",
+          1
+        ],
+        [
+          "see",
+          1
+        ],
+        [
+          "yummy",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "fishshop",
+      "name": "Fish Shop",
+      "level": 3,
+      "pages": 12,
+      "menuPages": 1,
+      "readPages": 5,
+      "questionPages": 6,
+      "rareContentWordsUnder3": 38,
+      "rareContentSample": [
+        [
+          "back",
+          1
+        ],
+        [
+          "big",
+          1
+        ],
+        [
+          "both",
+          1
+        ],
+        [
+          "come",
+          1
+        ],
+        [
+          "eat",
+          1
+        ],
+        [
+          "ever",
+          1
+        ],
+        [
+          "everything",
+          1
+        ],
+        [
+          "got",
+          1
+        ],
+        [
+          "has",
+          1
+        ],
+        [
+          "have",
+          1
+        ],
+        [
+          "letters",
+          1
+        ],
+        [
+          "little",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "sushi",
+      "name": "Sushi Bar",
+      "level": 3,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 19,
+      "rareContentSample": [
+        [
+          "back",
+          1
+        ],
+        [
+          "bar",
+          1
+        ],
+        [
+          "chef",
+          1
+        ],
+        [
+          "chopsticks",
+          1
+        ],
+        [
+          "come",
+          1
+        ],
+        [
+          "could",
+          1
+        ],
+        [
+          "good",
+          1
+        ],
+        [
+          "light",
+          1
+        ],
+        [
+          "looks",
+          1
+        ],
+        [
+          "makes",
+          1
+        ],
+        [
+          "pick",
+          1
+        ],
+        [
+          "shall",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "cheese",
+      "name": "Cheese Shop",
+      "level": 4,
+      "pages": 11,
+      "menuPages": 1,
+      "readPages": 5,
+      "questionPages": 5,
+      "rareContentWordsUnder3": 55,
+      "rareContentSample": [
+        [
+          "away",
+          1
+        ],
+        [
+          "back",
+          1
+        ],
+        [
+          "bread",
+          1
+        ],
+        [
+          "cheer",
+          1
+        ],
+        [
+          "delicious",
+          1
+        ],
+        [
+          "eat",
+          1
+        ],
+        [
+          "every",
+          1
+        ],
+        [
+          "extra",
+          1
+        ],
+        [
+          "favorite",
+          1
+        ],
+        [
+          "filling",
+          1
+        ],
+        [
+          "get",
+          1
+        ],
+        [
+          "hear",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "noodle",
+      "name": "Noodle House",
+      "level": 4,
+      "pages": 13,
+      "menuPages": 1,
+      "readPages": 5,
+      "questionPages": 7,
+      "rareContentWordsUnder3": 64,
+      "rareContentSample": [
+        [
+          "away",
+          1
+        ],
+        [
+          "bowl",
+          1
+        ],
+        [
+          "coming",
+          1
+        ],
+        [
+          "delicious",
+          1
+        ],
+        [
+          "each",
+          1
+        ],
+        [
+          "ever",
+          1
+        ],
+        [
+          "flavor",
+          1
+        ],
+        [
+          "floating",
+          1
+        ],
+        [
+          "full",
+          1
+        ],
+        [
+          "had",
+          1
+        ],
+        [
+          "happy",
+          1
+        ],
+        [
+          "has",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "smoothie",
+      "name": "Smoothie Stand",
+      "level": 4,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 21,
+      "rareContentSample": [
+        [
+          "berries",
+          1
+        ],
+        [
+          "best",
+          1
+        ],
+        [
+          "blend",
+          1
+        ],
+        [
+          "drink",
+          1
+        ],
+        [
+          "ever",
+          1
+        ],
+        [
+          "fresh",
+          1
+        ],
+        [
+          "fruit",
+          1
+        ],
+        [
+          "good",
+          1
+        ],
+        [
+          "look",
+          1
+        ],
+        [
+          "mango",
+          1
+        ],
+        [
+          "mmm",
+          1
+        ],
+        [
+          "see",
+          1
+        ]
+      ]
+    },
+    {
+      "stationId": "teahouse",
+      "name": "Tea House",
+      "level": 4,
+      "pages": 5,
+      "menuPages": 1,
+      "readPages": 2,
+      "questionPages": 2,
+      "rareContentWordsUnder3": 25,
+      "rareContentSample": [
+        [
+          "air",
+          1
+        ],
+        [
+          "below",
+          1
+        ],
+        [
+          "best",
+          1
+        ],
+        [
+          "both",
+          1
+        ],
+        [
+          "city",
+          1
+        ],
+        [
+          "drink",
+          1
+        ],
+        [
+          "far",
+          1
+        ],
+        [
+          "feel",
+          1
+        ],
+        [
+          "fresh",
+          1
+        ],
+        [
+          "hands",
+          1
+        ],
+        [
+          "house",
+          1
+        ],
+        [
+          "moment",
+          1
+        ]
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "FAIL",
+      "stationId": "bakery",
+      "pageIndex": 0,
+      "code": "variants.evidence_not_in_all_variants",
+      "message": "Evidence sentence \"It smells so good!\" appears in base read text but is missing from a read-page variant."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "bakery",
+      "pageIndex": 0,
+      "code": "variants.evidence_not_in_all_variants",
+      "message": "Evidence sentence \"It smells so good!\" appears in base read text but is missing from a read-page variant."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "bakery",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I am at the bakery. It smells so good! I want a sweet treat.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "bakery",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see little pies.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "bakery",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I say thank you.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The letters C and H work together in the word cheese.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 2,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 2,
+      "code": "read.focus_not_in_text",
+      "message": "sightWordFocus \"has\" does not appear as a token in sentence."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"Some cheese is yellow. Some cheese is white.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 4,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 5,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"A sandwich has bread and cheese.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 6,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The nice man at the shop helps me. He gives me a big chunk.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 9,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "cheese",
+      "pageIndex": 10,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I want to come back to this shop soon!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I am at the drink bar. I am so hot. I want a cold drink.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see cold drinks.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 4,
+      "code": "read.focus_not_in_text",
+      "message": "sightWordFocus \"want\" does not appear as a token in sentence."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 5,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"Hot and cold are opposites.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 7,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I am so hot. I want a cold drink.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "drink",
+      "pageIndex": 9,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"My drink is cold. It helps me.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The letters S and H work together in the word shop.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The fish looks so fresh. They all shine!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 5,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see pink shrimp in a shell! The shrimp look so good.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I wish for fish. I wish for shrimp.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 10,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"My fresh fish is so good! I wish for more.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fishshop",
+      "pageIndex": 11,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"This shop is the best!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fruit",
+      "pageIndex": 2,
+      "code": "read.focus_not_in_text",
+      "message": "sightWordFocus \"see\" does not appear as a token in sentence."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fruit",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see yellow bananas.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fruit",
+      "pageIndex": 6,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see big oranges.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "fruit",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I feel happy.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "icecream",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"It is so cold inside!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "icecream",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"Pink, brown, and white!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "icecream",
+      "pageIndex": 6,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"It is a hot day.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "icecream",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"It makes my tongue happy!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The letters T and H work together in the word the.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 2,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The steam goes up in the air.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 4,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I see the hot noodles. I think they will be very good!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 5,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 6,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I smell the yummy broth.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 7,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I think I will use chopsticks.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 10,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The noodles look thick and long.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 11,
+      "code": "read.missing_readingTip",
+      "message": "Read page missing readingTip."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "noodle",
+      "pageIndex": 12,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I want to thank the cook!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 1,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"I can smell hot pizza.\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 2,
+      "code": "read.focus_not_in_text",
+      "message": "sightWordFocus \"have\" does not appear as a token in sentence."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 3,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"The cheese is so gooey!\""
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 4,
+      "code": "variants.evidence_not_in_all_variants",
+      "message": "Evidence sentence \"My tummy is very hungry.\" appears in base read text but is missing from a read-page variant."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 7,
+      "code": "read.focus_not_in_text",
+      "message": "sightWordFocus \"very\" does not appear as a token in sentence."
+    },
+    {
+      "severity": "FAIL",
+      "stationId": "pizza",
+      "pageIndex": 8,
+      "code": "comprehension.evidence_not_found",
+      "message": "Key sentence not found in accumulated prior read passage: \"Now my tummy feels full.\""
+    }
+  ]
+}

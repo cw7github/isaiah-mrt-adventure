@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock Animation Test</title>
+  <link rel="stylesheet" href="manim-animations.css">
+  <link rel="stylesheet" href="clock-enhancements.css">
+  <style>
+    body {
+      background: #0f1419;
+      font-family: 'Fredoka One', 'Comic Sans MS', cursive;
+      padding: 40px;
+      color: white;
+    }
+    .test-section {
+      margin: 40px 0;
+    }
+    .test-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--manim-gold);
+    }
+    .clock-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .clock-item {
+      text-align: center;
+    }
+    .clock-label {
+      margin-top: 10px;
+      font-size: 18px;
+      color: var(--manim-teal);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; color: var(--manim-coral);">Clock Animation Tests</h1>
+
+  <div class="test-section">
+    <div class="test-title">Test 1: 3:00 (Hour at 3, Minute at 12)</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock1"></div>
+        <div class="clock-label">3:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Test 2: 7:30 (Hour between 7 and 8, Minute at 6)</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock2"></div>
+        <div class="clock-label">7:30</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Test 3: 12:00 (Both hands at 12)</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock3"></div>
+        <div class="clock-label">12:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Test 4: 6:15 (Hour between 6 and 7, Minute at 3)</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock4"></div>
+        <div class="clock-label">6:15</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Test 5: 9:45 (Hour between 9 and 10, Minute at 9)</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock5"></div>
+        <div class="clock-label">9:45</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Test 6: Various times</div>
+    <div class="clock-container">
+      <div class="clock-item">
+        <div id="clock6"></div>
+        <div class="clock-label">1:30</div>
+      </div>
+      <div class="clock-item">
+        <div id="clock7"></div>
+        <div class="clock-label">4:45</div>
+      </div>
+      <div class="clock-item">
+        <div id="clock8"></div>
+        <div class="clock-label">11:20</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="manim-animations.js"></script>
+  <script>
+    // Test 1: 3:00
+    ManimEngine.renderClock(document.getElementById('clock1'), {
+      hour: 3,
+      minute: 0,
+      animate: true
+    });
+
+    // Test 2: 7:30
+    ManimEngine.renderClock(document.getElementById('clock2'), {
+      hour: 7,
+      minute: 30,
+      animate: true
+    });
+
+    // Test 3: 12:00
+    ManimEngine.renderClock(document.getElementById('clock3'), {
+      hour: 12,
+      minute: 0,
+      animate: true
+    });
+
+    // Test 4: 6:15
+    ManimEngine.renderClock(document.getElementById('clock4'), {
+      hour: 6,
+      minute: 15,
+      animate: true
+    });
+
+    // Test 5: 9:45
+    ManimEngine.renderClock(document.getElementById('clock5'), {
+      hour: 9,
+      minute: 45,
+      animate: true
+    });
+
+    // Test 6: 1:30
+    ManimEngine.renderClock(document.getElementById('clock6'), {
+      hour: 1,
+      minute: 30,
+      animate: true
+    });
+
+    // Test 7: 4:45
+    ManimEngine.renderClock(document.getElementById('clock7'), {
+      hour: 4,
+      minute: 45,
+      animate: true
+    });
+
+    // Test 8: 11:20
+    ManimEngine.renderClock(document.getElementById('clock8'), {
+      hour: 11,
+      minute: 20,
+      animate: true
+    });
+  </script>
+</body>
+</html>

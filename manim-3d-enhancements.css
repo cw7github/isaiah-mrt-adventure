@@ -1,0 +1,480 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   3D SHAPE ENHANCEMENTS
+   Improved visual quality, drag interaction, and depth effects
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Enhanced 3D Container with better perspective */
+.manim-3d-container {
+  perspective: 800px;
+  perspective-origin: 50% 50%;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Add subtle ambient lighting effect */
+.manim-3d-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED 3D CUBE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-cube {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: manimCubeRotate 12s linear infinite;
+  cursor: grab;
+  transition: animation-play-state 0.3s, transform 0.3s var(--ease-smooth);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.manim-cube:hover {
+  animation-play-state: paused;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+}
+
+.manim-cube.dragging {
+  animation-play-state: paused;
+  cursor: grabbing;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+  transition: none;
+}
+
+.manim-cube.paused {
+  animation-play-state: paused;
+}
+
+/* Enhanced cube faces with better depth and shadows */
+.manim-cube-face {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.95);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  backface-visibility: visible;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.manim-cube-face::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.manim-cube-face.front {
+  background: rgba(255, 107, 107, 0.9);
+  transform: translateZ(65px);
+}
+
+.manim-cube-face.back {
+  background: rgba(78, 205, 196, 0.9);
+  transform: rotateY(180deg) translateZ(65px);
+}
+
+.manim-cube-face.right {
+  background: rgba(116, 185, 255, 0.9);
+  transform: rotateY(90deg) translateZ(65px);
+}
+
+.manim-cube-face.left {
+  background: rgba(162, 155, 254, 0.9);
+  transform: rotateY(-90deg) translateZ(65px);
+}
+
+.manim-cube-face.top {
+  background: rgba(255, 217, 61, 0.9);
+  transform: rotateX(90deg) translateZ(65px);
+}
+
+.manim-cube-face.bottom {
+  background: rgba(253, 121, 168, 0.9);
+  transform: rotateX(-90deg) translateZ(65px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED 3D SPHERE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-sphere {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,
+    #ffb3b3,
+    var(--manim-coral) 40%,
+    #d45d5d 70%,
+    #a83b3b 100%);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    inset 0 -15px 40px rgba(0, 0, 0, 0.35),
+    inset 0 15px 40px rgba(255, 255, 255, 0.35),
+    inset -10px -10px 30px rgba(0, 0, 0, 0.2);
+  animation: manimFloat 3s ease-in-out infinite;
+  cursor: grab;
+  transition: transform 0.3s var(--ease-smooth);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.manim-sphere::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 70%);
+  filter: blur(8px);
+}
+
+.manim-sphere:hover {
+  transform: translateY(-15px) scale(1.1);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    inset 0 -15px 40px rgba(0, 0, 0, 0.35),
+    inset 0 15px 40px rgba(255, 255, 255, 0.4),
+    0 0 50px rgba(255, 107, 107, 0.5);
+}
+
+.manim-sphere.dragging {
+  cursor: grabbing;
+  animation-play-state: paused;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    inset 0 -15px 40px rgba(0, 0, 0, 0.4),
+    inset 0 15px 40px rgba(255, 255, 255, 0.45),
+    0 0 60px rgba(255, 107, 107, 0.6);
+  transition: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED 3D CYLINDER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-cylinder {
+  width: 110px;
+  height: 150px;
+  background: linear-gradient(90deg,
+    #2471a3,
+    #2980b9 20%,
+    var(--manim-blue) 35%,
+    #74b9ff 50%,
+    var(--manim-blue) 65%,
+    #2980b9 80%,
+    #2471a3);
+  border-radius: 55px / 28px;
+  position: relative;
+  animation: manimFloat 3s ease-in-out infinite 0.5s;
+  cursor: grab;
+  transition: transform 0.3s var(--ease-smooth);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset -15px 0 20px rgba(0, 0, 0, 0.2),
+    inset 15px 0 20px rgba(255, 255, 255, 0.15);
+  transform-style: preserve-3d;
+}
+
+.manim-cylinder:hover {
+  transform: translateY(-15px) scale(1.08);
+  filter: brightness(1.15) drop-shadow(0 20px 40px rgba(116, 185, 255, 0.5));
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    inset -15px 0 20px rgba(0, 0, 0, 0.25),
+    inset 15px 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.manim-cylinder.dragging {
+  cursor: grabbing;
+  animation-play-state: paused;
+  filter: brightness(1.2) drop-shadow(0 25px 50px rgba(116, 185, 255, 0.6));
+  transition: none;
+}
+
+.manim-cylinder::before,
+.manim-cylinder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.manim-cylinder::before {
+  top: -18px;
+  background: radial-gradient(ellipse at center,
+    #a8d8ff 0%,
+    #74b9ff 30%,
+    #5dade2 60%,
+    var(--manim-blue) 100%);
+  box-shadow:
+    inset 0 12px 22px rgba(255, 255, 255, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.manim-cylinder::after {
+  bottom: -18px;
+  background: radial-gradient(ellipse at center,
+    #2980b9 0%,
+    #2471a3 60%,
+    #1a5276 100%);
+  box-shadow:
+    inset 0 -8px 16px rgba(0, 0, 0, 0.4),
+    0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED 3D CONE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-cone {
+  width: 0;
+  height: 0;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 130px solid var(--manim-lavender);
+  position: relative;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+  animation: manimFloat 3s ease-in-out infinite 1s;
+  cursor: grab;
+  transition: all 0.3s var(--ease-smooth);
+  transform-style: preserve-3d;
+}
+
+.manim-cone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -65px;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 130px solid rgba(0, 0, 0, 0.15);
+  transform: translateX(8px);
+}
+
+.manim-cone:hover {
+  transform: translateY(-15px) scale(1.08);
+  filter: drop-shadow(0 25px 45px rgba(162, 155, 254, 0.6)) brightness(1.15);
+}
+
+.manim-cone.dragging {
+  cursor: grabbing;
+  animation-play-state: paused;
+  filter: drop-shadow(0 30px 55px rgba(162, 155, 254, 0.7)) brightness(1.2);
+  transition: none;
+}
+
+.manim-cone::after {
+  content: '';
+  position: absolute;
+  top: 125px;
+  left: -65px;
+  width: 130px;
+  height: 35px;
+  background: radial-gradient(ellipse at center,
+    #b8a8fe 0%,
+    var(--manim-lavender) 40%,
+    #8b7fc7 80%,
+    #6856a3 100%);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 -6px 15px rgba(0, 0, 0, 0.3),
+    0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED FLOAT ANIMATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes manimFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED CUBE ROTATION ANIMATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes manimCubeRotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOUCH AND MOBILE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Prevent text selection during drag */
+.manim-cube.dragging,
+.manim-sphere.dragging,
+.manim-cylinder.dragging,
+.manim-cone.dragging {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Touch-friendly sizing on mobile */
+@media screen and (max-width: 640px) {
+  .manim-3d-container {
+    perspective: 600px;
+    padding: 40px 20px;
+  }
+
+  .manim-cube {
+    width: 110px;
+    height: 110px;
+  }
+
+  .manim-cube-face {
+    width: 110px;
+    height: 110px;
+    font-size: 40px;
+  }
+
+  .manim-cube-face.front,
+  .manim-cube-face.back,
+  .manim-cube-face.right,
+  .manim-cube-face.left {
+    transform-origin: center;
+  }
+
+  .manim-cube-face.front {
+    transform: translateZ(55px);
+  }
+
+  .manim-cube-face.back {
+    transform: rotateY(180deg) translateZ(55px);
+  }
+
+  .manim-cube-face.right {
+    transform: rotateY(90deg) translateZ(55px);
+  }
+
+  .manim-cube-face.left {
+    transform: rotateY(-90deg) translateZ(55px);
+  }
+
+  .manim-cube-face.top {
+    transform: rotateX(90deg) translateZ(55px);
+  }
+
+  .manim-cube-face.bottom {
+    transform: rotateX(-90deg) translateZ(55px);
+  }
+
+  .manim-sphere,
+  .manim-cylinder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .manim-cylinder {
+    height: 120px;
+  }
+
+  .manim-cone {
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 110px solid var(--manim-lavender);
+  }
+
+  .manim-cone::after {
+    top: 105px;
+    left: -55px;
+    width: 110px;
+    height: 30px;
+  }
+
+  .manim-cone::before {
+    left: -55px;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 110px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY - KEYBOARD FOCUS FOR 3D SHAPES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-cube:focus,
+.manim-sphere:focus,
+.manim-cylinder:focus,
+.manim-cone:focus {
+  outline: 4px solid var(--manim-gold);
+  outline-offset: 8px;
+  box-shadow: 0 0 0 12px rgba(255, 217, 61, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REDUCED MOTION SUPPORT FOR 3D SHAPES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .manim-cube,
+  .manim-sphere,
+  .manim-cylinder,
+  .manim-cone {
+    animation: none !important;
+  }
+
+  .manim-cube.dragging,
+  .manim-sphere.dragging,
+  .manim-cylinder.dragging,
+  .manim-cone.dragging {
+    transition: none !important;
+  }
+}

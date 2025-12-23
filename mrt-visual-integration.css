@@ -1,0 +1,857 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   MRT VISUAL INTEGRATION SYSTEM
+   Seamlessly blends math animations with the MRT Food Adventure theme
+   Creates a "Station Display" aesthetic for educational visuals
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ═══ MRT LINE COLORS ═══ */
+  /* Operations & Algebraic Thinking - Coral/Red Line */
+  --line-oa: #ff6b6b;
+  --line-oa-light: #ffacac;
+  --line-oa-dark: #d44545;
+  --line-oa-glow: rgba(255, 107, 107, 0.4);
+
+  /* Number & Base Ten - Blue Line */
+  --line-nbt: #4A90C2;
+  --line-nbt-light: #7eb8e8;
+  --line-nbt-dark: #3674a0;
+  --line-nbt-glow: rgba(74, 144, 194, 0.4);
+
+  /* Measurement & Data - Green Line */
+  --line-md: #2ecc71;
+  --line-md-light: #7ee8a8;
+  --line-md-dark: #229954;
+  --line-md-glow: rgba(46, 204, 113, 0.4);
+
+  /* Geometry - Orange Line */
+  --line-g: #f39c12;
+  --line-g-light: #f7c56e;
+  --line-g-dark: #c87f0a;
+  --line-g-glow: rgba(243, 156, 18, 0.4);
+
+  /* ═══ STATION DISPLAY COLORS ═══ */
+  --display-bg: linear-gradient(145deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(252, 250, 245, 0.95) 50%,
+    rgba(255, 248, 235, 0.92) 100%);
+  --display-border: rgba(200, 180, 150, 0.4);
+  --display-shadow: 0 8px 32px rgba(139, 115, 85, 0.15),
+                    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* ═══ ANIMATION TIMING ═══ */
+  --mrt-ease-arrive: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --mrt-ease-depart: cubic-bezier(0.55, 0, 0.1, 1);
+  --mrt-ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --mrt-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MRT STATION DISPLAY - The main visual wrapper
+   Frames animations like a station information display
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-visual-frame {
+  position: relative;
+  background: var(--display-bg);
+  border-radius: 24px;
+  padding: 0;
+  margin: 20px 0;
+  overflow: hidden;
+  box-shadow: var(--display-shadow);
+  border: 2px solid var(--display-border);
+
+  /* Subtle paper texture */
+  background-image:
+    var(--display-bg),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+
+  /* Animation on appearance */
+  animation: mrt-frame-arrive 0.6s var(--mrt-ease-arrive);
+}
+
+@keyframes mrt-frame-arrive {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ═══ LINE COLOR HEADERS ═══ */
+.mrt-visual-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--current-line-color, var(--line-oa));
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 2px 8px var(--current-line-glow, var(--line-oa-glow));
+}
+
+/* Line-specific coloring */
+.mrt-visual-frame[data-line="OA"] { --current-line-color: var(--line-oa); --current-line-glow: var(--line-oa-glow); }
+.mrt-visual-frame[data-line="NBT"] { --current-line-color: var(--line-nbt); --current-line-glow: var(--line-nbt-glow); }
+.mrt-visual-frame[data-line="MD"] { --current-line-color: var(--line-md); --current-line-glow: var(--line-md-glow); }
+.mrt-visual-frame[data-line="G"] { --current-line-color: var(--line-g); --current-line-glow: var(--line-g-glow); }
+
+/* ═══ STATION INDICATOR DOTS ═══ */
+.mrt-visual-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background:
+    radial-gradient(circle at 10px 2px, var(--current-line-color, var(--line-oa)) 3px, transparent 3px),
+    radial-gradient(circle at 30px 2px, var(--current-line-color, var(--line-oa)) 3px, transparent 3px),
+    radial-gradient(circle at 50px 2px, var(--current-line-color, var(--line-oa)) 3px, transparent 3px),
+    radial-gradient(circle at 70px 2px, var(--current-line-color, var(--line-oa)) 3px, transparent 3px);
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATION HEADER BAR
+   Shows station name and line info like real MRT displays
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-station-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 12px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%);
+  border-bottom: 1px solid rgba(200, 180, 150, 0.2);
+}
+
+.mrt-station-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Fredoka One', 'Comic Sans MS', cursive;
+  font-size: 18px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+.mrt-line-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--current-line-color, var(--line-oa));
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 2px 6px var(--current-line-glow, var(--line-oa-glow)),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.mrt-station-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VISUAL CONTENT AREA
+   Where the manim animations actually live
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-visual-content {
+  position: relative;
+  padding: 24px;
+  min-height: 200px;
+
+  /* Subtle track pattern background */
+  background-image:
+    linear-gradient(90deg,
+      rgba(200, 180, 150, 0.03) 1px,
+      transparent 1px),
+    linear-gradient(0deg,
+      rgba(200, 180, 150, 0.03) 1px,
+      transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Override manim-stage within MRT frame for light theme */
+.mrt-visual-frame .manim-stage {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0;
+
+  /* Remove the dark overlay */
+  --manim-bg-dark: transparent;
+  --manim-bg-gradient: transparent;
+}
+
+.mrt-visual-frame .manim-stage::before {
+  display: none;
+}
+
+.mrt-visual-frame .manim-stage.with-grid::after {
+  background-image:
+    linear-gradient(rgba(200, 180, 150, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 180, 150, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES FOR MANIM ELEMENTS
+   Makes animations blend with warm app theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Number Line - Light Theme */
+.mrt-visual-frame .manim-nl-track {
+  background: linear-gradient(90deg,
+    var(--current-line-color, var(--line-oa)) 0%,
+    var(--line-nbt) 50%,
+    var(--line-g) 100%);
+  box-shadow:
+    0 0 15px var(--current-line-glow, var(--line-oa-glow)),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.mrt-visual-frame .manim-nl-track::before {
+  border-color: transparent var(--current-line-color, var(--line-oa)) transparent transparent;
+}
+
+.mrt-visual-frame .manim-nl-track::after {
+  border-color: transparent transparent transparent var(--line-g);
+}
+
+.mrt-visual-frame .manim-nl-tick {
+  background: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-nl-tick.major {
+  background: var(--current-line-color, var(--line-oa));
+  box-shadow: 0 0 8px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-nl-num {
+  color: #4a4a4a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.mrt-visual-frame .manim-nl-num.active {
+  color: var(--current-line-color, var(--line-oa));
+  text-shadow: 0 0 15px var(--current-line-glow, var(--line-oa-glow));
+}
+
+/* Counters - Light Theme */
+.mrt-visual-frame .manim-counter-group {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px dashed rgba(200, 180, 150, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mrt-visual-frame .manim-counter-group::after {
+  background: var(--current-line-color, var(--line-oa));
+  box-shadow: 0 3px 10px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .counter-item,
+.mrt-visual-frame .manim-counter {
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.3));
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.mrt-visual-frame .counter-item:hover,
+.mrt-visual-frame .manim-counter:hover {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.18),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    0 0 20px var(--current-line-glow, var(--line-oa-glow));
+}
+
+/* Ten Frame - Light Theme */
+.mrt-visual-frame .manim-tf-grid {
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba(200, 180, 150, 0.4);
+  box-shadow:
+    inset 0 2px 8px rgba(0, 0, 0, 0.05),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mrt-visual-frame .manim-tf-cell {
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(200, 180, 150, 0.3);
+}
+
+.mrt-visual-frame .manim-tf-cell:hover {
+  background: rgba(var(--current-line-color, var(--line-oa)), 0.1);
+  border-color: var(--current-line-color, var(--line-oa));
+}
+
+.mrt-visual-frame .manim-tf-cell.filled {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--current-line-color, var(--line-oa));
+}
+
+.mrt-visual-frame .manim-tf-dot {
+  background: radial-gradient(circle at 30% 30%,
+    var(--current-line-color, var(--line-oa)),
+    color-mix(in srgb, var(--current-line-color, var(--line-oa)) 70%, black));
+  box-shadow:
+    0 3px 8px var(--current-line-glow, var(--line-oa-glow)),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.mrt-visual-frame .manim-tf-equation {
+  color: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-tf-equation .op {
+  color: var(--current-line-color, var(--line-oa));
+}
+
+/* Shapes - Light Theme */
+.mrt-visual-frame .manim-shape-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(200, 180, 150, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mrt-visual-frame .manim-shape-card:hover {
+  border-color: var(--current-line-color, var(--line-oa));
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 0 20px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-shape-card.highlighted {
+  border-color: var(--current-line-color, var(--line-oa));
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 0 30px var(--current-line-glow, var(--line-oa-glow)),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mrt-visual-frame .manim-shape-label {
+  color: #4a4a4a;
+}
+
+/* 3D Shapes - Light Theme */
+.mrt-visual-frame .manim-sphere {
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset 0 -8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+.mrt-visual-frame .manim-cube-face {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Equation - Light Theme */
+.mrt-visual-frame .manim-equation {
+  color: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-eq-num,
+.mrt-visual-frame .number {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mrt-visual-frame .manim-eq-num:hover,
+.mrt-visual-frame .number:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15),
+    0 0 15px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-eq-op,
+.mrt-visual-frame .operator {
+  color: var(--current-line-color, var(--line-oa));
+  text-shadow: 0 0 10px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-eq-equals {
+  color: var(--line-nbt);
+}
+
+.mrt-visual-frame .manim-eq-result {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 248, 235, 0.8));
+  border: 2px solid var(--current-line-color, var(--line-oa));
+  color: var(--current-line-color, var(--line-oa));
+  box-shadow: 0 4px 12px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-eq-blank {
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px dashed var(--current-line-color, var(--line-oa));
+}
+
+/* Comparison - Light Theme */
+.mrt-visual-frame .manim-compare-side,
+.mrt-visual-frame .manim-comparison {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mrt-visual-frame .manim-compare-side:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.mrt-visual-frame .manim-compare-side.bigger {
+  background: rgba(var(--line-md), 0.1);
+  border: 2px solid var(--line-md);
+  box-shadow: 0 0 25px var(--line-md-glow);
+}
+
+.mrt-visual-frame .manim-compare-side.equal {
+  border: 2px solid var(--current-line-color, var(--line-oa));
+  box-shadow: 0 0 20px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-compare-symbol {
+  color: var(--current-line-color, var(--line-oa));
+  text-shadow: 0 0 15px var(--current-line-glow, var(--line-oa-glow));
+}
+
+/* Place Value - Light Theme */
+.mrt-visual-frame .manim-place-column {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mrt-visual-frame .manim-place-column:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.mrt-visual-frame .manim-place-column.tens {
+  border: 2px solid var(--line-nbt);
+  box-shadow: 0 0 15px var(--line-nbt-glow);
+}
+
+.mrt-visual-frame .manim-place-column.ones {
+  border: 2px solid var(--line-oa);
+  box-shadow: 0 0 15px var(--line-oa-glow);
+}
+
+.mrt-visual-frame .manim-place-label {
+  color: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-block-unit {
+  background: var(--line-nbt);
+  box-shadow: 0 2px 4px var(--line-nbt-glow);
+}
+
+.mrt-visual-frame .manim-block-one {
+  background: var(--line-oa);
+  box-shadow: 0 2px 4px var(--line-oa-glow);
+}
+
+/* Clock - Light Theme */
+.mrt-visual-frame .manim-clock {
+  background: radial-gradient(circle at center,
+    #ffffff,
+    #f8f5f0);
+  border: 5px solid #4a4a4a;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.mrt-visual-frame .manim-clock:hover {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 2px 8px rgba(255, 255, 255, 0.8),
+    0 0 25px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-clock-number {
+  color: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-clock-minute {
+  background: var(--current-line-color, var(--line-oa));
+}
+
+/* CPA Transition - Light Theme */
+.mrt-visual-frame .manim-cpa-stage {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid transparent;
+}
+
+.mrt-visual-frame .manim-cpa-stage.active {
+  border-color: var(--current-line-color, var(--line-oa));
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 30px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-visual-frame .manim-cpa-label {
+  color: #4a4a4a;
+}
+
+.mrt-visual-frame .manim-cpa-arrow {
+  color: var(--current-line-color, var(--line-oa));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATION ARRIVAL ANIMATIONS
+   Creates a "train arriving at station" feel
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes station-arrive {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes station-depart {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+@keyframes platform-ding {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+.mrt-visual-frame.arriving {
+  animation: station-arrive 0.8s var(--mrt-ease-arrive);
+}
+
+.mrt-visual-frame.departing {
+  animation: station-depart 0.5s var(--mrt-ease-depart) forwards;
+}
+
+.mrt-visual-frame.ding {
+  animation: platform-ding 0.4s var(--mrt-ease-bounce);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRACK DECORATIONS
+   Subtle train track motifs
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-track-line {
+  position: absolute;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--current-line-color, var(--line-oa)) 10%,
+    var(--current-line-color, var(--line-oa)) 90%,
+    transparent 100%);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.mrt-track-line.top {
+  top: 20px;
+  left: 10%;
+  right: 10%;
+}
+
+.mrt-track-line.bottom {
+  bottom: 28px;
+  left: 10%;
+  right: 10%;
+}
+
+/* Track ties (perpendicular lines) */
+.mrt-track-ties {
+  position: absolute;
+  bottom: 24px;
+  left: 15%;
+  right: 15%;
+  height: 12px;
+  background: repeating-linear-gradient(90deg,
+    transparent 0px,
+    transparent 15px,
+    rgba(139, 115, 85, 0.15) 15px,
+    rgba(139, 115, 85, 0.15) 18px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MRT CELEBRATION - Train arrival party!
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.mrt-confetti {
+  position: absolute;
+  font-size: 28px;
+  animation: mrt-confetti-fall 3s linear forwards;
+}
+
+@keyframes mrt-confetti-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.mrt-train-emoji {
+  position: absolute;
+  font-size: 48px;
+  animation: mrt-train-zoom 1.5s var(--mrt-ease-arrive);
+}
+
+@keyframes mrt-train-zoom {
+  0% {
+    transform: translateX(-100vw) scale(0.5);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(50vw) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Station chime rings */
+.mrt-chime-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--current-line-color, var(--line-oa));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: mrt-chime-expand 1s var(--mrt-ease-smooth) forwards;
+  opacity: 0;
+}
+
+@keyframes mrt-chime-expand {
+  0% {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRESS INDICATOR - Like next stop display
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(200, 180, 150, 0.2);
+}
+
+.mrt-progress-station {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(200, 180, 150, 0.4);
+  transition: all 0.3s var(--mrt-ease-smooth);
+}
+
+.mrt-progress-station.completed {
+  background: var(--current-line-color, var(--line-oa));
+  box-shadow: 0 0 8px var(--current-line-glow, var(--line-oa-glow));
+}
+
+.mrt-progress-station.current {
+  background: var(--current-line-color, var(--line-oa));
+  transform: scale(1.3);
+  box-shadow: 0 0 12px var(--current-line-glow, var(--line-oa-glow));
+  animation: badge-pulse 1.5s ease-in-out infinite;
+}
+
+.mrt-progress-connector {
+  width: 24px;
+  height: 3px;
+  background: rgba(200, 180, 150, 0.3);
+  border-radius: 2px;
+}
+
+.mrt-progress-connector.completed {
+  background: var(--current-line-color, var(--line-oa));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media screen and (max-width: 640px) {
+  .mrt-visual-frame {
+    margin: 12px 0;
+    border-radius: 18px;
+  }
+
+  .mrt-visual-frame::before {
+    height: 5px;
+  }
+
+  .mrt-station-header {
+    padding: 12px 16px 10px;
+  }
+
+  .mrt-station-name {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .mrt-line-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .mrt-visual-content {
+    padding: 16px;
+    min-height: 160px;
+  }
+
+  .mrt-progress-bar {
+    padding: 10px 16px;
+    gap: 6px;
+  }
+
+  .mrt-progress-station {
+    width: 10px;
+    height: 10px;
+  }
+
+  .mrt-progress-connector {
+    width: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mrt-visual-frame {
+    margin: 8px 0;
+    border-radius: 14px;
+  }
+
+  .mrt-station-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .mrt-visual-content {
+    padding: 12px;
+    min-height: 140px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REDUCED MOTION SUPPORT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .mrt-visual-frame,
+  .mrt-visual-frame.arriving,
+  .mrt-visual-frame.departing,
+  .mrt-visual-frame.ding,
+  .mrt-line-badge,
+  .mrt-progress-station.current {
+    animation: none;
+  }
+
+  .mrt-confetti,
+  .mrt-train-emoji,
+  .mrt-chime-ring {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOCUS STATES FOR ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mrt-visual-frame:focus-within {
+  outline: 3px solid var(--current-line-color, var(--line-oa));
+  outline-offset: 4px;
+}
+
+.mrt-line-badge:focus {
+  outline: 3px solid var(--current-line-color, var(--line-oa));
+  outline-offset: 3px;
+}
+
+.mrt-progress-station:focus {
+  outline: 2px solid var(--current-line-color, var(--line-oa));
+  outline-offset: 2px;
+}

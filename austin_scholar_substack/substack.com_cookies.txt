@@ -1,0 +1,19 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.substack.com	TRUE	/	TRUE	1787349457	ab_experiment_sampled	%22false%22
+.substack.com	TRUE	/	TRUE	1791241894	ab_testing_id	%221535836c-9674-4106-bf9a-a7ce2c1e0b73%22
+.substack.com	TRUE	/	TRUE	1763589457	cookie_storage_key	ad02e321-4cea-4abb-927b-df8b1d30cfb7
+.substack.com	TRUE	/	FALSE	1794265740	_ga	GA1.1.427610518.1755813458
+.substack.com	TRUE	/	FALSE	1763589458	_gcl_au	1.1.59769143.1755813458
+.substack.com	TRUE	/	TRUE	1767481894	substack.sid	s%3Arpl0N3vcsLYeSQXpZE0AhQKgheXs66QM.uSyNtPjIPuzP49L2hU1UgS80UGk7j2ie8t8NP0eDY2c
+.substack.com	TRUE	/	FALSE	1791241894	ajs_anonymous_id	%225e2404b4-22eb-46da-8463-b4de8b6e294f%22
+.substack.com	TRUE	/	TRUE	1767479631	substack.lli	1
+.substack.com	TRUE	/	FALSE	1759707694	visit_id	%7B%22id%22%3A%2207be35c0-a518-46a8-82d5-a115d9189541%22%2C%22timestamp%22%3A%222025-10-05T23%3A01%3A44.528Z%22%2C%22utm_source%22%3A%22profile-page%22%7D
+.substack.com	TRUE	/	TRUE	1759707527	__cf_bm	Q0LWdv92MuoVwv1ECGP1PWZRGz3XiyQYprh4vIM__kw-1759705727-1.0.1.1-9EnvxNxtPl.08vS.y3qbPu5IyueQlGk24nMewDIyFUbN.RvsWwPDPDIpA6xXqJBKRYM3f_5dM9l4SSY.nBDitSVZ53WLmIMKw1yfNMKREg4
+.substack.com	TRUE	/	FALSE	1794265740	_ga_TLW0DF6G5V	GS2.1.s1759703632$o5$g1$t1759705739$j60$l0$h0
+substack.com	FALSE	/	FALSE	1760310694	AWSALBTG	8g0mY6vhG9VI52ir6R6yEHZpicn3epTWz+ft+MT+PYPrxEE+1CdXzWgFt4YIJ6VMG4Qb/e4XtI3ivZrSyKzyTg8K0GI6kFoo8kE8tX7hOxH0geENbJEKSqBQ6hmBKTII5//JAWLgNzNtcmBcJsqS1DwqIcADPAOZ+8v0RIM/Z20G
+substack.com	FALSE	/	TRUE	1760310694	AWSALBTGCORS	8g0mY6vhG9VI52ir6R6yEHZpicn3epTWz+ft+MT+PYPrxEE+1CdXzWgFt4YIJ6VMG4Qb/e4XtI3ivZrSyKzyTg8K0GI6kFoo8kE8tX7hOxH0geENbJEKSqBQ6hmBKTII5//JAWLgNzNtcmBcJsqS1DwqIcADPAOZ+8v0RIM/Z20G
+substack.com	FALSE	/	FALSE	1759706798	_dd_s	rum=0&expire=1759706774368
+.substack.com	TRUE	/	TRUE	1791241305	cf_clearance	X_qRGeWQFyyE2QJZtqieTIugBKpG2tWBlYmeyWROWWc-1759705305-1.2.1.1-c_OwYFHIcQs.NnuTOK4ma0Npm3jNItIgeW5qA1K8kGZttH8k3dzc41KvKqTn20K9eqVZyJRK.qSquK.T5.Fn5PBc3pMnsprXBJwfWYGLXpTwcwdjo_asW5zBzmfcSLzyEhoA5sh0G6yZR2lhASE997LMHMnrufs0S1GgOtUZIyxAZjvwhsWxb.sopNfev1tW18fbpFNhIddj1y7ZpYngfvSxoRbI8XM.y2eU4QunGOA

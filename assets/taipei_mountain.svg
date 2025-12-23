@@ -1,0 +1,27 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#E0F6FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#skyGradient)"/>
+
+  <!-- Distant Mountains -->
+  <path d="M0 300 C200 250, 400 280, 600 260 C800 240, 1000 270, 1200 300 L1200 400 L0 400 Z" fill="#7CB342"/>
+
+  <!-- Mid Mountains -->
+  <path d="M0 320 C200 270, 400 300, 600 280 C800 260, 1000 290, 1200 320 L1200 400 L0 400 Z" fill="#689F38"/>
+
+  <!-- Foreground Mountains -->
+  <path d="M0 360 C200 310, 400 340, 600 320 C800 300, 1000 330, 1200 360 L1200 400 L0 400 Z" fill="#558B2F"/>
+
+  <!-- Trees on lower slopes (simple circles) -->
+  <circle cx="100" cy="370" r="8" fill="#33691E"/>
+  <circle cx="300" cy="380" r="10" fill="#33691E"/>
+  <circle cx="500" cy="365" r="7" fill="#33691E"/>
+  <circle cx="700" cy="375" r="9" fill="#33691E"/>
+   <circle cx="900" cy="385" r="11" fill="#33691E"/>
+  <circle cx="1100" cy="370" r="8" fill="#33691E"/>
+</svg>

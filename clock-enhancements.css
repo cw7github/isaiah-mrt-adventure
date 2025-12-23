@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENHANCED CLOCK ANIMATIONS - Improvements to manim-animations.css
+   Add this file AFTER manim-animations.css to enhance clock rendering
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Enhanced clock face with better 3D appearance */
+.manim-clock {
+  width: 200px !important;
+  height: 200px !important;
+  background: radial-gradient(circle at 35% 35%,
+    #ffffff,
+    #f8f9fa 40%,
+    #e9ecef) !important;
+  border: 8px solid var(--manim-bg-dark) !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 3px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1) !important;
+  animation: manimClockAppear 0.6s var(--ease-overshoot) backwards !important;
+}
+
+@keyframes manimClockAppear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.manim-clock:hover {
+  transform: scale(1.06) !important;
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.5),
+    inset 0 3px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+    0 0 35px rgba(78, 205, 196, 0.4) !important;
+}
+
+/* Clock tick marks for better readability */
+.manim-clock-tick-hour {
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background: var(--manim-bg-dark);
+  top: 8px;
+  left: 50%;
+  transform-origin: 50% 92px;
+  transform: translateX(-50%) rotate(var(--tick-angle));
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.manim-clock-tick-minute {
+  position: absolute;
+  width: 1.5px;
+  height: 8px;
+  background: rgba(26, 26, 46, 0.3);
+  top: 8px;
+  left: 50%;
+  transform-origin: 50% 92px;
+  transform: translateX(-50%) rotate(var(--tick-angle));
+  border-radius: 1px;
+  opacity: 0.5;
+}
+
+/* Enhanced center dot with gradient and animation */
+.manim-clock-center {
+  width: 16px !important;
+  height: 16px !important;
+  background: radial-gradient(circle,
+    var(--manim-coral) 0%,
+    var(--manim-bg-dark) 50%,
+    var(--manim-bg-dark) 100%) !important;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+  animation: manimCenterPulse 0.4s var(--ease-elastic) 0.6s backwards !important;
+}
+
+@keyframes manimCenterPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Enhanced hour hand - thicker, with gradient */
+.manim-clock-hour {
+  width: 7px !important;
+  height: 55px !important;
+  background: linear-gradient(180deg,
+    var(--manim-bg-dark) 0%,
+    var(--manim-bg-dark) 85%,
+    transparent 100%) !important;
+  border-radius: 4px 4px 0 0 !important;
+  z-index: 8 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.8s var(--ease-smooth) !important;
+}
+
+/* Animated hour hand appearance */
+.manim-clock-hour.animated {
+  animation: manimHandSweep 1.2s var(--ease-overshoot) forwards !important;
+}
+
+@keyframes manimHandSweep {
+  0% {
+    transform: translateX(-50%) rotate(var(--start-angle, 0deg));
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) rotate(var(--hour-angle));
+    opacity: 1;
+  }
+}
+
+/* Enhanced minute hand - longer, coral colored */
+.manim-clock-minute {
+  width: 5px !important;
+  height: 75px !important;
+  background: linear-gradient(180deg,
+    var(--manim-coral) 0%,
+    var(--manim-coral) 85%,
+    transparent 100%) !important;
+  border-radius: 3px 3px 0 0 !important;
+  z-index: 9 !important;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.4) !important;
+  transition: transform 0.8s var(--ease-smooth) !important;
+}
+
+/* Animated minute hand appearance */
+.manim-clock-minute.animated {
+  animation: manimHandSweep 1.4s var(--ease-overshoot) 0.2s forwards !important;
+}
+
+/* Enhanced clock numbers - larger, bolder, more child-friendly */
+.manim-clock-number {
+  font-size: 22px !important;
+  font-weight: bold !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  animation: manimNumberPop 0.4s var(--ease-bounce) backwards !important;
+  user-select: none !important;
+  transition: all 0.2s var(--ease-smooth) !important;
+}
+
+.manim-clock-number:hover {
+  color: var(--manim-coral) !important;
+  transform: translate(-50%, -50%) scale(1.15) !important;
+}
+
+@keyframes manimNumberPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Optimized clock number positions for better spacing */
+.manim-clock-number[data-num="12"] { top: 14% !important; left: 50% !important; }
+.manim-clock-number[data-num="1"] { top: 19% !important; left: 71% !important; }
+.manim-clock-number[data-num="2"] { top: 32% !important; left: 86% !important; }
+.manim-clock-number[data-num="3"] { top: 50% !important; left: 91% !important; }
+.manim-clock-number[data-num="4"] { top: 68% !important; left: 86% !important; }
+.manim-clock-number[data-num="5"] { top: 81% !important; left: 71% !important; }
+.manim-clock-number[data-num="6"] { top: 86% !important; left: 50% !important; }
+.manim-clock-number[data-num="7"] { top: 81% !important; left: 29% !important; }
+.manim-clock-number[data-num="8"] { top: 68% !important; left: 14% !important; }
+.manim-clock-number[data-num="9"] { top: 50% !important; left: 9% !important; }
+.manim-clock-number[data-num="10"] { top: 32% !important; left: 14% !important; }
+.manim-clock-number[data-num="11"] { top: 19% !important; left: 29% !important; }
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 640px) {
+  .manim-clock {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .manim-clock-tick-hour {
+    transform-origin: 50% 77px;
+  }
+
+  .manim-clock-tick-minute {
+    transform-origin: 50% 77px;
+  }
+
+  .manim-clock-hour {
+    width: 6px !important;
+    height: 48px !important;
+  }
+
+  .manim-clock-minute {
+    width: 4px !important;
+    height: 65px !important;
+  }
+
+  .manim-clock-number {
+    font-size: 19px !important;
+  }
+
+  .manim-clock-center {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manim-clock {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .manim-clock-tick-hour {
+    transform-origin: 50% 67px;
+  }
+
+  .manim-clock-tick-minute {
+    transform-origin: 50% 67px;
+  }
+
+  .manim-clock-hour {
+    width: 5px !important;
+    height: 42px !important;
+  }
+
+  .manim-clock-minute {
+    width: 3px !important;
+    height: 58px !important;
+  }
+
+  .manim-clock-number {
+    font-size: 17px !important;
+  }
+
+  .manim-clock-center {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}

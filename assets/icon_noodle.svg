@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 52C12 34.3269 26.3269 20 44 20C61.6731 20 76 34.3269 76 52H12Z" fill="#FFAB91"/>
+<path d="M16 48C16 32.5181 28.5181 20 44 20C59.4819 20 72 32.5181 72 48H16Z" fill="#FFAB91"/>
+<path d="M20 44C20 30.0902 31.0902 20 44 20C56.9098 20 68 30.0902 68 44H20Z" fill="#FFAB91"/>
+<path d="M24 40C24 27.1757 33.1757 20 44 20C54.8243 20 64 27.1757 64 40H24Z" fill="#FFAB91"/>
+<path d="M28 36C28 24.2514 35.7486 20 44 20C52.2514 20 60 24.2514 60 36H28Z" fill="#FFAB91"/>
+<path d="M16 49C16 34.049 28.049 22 44 22C59.951 22 72 34.049 72 49H16Z" fill="#FFAB91"/>
+<path d="M20.3333 45.3333C20.3333 31.4976 31.4976 20.3333 45.3333 20.3333C59.169 20.3333 70.3333 31.4976 70.3333 45.3333H20.3333Z" fill="#FFAB91"/>
+<path d="M0 52C0 34.3269 14.3269 20 32 20C49.6731 20 64 34.3269 64 52H0Z" fill="#FFAB91"/>
+<path d="M4 32C4 25.3726 9.37258 20 16 20C22.6274 20 28 25.3726 28 32" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 32C36 25.3726 41.3726 20 48 20C54.6274 20 60 25.3726 60 32" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 44C4 37.3726 9.37258 32 16 32C22.6274 32 28 37.3726 28 44" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 44C36 37.3726 41.3726 32 48 32C54.6274 32 60 37.3726 60 44" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 56C4 49.3726 9.37258 44 16 44C22.6274 44 28 49.3726 28 56" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 56C36 49.3726 41.3726 44 48 44C54.6274 44 60 49.3726 60 56" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 30C32 30 30 34 28 34" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M46 30C46 30 44 34 42 34" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="31" cy="40" r="1" fill="black"/>
+<circle cx="37" cy="40" r="1" fill="black"/>
+<path d="M34 44C33.4477 44 33 44.4477 33 45C33 45.5523 33.4477 46 34 46H34.5C35.0523 46 35.5 45.5523 35.5 45C35.5 44.4477 35.0523 44 34.5 44H34Z" fill="black"/>
+<path d="M12 12C12 12 17 8 23 12" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M41 12C41 12 46 8 52 12" stroke="#FFF3E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

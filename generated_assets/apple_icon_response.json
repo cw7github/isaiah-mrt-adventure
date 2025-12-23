@@ -1,0 +1,42 @@
+{
+  "id": "gen-1766271894-g7e5dbRHT1uYTjnOpHal",
+  "provider": "Google AI Studio",
+  "model": "google/gemini-2.0-flash-001",
+  "object": "chat.completion",
+  "created": 1766271894,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```xml\n<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<defs>\n<linearGradient id=\"redGradient\" x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\">\n<stop offset=\"0%\" stop-color=\"#FF4136\"/>\n<stop offset=\"100%\" stop-color=\"#85144b\"/>\n</linearGradient>\n</defs>\n\n  <ellipse cx=\"100\" cy=\"100\" rx=\"70\" ry=\"75\" fill=\"url(#redGradient)\"/>\n\n  <circle cx=\"75\" cy=\"80\" r=\"4\" fill=\"#333\"/>\n  <circle cx=\"125\" cy=\"80\" r=\"4\" fill=\"#333\"/>\n\n  <path d=\"M75 120 C 85 130, 115 130, 125 120\" stroke=\"#333\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n\n  <ellipse cx=\"60\" cy=\"110\" rx=\"8\" ry=\"5\" fill=\"#F08080\" opacity=\"0.5\"/>\n  <ellipse cx=\"140\" cy=\"110\" rx=\"8\" ry=\"5\" fill=\"#F08080\" opacity=\"0.5\"/>\n\n  <path d=\"M100 30 C 110 35, 115 45, 110 55 C 105 65, 95 65, 90 55 C 85 45, 90 35, 100 30\" fill=\"#4CAF50\" stroke=\"#388E3C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n```",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 64,
+    "completion_tokens": 476,
+    "total_tokens": 540,
+    "cost": 0.0001968,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0000064,
+      "upstream_inference_completions_cost": 0.0001904
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  }
+}

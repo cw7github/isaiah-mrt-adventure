@@ -1,0 +1,1641 @@
+{
+  "g_shape_attributes": {
+    "name": "Shape Station",
+    "icon": "🔷",
+    "level": 2,
+    "line": "G",
+    "checklistTargets": ["1.G.A.1"],
+    "mathFocus": ["sides", "corners", "vertices", "shapes", "attributes"],
+    "manipulatives": ["shapes", "blocks"],
+    "previewConcepts": [
+      {
+        "concept": "Sides",
+        "icon": "📏",
+        "example": "A triangle has 3 sides"
+      },
+      {
+        "concept": "Corners",
+        "icon": "📐",
+        "example": "A square has 4 corners"
+      },
+      {
+        "concept": "Build shapes",
+        "icon": "🔨",
+        "example": "Make shapes with sides and corners"
+      }
+    ],
+    "stickers": ["🔷", "⭐", "🚂", "✨"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, clear, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the Shape Station. I see windows on the walls. The windows have different shapes. I look at the sides and corners.",
+        "mathConcept": "Shapes have sides and corners we can count",
+        "mathTip": "Look carefully at the sides. Then count the corners.",
+        "image": "🚂🔷",
+        "itemId": "g_attr_read_1",
+        "skillId": "recognize_shape_attributes",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What parts of shapes do we look at?",
+        "mathContext": "I see windows on the walls. The windows have different shapes. I look at the sides and corners.",
+        "mathHint": "Read the last sentence. What two things do I look at?",
+        "answers": [
+          { "name": "Sides and corners", "icon": "📐" },
+          { "name": "Colors and sizes", "icon": "🎨" },
+          { "name": "Doors and walls", "icon": "🚪" }
+        ],
+        "correctAnswerName": "Sides and corners",
+        "successMessage": "Yes! We look at sides and corners.",
+        "itemId": "g_attr_q1",
+        "skillId": "identify_shape_attributes",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.1"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a square window. I count the sides. There are 4 sides. I count the corners. There are 4 corners. A square has 4 sides and 4 corners.",
+        "mathConcept": "A square has 4 equal sides and 4 corners",
+        "mathTip": "Touch each side as you count. Then touch each corner.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_attr_read_2",
+        "skillId": "count_sides_corners_square",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many sides does a square have?",
+        "mathContext": "I see a square window. A square has 4 sides and 4 corners.",
+        "mathHint": "Count the sides of the square. Touch each one.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "5", "icon": "5️⃣" }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Great! A square has 4 sides.",
+        "itemId": "g_attr_q2",
+        "skillId": "count_square_sides",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.1"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a triangle sign on the wall. I count the sides. There are 3 sides. I count the corners. There are 3 corners. A triangle has 3 sides and 3 corners.",
+        "mathConcept": "A triangle has 3 sides and 3 corners",
+        "mathTip": "Count each side. Then count each corner.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_attr_read_3",
+        "skillId": "count_sides_corners_triangle",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many corners does a triangle have?",
+        "mathContext": "I see a triangle sign on the wall. A triangle has 3 sides and 3 corners.",
+        "mathHint": "Count the corners of the triangle. Point to each one.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "2", "icon": "2️⃣" }
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Yes! A triangle has 3 corners.",
+        "itemId": "g_attr_q3",
+        "skillId": "count_triangle_corners",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.1"]
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a snack!",
+        "menuStory": "The snack cart has treats. Each snack is a different shape. What will you choose?",
+        "items": [
+          { "name": "Rice Ball", "icon": "🍙", "description": "Shaped like a triangle" },
+          { "name": "Sandwich", "icon": "🥪", "description": "Shaped like a square" },
+          { "name": "Cookie", "icon": "🍪", "description": "Shaped like a circle" }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a rectangle tile on the floor. I count the sides. There are 4 sides. I count the corners. There are 4 corners. A rectangle has 4 sides and 4 corners.",
+        "mathConcept": "A rectangle has 4 sides and 4 corners",
+        "mathTip": "A rectangle is like a square but longer on two sides.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_attr_read_4",
+        "skillId": "count_sides_corners_rectangle",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which shape has 3 sides?",
+        "mathContext": "A triangle has 3 sides and 3 corners. A square has 4 sides and 4 corners. A rectangle has 4 sides and 4 corners.",
+        "mathHint": "Think about each shape. Which one has 3 sides?",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              },
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Triangle", "icon": "🔺" },
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Rectangle", "icon": "🟩" }
+        ],
+        "correctAnswerName": "Triangle",
+        "successMessage": "Nice! A triangle has 3 sides.",
+        "itemId": "g_attr_q4",
+        "skillId": "identify_shape_by_sides",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.1"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "I want to build a shape with 4 corners. Which shape should I build?",
+        "mathContext": "A triangle has 3 corners. A square has 4 corners. A rectangle has 4 corners.",
+        "mathHint": "Count how many corners each shape has. Which ones have 4?",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              },
+              {
+                "type": "circle",
+                "color": "yellow",
+                "attributes": {
+                  "sides": 0,
+                  "corners": 0
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Triangle", "icon": "🔺" },
+          { "name": "Circle", "icon": "🟡" }
+        ],
+        "correctAnswerName": "Square",
+        "successMessage": "Great! A square has 4 corners.",
+        "itemId": "g_attr_q5",
+        "skillId": "build_shape_with_attributes",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.1"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many sides does a rectangle have?",
+        "mathContext": "I see a rectangle tile on the floor. A rectangle has 4 sides and 4 corners.",
+        "mathHint": "Count the sides of the rectangle. Go around all the edges.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "6", "icon": "6️⃣" }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Yes! A rectangle has 4 sides.",
+        "itemId": "g_attr_q6",
+        "skillId": "count_rectangle_sides",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.1"]
+      }
+    ]
+  },
+  "g_2d_shapes": {
+    "name": "Food Shapes",
+    "icon": "🍕",
+    "level": 2,
+    "line": "G",
+    "checklistTargets": ["1.G.A.2"],
+    "mathFocus": ["2D shapes", "circle", "square", "rectangle", "triangle", "trapezoid"],
+    "manipulatives": ["shapes", "counters"],
+    "previewConcepts": [
+      {
+        "concept": "Circles",
+        "icon": "⭕",
+        "example": "Pizza is a circle"
+      },
+      {
+        "concept": "Rectangles",
+        "icon": "▭",
+        "example": "Sandwiches can be rectangles"
+      },
+      {
+        "concept": "Triangles",
+        "icon": "🔺",
+        "example": "Rice balls are triangles"
+      }
+    ],
+    "stickers": ["🍕", "🥪", "🍙", "⭐"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the Food Court. I see many foods. Each food has a shape. I can make 2D shapes. 2D shapes are flat.",
+        "mathConcept": "2D shapes are flat shapes like circles, squares, and triangles",
+        "mathTip": "2D means flat. You can draw 2D shapes on paper.",
+        "image": "🍕🥪",
+        "itemId": "g_2d_read_1",
+        "skillId": "recognize_2d_shapes",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What does 2D mean?",
+        "mathContext": "I can make 2D shapes. 2D shapes are flat.",
+        "mathHint": "Read the sentence. What word describes 2D shapes?",
+        "answers": [
+          { "name": "Flat", "icon": "📄" },
+          { "name": "Tall", "icon": "📏" },
+          { "name": "Round", "icon": "⚪" }
+        ],
+        "correctAnswerName": "Flat",
+        "successMessage": "Yes! 2D shapes are flat.",
+        "itemId": "g_2d_q1",
+        "skillId": "understand_2d_flat",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a pizza. The pizza is a circle. A circle is round. It has no sides and no corners. The pizza is a flat circle.",
+        "mathConcept": "A circle is round with no sides and no corners",
+        "mathTip": "A circle is round all the way around. No sides. No corners.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "circle",
+                "color": "yellow",
+                "attributes": {
+                  "sides": 0,
+                  "corners": 0
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_2d_read_2",
+        "skillId": "identify_circle",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape is the pizza?",
+        "mathContext": "I see a pizza. The pizza is a circle.",
+        "mathHint": "Read about the pizza. What shape is it?",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "circle",
+                "color": "yellow",
+                "attributes": {
+                  "sides": 0,
+                  "corners": 0
+                }
+              },
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Circle",
+        "successMessage": "Great! The pizza is a circle.",
+        "itemId": "g_2d_q2",
+        "skillId": "identify_circle_pizza",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a sandwich. The sandwich is a rectangle. A rectangle has 4 sides and 4 corners. Two sides are long. Two sides are short.",
+        "mathConcept": "A rectangle has 4 sides (2 long, 2 short) and 4 corners",
+        "mathTip": "In a rectangle, opposite sides are the same length.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_2d_read_3",
+        "skillId": "identify_rectangle",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape is the sandwich?",
+        "mathContext": "I see a sandwich. The sandwich is a rectangle.",
+        "mathHint": "Read the sentences. Find the shape of the sandwich.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Rectangle", "icon": "▭" },
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Rectangle",
+        "successMessage": "Yes! The sandwich is a rectangle.",
+        "itemId": "g_2d_q3",
+        "skillId": "identify_rectangle_sandwich",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a rice ball. The rice ball is a triangle. A triangle has 3 sides and 3 corners. All the sides make a triangle shape.",
+        "mathConcept": "A triangle has 3 sides and 3 corners",
+        "mathTip": "Count the sides of a triangle. Then count the corners.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_2d_read_4",
+        "skillId": "identify_triangle",
+        "difficulty": 2
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your lunch!",
+        "menuStory": "The food court has many foods. Each one is a different shape. What will you eat?",
+        "items": [
+          { "name": "Pizza", "icon": "🍕", "description": "Round circle pizza" },
+          { "name": "Sandwich", "icon": "🥪", "description": "Rectangle sandwich" },
+          { "name": "Rice Ball", "icon": "🍙", "description": "Triangle rice ball" }
+        ]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many sides does the rice ball have?",
+        "mathContext": "I see a rice ball. The rice ball is a triangle. A triangle has 3 sides and 3 corners.",
+        "mathHint": "A triangle has how many sides? Count them.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "0", "icon": "0️⃣" }
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Nice! A triangle has 3 sides.",
+        "itemId": "g_2d_q4",
+        "skillId": "count_triangle_sides",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a cheese slice. The cheese slice is a trapezoid. A trapezoid has 4 sides and 4 corners. The sides are different lengths.",
+        "mathConcept": "A trapezoid has 4 sides of different lengths",
+        "mathTip": "A trapezoid has 4 sides, but they are not all the same length.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "trapezoid",
+                "color": "orange",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_2d_read_5",
+        "skillId": "identify_trapezoid",
+        "difficulty": 3
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which food is a circle?",
+        "mathContext": "The pizza is a circle. The sandwich is a rectangle. The rice ball is a triangle.",
+        "mathHint": "Think about which food is round. Circles are round.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "circle",
+                "color": "yellow",
+                "attributes": {
+                  "sides": 0,
+                  "corners": 0
+                }
+              },
+              {
+                "type": "rectangle",
+                "color": "green",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Pizza", "icon": "🍕" },
+          { "name": "Sandwich", "icon": "🥪" },
+          { "name": "Rice Ball", "icon": "🍙" }
+        ],
+        "correctAnswerName": "Pizza",
+        "successMessage": "Great! The pizza is a circle.",
+        "itemId": "g_2d_q5",
+        "skillId": "match_circle_to_object",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "I want to make a square. How many sides do I need?",
+        "mathContext": "A square has 4 sides and 4 corners. All sides are the same length.",
+        "mathHint": "Think about a square. Count the sides.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "2", "icon": "2️⃣" }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Yes! A square has 4 sides.",
+        "itemId": "g_2d_q6",
+        "skillId": "create_square",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which shape has no corners?",
+        "mathContext": "A circle is round. It has no sides and no corners. A square has 4 corners. A triangle has 3 corners.",
+        "mathHint": "Think about each shape. Which one has no corners at all?",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "circle",
+                "color": "yellow",
+                "attributes": {
+                  "sides": 0,
+                  "corners": 0
+                }
+              },
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "answers": [
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Circle",
+        "successMessage": "Nice! A circle has no corners.",
+        "itemId": "g_2d_q7",
+        "skillId": "identify_no_corners",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      }
+    ]
+  },
+  "g_3d_shapes": {
+    "name": "Drink Station",
+    "icon": "🧃",
+    "level": 3,
+    "line": "G",
+    "checklistTargets": ["1.G.A.2"],
+    "mathFocus": ["3D shapes", "cube", "cone", "cylinder", "prism", "faces", "edges"],
+    "manipulatives": ["blocks", "shapes"],
+    "previewConcepts": [
+      {
+        "concept": "Cubes",
+        "icon": "🧊",
+        "example": "Ice cubes are cubes"
+      },
+      {
+        "concept": "Cylinders",
+        "icon": "🥫",
+        "example": "Soda cans are cylinders"
+      },
+      {
+        "concept": "Cones",
+        "icon": "🍦",
+        "example": "Ice cream cones are cones"
+      }
+    ],
+    "stickers": ["🧃", "🥤", "🍦", "⭐"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, clear"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the Drink Station. I see many drinks. The drinks come in 3D shapes. 3D shapes are solid. They are not flat.",
+        "mathConcept": "3D shapes are solid shapes that are not flat",
+        "mathTip": "3D means solid. You can hold 3D shapes in your hand.",
+        "image": "🧃🥤",
+        "itemId": "g_3d_read_1",
+        "skillId": "recognize_3d_shapes",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What does 3D mean?",
+        "mathContext": "The drinks come in 3D shapes. 3D shapes are solid. They are not flat.",
+        "mathHint": "Read the sentence. What word describes 3D shapes?",
+        "answers": [
+          { "name": "Solid", "icon": "🧊" },
+          { "name": "Flat", "icon": "📄" },
+          { "name": "Thin", "icon": "📏" }
+        ],
+        "correctAnswerName": "Solid",
+        "successMessage": "Yes! 3D shapes are solid.",
+        "itemId": "g_3d_q1",
+        "skillId": "understand_3d_solid",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a juice box. The juice box is a rectangular prism. It has 6 flat faces. It has 12 edges. It looks like a box.",
+        "mathConcept": "A rectangular prism has 6 faces and 12 edges",
+        "mathTip": "A rectangular prism is like a box. Count the flat sides.",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cube",
+            "rotate": true
+          }
+        },
+        "itemId": "g_3d_read_2",
+        "skillId": "identify_prism",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape is the juice box?",
+        "mathContext": "I see a juice box. The juice box is a rectangular prism.",
+        "mathHint": "Read about the juice box. What is its shape?",
+        "answers": [
+          { "name": "Rectangular prism", "icon": "📦" },
+          { "name": "Cone", "icon": "🔺" },
+          { "name": "Cylinder", "icon": "🥫" }
+        ],
+        "correctAnswerName": "Rectangular prism",
+        "successMessage": "Great! The juice box is a rectangular prism.",
+        "itemId": "g_3d_q2",
+        "skillId": "identify_prism_juice_box",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see a soda can. The soda can is a cylinder. It has 2 flat faces on the top and bottom. It has 1 curved edge. It can roll.",
+        "mathConcept": "A cylinder has 2 flat circular faces and 1 curved surface",
+        "mathTip": "A cylinder can roll. It has circles on the ends.",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cylinder",
+            "rotate": true
+          }
+        },
+        "itemId": "g_3d_read_3",
+        "skillId": "identify_cylinder",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape is the soda can?",
+        "mathContext": "I see a soda can. The soda can is a cylinder.",
+        "mathHint": "Read about the soda can. Find its shape.",
+        "answers": [
+          { "name": "Cylinder", "icon": "🥫" },
+          { "name": "Cube", "icon": "🧊" },
+          { "name": "Cone", "icon": "🍦" }
+        ],
+        "correctAnswerName": "Cylinder",
+        "successMessage": "Yes! The soda can is a cylinder.",
+        "itemId": "g_3d_q3",
+        "skillId": "identify_cylinder_can",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your drink!",
+        "menuStory": "The drink station has many choices. Each drink has a different shape. What will you choose?",
+        "items": [
+          { "name": "Juice Box", "icon": "🧃", "description": "Box shaped drink" },
+          { "name": "Soda Can", "icon": "🥤", "description": "Cylinder shaped can" },
+          { "name": "Ice Cream Cone", "icon": "🍦", "description": "Cone shaped treat" }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I see an ice cream cone. The ice cream cone is a cone. It has 1 flat face on the bottom. It has 1 point at the top. It cannot roll.",
+        "mathConcept": "A cone has 1 flat circular face and 1 point",
+        "mathTip": "A cone has a point. It has a circle at the bottom.",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cone",
+            "rotate": true
+          }
+        },
+        "itemId": "g_3d_read_4",
+        "skillId": "identify_cone",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape is the ice cream cone?",
+        "mathContext": "I see an ice cream cone. The ice cream cone is a cone.",
+        "mathHint": "Read about the ice cream. What shape is it?",
+        "answers": [
+          { "name": "Cone", "icon": "🍦" },
+          { "name": "Cylinder", "icon": "🥫" },
+          { "name": "Cube", "icon": "🧊" }
+        ],
+        "correctAnswerName": "Cone",
+        "successMessage": "Nice! The ice cream cone is a cone.",
+        "itemId": "g_3d_q4",
+        "skillId": "identify_cone_ice_cream",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I see ice cubes in my drink. Each ice cube is a cube. A cube has 6 square faces. All the faces are the same size.",
+        "mathConcept": "A cube has 6 equal square faces",
+        "mathTip": "A cube is like a box. All sides are squares. All sides are equal.",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cube",
+            "rotate": true
+          }
+        },
+        "itemId": "g_3d_read_5",
+        "skillId": "identify_cube",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many faces does a cube have?",
+        "mathContext": "I see ice cubes in my drink. A cube has 6 square faces.",
+        "mathHint": "Count the faces of a cube. How many are there?",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cube",
+            "rotate": true
+          }
+        },
+        "answers": [
+          { "name": "6", "icon": "6️⃣" },
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "8", "icon": "8️⃣" }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Great! A cube has 6 faces.",
+        "itemId": "g_3d_q5",
+        "skillId": "count_cube_faces",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which shape can roll?",
+        "mathContext": "A cylinder can roll. A cone has a point and cannot roll. A cube has flat faces.",
+        "mathHint": "Think about which shapes are round. Round shapes can roll.",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cylinder",
+            "rotate": true
+          }
+        },
+        "answers": [
+          { "name": "Cylinder", "icon": "🥫" },
+          { "name": "Cube", "icon": "🧊" },
+          { "name": "Rectangular prism", "icon": "📦" }
+        ],
+        "correctAnswerName": "Cylinder",
+        "successMessage": "Yes! A cylinder can roll.",
+        "itemId": "g_3d_q6",
+        "skillId": "identify_rolling_shape",
+        "difficulty": 3,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which shape has a point at the top?",
+        "mathContext": "A cone has 1 point at the top. A cylinder has flat ends. A cube has square faces.",
+        "mathHint": "Think about the shapes. Which one comes to a point?",
+        "visual": {
+          "type": "3dShape",
+          "data": {
+            "shape": "cone",
+            "rotate": true
+          }
+        },
+        "answers": [
+          { "name": "Cone", "icon": "🍦" },
+          { "name": "Cylinder", "icon": "🥫" },
+          { "name": "Cube", "icon": "🧊" }
+        ],
+        "correctAnswerName": "Cone",
+        "successMessage": "Nice! A cone has a point at the top.",
+        "itemId": "g_3d_q7",
+        "skillId": "identify_pointed_shape",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      }
+    ]
+  },
+  "g_compose_shapes": {
+    "name": "Tile Workshop",
+    "icon": "🔨",
+    "level": 3,
+    "line": "G",
+    "checklistTargets": ["1.G.A.2"],
+    "mathFocus": ["compose shapes", "combine shapes", "make new shapes", "pattern blocks"],
+    "manipulatives": ["shapes", "blocks"],
+    "previewConcepts": [
+      {
+        "concept": "Combine shapes",
+        "icon": "➕",
+        "example": "Put two triangles together"
+      },
+      {
+        "concept": "Make new shapes",
+        "icon": "🔨",
+        "example": "Two squares make a rectangle"
+      },
+      {
+        "concept": "Build patterns",
+        "icon": "🎨",
+        "example": "Use shapes to make pictures"
+      }
+    ],
+    "stickers": ["🔨", "🎨", "⭐", "✨"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the Tile Workshop. I see many tiles. The tiles are different shapes. I can put shapes together to make new shapes.",
+        "mathConcept": "We can combine shapes to create new, bigger shapes",
+        "mathTip": "When you put shapes together, you can make a new shape.",
+        "image": "🔨🎨",
+        "itemId": "g_comp_read_1",
+        "skillId": "understand_composing",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What can I do with shapes?",
+        "mathContext": "I see many tiles. The tiles are different shapes. I can put shapes together to make new shapes.",
+        "mathHint": "Read the last sentence. What can I do?",
+        "answers": [
+          { "name": "Put shapes together", "icon": "🔨" },
+          { "name": "Throw shapes away", "icon": "🗑️" },
+          { "name": "Hide shapes", "icon": "👀" }
+        ],
+        "correctAnswerName": "Put shapes together",
+        "successMessage": "Yes! You can put shapes together.",
+        "itemId": "g_comp_q1",
+        "skillId": "describe_composing",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I take two triangles. I put them together. The two triangles make a square. I made a new shape from two shapes.",
+        "mathConcept": "Two triangles can combine to make a square",
+        "mathTip": "When you put two right triangles together, they can make a square.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_comp_read_2",
+        "skillId": "compose_triangles_square",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What shape do two triangles make?",
+        "mathContext": "I take two triangles. I put them together. The two triangles make a square.",
+        "mathHint": "Read about the two triangles. What do they make?",
+        "answers": [
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Square",
+        "successMessage": "Great! Two triangles make a square.",
+        "itemId": "g_comp_q2",
+        "skillId": "identify_triangle_composition",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "read",
+        "sentence": "I take two squares. I put them side by side. The two squares make a rectangle. The rectangle is longer than one square.",
+        "mathConcept": "Two squares side by side make a rectangle",
+        "mathTip": "When you put squares next to each other, you make a rectangle.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              },
+              {
+                "type": "square",
+                "color": "blue",
+                "attributes": {
+                  "sides": 4,
+                  "corners": 4
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_comp_read_3",
+        "skillId": "compose_squares_rectangle",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What do two squares make when you put them side by side?",
+        "mathContext": "I take two squares. I put them side by side. The two squares make a rectangle.",
+        "mathHint": "Read the sentence. What shape do two squares make?",
+        "answers": [
+          { "name": "Rectangle", "icon": "▭" },
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Rectangle",
+        "successMessage": "Yes! Two squares make a rectangle.",
+        "itemId": "g_comp_q3",
+        "skillId": "identify_square_composition",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your project!",
+        "menuStory": "The workshop has many tile projects. Each one uses different shapes. What will you build?",
+        "items": [
+          { "name": "Wall Pattern", "icon": "🧱", "description": "Rectangles and squares" },
+          { "name": "Window Design", "icon": "🪟", "description": "Triangles and squares" },
+          { "name": "Floor Tile", "icon": "⬛", "description": "Many small squares" }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I make a big triangle. I use three small triangles. I put them together carefully. Now I have one big triangle made from three small triangles.",
+        "mathConcept": "Smaller shapes can combine to make larger shapes of the same type",
+        "mathTip": "You can use small shapes to build bigger shapes.",
+        "visual": {
+          "type": "shapes",
+          "data": {
+            "shapes": [
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              },
+              {
+                "type": "triangle",
+                "color": "red",
+                "attributes": {
+                  "sides": 3,
+                  "corners": 3
+                }
+              }
+            ]
+          }
+        },
+        "itemId": "g_comp_read_4",
+        "skillId": "compose_multiple_shapes",
+        "difficulty": 3
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many small triangles did I use?",
+        "mathContext": "I make a big triangle. I use three small triangles. Now I have one big triangle made from three small triangles.",
+        "mathHint": "Count how many small triangles I used.",
+        "answers": [
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "2", "icon": "2️⃣" },
+          { "name": "4", "icon": "4️⃣" }
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Nice! You used 3 small triangles.",
+        "itemId": "g_comp_q4",
+        "skillId": "count_composed_shapes",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "I want to make a rectangle. Which shapes can I use?",
+        "mathContext": "Two squares make a rectangle. Two triangles can make a square. Shapes can combine to make new shapes.",
+        "mathHint": "Think about what shapes combine to make a rectangle.",
+        "answers": [
+          { "name": "Two squares", "icon": "🟦" },
+          { "name": "Two circles", "icon": "⭕" },
+          { "name": "One triangle", "icon": "🔺" }
+        ],
+        "correctAnswerName": "Two squares",
+        "successMessage": "Great! Two squares make a rectangle.",
+        "itemId": "g_comp_q5",
+        "skillId": "choose_shapes_to_compose",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What new shape can two triangles make?",
+        "mathContext": "I take two triangles. I put them together. The two triangles make a square.",
+        "mathHint": "Remember what happened when we put two triangles together.",
+        "answers": [
+          { "name": "Square", "icon": "🟦" },
+          { "name": "Circle", "icon": "⭕" },
+          { "name": "Cone", "icon": "🍦" }
+        ],
+        "correctAnswerName": "Square",
+        "successMessage": "Yes! Two triangles can make a square.",
+        "itemId": "g_comp_q6",
+        "skillId": "recall_composition",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.2"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "I have 4 small squares. I put them in a 2 by 2 pattern. What shape do I make?",
+        "mathContext": "Small squares can combine to make bigger shapes. When you put 4 squares in a square pattern, you make a bigger square.",
+        "mathHint": "Think about 4 squares in a square pattern. What big shape do they make?",
+        "answers": [
+          { "name": "Big square", "icon": "🟦" },
+          { "name": "Triangle", "icon": "🔺" },
+          { "name": "Circle", "icon": "⭕" }
+        ],
+        "correctAnswerName": "Big square",
+        "successMessage": "Nice! 4 small squares make a big square.",
+        "itemId": "g_comp_q7",
+        "skillId": "compose_four_squares",
+        "difficulty": 3,
+        "checklistTargets": ["1.G.A.2"]
+      }
+    ]
+  },
+  "g_halves_quarters": {
+    "name": "Pizza Party",
+    "icon": "🍕",
+    "level": 2,
+    "line": "G",
+    "checklistTargets": ["1.G.A.3"],
+    "mathFocus": ["halves", "fourths", "quarters", "equal parts", "fair shares"],
+    "manipulatives": ["shapes", "counters"],
+    "previewConcepts": [
+      {
+        "concept": "Halves",
+        "icon": "½",
+        "example": "Cut a pizza into 2 equal parts"
+      },
+      {
+        "concept": "Fourths",
+        "icon": "¼",
+        "example": "Cut a pizza into 4 equal parts"
+      },
+      {
+        "concept": "Equal parts",
+        "icon": "⚖️",
+        "example": "All pieces are the same size"
+      }
+    ],
+    "stickers": ["🍕", "🥪", "⭐", "✨"],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, encouraging"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the Pizza Party. I see pizzas and sandwiches. I need to share the food fairly. I will cut the food into equal parts.",
+        "mathConcept": "Fair sharing means cutting into equal parts",
+        "mathTip": "Equal parts means all the pieces are the same size.",
+        "image": "🍕🥪",
+        "itemId": "g_hq_read_1",
+        "skillId": "understand_equal_parts",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What does equal parts mean?",
+        "mathContext": "I need to share the food fairly. I will cut the food into equal parts.",
+        "mathHint": "Read about equal parts. What does it mean?",
+        "answers": [
+          { "name": "Same size pieces", "icon": "⚖️" },
+          { "name": "Different size pieces", "icon": "📏" },
+          { "name": "Many small pieces", "icon": "🔪" }
+        ],
+        "correctAnswerName": "Same size pieces",
+        "successMessage": "Yes! Equal parts are the same size.",
+        "itemId": "g_hq_q1",
+        "skillId": "define_equal_parts",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "read",
+        "sentence": "I cut a pizza into 2 equal parts. Each part is called a half. There are 2 halves. The 2 halves make 1 whole pizza.",
+        "mathConcept": "A half is 1 of 2 equal parts",
+        "mathTip": "When you cut something into 2 equal parts, each part is a half.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 2,
+            "shaded": 1,
+            "shape": "circle"
+          }
+        },
+        "itemId": "g_hq_read_2",
+        "skillId": "understand_halves",
+        "difficulty": 1
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many halves are in 1 whole pizza?",
+        "mathContext": "I cut a pizza into 2 equal parts. There are 2 halves. The 2 halves make 1 whole pizza.",
+        "mathHint": "Count the halves. How many equal parts?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 2,
+            "shaded": 0,
+            "shape": "circle"
+          }
+        },
+        "answers": [
+          { "name": "2", "icon": "2️⃣" },
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "3", "icon": "3️⃣" }
+        ],
+        "correctAnswerName": "2",
+        "successMessage": "Great! There are 2 halves in 1 whole.",
+        "itemId": "g_hq_q2",
+        "skillId": "count_halves",
+        "difficulty": 1,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "read",
+        "sentence": "I cut a sandwich into 4 equal parts. Each part is called a fourth. Each part is also called a quarter. There are 4 fourths. The 4 fourths make 1 whole sandwich.",
+        "mathConcept": "A fourth or quarter is 1 of 4 equal parts",
+        "mathTip": "When you cut into 4 equal parts, each part is a fourth or a quarter.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 4,
+            "shaded": 1,
+            "shape": "rectangle"
+          }
+        },
+        "itemId": "g_hq_read_3",
+        "skillId": "understand_fourths",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "How many fourths are in 1 whole sandwich?",
+        "mathContext": "I cut a sandwich into 4 equal parts. There are 4 fourths. The 4 fourths make 1 whole sandwich.",
+        "mathHint": "Count the fourths. How many equal parts?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 4,
+            "shaded": 0,
+            "shape": "rectangle"
+          }
+        },
+        "answers": [
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "2", "icon": "2️⃣" },
+          { "name": "3", "icon": "3️⃣" }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Yes! There are 4 fourths in 1 whole.",
+        "itemId": "g_hq_q3",
+        "skillId": "count_fourths",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your food!",
+        "menuStory": "The party has different foods to share. Each one can be cut into equal parts. What will you share?",
+        "items": [
+          { "name": "Pizza", "icon": "🍕", "description": "Round and easy to cut" },
+          { "name": "Sandwich", "icon": "🥪", "description": "Rectangle shape" },
+          { "name": "Cookie", "icon": "🍪", "description": "Circle to share" }
+        ]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "What is another name for a fourth?",
+        "mathContext": "Each part is called a fourth. Each part is also called a quarter.",
+        "mathHint": "Read about fourths. What is another name?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 4,
+            "shaded": 1,
+            "shape": "rectangle"
+          }
+        },
+        "answers": [
+          { "name": "Quarter", "icon": "¼" },
+          { "name": "Half", "icon": "½" },
+          { "name": "Whole", "icon": "⭕" }
+        ],
+        "correctAnswerName": "Quarter",
+        "successMessage": "Nice! A fourth is also called a quarter.",
+        "itemId": "g_hq_q4",
+        "skillId": "identify_quarter_fourth",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "read",
+        "sentence": "I need to share a cookie with my friend. I cut it into 2 equal parts. We each get 1 half. This is a fair share.",
+        "mathConcept": "Sharing fairly means each person gets an equal part",
+        "mathTip": "When we share fairly, everyone gets the same amount.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 2,
+            "shaded": 1,
+            "shape": "circle"
+          }
+        },
+        "itemId": "g_hq_read_4",
+        "skillId": "apply_halves_sharing",
+        "difficulty": 2
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "I want to share a pizza with 3 friends. How many equal parts do I need?",
+        "mathContext": "I need to share fairly. I cut into equal parts. Each person gets 1 equal part.",
+        "mathHint": "Count how many people. You and 3 friends is 4 people total.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 4,
+            "shaded": 0,
+            "shape": "circle"
+          }
+        },
+        "answers": [
+          { "name": "4", "icon": "4️⃣" },
+          { "name": "3", "icon": "3️⃣" },
+          { "name": "2", "icon": "2️⃣" }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Great! 4 people need 4 equal parts.",
+        "itemId": "g_hq_q5",
+        "skillId": "apply_fourths_sharing",
+        "difficulty": 3,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which cut makes halves?",
+        "mathContext": "A half is 1 of 2 equal parts. When I cut into 2 equal parts, I make halves.",
+        "mathHint": "Think about halves. How many parts are there?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 2,
+            "shaded": 0,
+            "shape": "circle"
+          }
+        },
+        "answers": [
+          { "name": "2 equal parts", "icon": "½" },
+          { "name": "4 equal parts", "icon": "¼" },
+          { "name": "3 equal parts", "icon": "⅓" }
+        ],
+        "correctAnswerName": "2 equal parts",
+        "successMessage": "Yes! 2 equal parts make halves.",
+        "itemId": "g_hq_q6",
+        "skillId": "identify_halves_cut",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Which cut makes fourths?",
+        "mathContext": "A fourth is 1 of 4 equal parts. When I cut into 4 equal parts, I make fourths.",
+        "mathHint": "Think about fourths. How many parts are there?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 4,
+            "shaded": 0,
+            "shape": "rectangle"
+          }
+        },
+        "answers": [
+          { "name": "4 equal parts", "icon": "¼" },
+          { "name": "2 equal parts", "icon": "½" },
+          { "name": "5 equal parts", "icon": "⅕" }
+        ],
+        "correctAnswerName": "4 equal parts",
+        "successMessage": "Nice! 4 equal parts make fourths.",
+        "itemId": "g_hq_q7",
+        "skillId": "identify_fourths_cut",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.3"]
+      },
+      {
+        "type": "question",
+        "questionType": "geometry",
+        "questionMode": "multipleChoice",
+        "question": "Are these parts equal?",
+        "mathContext": "I see a pizza cut into 2 parts. One part is big. One part is small. These parts are not equal.",
+        "mathHint": "Look at the two parts. Are they the same size?",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "parts": 2,
+            "shaded": 0,
+            "shape": "circle"
+          }
+        },
+        "answers": [
+          { "name": "No", "icon": "❌" },
+          { "name": "Yes", "icon": "✅" },
+          { "name": "Maybe", "icon": "❓" }
+        ],
+        "correctAnswerName": "No",
+        "successMessage": "Right! The parts are not equal.",
+        "itemId": "g_hq_q8",
+        "skillId": "identify_unequal_parts",
+        "difficulty": 2,
+        "checklistTargets": ["1.G.A.3"]
+      }
+    ]
+  }
+}

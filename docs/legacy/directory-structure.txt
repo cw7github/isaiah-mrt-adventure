@@ -1,0 +1,110 @@
+Isaiah's MRT Food Adventure - Scene Backgrounds Directory Structure
+═══════════════════════════════════════════════════════════════════
+
+PROJECT ROOT: /Users/charleswu/Desktop/+/home_school/isaiah_school/
+
+📁 isaiah_school/
+│
+├── 📄 index.html                         Main app file
+│
+├── 📁 assets/
+│   ├── 📁 scenes/                         ← Scene backgrounds go here
+│   │   │
+│   │   ├── 🍎 FRUIT STATION (3 scenes)
+│   │   │   ├── 🖼️  fruit_arrival.png     Fruit stand entrance
+│   │   │   ├── 🖼️  fruit_exploring.png   Inside orchard/displays
+│   │   │   └── 🖼️  fruit_enjoying.png    Enjoying fresh fruit
+│   │   │
+│   │   ├── 🥤 DRINK STATION (3 scenes)
+│   │   │   ├── 🖼️  drink_arrival.png     Juice bar entrance
+│   │   │   ├── 🖼️  drink_exploring.png   Inside cafe
+│   │   │   └── 🖼️  drink_enjoying.png    Drinks ready at counter
+│   │   │
+│   │   ├── 🧁 BAKERY STATION (3 scenes)
+│   │   │   ├── 🖼️  bakery_arrival.png    Bakery storefront
+│   │   │   ├── 🖼️  bakery_exploring.png  Inside bakery
+│   │   │   └── 🖼️  bakery_enjoying.png   Fresh pastries counter
+│   │   │
+│   │   ├── 🍕 PIZZA STATION (3 scenes)
+│   │   │   ├── 🖼️  pizza_arrival.png     Pizzeria entrance
+│   │   │   ├── 🖼️  pizza_exploring.png   Pizza kitchen
+│   │   │   └── 🖼️  pizza_enjoying.png    Hot pizza at table
+│   │   │
+│   │   ├── 🍦 ICE CREAM STATION (3 scenes)
+│   │   │   ├── 🖼️  icecream_arrival.png  Ice cream parlor entrance
+│   │   │   ├── 🖼️  icecream_exploring.png Inside parlor
+│   │   │   └── 🖼️  icecream_enjoying.png Ice cream counter
+│   │   │
+│   │   ├── 🐟 FISH SHOP STATION (3 scenes)
+│   │   │   ├── 🖼️  fishshop_arrival.png  Fish market entrance
+│   │   │   ├── 🖼️  fishshop_exploring.png Inside market
+│   │   │   └── 🖼️  fishshop_enjoying.png Seafood counter
+│   │   │
+│   │   ├── 🧀 CHEESE STATION (3 scenes)
+│   │   │   ├── 🖼️  cheese_arrival.png    Cheese shop entrance
+│   │   │   ├── 🖼️  cheese_exploring.png  Inside cheese shop
+│   │   │   └── 🖼️  cheese_enjoying.png   Cheese & sandwich counter
+│   │   │
+│   │   └── 🍜 NOODLE STATION (3 scenes)
+│   │       ├── 🖼️  noodle_arrival.png    Noodle house entrance
+│   │       ├── 🖼️  noodle_exploring.png  Inside ramen shop
+│   │       └── 🖼️  noodle_enjoying.png   Steaming ramen counter
+│   │
+│   ├── 🖼️  food_bakery.png                Existing station images
+│   ├── 🖼️  food_cheese.png
+│   ├── 🖼️  food_drink.jpeg
+│   ├── 🖼️  food_fishshop.png
+│   ├── 🖼️  food_fruit.jpeg
+│   ├── 🖼️  food_icecream.png
+│   ├── 🖼️  food_noodle.png
+│   ├── 🖼️  food_pizza.jpeg
+│   └── ... (other assets)
+│
+├── 📘 DOCUMENTATION - Scene Generation
+│   ├── README_SCENES.md              Project overview (START HERE!)
+│   ├── QUICK_START.md                Fast-track guide
+│   ├── SCENE_GENERATION_GUIDE.md     All 24 prompts
+│   ├── HOW_TO_USE_SCENES.md          Integration guide
+│   └── SCENE_CHECKLIST.md            Progress tracker
+│
+├── 💻 GENERATION SCRIPTS
+│   ├── generate_scenes_openai.py     Python auto-generation
+│   ├── generate_scenes.js            Node.js alternative
+│   └── EXAMPLE_STATION_WITH_SCENES.js Code examples
+│
+└── 📄 This file
+    └── DIRECTORY_STRUCTURE.txt       You are here!
+
+═══════════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════════
+
+Total Scene Images Needed:    24 PNG files
+Directory Location:            assets/scenes/
+Stations:                      8 (Fruit, Drink, Bakery, Pizza,
+                               Ice Cream, Fish Shop, Cheese, Noodle)
+Scenes per Station:            3 (arrival, exploring, enjoying)
+
+Image Specifications:
+  • Format:       PNG or JPG
+  • Orientation:  Horizontal/Landscape (16:9)
+  • Resolution:   1920x1080 recommended
+  • File Size:    100-300KB optimized
+  • Style:        Studio Ghibli/Miyazaki watercolor
+  • Content:      NO text, NO people
+
+═══════════════════════════════════════════════════════════════════
+CURRENT STATUS
+═══════════════════════════════════════════════════════════════════
+
+[ ] assets/scenes/ directory exists (empty)
+[ ] 0/24 scene images generated
+[ ] Integration not yet started
+
+Next Steps:
+1. Read README_SCENES.md or QUICK_START.md
+2. Generate 24 scene images using your preferred method
+3. Save all images to assets/scenes/
+4. Follow HOW_TO_USE_SCENES.md to integrate
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Animation Tests - Manim Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="manim-animations.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Fredoka One', cursive;
+            min-height: 100vh;
+        }
+
+        .test-section {
+            margin-bottom: 60px;
+        }
+
+        .test-title {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .test-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .test-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="color: white; text-align: center; font-size: 48px; margin-bottom: 60px; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);">
+            Counter Animation Tests
+        </h1>
+
+        <!-- Test 1: Basic Counters -->
+        <div class="test-section">
+            <div class="test-title">1. Basic Counters (5 items)</div>
+            <div class="test-description">
+                Single group of 5 items with smooth pop-in animation and count badge
+            </div>
+            <div id="test1"></div>
+        </div>
+
+        <!-- Test 2: Multiple Groups -->
+        <div class="test-section">
+            <div class="test-title">2. Multiple Groups (12 items, groups of 5)</div>
+            <div class="test-description">
+                Items are automatically grouped into sets of 5. Note the flex-wrap and proper spacing.
+            </div>
+            <div id="test2"></div>
+        </div>
+
+        <!-- Test 3: Large Count (20 items) -->
+        <div class="test-section">
+            <div class="test-title">3. Large Count Test (20 items)</div>
+            <div class="test-description">
+                Maximum reasonable count with overflow protection. Groups wrap properly without overflowing container.
+            </div>
+            <div id="test3"></div>
+        </div>
+
+        <!-- Test 4: Addition Visual -->
+        <div class="test-section">
+            <div class="test-title">4. Addition Animation (5 + 3)</div>
+            <div class="test-description">
+                Enhanced addition visual with clear separation, better spacing, and equation below
+            </div>
+            <div id="test4"></div>
+        </div>
+
+        <!-- Test 5: Addition with Large Numbers -->
+        <div class="test-section">
+            <div class="test-title">5. Addition Animation (8 + 7)</div>
+            <div class="test-description">
+                Testing flex-wrap in addition groups with larger numbers
+            </div>
+            <div id="test5"></div>
+        </div>
+
+        <!-- Test 6: Different Icons -->
+        <div class="test-section">
+            <div class="test-title">6. Different Icons (Stars, Apples, Fish)</div>
+            <div class="test-description">
+                Emoji icons display at consistent size with enhanced hover effects
+            </div>
+            <div id="test6"></div>
+        </div>
+    </div>
+
+    <script src="manim-animations.js"></script>
+    <script>
+        // Test 1: Basic counters
+        ManimEngine.renderCounters(document.getElementById('test1'), {
+            count: 5,
+            style: 'circles'
+        });
+
+        // Test 2: Multiple groups
+        ManimEngine.renderCounters(document.getElementById('test2'), {
+            count: 12,
+            groupOf: 5,
+            style: 'hearts'
+        });
+
+        // Test 3: Large count
+        ManimEngine.renderCounters(document.getElementById('test3'), {
+            count: 20,
+            groupOf: 5,
+            style: 'stars'
+        });
+
+        // Test 4: Addition (5 + 3)
+        ManimEngine.renderAddition(document.getElementById('test4'), {
+            left: 5,
+            right: 3,
+            icon: '🍎'
+        });
+
+        // Test 5: Addition (8 + 7)
+        ManimEngine.renderAddition(document.getElementById('test5'), {
+            left: 8,
+            right: 7,
+            icon: '🐟'
+        });
+
+        // Test 6: Different icons
+        const test6Container = document.getElementById('test6');
+
+        const row1 = document.createElement('div');
+        row1.style.marginBottom = '40px';
+        test6Container.appendChild(row1);
+        ManimEngine.renderCounters(row1, {
+            count: 7,
+            groupOf: 5,
+            style: 'stars'
+        });
+
+        const row2 = document.createElement('div');
+        row2.style.marginBottom = '40px';
+        test6Container.appendChild(row2);
+        ManimEngine.renderCounters(row2, {
+            count: 6,
+            groupOf: 5,
+            style: 'apples'
+        });
+
+        const row3 = document.createElement('div');
+        test6Container.appendChild(row3);
+        ManimEngine.renderCounters(row3, {
+            count: 9,
+            groupOf: 5,
+            style: 'fish'
+        });
+    </script>
+</body>
+</html>

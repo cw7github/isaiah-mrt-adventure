@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B0E2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ADD8E6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#gradSky)" />
+
+  <path d="M0 300 L1200 300 L1200 400 L0 400 Z" fill="#98E2B2" />
+
+  <!-- Temple -->
+  <g transform="translate(450, 150)">
+    <path d="M0 100 L200 100 L200 0 L0 0 Z" fill="#E85D75"/>
+    <path d="M200 100 L230 80 L230 0 L200 0 Z" fill="#DC143C"/>
+    <path d="M-30 80 L-30 0 L0 0 L0 100 Z" fill="#DC143C"/>
+   <path d="M-30 80 L-60 100 L0 100 Z" fill="#E85D75"/>
+    <path d="M230 80 L260 100 L200 100 Z" fill="#E85D75"/>
+    <path d="M-60 100 L260 100 L260 120 C 260 150, 200 150, 200 120 L 200 110 L 0 110 L 0 120 C 0 150, -60 150,-60 120 Z" fill="#7CB342"/>
+     <path d="M-60 120 L260 120 L260 130 C 260 170, 200 170, 200 130 L 200 120 L 0 120 L 0 130 C 0 170, -60 170,-60 130 Z" fill="#7CB342"/>
+    <path d="M-60 130 L260 130 L260 140 C 260 180, 200 180, 200 140 L 200 130 L 0 130 L 0 140 C 0 180, -60 180,-60 140 Z" fill="#7CB342"/>
+    <path d="M-60 140 L260 140 L260 150 C 260 190, 200 190, 200 150 L 200 140 L 0 140 L 0 150 C 0 190, -60 190,-60 150 Z" fill="#7CB342"/>
+
+
+     <rect x="50" y="10" width="10" height="20" fill="#FFD700" />
+      <rect x="150" y="10" width="10" height="20" fill="#FFD700" />
+   
+     
+   
+  </g>
+
+  <!-- lanterns -->
+  <circle cx="300" cy="100" r="8" fill="#F9D56E" />
+  <circle cx="300" cy="100" r="6" fill="#FFD700" />
+    <line x1="300" y1="100" x2="300" y2="120" stroke="#DC143C" stroke-width="2" />
+    <circle cx="800" cy="100" r="8" fill="#F9D56E" />
+  <circle cx="800" cy="100" r="6" fill="#FFD700" />
+    <line x1="800" y1="100" x2="800" y2="120" stroke="#DC143C" stroke-width="2" />
+
+  <!-- Incense smoke -->
+  <path d="M550 80 Q570 40, 600 60" stroke="#FFFFFF" stroke-width="2" fill="transparent"/>
+  <path d="M520 90 Q540 50, 570 70" stroke="#FFFFFF" stroke-width="2" fill="transparent"/>
+
+
+  <!-- Trees -->
+  <circle cx="150" cy="250" r="30" fill="#7CB342" />
+  <circle cx="160" cy="220" r="30" fill="#7CB342" />
+    <circle cx="140" cy="220" r="30" fill="#7CB342" />
+
+
+  <circle cx="950" cy="250" r="30" fill="#7CB342" />
+  <circle cx="960" cy="220" r="30" fill="#7CB342" />
+    <circle cx="940" cy="220" r="30" fill="#7CB342" />
+
+</svg>

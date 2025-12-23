@@ -1,0 +1,14 @@
+{
+  "name": "isaiah-mrt-food-adventure",
+  "version": "1.0.0",
+  "description": "Isaiah's MRT Food Adventure - An interactive reading app for learning",
+  "private": true,
+  "dependencies": {
+    "jose": "^6.1.0"
+  },
+  "scripts": {
+    "audit:content": "node scripts/audit-content.mjs",
+    "generate:menu-rewards": "node scripts/generate-menu-reward-images.mjs",
+    "deploy": "vercel --prod"
+  }
+}

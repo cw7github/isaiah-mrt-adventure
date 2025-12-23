@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32">
+  <defs>
+    <linearGradient id="ink" x1="4" y1="24" x2="60" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+    <filter id="paperEdge" x="-20%" y="-40%" width="140%" height="180%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#paperEdge)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main swoop -->
+    <path d="M3 22c10-10 18-14 29-14s19 4 29 14" stroke="url(#ink)" stroke-width="4.2"/>
+    <!-- Inner feather hint -->
+    <path d="M13 22c6-6 11-9 19-9s13 3 19 9" stroke="#0B1220" stroke-opacity="0.45" stroke-width="3.2"/>
+  </g>
+</svg>

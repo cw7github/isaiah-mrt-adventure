@@ -1,0 +1,2898 @@
+{
+  "oa_counting_up_down": {
+    "name": "Counting Train Platform",
+    "icon": "🔢",
+    "level": 1,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.C.5"
+    ],
+    "mathFocus": [
+      "counting on",
+      "counting back",
+      "adding one",
+      "subtracting one"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Counting up is adding",
+        "icon": "⬆️",
+        "example": "5, 6, 7 is like 5 + 1 + 1"
+      },
+      {
+        "concept": "Counting down is subtracting",
+        "icon": "⬇️",
+        "example": "7, 6, 5 is like 7 - 1 - 1"
+      },
+      {
+        "concept": "Number line jumps",
+        "icon": "➡️",
+        "example": "Jump forward to add"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the counting platform. I see the number line on the wall. The numbers go from zero to twenty.",
+        "mathConcept": "Number lines show counting order",
+        "mathTip": "Numbers go in order. Each number is one more than the last.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 0,
+            "end": 20,
+            "highlight": [],
+            "jumperIcon": "🚂",
+            "showJumps": false
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I start at five. I count up. Five, six, seven. I moved up by one each time.",
+        "mathConcept": "Counting up means adding one",
+        "mathTip": "When you count up, you add one.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 0,
+            "end": 10,
+            "highlight": [
+              5,
+              6,
+              7
+            ],
+            "jumperIcon": "🐸",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q1",
+        "skillId": "count_up_is_add",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "I start at 7. I count up two numbers. Where do I land?",
+        "mathContext": "I am counting on the number line.",
+        "numberSentence": "7 + 1 + 1 = ____",
+        "mathHint": "Start at seven. Count up one, then up one more.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 5,
+            "end": 12,
+            "highlight": [
+              7,
+              8,
+              9
+            ],
+            "jumperIcon": "🐸",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "9"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "10"
+          }
+        ],
+        "correctAnswerName": "9",
+        "successMessage": "Yes! Counting up is adding."
+      },
+      {
+        "type": "read",
+        "sentence": "I stand at ten. I count down. Ten, nine, eight. I moved down by one each time.",
+        "mathConcept": "Counting down means subtracting one",
+        "mathTip": "When you count down, you subtract one.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 5,
+            "end": 15,
+            "highlight": [
+              10,
+              9,
+              8
+            ],
+            "jumperIcon": "🐰",
+            "showJumps": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q2",
+        "skillId": "count_down_is_subtract",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "I start at 12. I count down two numbers. Where do I land?",
+        "mathContext": "I am counting backward on the number line.",
+        "numberSentence": "12 - 1 - 1 = ____",
+        "mathHint": "Start at twelve. Count down one, then down one more.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 8,
+            "end": 15,
+            "highlight": [
+              12,
+              11,
+              10
+            ],
+            "jumperIcon": "🐰",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "10"
+          },
+          {
+            "name": "11"
+          },
+          {
+            "name": "9"
+          }
+        ],
+        "correctAnswerName": "10",
+        "successMessage": "Great! Counting down is subtracting."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your snack!",
+        "menuStory": "The snack stand has treats. I choose one.",
+        "items": [
+          {
+            "name": "Rice Ball",
+            "icon": "🍙",
+            "description": "Two in a pack"
+          },
+          {
+            "name": "Egg Tart",
+            "icon": "🥧",
+            "description": "Sweet and warm"
+          },
+          {
+            "name": "Fruit Cup",
+            "icon": "🍇",
+            "description": "Fresh and juicy"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I count the people waiting. I start at six. One more person comes. Now there are seven people.",
+        "mathConcept": "Adding one is the same as counting up one",
+        "mathTip": "Six plus one equals seven. That is counting up.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 7,
+            "groupSize": 5,
+            "icon": "👤"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q3",
+        "skillId": "add_one_count_up",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 8 + 1?",
+        "mathContext": "I have eight tickets. I get one more.",
+        "numberSentence": "8 + 1 = ____",
+        "mathHint": "Count up from eight. What number comes next?",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 5,
+            "end": 12,
+            "highlight": [
+              8,
+              9
+            ],
+            "jumperIcon": "🎫",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "9"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "10"
+          }
+        ],
+        "correctAnswerName": "9",
+        "successMessage": "Yes! Eight plus one is nine. You counted up."
+      },
+      {
+        "type": "read",
+        "sentence": "I have nine coins. I spend one coin. Now I have eight coins left.",
+        "mathConcept": "Subtracting one is the same as counting down one",
+        "mathTip": "Nine minus one equals eight. That is counting down.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 9,
+            "groupSize": 5,
+            "icon": "🪙",
+            "fadeCount": 1
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q4",
+        "skillId": "subtract_one_count_down",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 11 - 1?",
+        "mathContext": "I have eleven napkins. I use one napkin.",
+        "numberSentence": "11 - 1 = ____",
+        "mathHint": "Count down from eleven. What number comes before?",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 8,
+            "end": 15,
+            "highlight": [
+              11,
+              10
+            ],
+            "jumperIcon": "🧻",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "10"
+          },
+          {
+            "name": "12"
+          },
+          {
+            "name": "9"
+          }
+        ],
+        "correctAnswerName": "10",
+        "successMessage": "Nice! Eleven minus one is ten. You counted down."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q5",
+        "skillId": "count_on_add",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 5 + 2?",
+        "mathContext": "I start at five. I count up two times.",
+        "numberSentence": "5 + 2 = ____",
+        "mathHint": "Start at five. Count up: six, seven.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 3,
+            "end": 10,
+            "highlight": [
+              5,
+              6,
+              7
+            ],
+            "jumperIcon": "🦘",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "8"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Great! You counted on from five."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c5_q6",
+        "skillId": "count_back_subtract",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.5"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 9 - 2?",
+        "mathContext": "I start at nine. I count back two times.",
+        "numberSentence": "9 - 2 = ____",
+        "mathHint": "Start at nine. Count back: eight, seven.",
+        "visual": {
+          "type": "numberLine",
+          "data": {
+            "start": 5,
+            "end": 12,
+            "highlight": [
+              9,
+              8,
+              7
+            ],
+            "jumperIcon": "🦘",
+            "showJumps": true
+          }
+        },
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Excellent! You counted back from nine."
+      }
+    ]
+  },
+  "oa_add_word_problems": {
+    "name": "Fruit Stand Addition",
+    "icon": "🍎",
+    "level": 2,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.A.1"
+    ],
+    "mathFocus": [
+      "addition within 20",
+      "word problems",
+      "joining situations",
+      "start unknown"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Put together to add",
+        "icon": "➕",
+        "example": "I have 3 apples. I get 2 more. Now I have 5."
+      },
+      {
+        "concept": "Read the story carefully",
+        "icon": "📖",
+        "example": "Find the numbers. Find the action."
+      },
+      {
+        "concept": "Count all to check",
+        "icon": "✅",
+        "example": "Use objects or fingers to count."
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the fruit stand. I see baskets of fruit. The vendor smiles and says hello.",
+        "mathConcept": "Setting the scene for word problems",
+        "mathTip": "Word problems tell a story with numbers.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 5,
+            "groupSize": 5,
+            "icon": "🍎"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I have three apples in my bag. I pick two more apples. Now I have five apples in my bag.",
+        "mathConcept": "Joining numbers together is addition",
+        "mathTip": "When you get more, you add.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 2,
+            "icon": "🍎"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_add_q1",
+        "skillId": "add_word_problem_join",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many apples do I have now?",
+        "mathContext": "I have three apples in my bag. I pick two more apples.",
+        "numberSentence": "3 + 2 = ____",
+        "mathHint": "Count all the apples. Start with three. Add two more.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 2,
+            "icon": "🍎"
+          }
+        },
+        "answers": [
+          {
+            "name": "5"
+          },
+          {
+            "name": "4"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Yes! Three plus two equals five."
+      },
+      {
+        "type": "read",
+        "sentence": "I see four oranges on the left shelf. I see three oranges on the right shelf. There are seven oranges in all.",
+        "mathConcept": "Putting groups together",
+        "mathTip": "Add to find how many in all.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 4,
+            "right": 3,
+            "icon": "🍊"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_add_q2",
+        "skillId": "add_word_problem_part_part",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many oranges are there in all?",
+        "mathContext": "There are six oranges on the left. There are five oranges on the right.",
+        "numberSentence": "6 + 5 = ____",
+        "mathHint": "Add the two groups together.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 6,
+            "right": 5,
+            "icon": "🍊"
+          }
+        },
+        "answers": [
+          {
+            "name": "11"
+          },
+          {
+            "name": "10"
+          },
+          {
+            "name": "12"
+          }
+        ],
+        "correctAnswerName": "11",
+        "successMessage": "Correct! Six plus five equals eleven."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your fruit!",
+        "menuStory": "The fruit looks fresh and colorful. I choose my favorite.",
+        "items": [
+          {
+            "name": "Strawberries",
+            "icon": "🍓",
+            "description": "Red and sweet"
+          },
+          {
+            "name": "Bananas",
+            "icon": "🍌",
+            "description": "Yellow and soft"
+          },
+          {
+            "name": "Grapes",
+            "icon": "🍇",
+            "description": "Purple and juicy"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_add_q3",
+        "skillId": "add_word_problem_join_medium",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many pieces of fruit does she have now?",
+        "mathContext": "My sister has seven strawberries. I give her four more strawberries.",
+        "numberSentence": "7 + 4 = ____",
+        "mathHint": "Start with seven. Count on four more.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 7,
+            "right": 4,
+            "icon": "🍓"
+          }
+        },
+        "answers": [
+          {
+            "name": "11"
+          },
+          {
+            "name": "10"
+          },
+          {
+            "name": "12"
+          }
+        ],
+        "correctAnswerName": "11",
+        "successMessage": "Great work! Seven plus four equals eleven."
+      },
+      {
+        "type": "read",
+        "sentence": "The vendor puts eight pears in a basket. Then he adds five more pears to the basket. Now there are thirteen pears.",
+        "mathConcept": "Adding within 20",
+        "mathTip": "You can count on from the bigger number.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 8,
+            "right": 5,
+            "icon": "🍐"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_add_q4",
+        "skillId": "add_word_problem_larger_numbers",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many fruits are in the box now?",
+        "mathContext": "There are nine apples in a box. The farmer adds six more apples.",
+        "numberSentence": "9 + 6 = ____",
+        "mathHint": "Start at nine. Count on six more: ten, eleven, twelve, thirteen, fourteen, fifteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 9,
+            "right": 6,
+            "icon": "🍎"
+          }
+        },
+        "answers": [
+          {
+            "name": "15"
+          },
+          {
+            "name": "14"
+          },
+          {
+            "name": "16"
+          }
+        ],
+        "correctAnswerName": "15",
+        "successMessage": "Excellent! Nine plus six equals fifteen."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_add_q5",
+        "skillId": "add_word_problem_both_parts",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many total fruits do I buy?",
+        "mathContext": "I buy eight oranges and seven lemons.",
+        "numberSentence": "8 + 7 = ____",
+        "mathHint": "Add eight and seven. You can make ten first: 8 + 2 = 10, then add 5 more.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 8,
+            "right": 7,
+            "icon": "🍋"
+          }
+        },
+        "answers": [
+          {
+            "name": "15"
+          },
+          {
+            "name": "14"
+          },
+          {
+            "name": "16"
+          }
+        ],
+        "correctAnswerName": "15",
+        "successMessage": "Perfect! Eight plus seven equals fifteen."
+      }
+    ]
+  },
+  "oa_sub_word_problems": {
+    "name": "Noodle Shop Subtraction",
+    "icon": "🍜",
+    "level": 2,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.A.1"
+    ],
+    "mathFocus": [
+      "subtraction within 20",
+      "word problems",
+      "take away",
+      "comparison"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Take away to subtract",
+        "icon": "➖",
+        "example": "I have 8 bowls. I use 3. I have 5 left."
+      },
+      {
+        "concept": "Find how many are left",
+        "icon": "🔍",
+        "example": "Start with the total. Remove some."
+      },
+      {
+        "concept": "Count back or count what remains",
+        "icon": "⬅️",
+        "example": "You can count backward to subtract."
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the noodle shop. I see steaming bowls on the counter. The cook is busy making more noodles.",
+        "mathConcept": "Setting up a subtraction story",
+        "mathTip": "Subtraction stories tell about things being taken away or used up.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 7,
+            "groupSize": 5,
+            "icon": "🍜"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "There are seven bowls of noodles. Three customers take bowls. Now there are four bowls left.",
+        "mathConcept": "Taking away is subtraction",
+        "mathTip": "When you take away, you subtract.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 7,
+            "groupSize": 5,
+            "icon": "🍜",
+            "fadeCount": 3
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_sub_q1",
+        "skillId": "subtract_word_problem_take_away",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many bowls are left?",
+        "mathContext": "There are seven bowls of noodles. Three customers take bowls.",
+        "numberSentence": "7 - 3 = ____",
+        "mathHint": "Start with seven. Take away three. Count what is left.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 7,
+            "groupSize": 5,
+            "icon": "🍜",
+            "fadeCount": 3
+          }
+        },
+        "answers": [
+          {
+            "name": "4"
+          },
+          {
+            "name": "5"
+          },
+          {
+            "name": "3"
+          }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Yes! Seven minus three equals four."
+      },
+      {
+        "type": "read",
+        "sentence": "The cook has ten eggs. She uses four eggs to make noodles. She has six eggs left.",
+        "mathConcept": "Using objects is subtraction",
+        "mathTip": "When you use some, subtract to find what is left.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 10,
+            "groupSize": 5,
+            "icon": "🥚",
+            "fadeCount": 4
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_sub_q2",
+        "skillId": "subtract_word_problem_use",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many chopsticks are left?",
+        "mathContext": "There are twelve chopsticks in the jar. I take out five chopsticks.",
+        "numberSentence": "12 - 5 = ____",
+        "mathHint": "Start at twelve. Count back five.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 12,
+            "subtract": 5,
+            "icon": "🥢"
+          }
+        },
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Correct! Twelve minus five equals seven."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your noodles!",
+        "menuStory": "The menu has many choices. I pick my favorite kind of noodles.",
+        "items": [
+          {
+            "name": "Ramen",
+            "icon": "🍜",
+            "description": "Hot and savory"
+          },
+          {
+            "name": "Udon",
+            "icon": "🥢",
+            "description": "Thick and chewy"
+          },
+          {
+            "name": "Soba",
+            "icon": "🥡",
+            "description": "Buckwheat and nutty"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_sub_q3",
+        "skillId": "subtract_word_problem_medium",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many napkins are left in the holder?",
+        "mathContext": "There are fifteen napkins in the holder. Customers use eight napkins.",
+        "numberSentence": "15 - 8 = ____",
+        "mathHint": "Start with fifteen. Take away eight. Count what remains.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 15,
+            "groupSize": 5,
+            "icon": "🧻",
+            "fadeCount": 8
+          }
+        },
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Great! Fifteen minus eight equals seven."
+      },
+      {
+        "type": "read",
+        "sentence": "I see fourteen dumplings on the tray. My family eats six dumplings. There are eight dumplings left on the tray.",
+        "mathConcept": "Subtracting larger numbers within 20",
+        "mathTip": "You can count back or think about what is left.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 14,
+            "groupSize": 5,
+            "icon": "🥟",
+            "fadeCount": 6
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_sub_q4",
+        "skillId": "subtract_word_problem_larger",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many spring rolls are left?",
+        "mathContext": "The cook makes sixteen spring rolls. He sells nine spring rolls.",
+        "numberSentence": "16 - 9 = ____",
+        "mathHint": "Start at sixteen. Count back nine, or think: nine plus what equals sixteen?",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 16,
+            "subtract": 9,
+            "icon": "🥟"
+          }
+        },
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Excellent! Sixteen minus nine equals seven."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a1_sub_q5",
+        "skillId": "subtract_word_problem_teen_numbers",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.1"
+        ],
+        "questionType": "wordProblem",
+        "questionMode": "multipleChoice",
+        "question": "How many customers are still waiting?",
+        "mathContext": "There are thirteen customers waiting. Seven customers get their food and leave.",
+        "numberSentence": "13 - 7 = ____",
+        "mathHint": "Start with thirteen. Take away seven. You can count back.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 13,
+            "groupSize": 5,
+            "icon": "👤",
+            "fadeCount": 7
+          }
+        },
+        "answers": [
+          {
+            "name": "6"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "5"
+          }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Perfect! Thirteen minus seven equals six."
+      }
+    ]
+  },
+  "oa_add_three_numbers": {
+    "name": "Bakery Three Numbers",
+    "icon": "🥐",
+    "level": 2,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.A.2"
+    ],
+    "mathFocus": [
+      "add three numbers",
+      "make ten",
+      "group numbers",
+      "associative property"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Add two numbers first",
+        "icon": "✌️",
+        "example": "3 + 4 + 6: add 3 + 4 = 7, then 7 + 6 = 13"
+      },
+      {
+        "concept": "Look for ten",
+        "icon": "🔟",
+        "example": "2 + 8 + 5: make 2 + 8 = 10, then 10 + 5 = 15"
+      },
+      {
+        "concept": "Group any two numbers",
+        "icon": "🔄",
+        "example": "You can add in any order"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I walk into the bakery. I smell fresh bread and sweet pastries. The baker shows me three trays of treats.",
+        "mathConcept": "Setting up for adding three numbers",
+        "mathTip": "When you have three numbers, you add two first, then add the third.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 6,
+            "groupSize": 3,
+            "icon": "🥐"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I see two croissants on the first tray. I see three croissants on the second tray. I see one croissant on the third tray. There are six croissants in all.",
+        "mathConcept": "Adding three numbers by grouping",
+        "mathTip": "Add the first two numbers. Then add the third number.",
+        "numberSentence": "2 + 3 + 1 = 6",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 6,
+            "groupSize": 3,
+            "icon": "🥐"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a2_q1",
+        "skillId": "add_three_simple",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.A.2"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 2 + 3 + 1?",
+        "mathContext": "There are two croissants, then three croissants, then one croissant.",
+        "numberSentence": "2 + 3 + 1 = ____",
+        "mathHint": "Add two and three first. That makes five. Then add one more.",
+        "answers": [
+          {
+            "name": "6"
+          },
+          {
+            "name": "5"
+          },
+          {
+            "name": "7"
+          }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Yes! Two plus three plus one equals six.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 2,
+            "right": 3,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "The baker puts four cookies, two cookies, and four cookies in a bag. I can group the fours together. Four plus four equals eight. Then I add two more. The total is ten cookies.",
+        "mathConcept": "Grouping numbers that are easy to add",
+        "mathTip": "Look for doubles or easy pairs. Add those first.",
+        "numberSentence": "4 + 2 + 4 = 10",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 10,
+            "groupSize": 5,
+            "icon": "🍪"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a2_q2",
+        "skillId": "add_three_doubles",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.2"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 3 + 5 + 3?",
+        "mathContext": "I buy three muffins, five muffins, and three muffins.",
+        "numberSentence": "3 + 5 + 3 = ____",
+        "mathHint": "Look for the doubles. Three plus three equals six. Then add five.",
+        "answers": [
+          {
+            "name": "11"
+          },
+          {
+            "name": "10"
+          },
+          {
+            "name": "12"
+          }
+        ],
+        "correctAnswerName": "11",
+        "successMessage": "Great! You grouped the threes first. Three plus three plus five equals eleven.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 5,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your pastry!",
+        "menuStory": "The bakery has so many delicious treats. I choose one to eat now.",
+        "items": [
+          {
+            "name": "Croissant",
+            "icon": "🥐",
+            "description": "Buttery and flaky"
+          },
+          {
+            "name": "Danish",
+            "icon": "🥞",
+            "description": "Sweet with fruit"
+          },
+          {
+            "name": "Baguette",
+            "icon": "🥖",
+            "description": "Crusty and warm"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I see seven rolls, three rolls, and two rolls. I notice that three and seven make ten. Then I add two more. There are twelve rolls in all.",
+        "mathConcept": "Making ten to add three numbers",
+        "mathTip": "Look for two numbers that make ten. That makes adding easier.",
+        "numberSentence": "7 + 3 + 2 = 12",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 10,
+            "icon": "⭐",
+            "showCount": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a2_q3",
+        "skillId": "add_three_make_ten",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.A.2"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 6 + 4 + 3?",
+        "mathContext": "There are six bagels, four bagels, and three bagels.",
+        "numberSentence": "6 + 4 + 3 = ____",
+        "mathHint": "Six plus four makes ten. Then add three more.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 13,
+            "groupSize": 5,
+            "icon": "🥯"
+          }
+        },
+        "answers": [
+          {
+            "name": "13"
+          },
+          {
+            "name": "12"
+          },
+          {
+            "name": "14"
+          }
+        ],
+        "correctAnswerName": "13",
+        "successMessage": "Excellent! You made ten first. Six plus four plus three equals thirteen."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a2_q4",
+        "skillId": "add_three_any_order",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.2"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 2 + 8 + 5?",
+        "mathContext": "I count two tarts, eight tarts, and five tarts.",
+        "numberSentence": "2 + 8 + 5 = ____",
+        "mathHint": "Two plus eight makes ten. Then add five more.",
+        "answers": [
+          {
+            "name": "15"
+          },
+          {
+            "name": "14"
+          },
+          {
+            "name": "16"
+          }
+        ],
+        "correctAnswerName": "15",
+        "successMessage": "Perfect! Two plus eight plus five equals fifteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 2,
+            "right": 8,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_a2_q5",
+        "skillId": "add_three_strategy_choice",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.A.2"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 5 + 3 + 5?",
+        "mathContext": "The baker arranges five pies, three pies, and five pies on the shelf.",
+        "numberSentence": "5 + 3 + 5 = ____",
+        "mathHint": "Look for doubles. Five plus five equals ten. Then add three.",
+        "answers": [
+          {
+            "name": "13"
+          },
+          {
+            "name": "12"
+          },
+          {
+            "name": "14"
+          }
+        ],
+        "correctAnswerName": "13",
+        "successMessage": "Wonderful! Five plus three plus five equals thirteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 5,
+            "right": 3,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  },
+  "oa_fact_families": {
+    "name": "Bubble Tea Fact Families",
+    "icon": "🧋",
+    "level": 3,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.B.3",
+      "1.OA.B.4"
+    ],
+    "mathFocus": [
+      "fact families",
+      "commutative property",
+      "turn-around facts",
+      "related facts"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Turn-around facts",
+        "icon": "🔄",
+        "example": "3 + 4 = 7 and 4 + 3 = 7"
+      },
+      {
+        "concept": "Fact family triangle",
+        "icon": "🔺",
+        "example": "3, 4, 7 make four facts"
+      },
+      {
+        "concept": "Addition and subtraction are related",
+        "icon": "↔️",
+        "example": "If 5 + 2 = 7, then 7 - 2 = 5"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I visit the bubble tea shop. The cashier shows me three cups and four cups. She says there are seven cups in all. Then she switches them. Four cups and three cups still make seven cups.",
+        "mathConcept": "Commutative property of addition",
+        "mathTip": "You can add numbers in any order. The sum stays the same.",
+        "numberSentence": "3 + 4 = 7 and 4 + 3 = 7",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 4,
+            "icon": "🧋"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q1",
+        "skillId": "commutative_turn_around",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.B.3"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "If 5 + 2 = 7, what is 2 + 5?",
+        "mathContext": "I learn about turn-around facts.",
+        "numberSentence": "2 + 5 = ____",
+        "mathHint": "Turn-around facts have the same answer. The order does not matter.",
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "8"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Yes! Five plus two and two plus five both equal seven.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 5,
+            "right": 2,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "The worker puts six tapioca pearls in one cup and four pearls in another cup. That makes ten pearls. She tells me this is a fact family. Six plus four equals ten. Four plus six equals ten. Ten minus six equals four. Ten minus four equals six.",
+        "mathConcept": "Fact families show related facts",
+        "mathTip": "A fact family uses the same three numbers to make four facts.",
+        "numberSentence": "6 + 4 = 10, 4 + 6 = 10, 10 - 6 = 4, 10 - 4 = 6",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 10,
+            "icon": "⭐",
+            "showCount": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q2",
+        "skillId": "fact_family_identify",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.B.3",
+          "1.OA.B.4"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Which fact belongs in the same family as 3 + 5 = 8?",
+        "mathContext": "I am learning fact families with three, five, and eight.",
+        "mathHint": "Fact families use the same three numbers. Look for three, five, and eight.",
+        "answers": [
+          {
+            "name": "8 - 5 = 3"
+          },
+          {
+            "name": "5 + 4 = 9"
+          },
+          {
+            "name": "8 + 3 = 11"
+          }
+        ],
+        "correctAnswerName": "8 - 5 = 3",
+        "successMessage": "Correct! Three, five, and eight make a fact family.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 5,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your bubble tea!",
+        "menuStory": "The menu has many flavors. I pick my favorite bubble tea to drink.",
+        "items": [
+          {
+            "name": "Taro",
+            "icon": "🟣",
+            "description": "Purple and creamy"
+          },
+          {
+            "name": "Mango",
+            "icon": "🥭",
+            "description": "Yellow and tropical"
+          },
+          {
+            "name": "Matcha",
+            "icon": "🍵",
+            "description": "Green and earthy"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I use the numbers seven, two, and nine to write facts. Seven plus two equals nine. Two plus seven equals nine. Nine minus seven equals two. Nine minus two equals seven.",
+        "mathConcept": "Writing all four facts in a family",
+        "mathTip": "Start with addition facts. Then write subtraction facts using the same numbers.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 7,
+            "right": 2,
+            "icon": "🧋"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q3",
+        "skillId": "fact_family_complete",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.B.3",
+          "1.OA.B.4"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "I know 4 + 5 = 9. What is 9 - 4?",
+        "mathContext": "I use the fact family for four, five, and nine.",
+        "numberSentence": "9 - 4 = ____",
+        "mathHint": "If four plus five equals nine, then nine minus four equals five.",
+        "answers": [
+          {
+            "name": "5"
+          },
+          {
+            "name": "4"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Great! You used the fact family.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 4,
+            "right": 5,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q4",
+        "skillId": "fact_family_addition_to_subtraction",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.B.4"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "I know 7 + 6 = 13. What is 13 - 7?",
+        "mathContext": "I use addition to help with subtraction.",
+        "numberSentence": "13 - 7 = ____",
+        "mathHint": "Seven plus six equals thirteen. So thirteen minus seven equals six.",
+        "answers": [
+          {
+            "name": "6"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "5"
+          }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Excellent! You used addition to solve subtraction.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 7,
+            "right": 6,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q5",
+        "skillId": "fact_family_missing_number",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.B.4"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number completes this fact family: 8 + ___ = 14, 14 - 8 = ___?",
+        "mathContext": "I am finding the missing number in a fact family.",
+        "numberSentence": "8 + ___ = 14",
+        "mathHint": "What number do you add to eight to get fourteen? That same number is the answer to fourteen minus eight.",
+        "answers": [
+          {
+            "name": "6"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "5"
+          }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Perfect! Eight plus six equals fourteen, and fourteen minus eight equals six.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 8,
+            "right": 14,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_b3_q6",
+        "skillId": "commutative_larger_numbers",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.B.3"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "If 9 + 5 = 14, what is 5 + 9?",
+        "mathContext": "I check if turn-around facts work with bigger numbers.",
+        "numberSentence": "5 + 9 = ____",
+        "mathHint": "You can add in any order. The sum is the same.",
+        "answers": [
+          {
+            "name": "14"
+          },
+          {
+            "name": "13"
+          },
+          {
+            "name": "15"
+          }
+        ],
+        "correctAnswerName": "14",
+        "successMessage": "Yes! Nine plus five and five plus nine both equal fourteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 9,
+            "right": 5,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  },
+  "oa_add_facts_20": {
+    "name": "Dumpling Addition Facts",
+    "icon": "🥟",
+    "level": 3,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.C.6"
+    ],
+    "mathFocus": [
+      "addition fluency",
+      "facts within 20",
+      "mental math",
+      "quick recall"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Know addition facts quickly",
+        "icon": "⚡",
+        "example": "7 + 8 = 15"
+      },
+      {
+        "concept": "Use strategies you know",
+        "icon": "🧠",
+        "example": "Make ten, use doubles, count on"
+      },
+      {
+        "concept": "Practice makes fluent",
+        "icon": "💪",
+        "example": "The more you practice, the faster you get"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I arrive at the dumpling restaurant. The cook is making dumplings very fast. She knows her numbers quickly. I will practice my addition facts to get fast too.",
+        "mathConcept": "Building fluency with addition facts",
+        "mathTip": "Practice helps you get faster and more accurate.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 10,
+            "icon": "⭐",
+            "showCount": false
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q1",
+        "skillId": "add_fluency_doubles",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 6 + 6?",
+        "mathContext": "I count dumplings. Six plus six is a double.",
+        "numberSentence": "6 + 6 = ____",
+        "mathHint": "Six plus six is a double. What is double six?",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 6,
+            "right": 6,
+            "icon": "🥟"
+          }
+        },
+        "answers": [
+          {
+            "name": "12"
+          },
+          {
+            "name": "11"
+          },
+          {
+            "name": "13"
+          }
+        ],
+        "correctAnswerName": "12",
+        "successMessage": "Yes! Six plus six equals twelve."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q2",
+        "skillId": "add_fluency_plus_one",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 9 + 1?",
+        "mathContext": "There are nine dumplings. I add one more.",
+        "numberSentence": "9 + 1 = ____",
+        "mathHint": "Nine plus one is just counting up one from nine.",
+        "answers": [
+          {
+            "name": "10"
+          },
+          {
+            "name": "11"
+          },
+          {
+            "name": "8"
+          }
+        ],
+        "correctAnswerName": "10",
+        "successMessage": "Correct! Nine plus one equals ten.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 9,
+            "right": 1,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q3",
+        "skillId": "add_fluency_make_ten",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 7 + 3?",
+        "mathContext": "I group seven dumplings and three dumplings.",
+        "numberSentence": "7 + 3 = ____",
+        "mathHint": "Seven and three make ten.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 10,
+            "icon": "⭐",
+            "showCount": true
+          }
+        },
+        "answers": [
+          {
+            "name": "10"
+          },
+          {
+            "name": "9"
+          },
+          {
+            "name": "11"
+          }
+        ],
+        "correctAnswerName": "10",
+        "successMessage": "Great! Seven plus three equals ten."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your dumplings!",
+        "menuStory": "The restaurant has different kinds of dumplings. I choose my favorite.",
+        "items": [
+          {
+            "name": "Pork Dumplings",
+            "icon": "🥟",
+            "description": "Savory and juicy"
+          },
+          {
+            "name": "Shrimp Dumplings",
+            "icon": "🦐",
+            "description": "Fresh and light"
+          },
+          {
+            "name": "Veggie Dumplings",
+            "icon": "🥬",
+            "description": "Healthy and tasty"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q4",
+        "skillId": "add_fluency_near_doubles",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 7 + 8?",
+        "mathContext": "I add seven dumplings and eight dumplings.",
+        "numberSentence": "7 + 8 = ____",
+        "mathHint": "Think of the double seven plus seven equals fourteen. Then add one more.",
+        "answers": [
+          {
+            "name": "15"
+          },
+          {
+            "name": "14"
+          },
+          {
+            "name": "16"
+          }
+        ],
+        "correctAnswerName": "15",
+        "successMessage": "Excellent! Seven plus eight equals fifteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 7,
+            "right": 8,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q5",
+        "skillId": "add_fluency_mixed",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 5 + 7?",
+        "mathContext": "The cook puts five dumplings and seven dumplings on the tray.",
+        "numberSentence": "5 + 7 = ____",
+        "mathHint": "You can make ten first. Five plus five equals ten. Then add two more.",
+        "answers": [
+          {
+            "name": "12"
+          },
+          {
+            "name": "11"
+          },
+          {
+            "name": "13"
+          }
+        ],
+        "correctAnswerName": "12",
+        "successMessage": "Nice work! Five plus seven equals twelve.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 5,
+            "right": 7,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q6",
+        "skillId": "add_fluency_larger",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 9 + 7?",
+        "mathContext": "I count nine dumplings and seven dumplings.",
+        "numberSentence": "9 + 7 = ____",
+        "mathHint": "Nine plus one equals ten. Then add six more. Ten plus six equals sixteen.",
+        "answers": [
+          {
+            "name": "16"
+          },
+          {
+            "name": "15"
+          },
+          {
+            "name": "17"
+          }
+        ],
+        "correctAnswerName": "16",
+        "successMessage": "Perfect! Nine plus seven equals sixteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 9,
+            "right": 7,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_add_q7",
+        "skillId": "add_fluency_teen_sum",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 8 + 6?",
+        "mathContext": "There are eight steamed dumplings and six fried dumplings.",
+        "numberSentence": "8 + 6 = ____",
+        "mathHint": "Eight plus two makes ten. Then add four more.",
+        "answers": [
+          {
+            "name": "14"
+          },
+          {
+            "name": "13"
+          },
+          {
+            "name": "15"
+          }
+        ],
+        "correctAnswerName": "14",
+        "successMessage": "Wonderful! Eight plus six equals fourteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 8,
+            "right": 6,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  },
+  "oa_sub_facts_20": {
+    "name": "Rice Bowl Subtraction Facts",
+    "icon": "🍚",
+    "level": 3,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.C.6"
+    ],
+    "mathFocus": [
+      "subtraction fluency",
+      "facts within 20",
+      "mental math",
+      "related addition facts"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Know subtraction facts quickly",
+        "icon": "⚡",
+        "example": "14 - 6 = 8"
+      },
+      {
+        "concept": "Think addition to subtract",
+        "icon": "🔄",
+        "example": "12 - 7 = ? Think: 7 + ? = 12"
+      },
+      {
+        "concept": "Count back or use fact families",
+        "icon": "⬅️",
+        "example": "Multiple strategies help"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I am at the rice bowl shop. The server is very quick with numbers. She can subtract fast. I will practice my subtraction facts.",
+        "mathConcept": "Building fluency with subtraction facts",
+        "mathTip": "Knowing your subtraction facts helps you solve problems quickly.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 10,
+            "icon": "🔵",
+            "showCount": false
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q1",
+        "skillId": "subtract_fluency_minus_one",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 - 1?",
+        "mathContext": "There are ten bowls. One customer takes a bowl.",
+        "numberSentence": "10 - 1 = ____",
+        "mathHint": "Ten minus one is just counting back one from ten.",
+        "answers": [
+          {
+            "name": "9"
+          },
+          {
+            "name": "11"
+          },
+          {
+            "name": "8"
+          }
+        ],
+        "correctAnswerName": "9",
+        "successMessage": "Yes! Ten minus one equals nine.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 10,
+            "subtract": 1,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q2",
+        "skillId": "subtract_fluency_from_ten",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 10 - 4?",
+        "mathContext": "I have ten grains of rice. I eat four grains.",
+        "numberSentence": "10 - 4 = ____",
+        "mathHint": "Think: four plus what equals ten? Four plus six equals ten.",
+        "visual": {
+          "type": "tenFrame",
+          "data": {
+            "filled": 6,
+            "icon": "🔵",
+            "showCount": true
+          }
+        },
+        "answers": [
+          {
+            "name": "6"
+          },
+          {
+            "name": "5"
+          },
+          {
+            "name": "7"
+          }
+        ],
+        "correctAnswerName": "6",
+        "successMessage": "Correct! Ten minus four equals six."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q3",
+        "skillId": "subtract_fluency_small_difference",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 8 - 3?",
+        "mathContext": "There are eight spoons. Three spoons are used.",
+        "numberSentence": "8 - 3 = ____",
+        "mathHint": "Count back three from eight: seven, six, five.",
+        "visual": {
+          "type": "counters",
+          "data": {
+            "count": 8,
+            "groupSize": 5,
+            "icon": "🥄",
+            "fadeCount": 3
+          }
+        },
+        "answers": [
+          {
+            "name": "5"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "4"
+          }
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Great! Eight minus three equals five."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your rice bowl!",
+        "menuStory": "The menu has rice bowls with different toppings. I pick one.",
+        "items": [
+          {
+            "name": "Chicken Bowl",
+            "icon": "🍗",
+            "description": "Grilled and tasty"
+          },
+          {
+            "name": "Beef Bowl",
+            "icon": "🥩",
+            "description": "Tender and rich"
+          },
+          {
+            "name": "Tofu Bowl",
+            "icon": "🧈",
+            "description": "Soft and healthy"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q4",
+        "skillId": "subtract_fluency_teen_minus",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 12 - 5?",
+        "mathContext": "The cook makes twelve bowls. Five bowls are sold.",
+        "numberSentence": "12 - 5 = ____",
+        "mathHint": "Think: five plus what equals twelve? Five plus seven equals twelve.",
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Excellent! Twelve minus five equals seven.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 12,
+            "subtract": 5,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q5",
+        "skillId": "subtract_fluency_larger_numbers",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 15 - 7?",
+        "mathContext": "I see fifteen chopsticks. Seven are taken away.",
+        "numberSentence": "15 - 7 = ____",
+        "mathHint": "Think: seven plus what equals fifteen? Seven plus eight equals fifteen.",
+        "answers": [
+          {
+            "name": "8"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "9"
+          }
+        ],
+        "correctAnswerName": "8",
+        "successMessage": "Perfect! Fifteen minus seven equals eight.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 15,
+            "subtract": 7,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q6",
+        "skillId": "subtract_fluency_near_ten",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 13 - 8?",
+        "mathContext": "There are thirteen napkins. Eight napkins are used.",
+        "numberSentence": "13 - 8 = ____",
+        "mathHint": "Think: eight plus what equals thirteen? Eight plus five equals thirteen.",
+        "answers": [
+          {
+            "name": "5"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "4"
+          }
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Wonderful! Thirteen minus eight equals five.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 13,
+            "subtract": 8,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_c6_sub_q7",
+        "skillId": "subtract_fluency_mixed",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.C.6"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What is 17 - 9?",
+        "mathContext": "The restaurant has seventeen tables. Nine tables are full.",
+        "numberSentence": "17 - 9 = ____",
+        "mathHint": "Think: nine plus what equals seventeen? Nine plus eight equals seventeen.",
+        "answers": [
+          {
+            "name": "8"
+          },
+          {
+            "name": "7"
+          },
+          {
+            "name": "9"
+          }
+        ],
+        "correctAnswerName": "8",
+        "successMessage": "Amazing! Seventeen minus nine equals eight.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 17,
+            "subtract": 9,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  },
+  "oa_equal_sign": {
+    "name": "Balance Scale Station",
+    "icon": "⚖️",
+    "level": 3,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.D.7"
+    ],
+    "mathFocus": [
+      "equal sign meaning",
+      "true or false",
+      "both sides equal",
+      "balance"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Equal means the same amount",
+        "icon": "=",
+        "example": "5 = 5 is true"
+      },
+      {
+        "concept": "Both sides must match",
+        "icon": "⚖️",
+        "example": "3 + 2 = 5 is true"
+      },
+      {
+        "concept": "Check if it is true or false",
+        "icon": "✅❌",
+        "example": "4 = 5 is false"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I walk into the balance scale station. The worker shows me a scale. She says the equal sign is like a balance. Both sides must be the same.",
+        "mathConcept": "The equal sign means both sides are the same",
+        "mathTip": "Equal means the left side and right side have the same value.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 5,
+            "right": 5,
+            "icon": "⚖️"
+          }
+        }
+      },
+      {
+        "type": "read",
+        "sentence": "I see the equation three equals three. The worker says this is true. Three on the left and three on the right are the same.",
+        "mathConcept": "Understanding true equations",
+        "mathTip": "If both sides are equal, the equation is true.",
+        "numberSentence": "3 = 3"
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q1",
+        "skillId": "equal_sign_simple_true_false",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 5 = 5 true or false?",
+        "mathContext": "I check if both sides are equal.",
+        "numberSentence": "5 = 5",
+        "mathHint": "Is five the same as five? Yes, so it is true.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 5,
+            "right": 5,
+            "icon": "🔵"
+          }
+        },
+        "answers": [
+          {
+            "name": "True"
+          },
+          {
+            "name": "False"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "True",
+        "successMessage": "Yes! Five equals five is true."
+      },
+      {
+        "type": "read",
+        "sentence": "I see another equation. Four plus one equals five. The worker puts four blocks and one block on the left. She puts five blocks on the right. The scale balances. It is true.",
+        "mathConcept": "Equations with operations can be true",
+        "mathTip": "Check both sides. If they are the same, it is true.",
+        "numberSentence": "4 + 1 = 5",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 4,
+            "operator": "+",
+            "right": 1,
+            "result": 5,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q2",
+        "skillId": "equal_sign_addition_true",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 3 + 2 = 5 true or false?",
+        "mathContext": "I check if three plus two equals five.",
+        "numberSentence": "3 + 2 = 5",
+        "mathHint": "Add three and two. Does it equal five? Yes, so it is true.",
+        "answers": [
+          {
+            "name": "True"
+          },
+          {
+            "name": "False"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "True",
+        "successMessage": "Correct! Three plus two equals five, so it is true.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 3,
+            "right": 2,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your balance challenge!",
+        "menuStory": "The station has different balance activities. I choose one to try.",
+        "items": [
+          {
+            "name": "Number Balance",
+            "icon": "🔢",
+            "description": "Balance with numbers"
+          },
+          {
+            "name": "Block Balance",
+            "icon": "🧱",
+            "description": "Balance with blocks"
+          },
+          {
+            "name": "Coin Balance",
+            "icon": "🪙",
+            "description": "Balance with coins"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "I try an equation that is false. The worker shows me six equals seven. She says this is false. Six and seven are not the same. The scale does not balance.",
+        "mathConcept": "False equations do not balance",
+        "mathTip": "If both sides are different, the equation is false.",
+        "numberSentence": "6 = 7",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 6,
+            "right": 7,
+            "icon": "⚖️"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q3",
+        "skillId": "equal_sign_false_identify",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 8 = 9 true or false?",
+        "mathContext": "I check if eight equals nine.",
+        "numberSentence": "8 = 9",
+        "mathHint": "Are eight and nine the same? No, so it is false.",
+        "answers": [
+          {
+            "name": "False"
+          },
+          {
+            "name": "True"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "False",
+        "successMessage": "Yes! Eight does not equal nine, so it is false.",
+        "visual": {
+          "type": "numberSentence",
+          "data": {
+            "sentence": " 8 = 9 ",
+            "highlight": "="
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q4",
+        "skillId": "equal_sign_operation_false",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 5 + 3 = 9 true or false?",
+        "mathContext": "I check if five plus three equals nine.",
+        "numberSentence": "5 + 3 = 9",
+        "mathHint": "Add five and three. Does it equal nine? No, five plus three equals eight.",
+        "answers": [
+          {
+            "name": "False"
+          },
+          {
+            "name": "True"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "False",
+        "successMessage": "Correct! Five plus three equals eight, not nine. It is false.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 5,
+            "right": 3,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q5",
+        "skillId": "equal_sign_both_sides_operation",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 4 + 3 = 2 + 5 true or false?",
+        "mathContext": "I check if both sides are equal. The left side is four plus three. The right side is two plus five.",
+        "numberSentence": "4 + 3 = 2 + 5",
+        "mathHint": "Add both sides. Four plus three equals seven. Two plus five equals seven. Both sides are seven.",
+        "visual": {
+          "type": "comparison",
+          "data": {
+            "left": 7,
+            "right": 7,
+            "icon": "⚖️"
+          }
+        },
+        "answers": [
+          {
+            "name": "True"
+          },
+          {
+            "name": "False"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "True",
+        "successMessage": "Excellent! Both sides equal seven, so it is true."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d7_q6",
+        "skillId": "equal_sign_subtraction",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.D.7"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "Is 10 - 4 = 6 true or false?",
+        "mathContext": "I check if ten minus four equals six.",
+        "numberSentence": "10 - 4 = 6",
+        "mathHint": "Subtract four from ten. Does it equal six? Yes.",
+        "answers": [
+          {
+            "name": "True"
+          },
+          {
+            "name": "False"
+          },
+          {
+            "name": "Not sure"
+          }
+        ],
+        "correctAnswerName": "True",
+        "successMessage": "Perfect! Ten minus four equals six, so it is true.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 10,
+            "subtract": 4,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  },
+  "oa_missing_number": {
+    "name": "Mystery Number Station",
+    "icon": "❓",
+    "level": 3,
+    "line": "OA",
+    "checklistTargets": [
+      "1.OA.D.8"
+    ],
+    "mathFocus": [
+      "missing addend",
+      "missing number",
+      "unknown in all positions",
+      "equation solving"
+    ],
+    "previewConcepts": [
+      {
+        "concept": "Find the missing number",
+        "icon": "🔍",
+        "example": "3 + ___ = 7"
+      },
+      {
+        "concept": "The blank can be anywhere",
+        "icon": "📍",
+        "example": "___ + 4 = 9 or 12 - ___ = 5"
+      },
+      {
+        "concept": "Use what you know to solve",
+        "icon": "💡",
+        "example": "Think: what number makes it true?"
+      }
+    ],
+    "pages": [
+      {
+        "type": "read",
+        "sentence": "I enter the mystery number station. The detective shows me equations with missing numbers. She says I need to find what number goes in the blank to make it true.",
+        "mathConcept": "Finding unknown numbers in equations",
+        "mathTip": "The missing number makes the equation true."
+      },
+      {
+        "type": "read",
+        "sentence": "I see my first mystery. Three plus blank equals seven. I think: three plus what makes seven? Three plus four makes seven. The missing number is four.",
+        "mathConcept": "Missing addend in addition",
+        "mathTip": "Ask yourself: what do I add to get the answer?",
+        "numberSentence": "3 + ___ = 7",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 3,
+            "operator": "+",
+            "right": "?",
+            "result": 7,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q1",
+        "skillId": "missing_addend_simple",
+        "difficulty": 1,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? 5 + ___ = 8",
+        "mathContext": "I need to find the missing number.",
+        "numberSentence": "5 + ___ = 8",
+        "mathHint": "Five plus what equals eight? Think: five plus three equals eight.",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 5,
+            "operator": "+",
+            "right": "?",
+            "result": 8,
+            "showResult": true
+          }
+        },
+        "answers": [
+          {
+            "name": "3"
+          },
+          {
+            "name": "2"
+          },
+          {
+            "name": "4"
+          }
+        ],
+        "correctAnswerName": "3",
+        "successMessage": "Yes! Five plus three equals eight."
+      },
+      {
+        "type": "read",
+        "sentence": "The detective shows me a new mystery. Blank plus six equals ten. I think: what plus six makes ten? Four plus six makes ten. The missing number is four.",
+        "mathConcept": "Missing number at the beginning",
+        "mathTip": "It does not matter where the blank is. Think about what makes it true.",
+        "numberSentence": "___ + 6 = 10",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": "?",
+            "operator": "+",
+            "right": 6,
+            "result": 10,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q2",
+        "skillId": "missing_first_addend",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? ___ + 4 = 9",
+        "mathContext": "The missing number is at the beginning.",
+        "numberSentence": "___ + 4 = 9",
+        "mathHint": "What plus four equals nine? Think: five plus four equals nine.",
+        "answers": [
+          {
+            "name": "5"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "4"
+          }
+        ],
+        "correctAnswerName": "5",
+        "successMessage": "Correct! Five plus four equals nine.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 4,
+            "right": 9,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick your mystery case!",
+        "menuStory": "The detective has different mystery cases. I choose one to solve.",
+        "items": [
+          {
+            "name": "Addition Mystery",
+            "icon": "➕",
+            "description": "Find the missing addend"
+          },
+          {
+            "name": "Subtraction Mystery",
+            "icon": "➖",
+            "description": "Find the missing number"
+          },
+          {
+            "name": "Mixed Mystery",
+            "icon": "🔀",
+            "description": "Addition or subtraction"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "sentence": "Now I see a subtraction mystery. Twelve minus blank equals five. I think: twelve minus what makes five? Twelve minus seven makes five. The missing number is seven.",
+        "mathConcept": "Missing number in subtraction",
+        "mathTip": "For subtraction, think: what do I take away to get the answer?",
+        "numberSentence": "12 - ___ = 5",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 12,
+            "operator": "-",
+            "right": "?",
+            "result": 5,
+            "showResult": true
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q3",
+        "skillId": "missing_subtrahend",
+        "difficulty": 2,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? 10 - ___ = 6",
+        "mathContext": "I need to find what number to subtract.",
+        "numberSentence": "10 - ___ = 6",
+        "mathHint": "Ten minus what equals six? Think: ten minus four equals six.",
+        "visual": {
+          "type": "equation",
+          "data": {
+            "left": 10,
+            "operator": "-",
+            "right": "?",
+            "result": 6,
+            "showResult": true
+          }
+        },
+        "answers": [
+          {
+            "name": "4"
+          },
+          {
+            "name": "5"
+          },
+          {
+            "name": "3"
+          }
+        ],
+        "correctAnswerName": "4",
+        "successMessage": "Great! Ten minus four equals six."
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q4",
+        "skillId": "missing_addend_larger",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? 8 + ___ = 15",
+        "mathContext": "I find the missing addend with larger numbers.",
+        "numberSentence": "8 + ___ = 15",
+        "mathHint": "Eight plus what equals fifteen? Count on from eight or think: eight plus seven equals fifteen.",
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "6"
+          },
+          {
+            "name": "8"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Excellent! Eight plus seven equals fifteen.",
+        "visual": {
+          "type": "addition",
+          "data": {
+            "left": 8,
+            "right": 15,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q5",
+        "skillId": "missing_minuend",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? ___ - 5 = 9",
+        "mathContext": "The missing number is the starting number.",
+        "numberSentence": "___ - 5 = 9",
+        "mathHint": "What number minus five equals nine? Think: nine plus five equals fourteen. So fourteen minus five equals nine.",
+        "answers": [
+          {
+            "name": "14"
+          },
+          {
+            "name": "13"
+          },
+          {
+            "name": "15"
+          }
+        ],
+        "correctAnswerName": "14",
+        "successMessage": "Perfect! Fourteen minus five equals nine.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 5,
+            "subtract": 9,
+            "icon": "⭕"
+          }
+        }
+      },
+      {
+        "type": "question",
+        "itemId": "oa_d8_q6",
+        "skillId": "missing_number_teen_facts",
+        "difficulty": 3,
+        "checklistTargets": [
+          "1.OA.D.8"
+        ],
+        "questionType": "computation",
+        "questionMode": "multipleChoice",
+        "question": "What number goes in the blank? 13 - ___ = 6",
+        "mathContext": "I solve a harder subtraction mystery.",
+        "numberSentence": "13 - ___ = 6",
+        "mathHint": "Thirteen minus what equals six? Think: six plus seven equals thirteen. So thirteen minus seven equals six.",
+        "answers": [
+          {
+            "name": "7"
+          },
+          {
+            "name": "8"
+          },
+          {
+            "name": "6"
+          }
+        ],
+        "correctAnswerName": "7",
+        "successMessage": "Amazing! Thirteen minus seven equals six.",
+        "visual": {
+          "type": "subtraction",
+          "data": {
+            "total": 13,
+            "subtract": 6,
+            "icon": "⭕"
+          }
+        }
+      }
+    ]
+  }
+}

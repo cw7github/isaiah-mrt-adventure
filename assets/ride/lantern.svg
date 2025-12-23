@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 84">
+  <defs>
+    <linearGradient id="paper" x1="14" y1="10" x2="50" y2="66" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE08A"/>
+      <stop offset="0.55" stop-color="#FFB703"/>
+      <stop offset="1" stop-color="#FB8500"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="18" y1="10" x2="46" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C2D12"/>
+      <stop offset="0.5" stop-color="#9A3412"/>
+      <stop offset="1" stop-color="#7C2D12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(30 30) rotate(55) scale(18 26)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lanternSoft" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="1" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.6" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#lanternSoft)">
+    <path d="M20 8h24c6 0 10 4 10 10v34c0 14-14 24-22 24S10 66 10 52V18c0-6 4-10 10-10Z" fill="url(#paper)"/>
+    <!-- subtle ribs -->
+    <path d="M22 10c-3 10-4 22-4 34 0 11 2 22 6 30" stroke="#7C2D12" stroke-opacity="0.15" stroke-width="3" stroke-linecap="round"/>
+    <path d="M42 10c3 10 4 22 4 34 0 11-2 22-6 30" stroke="#7C2D12" stroke-opacity="0.15" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 8h24c6 0 10 4 10 10v34c0 14-14 24-22 24S10 66 10 52V18c0-6 4-10 10-10Z" fill="url(#glow)"/>
+    <path d="M18 10h28" stroke="url(#rim)" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M18 62h28" stroke="url(#rim)" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M32 70v10" stroke="#7C2D12" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="32" cy="78" r="3" fill="#7C2D12"/>
+  </g>
+</svg>

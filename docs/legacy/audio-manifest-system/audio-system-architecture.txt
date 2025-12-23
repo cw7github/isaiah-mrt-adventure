@@ -1,0 +1,232 @@
+LEGACY AUDIO SYSTEM ARCHITECTURE (audio-manifest pipeline)
+See: ../../AUDIO_SYSTEM.md
+
+AUDIO SYSTEM ARCHITECTURE
+=========================
+
+┌─────────────────────────────────────────────────────────────────┐
+│                      CONTENT PACK (JSON)                        │
+│  - Stations (56)                                                │
+│  - Pages (505)                                                  │
+│  - Text content: sentences, questions, passages, etc.           │
+└──────────────────────┬──────────────────────────────────────────┘
+                       │
+                       ▼
+           ┌───────────────────────┐
+           │ extract-audio-texts   │ (Script)
+           │     .mjs              │
+           └───────────┬───────────┘
+                       │
+                       │ Extracts all text strings
+                       │ Creates audio ID mapping
+                       │
+                       ▼
+        ┌──────────────────────────────┐
+        │   AUDIO MANIFEST (JSON)      │
+        │   - 2703 audio entries       │
+        │   - Text → audioPath map     │
+        │   - Metadata (type, station) │
+        └────────┬─────────────────────┘
+                 │
+                 ├──────────────────────────┐
+                 │                          │
+                 ▼                          ▼
+    ┌────────────────────┐    ┌────────────────────────┐
+    │ generate-audio.mjs │    │   audio-player.js      │
+    │   (Script)         │    │   (Browser Library)    │
+    └────────┬───────────┘    └───────┬────────────────┘
+             │                        │
+             │ Calls ElevenLabs       │ Loads manifest
+             │ TTS API                │ Manages playback
+             │                        │
+             ▼                        │
+    ┌─────────────────┐              │
+    │  AUDIO FILES    │◄─────────────┘
+    │  (.mp3)         │   Fetches & plays
+    │  2703 files     │
+    └─────────────────┘
+
+AUDIO PLAYER FEATURES
+=====================
+
+Initialization
+├─ Load manifest from JSON
+├─ Initialize Web Audio Context
+└─ Set up callbacks (word highlight, completion, error)
+
+Playback Control
+├─ play(audioId, options)
+│  ├─ enableAutoWordSync
+│  └─ custom wordTimings
+├─ pause() → tracks position
+├─ resume() → continues from position
+├─ stop()
+└─ skip()
+
+Queue Management
+├─ enqueue(audioId)
+├─ enqueueBatch([items])
+├─ processQueue() → sequential playback
+│  └─ Auto-preloads next 3 items
+└─ clearQueue()
+
+Preloading
+├─ preload(audioId, {silent})
+├─ preloadBatch([audioIds])
+├─ preloadQueue(lookahead=3)
+├─ preloadPage(stationId, pageIndex)
+└─ preloadStationAnnouncement(stationId)
+
+Error Handling
+├─ Graceful 404 handling
+├─ Cache null for missing files
+├─ Continue queue on errors
+└─ Error callbacks
+
+Cache Management
+├─ Memory cache (Map)
+├─ getCacheStats()
+├─ clearCache()
+└─ Avoid repeated fetches
+
+Word Highlighting
+├─ Auto word sync (estimated)
+├─ Custom timings (precise)
+├─ onWordHighlight callback
+└─ Karaoke-style display
+
+AUDIO ID NAMING CONVENTION
+===========================
+
+UI Elements:
+  ui_train_announcement
+
+Station Announcements:
+  {stationId}_announcement
+  Example: rf_f1_print_concepts_announcement
+
+Page Content:
+  {stationId}_page{N}_{type}
+
+Types:
+  - sentence         (read page)
+  - readingtip       (read page)
+  - question         (question page)
+  - passage          (question page)
+  - hint             (question page)
+  - success          (question page)
+  - answer{N}        (answer options)
+  - prompt           (menu/activity)
+  - menustory        (menu page)
+  - item{N}_name     (menu items)
+  - item{N}_desc     (menu items)
+  - wrongfeedback    (wrong answer)
+  - successcriteria  (activity spec)
+
+Examples:
+  rf_f1_print_concepts_page0_sentence
+  rf_f1_print_concepts_page1_question
+  rf_f1_print_concepts_page1_passage
+  rf_f1_print_concepts_page1_hint
+  rf_f1_print_concepts_page1_answer0
+  rf_f1_print_concepts_page1_success
+
+INTEGRATION WORKFLOW
+====================
+
+1. App Initialization
+   └─ const player = new AudioPlayer(options)
+   └─ await player.initialize()
+
+2. Station Transition
+   └─ await player.preloadStationAnnouncement(stationId)
+   └─ await player.play(`${stationId}_announcement`)
+
+3. Page Load
+   └─ await player.preloadPage(stationId, pageIndex)
+   
+4. Read Page
+   └─ player.enqueueBatch([sentence, readingtip])
+   └─ await player.processQueue()
+
+5. Question Page
+   └─ await player.play(question)
+   └─ await player.play(passage)
+
+6. User Interaction
+   ├─ Needs hint → play(hint)
+   ├─ Wrong answer → play(wrongfeedback)
+   └─ Correct answer → play(success)
+
+ERROR HANDLING FLOW
+===================
+
+Missing Audio File (404)
+  ├─ Detected in preload()
+  ├─ Cache as null
+  ├─ Log warning (if not silent)
+  ├─ Skip playback
+  └─ Call onPlaybackComplete (continue queue)
+
+Network Error
+  ├─ Retry logic in generate-audio.mjs
+  ├─ Log error
+  ├─ Call onError callback
+  └─ Continue with next item
+
+Missing Manifest Entry
+  ├─ hasAudio() returns false
+  ├─ preload() returns null
+  └─ play() skips silently
+
+MEMORY MANAGEMENT
+=================
+
+Cache Strategy:
+  ├─ Store decoded audio buffers
+  ├─ Cache failed loads as null
+  ├─ Auto-preload next 3 in queue
+  └─ Manual clearCache() available
+
+Best Practices:
+  ├─ Preload during transitions
+  ├─ Clear cache between stations
+  ├─ Monitor getCacheStats()
+  └─ Balance preload vs. memory
+
+PRODUCTION CHECKLIST
+====================
+
+Before Launch:
+ [ ] Generate all audio files (2703 total)
+ [ ] Test on Chrome, Safari, Firefox
+ [ ] Test on iOS Safari, Android Chrome
+ [ ] Verify error handling with missing files
+ [ ] Test pause/resume functionality
+ [ ] Test word highlighting
+ [ ] Test queue processing
+ [ ] Verify preloading performance
+ [ ] Add loading indicators
+ [ ] Add pause/resume controls
+ [ ] Test on slow connections
+ [ ] Monitor memory usage
+ [ ] Add analytics for audio playback
+
+FILES REFERENCE
+===============
+
+Core Files:
+  lib/audio-player.js              (Browser library)
+  content/.../audio-manifest.json  (Audio mapping)
+  assets/audio/ela/*.mp3           (Audio files)
+
+Scripts:
+  scripts/extract-audio-texts.mjs  (Generate manifest)
+  scripts/generate-audio.mjs       (Generate TTS)
+  scripts/test-audio-system.mjs    (Test suite)
+  scripts/verify-audio-manifest.mjs (Verify completeness)
+
+Documentation:
+  docs/audio-system-integration.md (Integration guide)
+  docs/audio-system-review-report.md (This review)
+  AUDIO_SYSTEM_CHANGES.md          (Change summary)

@@ -1,0 +1,1379 @@
+/**
+ * MANIM-STYLE ANIMATION ENGINE
+ * Inspired by 3Blue1Brown - Mathematical animations for young learners
+ * Isaiah's MRT Food Adventure - Grade 1 Math
+ */
+
+const ManimEngine = {
+  // Animation timing defaults
+  timing: {
+    fast: 300,
+    normal: 500,
+    slow: 800,
+    verySlow: 1200
+  },
+
+  // Easing functions (matching CSS)
+  easing: {
+    smooth: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+    elastic: 'cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+    overshoot: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+  },
+
+  // Color palette
+  colors: {
+    coral: '#ff6b6b',
+    teal: '#4ecdc4',
+    gold: '#ffd93d',
+    lavender: '#a29bfe',
+    pink: '#fd79a8',
+    green: '#00b894',
+    blue: '#74b9ff',
+    orange: '#fdcb6e'
+  },
+
+  /**
+   * Create a manim-style stage container
+   */
+  createStage(options = {}) {
+    const stage = document.createElement('div');
+    stage.className = 'manim-stage';
+    if (options.withGrid) stage.classList.add('with-grid');
+    return stage;
+  },
+
+  /**
+   * Render an animated number line
+   */
+  renderNumberLine(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderNumberLine: container is required');
+      return null;
+    }
+
+    const { start = 0, end = 10, highlight = [], jumperIcon = '🐸', showJumps = true } = data;
+
+    // Validate range
+    if (end <= start) {
+      console.error('ManimEngine.renderNumberLine: end must be greater than start');
+      return null;
+    }
+
+    const stage = this.createStage({ withGrid: true });
+    const numberLine = document.createElement('div');
+    numberLine.className = 'manim-number-line';
+
+    const range = end - start;
+    const width = Math.min(range * 45, 600);
+
+    // Track
+    const track = document.createElement('div');
+    track.className = 'manim-nl-track';
+    track.style.width = width + 'px';
+
+    // Numbers and ticks
+    for (let i = start; i <= end; i++) {
+      const percent = ((i - start) / range) * 100;
+
+      // Tick
+      const tick = document.createElement('div');
+      tick.className = 'manim-nl-tick';
+      if (i % 5 === 0) tick.classList.add('major');
+      tick.style.left = percent + '%';
+      track.appendChild(tick);
+
+      // Number
+      const num = document.createElement('span');
+      num.className = 'manim-nl-num';
+      if (highlight.includes(i)) num.classList.add('active');
+      num.style.left = percent + '%';
+      num.textContent = i;
+      num.style.animationDelay = (i * 0.05) + 's';
+      track.appendChild(num);
+    }
+
+    // Jumper (frog/bunny)
+    if (highlight.length > 0 && jumperIcon) {
+      const jumper = document.createElement('span');
+      jumper.className = 'manim-jumper';
+      const startPos = ((highlight[0] - start) / range) * 100;
+      jumper.style.left = startPos + '%';
+      jumper.textContent = jumperIcon;
+      track.appendChild(jumper);
+
+      // Animate jumps
+      if (showJumps && highlight.length > 1) {
+        this.animateJumps(jumper, highlight, start, range);
+      }
+    }
+
+    // Draw arc trails
+    if (showJumps && highlight.length > 1) {
+      for (let i = 0; i < highlight.length - 1; i++) {
+        const fromPos = ((highlight[i] - start) / range) * width;
+        const toPos = ((highlight[i + 1] - start) / range) * width;
+        this.drawJumpArc(track, fromPos, toPos, i * 0.3);
+      }
+    }
+
+    numberLine.appendChild(track);
+    stage.appendChild(numberLine);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Animate jumper along number line
+   */
+  animateJumps(jumper, positions, start, range) {
+    const track = jumper.parentElement;
+    let currentIndex = 0;
+
+    const jump = () => {
+      if (currentIndex >= positions.length - 1) {
+        currentIndex = 0; // Loop
+      }
+
+      const nextIndex = currentIndex + 1;
+      const currentPos = ((positions[currentIndex] - start) / range) * 100;
+      const nextPos = ((positions[nextIndex] - start) / range) * 100;
+      const distance = nextPos - currentPos;
+
+      // Set CSS custom properties for smooth animation
+      jumper.style.setProperty('--jump-start', currentPos + '%');
+      jumper.style.setProperty('--jump-end', nextPos + '%');
+      jumper.style.setProperty('--jump-distance', Math.abs(distance) + '%');
+
+      // Add jumping class to trigger CSS animation
+      jumper.classList.add('jumping');
+
+      // Update position and remove class after animation completes
+      setTimeout(() => {
+        jumper.style.left = nextPos + '%';
+        jumper.classList.remove('jumping');
+        currentIndex = nextIndex;
+      }, 600); // Match CSS animation duration
+    };
+
+    // Start jumping after initial delay
+    setTimeout(() => {
+      jump(); // First jump
+      setInterval(jump, 1500);
+    }, 1000);
+  },
+
+  /**
+   * Draw SVG arc for jump visualization
+   */
+  drawJumpArc(container, fromX, toX, delay = 0) {
+    const arc = document.createElement('div');
+    arc.className = 'manim-jump-arc';
+    arc.style.left = fromX + 'px';
+
+    const width = Math.abs(toX - fromX);
+    const height = Math.min(50, width * 0.6); // Slightly taller arc for better visual
+
+    // Create SVG with arc path
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    // Create path element
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M 0 ${height} Q ${width/2} ${height * 0.1} ${width} ${height}`);
+    path.style.animationDelay = delay + 's';
+
+    svg.appendChild(path);
+    arc.appendChild(svg);
+    container.appendChild(arc);
+
+    // Remove arc after animation completes
+    setTimeout(() => {
+      arc.remove();
+    }, (delay + 1.2) * 1000); // Arc animation duration is 0.8s + delay + buffer
+  },
+
+  /**
+   * Render animated counters
+   */
+  renderCounters(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderCounters: container is required');
+      return null;
+    }
+
+    const { count = 0, groupOf = 5, style = 'circles', icon = '🔴' } = data;
+
+    // Validate count
+    if (count < 0) {
+      console.error('ManimEngine.renderCounters: count must be non-negative');
+      return null;
+    }
+
+    if (groupOf <= 0) {
+      console.error('ManimEngine.renderCounters: groupOf must be positive');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const counters = document.createElement('div');
+    counters.className = 'manim-counters';
+
+    const icons = {
+      circles: '🔴',
+      stars: '⭐',
+      apples: '🍎',
+      fish: '🐟',
+      hearts: '❤️',
+      trains: '🚃',
+      bubbles: '🫧',
+      cookies: '🍪'
+    };
+
+    const displayIcon = icons[style] || icon;
+    const groups = Math.ceil(count / groupOf);
+
+    for (let g = 0; g < groups; g++) {
+      const group = document.createElement('div');
+      group.className = 'manim-counter-group';
+
+      const startIdx = g * groupOf;
+      const endIdx = Math.min(startIdx + groupOf, count);
+      const groupCount = endIdx - startIdx;
+
+      group.setAttribute('data-count', groupCount);
+
+      for (let i = startIdx; i < endIdx; i++) {
+        const counter = document.createElement('span');
+        counter.className = 'manim-counter';
+        counter.textContent = displayIcon;
+        counter.style.animationDelay = (i * 0.1) + 's';
+        group.appendChild(counter);
+      }
+
+      counters.appendChild(group);
+    }
+
+    stage.appendChild(counters);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render animated ten frame
+   */
+  renderTenFrame(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderTenFrame: container is required');
+      return null;
+    }
+
+    const { count = 0, style = 'dots', showEquation = true } = data;
+
+    // Validate count
+    if (count < 0) {
+      console.error('ManimEngine.renderTenFrame: count must be non-negative');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const tenFrame = document.createElement('div');
+    tenFrame.className = 'manim-ten-frame';
+
+    // Grid (2 rows x 5 columns)
+    const grid = document.createElement('div');
+    grid.className = 'manim-tf-grid';
+
+    // Fill in proper order: left to right, top to bottom
+    for (let i = 0; i < 10; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'manim-tf-cell';
+      cell.setAttribute('data-index', i);
+
+      if (i < count) {
+        cell.classList.add('filled');
+        const dot = document.createElement('div');
+        dot.className = 'manim-tf-dot';
+        // Staggered animation with 0.1s delay between each dot
+        dot.style.animationDelay = (i * 0.1) + 's';
+
+        if (style === 'stars') {
+          dot.textContent = '⭐';
+          dot.classList.add('emoji-style');
+        } else if (style === 'fish') {
+          dot.textContent = '🐟';
+          dot.classList.add('emoji-style');
+        }
+
+        cell.appendChild(dot);
+      }
+
+      grid.appendChild(cell);
+    }
+
+    tenFrame.appendChild(grid);
+
+    // Equation display - animates in after dots complete
+    if (showEquation && count <= 10) {
+      const equation = document.createElement('div');
+      equation.className = 'manim-tf-equation';
+      // Calculate when last dot animation completes: (count-1) * 0.1s delay + 0.5s animation duration
+      const equationDelay = count > 0 ? (count - 1) * 0.1 + 0.5 : 0;
+      equation.style.animationDelay = equationDelay + 's';
+
+      equation.innerHTML = `
+        <span class="num" style="animation-delay: ${equationDelay}s">${count}</span>
+        <span class="op" style="animation-delay: ${equationDelay + 0.1}s">=</span>
+        <span class="num" style="animation-delay: ${equationDelay + 0.2}s">${Math.min(count, 5)}</span>
+        <span class="op" style="animation-delay: ${equationDelay + 0.3}s">+</span>
+        <span class="num" style="animation-delay: ${equationDelay + 0.4}s">${Math.max(0, count - 5)}</span>
+      `;
+      tenFrame.appendChild(equation);
+    }
+
+    stage.appendChild(tenFrame);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render animated 2D shapes
+   */
+  renderShapes2D(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderShapes2D: container is required');
+      return null;
+    }
+
+    const { shapes = [], highlight = null, showLabels = true } = data;
+
+    const stage = this.createStage();
+    const shapesContainer = document.createElement('div');
+    shapesContainer.className = 'manim-shapes';
+
+    const shapeColors = {
+      circle: this.colors.coral,
+      square: this.colors.blue,
+      triangle: this.colors.gold,
+      rectangle: this.colors.green,
+      hexagon: this.colors.lavender,
+      oval: this.colors.teal,
+      trapezoid: this.colors.pink,
+      pentagon: this.colors.orange
+    };
+
+    shapes.forEach((shapeName, idx) => {
+      const card = document.createElement('div');
+      card.className = 'manim-shape-card';
+      if (shapeName === highlight) card.classList.add('highlighted');
+      card.style.animationDelay = (idx * 0.15) + 's';
+
+      const svg = this.createShapeSVG(shapeName, shapeColors[shapeName] || this.colors.coral);
+      card.appendChild(svg);
+
+      if (showLabels) {
+        const label = document.createElement('span');
+        label.className = 'manim-shape-label';
+        label.textContent = shapeName;
+        card.appendChild(label);
+      }
+
+      // Add shape attributes (sides/corners) on hover
+      const attributes = this.getShapeAttributes(shapeName);
+      if (attributes) {
+        const attrContainer = document.createElement('div');
+        attrContainer.className = 'manim-shape-attributes';
+
+        if (attributes.sides !== null) {
+          const sidesEl = document.createElement('span');
+          sidesEl.className = 'manim-attr-badge sides';
+          sidesEl.textContent = `${attributes.sides} ${attributes.sides === 1 ? 'side' : 'sides'}`;
+          attrContainer.appendChild(sidesEl);
+        }
+
+        if (attributes.corners !== null) {
+          const cornersEl = document.createElement('span');
+          cornersEl.className = 'manim-attr-badge corners';
+          cornersEl.textContent = `${attributes.corners} ${attributes.corners === 1 ? 'corner' : 'corners'}`;
+          attrContainer.appendChild(cornersEl);
+        }
+
+        card.appendChild(attrContainer);
+      }
+
+      shapesContainer.appendChild(card);
+    });
+
+    stage.appendChild(shapesContainer);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Alias for renderShapes2D (backward compatibility)
+   */
+  renderShapes(container, data = {}) {
+    return this.renderShapes2D(container, data);
+  },
+
+  /**
+   * Get shape attributes (sides and corners count)
+   */
+  getShapeAttributes(shapeName) {
+    const attributes = {
+      circle: { sides: null, corners: 0 },
+      oval: { sides: null, corners: 0 },
+      triangle: { sides: 3, corners: 3 },
+      square: { sides: 4, corners: 4 },
+      rectangle: { sides: 4, corners: 4 },
+      trapezoid: { sides: 4, corners: 4 },
+      pentagon: { sides: 5, corners: 5 },
+      hexagon: { sides: 6, corners: 6 }
+    };
+
+    return attributes[shapeName] || null;
+  },
+
+  /**
+   * Create SVG for a shape
+   */
+  createShapeSVG(shapeName, color) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'manim-shape-svg';
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+
+    let shapeEl;
+    switch (shapeName) {
+      case 'circle':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        shapeEl.setAttribute('cx', '50');
+        shapeEl.setAttribute('cy', '50');
+        shapeEl.setAttribute('r', '40');
+        break;
+      case 'square':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        shapeEl.setAttribute('x', '10');
+        shapeEl.setAttribute('y', '10');
+        shapeEl.setAttribute('width', '80');
+        shapeEl.setAttribute('height', '80');
+        shapeEl.setAttribute('rx', '2');
+        break;
+      case 'rectangle':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        shapeEl.setAttribute('x', '8');
+        shapeEl.setAttribute('y', '25');
+        shapeEl.setAttribute('width', '84');
+        shapeEl.setAttribute('height', '50');
+        shapeEl.setAttribute('rx', '2');
+        break;
+      case 'triangle':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        shapeEl.setAttribute('points', '50,10 90,85 10,85');
+        break;
+      case 'hexagon':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        shapeEl.setAttribute('points', '50,8 88,30 88,70 50,92 12,70 12,30');
+        break;
+      case 'trapezoid':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        shapeEl.setAttribute('points', '25,20 75,20 90,80 10,80');
+        break;
+      case 'oval':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+        shapeEl.setAttribute('cx', '50');
+        shapeEl.setAttribute('cy', '50');
+        shapeEl.setAttribute('rx', '42');
+        shapeEl.setAttribute('ry', '30');
+        break;
+      case 'pentagon':
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        shapeEl.setAttribute('points', '50,8 92,38 75,88 25,88 8,38');
+        break;
+      default:
+        shapeEl = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        shapeEl.setAttribute('cx', '50');
+        shapeEl.setAttribute('cy', '50');
+        shapeEl.setAttribute('r', '40');
+    }
+
+    shapeEl.setAttribute('fill', color);
+    shapeEl.setAttribute('stroke', 'rgba(255,255,255,0.3)');
+    shapeEl.setAttribute('stroke-width', '2.5');
+
+    svg.appendChild(shapeEl);
+    wrapper.appendChild(svg);
+    return wrapper;
+  },
+
+  /**
+   * Render animated 3D shape
+   */
+  render3DShape(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.render3DShape: container is required');
+      return null;
+    }
+
+    const { shape = 'cube', showFaces = true, autoRotate = true } = data;
+
+    const stage = this.createStage();
+    const container3d = document.createElement('div');
+    container3d.className = 'manim-3d-container';
+
+    let shapeEl;
+
+    if (shape === 'cube') {
+      shapeEl = document.createElement('div');
+      shapeEl.className = 'manim-cube';
+      if (!autoRotate) shapeEl.classList.add('paused');
+
+      const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+      const labels = showFaces ? ['1', '2', '3', '4', '5', '6'] : ['', '', '', '', '', ''];
+
+      faces.forEach((face, idx) => {
+        const faceEl = document.createElement('div');
+        faceEl.className = `manim-cube-face ${face}`;
+        faceEl.textContent = labels[idx];
+        shapeEl.appendChild(faceEl);
+      });
+    } else if (shape === 'sphere') {
+      shapeEl = document.createElement('div');
+      shapeEl.className = 'manim-sphere';
+    } else if (shape === 'cylinder') {
+      shapeEl = document.createElement('div');
+      shapeEl.className = 'manim-cylinder';
+    } else if (shape === 'cone') {
+      shapeEl = document.createElement('div');
+      shapeEl.className = 'manim-cone';
+    }
+
+    container3d.appendChild(shapeEl);
+    stage.appendChild(container3d);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render animated equation
+   * Enhanced with larger numbers, better spacing, and more satisfying animations
+   */
+  renderEquation(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderEquation: container is required');
+      return null;
+    }
+
+    const { left = 0, operator = '+', right = 0, result = 0, showResult = false } = data;
+
+    const stage = this.createStage();
+    const equation = document.createElement('div');
+    equation.className = 'manim-equation';
+
+    // Left number - Enhanced with data attribute for styling
+    const leftEl = document.createElement('span');
+    leftEl.className = 'manim-eq-part manim-eq-num';
+    leftEl.textContent = left;
+    leftEl.style.animationDelay = '0s';
+    leftEl.setAttribute('data-number', left);
+    equation.appendChild(leftEl);
+
+    // Operator - Enhanced with better timing
+    const opEl = document.createElement('span');
+    opEl.className = 'manim-eq-part manim-eq-op';
+    opEl.textContent = operator;
+    opEl.style.animationDelay = '0.3s';
+    equation.appendChild(opEl);
+
+    // Right number - Enhanced with data attribute for styling
+    const rightEl = document.createElement('span');
+    rightEl.className = 'manim-eq-part manim-eq-num';
+    rightEl.textContent = right;
+    rightEl.style.animationDelay = '0.6s';
+    rightEl.setAttribute('data-number', right);
+    equation.appendChild(rightEl);
+
+    // Equals - Enhanced with better timing
+    const eqEl = document.createElement('span');
+    eqEl.className = 'manim-eq-part manim-eq-equals';
+    eqEl.textContent = '=';
+    eqEl.style.animationDelay = '0.9s';
+    equation.appendChild(eqEl);
+
+    // Result or blank - Enhanced animations
+    const resultEl = document.createElement('span');
+    if (showResult) {
+      resultEl.className = 'manim-eq-part manim-eq-result';
+      resultEl.textContent = result;
+      resultEl.style.animationDelay = '1.2s';
+      resultEl.setAttribute('data-number', result);
+    } else {
+      resultEl.className = 'manim-eq-part manim-eq-blank';
+      resultEl.textContent = '?';
+    }
+    equation.appendChild(resultEl);
+
+    stage.appendChild(equation);
+    container.appendChild(stage);
+
+    return { stage, resultEl };
+  },
+
+  /**
+   * Render CPA transition visualization
+   */
+  renderCPATransition(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderCPATransition: container is required');
+      return null;
+    }
+
+    const { stage: currentStage = 'concrete', concept = 'counting' } = data;
+
+    const stageEl = this.createStage();
+    const cpa = document.createElement('div');
+    cpa.className = 'manim-cpa';
+
+    const stages = [
+      { key: 'concrete', icon: '🧱', label: 'Objects' },
+      { key: 'pictorial', icon: '🖼️', label: 'Pictures' },
+      { key: 'abstract', icon: '🔢', label: 'Numbers' }
+    ];
+
+    stages.forEach((s, idx) => {
+      if (idx > 0) {
+        const arrow = document.createElement('span');
+        arrow.className = 'manim-cpa-arrow';
+        arrow.textContent = '→';
+        cpa.appendChild(arrow);
+      }
+
+      const stageBox = document.createElement('div');
+      stageBox.className = 'manim-cpa-stage';
+      if (s.key === currentStage) stageBox.classList.add('active');
+      if (stages.findIndex(x => x.key === currentStage) > idx) stageBox.classList.add('completed');
+      stageBox.style.animationDelay = (idx * 0.2) + 's';
+      stageBox.setAttribute('data-stage', s.key);
+      stageBox.setAttribute('title', `${s.label} - ${s.key === currentStage ? 'Current Stage' : s.key}`);
+
+      const icon = document.createElement('span');
+      icon.className = 'manim-cpa-icon';
+      icon.textContent = s.icon;
+      stageBox.appendChild(icon);
+
+      const label = document.createElement('span');
+      label.className = 'manim-cpa-label';
+      label.textContent = s.label;
+      stageBox.appendChild(label);
+
+      cpa.appendChild(stageBox);
+    });
+
+    stageEl.appendChild(cpa);
+    container.appendChild(stageEl);
+
+    return stageEl;
+  },
+
+  /**
+   * Render addition animation
+   */
+  renderAddition(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderAddition: container is required');
+      return null;
+    }
+
+    const { left = 3, right = 2, icon = '🍎' } = data;
+
+    // Validate values
+    if (left < 0 || right < 0) {
+      console.error('ManimEngine.renderAddition: left and right must be non-negative');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const operation = document.createElement('div');
+    operation.className = 'manim-operation';
+
+    // Visual representation
+    const visual = document.createElement('div');
+    visual.className = 'manim-op-visual';
+
+    // Left group
+    const leftGroup = document.createElement('div');
+    leftGroup.className = 'manim-op-group';
+    for (let i = 0; i < left; i++) {
+      const item = document.createElement('span');
+      item.className = 'manim-op-item';
+      item.textContent = icon;
+      item.style.animationDelay = (i * 0.1) + 's';
+      leftGroup.appendChild(item);
+    }
+    visual.appendChild(leftGroup);
+
+    // Plus symbol
+    const plus = document.createElement('span');
+    plus.className = 'manim-op-symbol';
+    plus.textContent = '+';
+    visual.appendChild(plus);
+
+    // Right group
+    const rightGroup = document.createElement('div');
+    rightGroup.className = 'manim-op-group';
+    for (let i = 0; i < right; i++) {
+      const item = document.createElement('span');
+      item.className = 'manim-op-item';
+      item.textContent = icon;
+      item.style.animationDelay = ((left + i) * 0.1) + 's';
+      rightGroup.appendChild(item);
+    }
+    visual.appendChild(rightGroup);
+
+    operation.appendChild(visual);
+
+    // Equation
+    const equation = document.createElement('div');
+    equation.className = 'manim-tf-equation';
+    equation.innerHTML = `
+      <span class="num">${left}</span>
+      <span class="op">+</span>
+      <span class="num">${right}</span>
+      <span class="op">=</span>
+      <span class="num" style="color: var(--manim-gold);">${left + right}</span>
+    `;
+    operation.appendChild(equation);
+
+    stage.appendChild(operation);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render comparison animation
+   */
+  renderComparison(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderComparison: container is required');
+      return null;
+    }
+
+    const { left = 5, right = 3, icon = '🔵' } = data;
+
+    // Validate values
+    if (left < 0 || right < 0) {
+      console.error('ManimEngine.renderComparison: left and right must be non-negative');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const compare = document.createElement('div');
+    compare.className = 'manim-compare';
+
+    // Calculate responsive sizing based on max number
+    const maxNum = Math.max(left, right);
+    let iconSize, gridCols;
+
+    if (maxNum <= 5) {
+      iconSize = 32;
+      gridCols = Math.min(maxNum, 5);
+    } else if (maxNum <= 10) {
+      iconSize = 28;
+      gridCols = 5;
+    } else if (maxNum <= 15) {
+      iconSize = 24;
+      gridCols = 5;
+    } else {
+      iconSize = 20;
+      gridCols = 5;
+    }
+
+    // Left side
+    const leftSide = document.createElement('div');
+    leftSide.className = 'manim-compare-side';
+    if (left > right) leftSide.classList.add('bigger');
+    else if (left < right) leftSide.classList.add('smaller');
+    else leftSide.classList.add('equal');
+
+    const leftIcons = document.createElement('div');
+    leftIcons.className = 'manim-compare-icons';
+    leftIcons.style.cssText = `
+      display: grid;
+      grid-template-columns: repeat(${gridCols}, 1fr);
+      gap: 6px;
+      justify-items: center;
+      align-items: center;
+      max-width: 200px;
+    `;
+
+    for (let i = 0; i < left; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'manim-compare-dot';
+      dot.textContent = icon;
+      dot.style.cssText = `
+        font-size: ${iconSize}px;
+        animation: manimCompareDotAppear 0.4s var(--ease-elastic) backwards;
+        animation-delay: ${i * 0.08}s;
+      `;
+      leftIcons.appendChild(dot);
+    }
+    leftSide.appendChild(leftIcons);
+
+    const leftNum = document.createElement('div');
+    leftNum.className = 'manim-compare-number';
+    leftNum.textContent = left;
+    leftSide.appendChild(leftNum);
+
+    compare.appendChild(leftSide);
+
+    // Comparison symbol
+    const symbol = document.createElement('span');
+    symbol.className = 'manim-compare-symbol';
+    if (left > right) symbol.textContent = '>';
+    else if (left < right) symbol.textContent = '<';
+    else symbol.textContent = '=';
+    compare.appendChild(symbol);
+
+    // Right side
+    const rightSide = document.createElement('div');
+    rightSide.className = 'manim-compare-side';
+    if (right > left) rightSide.classList.add('bigger');
+    else if (right < left) rightSide.classList.add('smaller');
+    else rightSide.classList.add('equal');
+
+    const rightIcons = document.createElement('div');
+    rightIcons.className = 'manim-compare-icons';
+    rightIcons.style.cssText = `
+      display: grid;
+      grid-template-columns: repeat(${gridCols}, 1fr);
+      gap: 6px;
+      justify-items: center;
+      align-items: center;
+      max-width: 200px;
+    `;
+
+    for (let i = 0; i < right; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'manim-compare-dot';
+      dot.textContent = icon;
+      dot.style.cssText = `
+        font-size: ${iconSize}px;
+        animation: manimCompareDotAppear 0.4s var(--ease-elastic) backwards;
+        animation-delay: ${i * 0.08}s;
+      `;
+      rightIcons.appendChild(dot);
+    }
+    rightSide.appendChild(rightIcons);
+
+    const rightNum = document.createElement('div');
+    rightNum.className = 'manim-compare-number';
+    rightNum.textContent = right;
+    rightSide.appendChild(rightNum);
+
+    compare.appendChild(rightSide);
+
+    stage.appendChild(compare);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Trigger celebration animation
+   */
+  celebrate(emojis = ['⭐', '🎉', '✨', '🌟', '💫']) {
+    if (!Array.isArray(emojis) || emojis.length === 0) {
+      emojis = ['⭐', '🎉', '✨', '🌟', '💫'];
+    }
+
+    const container = document.createElement('div');
+    container.className = 'manim-celebrate';
+    document.body.appendChild(container);
+
+    for (let i = 0; i < 15; i++) {
+      const particle = document.createElement('span');
+      particle.className = 'manim-particle';
+      particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      particle.style.setProperty('--tx', (Math.random() - 0.5) * 400 + 'px');
+      particle.style.setProperty('--ty', (Math.random() - 0.5) * 400 + 'px');
+      particle.style.setProperty('--rot', Math.random() * 720 - 360 + 'deg');
+      particle.style.animationDelay = (Math.random() * 0.3) + 's';
+      container.appendChild(particle);
+    }
+
+    setTimeout(() => container.remove(), 1500);
+  },
+
+  /**
+   * Render animated clock for time telling
+   */
+  renderClock(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderClock: container is required');
+      return null;
+    }
+
+    const { hour = 3, minute = 0, showTickMarks = true, animate = true } = data;
+
+    // Validate time values
+    if (hour < 0 || hour > 23) {
+      console.error('ManimEngine.renderClock: hour must be between 0-23');
+      return null;
+    }
+
+    if (minute < 0 || minute > 59) {
+      console.error('ManimEngine.renderClock: minute must be between 0-59');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const clock = document.createElement('div');
+    clock.className = 'manim-clock';
+
+    // Tick marks (5-minute intervals and hours)
+    if (showTickMarks) {
+      for (let i = 0; i < 60; i++) {
+        const tick = document.createElement('div');
+        const isHourMark = i % 5 === 0;
+        tick.className = isHourMark ? 'manim-clock-tick-hour' : 'manim-clock-tick-minute';
+        const tickAngle = i * 6; // Each tick is 6 degrees (360/60)
+        tick.style.setProperty('--tick-angle', tickAngle + 'deg');
+        clock.appendChild(tick);
+      }
+    }
+
+    // Numbers (1-12)
+    for (let i = 1; i <= 12; i++) {
+      const num = document.createElement('span');
+      num.className = 'manim-clock-number';
+      num.setAttribute('data-num', i);
+      num.textContent = i;
+      num.style.animationDelay = (i * 0.05) + 's';
+      clock.appendChild(num);
+    }
+
+    // Hour hand
+    const hourHand = document.createElement('div');
+    hourHand.className = 'manim-clock-hour';
+    const hourAngle = (hour % 12) * 30 + (minute / 60) * 30;
+    hourHand.style.setProperty('--hour-angle', hourAngle + 'deg');
+    if (animate) {
+      hourHand.style.setProperty('--start-angle', '0deg');
+      hourHand.classList.add('animated');
+    }
+    clock.appendChild(hourHand);
+
+    // Minute hand
+    const minuteHand = document.createElement('div');
+    minuteHand.className = 'manim-clock-minute';
+    const minuteAngle = minute * 6;
+    minuteHand.style.setProperty('--minute-angle', minuteAngle + 'deg');
+    if (animate) {
+      minuteHand.style.setProperty('--start-angle', '0deg');
+      minuteHand.classList.add('animated');
+    }
+    clock.appendChild(minuteHand);
+
+    // Center dot
+    const center = document.createElement('div');
+    center.className = 'manim-clock-center';
+    clock.appendChild(center);
+
+    stage.appendChild(clock);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render place value visualization
+   * Enhanced to clearly show tens blocks are 10 grouped ones
+   */
+  renderPlaceValue(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderPlaceValue: container is required');
+      return null;
+    }
+
+    const { number = 15, showEquation = true } = data;
+
+    // Validate number
+    if (number < 0) {
+      console.error('ManimEngine.renderPlaceValue: number must be non-negative');
+      return null;
+    }
+
+    const tens = Math.floor(number / 10);
+    const ones = number % 10;
+
+    const stage = this.createStage();
+    const placeValue = document.createElement('div');
+    placeValue.className = 'manim-place-value';
+
+    // Tens column
+    const tensColumn = document.createElement('div');
+    tensColumn.className = 'manim-place-column tens';
+
+    const tensLabel = document.createElement('div');
+    tensLabel.className = 'manim-place-label';
+    tensLabel.textContent = 'Tens';
+    tensColumn.appendChild(tensLabel);
+
+    const tensBlocks = document.createElement('div');
+    tensBlocks.className = 'manim-place-blocks';
+    for (let t = 0; t < tens; t++) {
+      const block = document.createElement('div');
+      block.className = 'manim-block-ten';
+      block.setAttribute('title', '10 ones = 1 ten');
+      for (let u = 0; u < 10; u++) {
+        const unit = document.createElement('div');
+        unit.className = 'manim-block-unit';
+        unit.style.animationDelay = (t * 0.3 + u * 0.03) + 's';
+        unit.setAttribute('data-position', u + 1);
+        block.appendChild(unit);
+      }
+      block.style.animationDelay = (t * 0.3) + 's';
+      tensBlocks.appendChild(block);
+    }
+    tensColumn.appendChild(tensBlocks);
+
+    const tensNum = document.createElement('div');
+    tensNum.style.cssText = 'font-size: 32px; font-family: "Fredoka One", cursive; color: var(--manim-blue); margin-top: 12px;';
+    tensNum.textContent = tens;
+    tensColumn.appendChild(tensNum);
+
+    placeValue.appendChild(tensColumn);
+
+    // Ones column
+    const onesColumn = document.createElement('div');
+    onesColumn.className = 'manim-place-column ones';
+
+    const onesLabel = document.createElement('div');
+    onesLabel.className = 'manim-place-label';
+    onesLabel.textContent = 'Ones';
+    onesColumn.appendChild(onesLabel);
+
+    const onesBlocks = document.createElement('div');
+    onesBlocks.className = 'manim-place-blocks';
+    onesBlocks.style.display = 'flex';
+    onesBlocks.style.flexWrap = 'wrap';
+    onesBlocks.style.gap = '6px';
+    onesBlocks.style.justifyContent = 'center';
+    for (let o = 0; o < ones; o++) {
+      const block = document.createElement('div');
+      block.className = 'manim-block-one';
+      block.style.animationDelay = (tens * 0.3 + o * 0.1) + 's';
+      onesBlocks.appendChild(block);
+    }
+    onesColumn.appendChild(onesBlocks);
+
+    const onesNum = document.createElement('div');
+    onesNum.style.cssText = 'font-size: 32px; font-family: "Fredoka One", cursive; color: var(--manim-coral); margin-top: 12px;';
+    onesNum.textContent = ones;
+    onesColumn.appendChild(onesNum);
+
+    placeValue.appendChild(onesColumn);
+
+    // Add place value equation if requested
+    if (showEquation) {
+      const equation = document.createElement('div');
+      equation.className = 'manim-place-equation';
+      equation.style.cssText = `
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 24px;
+        font-family: 'Fredoka One', cursive;
+        font-size: 36px;
+        color: var(--manim-white);
+        animation: manimFadeIn 0.6s var(--ease-smooth) forwards;
+        animation-delay: ${(tens * 0.3 + ones * 0.1 + 0.5)}s;
+        opacity: 0;
+      `;
+
+      const tensDisplay = document.createElement('span');
+      tensDisplay.style.cssText = 'padding: 8px 20px; background: rgba(116, 185, 255, 0.15); border-radius: 12px; color: var(--manim-blue);';
+      tensDisplay.textContent = `${tens} × 10`;
+      equation.appendChild(tensDisplay);
+
+      const plus = document.createElement('span');
+      plus.style.color = 'var(--manim-gold)';
+      plus.textContent = '+';
+      equation.appendChild(plus);
+
+      const onesDisplay = document.createElement('span');
+      onesDisplay.style.cssText = 'padding: 8px 20px; background: rgba(255, 107, 107, 0.15); border-radius: 12px; color: var(--manim-coral);';
+      onesDisplay.textContent = ones;
+      equation.appendChild(onesDisplay);
+
+      const equals = document.createElement('span');
+      equals.style.color = 'var(--manim-teal)';
+      equals.textContent = '=';
+      equation.appendChild(equals);
+
+      const total = document.createElement('span');
+      total.style.cssText = 'padding: 8px 20px; background: rgba(255, 217, 61, 0.15); border: 2px solid var(--manim-gold); border-radius: 12px; color: var(--manim-gold);';
+      total.textContent = number;
+      equation.appendChild(total);
+
+      placeValue.appendChild(equation);
+    }
+
+    stage.appendChild(placeValue);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render blocks visualization (for building/grouping activities)
+   */
+  renderBlocks(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderBlocks: container is required');
+      return null;
+    }
+
+    const { blocks = [], colors = null, labels = true } = data;
+
+    // Validate blocks array
+    if (!Array.isArray(blocks) || blocks.length === 0) {
+      console.error('ManimEngine.renderBlocks: blocks array is required and must not be empty');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const blocksContainer = document.createElement('div');
+    blocksContainer.className = 'manim-blocks-container';
+    blocksContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 24px;';
+
+    const defaultColors = [
+      this.colors.coral,
+      this.colors.teal,
+      this.colors.gold,
+      this.colors.lavender,
+      this.colors.blue,
+      this.colors.green,
+      this.colors.pink,
+      this.colors.orange
+    ];
+
+    blocks.forEach((block, idx) => {
+      const blockEl = document.createElement('div');
+      blockEl.className = 'manim-block';
+      blockEl.style.cssText = `
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        background: ${colors && colors[idx] ? colors[idx] : defaultColors[idx % defaultColors.length]};
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Fredoka One', cursive;
+        font-size: 32px;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        animation: manimCounterPop 0.5s var(--ease-elastic) backwards;
+        animation-delay: ${idx * 0.1}s;
+        cursor: pointer;
+        transition: all 0.3s var(--ease-smooth);
+      `;
+
+      if (labels && typeof block === 'object' && block.label) {
+        blockEl.textContent = block.label;
+      } else if (typeof block === 'string' || typeof block === 'number') {
+        blockEl.textContent = block;
+      }
+
+      blockEl.addEventListener('mouseenter', () => {
+        blockEl.style.transform = 'scale(1.1) rotate(5deg)';
+        blockEl.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3)';
+      });
+
+      blockEl.addEventListener('mouseleave', () => {
+        blockEl.style.transform = 'scale(1) rotate(0deg)';
+        blockEl.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.2)';
+      });
+
+      blocksContainer.appendChild(blockEl);
+    });
+
+    stage.appendChild(blocksContainer);
+    container.appendChild(stage);
+
+    return stage;
+  },
+
+  /**
+   * Render picture graph visualization
+   */
+  renderPictureGraph(container, data = {}) {
+    if (!container) {
+      console.error('ManimEngine.renderPictureGraph: container is required');
+      return null;
+    }
+
+    const { categories = [], icon = '🍎', maxCount = 10, showLabels = true, orientation = 'vertical' } = data;
+
+    // Validate categories
+    if (!Array.isArray(categories) || categories.length === 0) {
+      console.error('ManimEngine.renderPictureGraph: categories array is required and must not be empty');
+      return null;
+    }
+
+    const stage = this.createStage();
+    const graph = document.createElement('div');
+    graph.className = 'manim-picture-graph';
+    graph.style.cssText = `
+      display: flex;
+      flex-direction: ${orientation === 'horizontal' ? 'column' : 'row'};
+      gap: 24px;
+      padding: 28px;
+      align-items: ${orientation === 'horizontal' ? 'flex-start' : 'flex-end'};
+      justify-content: center;
+    `;
+
+    categories.forEach((category, catIdx) => {
+      const categoryEl = document.createElement('div');
+      categoryEl.className = 'manim-graph-category';
+      categoryEl.style.cssText = `
+        display: flex;
+        flex-direction: ${orientation === 'horizontal' ? 'row' : 'column'};
+        align-items: center;
+        gap: 8px;
+      `;
+
+      // Category label
+      if (showLabels && category.label) {
+        const label = document.createElement('div');
+        label.className = 'manim-graph-label';
+        label.style.cssText = `
+          font-family: 'Fredoka One', cursive;
+          font-size: 18px;
+          color: var(--manim-white);
+          text-align: center;
+          min-width: 80px;
+          padding: 8px;
+          background: rgba(255, 255, 255, 0.08);
+          border-radius: 12px;
+        `;
+        label.textContent = category.label;
+        categoryEl.appendChild(label);
+      }
+
+      // Icons container
+      const iconsContainer = document.createElement('div');
+      iconsContainer.className = 'manim-graph-icons';
+      iconsContainer.style.cssText = `
+        display: flex;
+        flex-direction: ${orientation === 'horizontal' ? 'row' : 'column-reverse'};
+        gap: 6px;
+        align-items: center;
+      `;
+
+      const count = Math.min(category.count || 0, maxCount);
+      const categoryIcon = category.icon || icon;
+
+      for (let i = 0; i < count; i++) {
+        const iconEl = document.createElement('span');
+        iconEl.className = 'manim-graph-icon';
+        iconEl.style.cssText = `
+          font-size: 32px;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+          animation: manimCounterPop 0.4s var(--ease-elastic) backwards;
+          animation-delay: ${(catIdx * 0.2) + (i * 0.1)}s;
+          cursor: pointer;
+          transition: all 0.2s var(--ease-smooth);
+        `;
+        iconEl.textContent = categoryIcon;
+
+        iconEl.addEventListener('mouseenter', () => {
+          iconEl.style.transform = 'scale(1.2)';
+          iconEl.style.filter = 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))';
+        });
+
+        iconEl.addEventListener('mouseleave', () => {
+          iconEl.style.transform = 'scale(1)';
+          iconEl.style.filter = 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))';
+        });
+
+        iconsContainer.appendChild(iconEl);
+      }
+
+      categoryEl.appendChild(iconsContainer);
+      graph.appendChild(categoryEl);
+    });
+
+    stage.appendChild(graph);
+    container.appendChild(stage);
+
+    return stage;
+  }
+};
+
+// Expose globally
+window.ManimEngine = ManimEngine;
+
+// Enhanced render function that uses ManimEngine
+window.renderManimVisual = function(visual, container) {
+  if (!visual || !visual.type) {
+    console.warn('renderManimVisual: visual object with type is required');
+    return null;
+  }
+
+  if (!container) {
+    console.error('renderManimVisual: container element is required');
+    return null;
+  }
+
+  try {
+    switch (visual.type) {
+      case 'numberLine':
+        return ManimEngine.renderNumberLine(container, visual.data || {});
+      case 'counters':
+        return ManimEngine.renderCounters(container, visual.data || {});
+      case 'tenFrame':
+        return ManimEngine.renderTenFrame(container, visual.data || {});
+      case 'shapes':
+      case 'shapes2d':
+        return ManimEngine.renderShapes2D(container, visual.data || {});
+      case '3dShape':
+      case 'shape3d':
+        return ManimEngine.render3DShape(container, visual.data || {});
+      case 'equation':
+        return ManimEngine.renderEquation(container, visual.data || {});
+      case 'addition':
+        return ManimEngine.renderAddition(container, visual.data || {});
+      case 'comparison':
+        return ManimEngine.renderComparison(container, visual.data || {});
+      case 'cpa':
+        return ManimEngine.renderCPATransition(container, visual.data || {});
+      case 'clock':
+        return ManimEngine.renderClock(container, visual.data || {});
+      case 'placeValue':
+        return ManimEngine.renderPlaceValue(container, visual.data || {});
+      case 'blocks':
+        return ManimEngine.renderBlocks(container, visual.data || {});
+      case 'pictureGraph':
+      case 'picturegraph':
+        return ManimEngine.renderPictureGraph(container, visual.data || {});
+      default:
+        console.warn('Unknown manim visual type:', visual.type);
+        return null;
+    }
+  } catch (error) {
+    console.error('Error rendering manim visual:', error);
+    return null;
+  }
+};

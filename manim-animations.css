@@ -1,0 +1,2471 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   MANIM-STYLE ANIMATION SYSTEM
+   Inspired by 3Blue1Brown - Mathematical animations for young learners
+   Isaiah's MRT Food Adventure - Grade 1 Math
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Manim-inspired color palette */
+  --manim-bg-dark: #1a1a2e;
+  --manim-bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --manim-coral: #ff6b6b;
+  --manim-coral-light: #ff8e8e;
+  --manim-teal: #4ecdc4;
+  --manim-teal-light: #7ee8e1;
+  --manim-gold: #ffd93d;
+  --manim-gold-light: #ffe066;
+  --manim-lavender: #a29bfe;
+  --manim-pink: #fd79a8;
+  --manim-green: #00b894;
+  --manim-blue: #74b9ff;
+  --manim-orange: #fdcb6e;
+  --manim-white: #f8f9fa;
+  --manim-text: #dfe6e9;
+
+  /* Smooth easing curves - kid-friendly timing */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --ease-anticipate: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --ease-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Animation durations - slower for kids to process */
+  --duration-fast: 0.4s;
+  --duration-normal: 0.6s;
+  --duration-slow: 0.8s;
+  --duration-very-slow: 1.2s;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY - Reduced Motion Support
+   Respects user preference for reduced motion (prefers-reduced-motion)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+
+  /* Disable specific animations */
+  .manim-jumper.jumping,
+  .manim-counter,
+  .counter-item,
+  .manim-tf-dot,
+  .manim-cube,
+  .manim-sphere,
+  .manim-cylinder,
+  .manim-cone,
+  .manim-particle,
+  .manim-loading-dot,
+  .manim-shape-card {
+    animation: none !important;
+  }
+
+  /* Keep hover states but reduce motion */
+  .manim-shape-card:hover,
+  .manim-interactive:hover,
+  .manim-counter:hover,
+  .counter-item:hover {
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY - Focus States for Keyboard Navigation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-interactive:focus,
+.manim-counter:focus,
+.counter-item:focus,
+.manim-tf-cell:focus,
+.manim-shape-card:focus,
+.manim-clickable:focus,
+.manim-cube:focus,
+.manim-sphere:focus,
+.manim-cylinder:focus,
+.manim-cone:focus,
+.manim-clock:focus,
+.manim-compare-side:focus,
+.manim-place-column:focus {
+  outline: 3px solid var(--manim-gold);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(255, 217, 61, 0.2);
+}
+
+/* Make interactive elements keyboard accessible */
+.manim-interactive,
+.manim-counter,
+.counter-item,
+.manim-tf-cell,
+.manim-shape-card,
+.manim-clickable,
+.manim-cube,
+.manim-sphere,
+.manim-cylinder,
+.manim-cone,
+.manim-clock,
+.manim-compare-side,
+.manim-place-column,
+.manim-block-one,
+.manim-block-unit {
+  -webkit-tap-highlight-color: rgba(255, 217, 61, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MANIM STAGE - Dark themed container
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-stage {
+  position: relative;
+  background: var(--manim-bg-gradient);
+  border-radius: 20px;
+  padding: 24px;
+  margin: 16px 0;
+  overflow: hidden;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.manim-stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.manim-stage.with-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATED NUMBER LINE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-number-line {
+  position: relative;
+  height: 120px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manim-nl-track {
+  position: relative;
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--manim-teal) 0%,
+    var(--manim-blue) 50%,
+    var(--manim-lavender) 100%);
+  border-radius: 3px;
+  box-shadow:
+    0 0 20px rgba(78, 205, 196, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.manim-nl-track::before,
+.manim-nl-track::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+}
+
+.manim-nl-track::before {
+  left: -12px;
+  border-width: 6px 12px 6px 0;
+  border-color: transparent var(--manim-teal) transparent transparent;
+}
+
+.manim-nl-track::after {
+  right: -12px;
+  border-width: 6px 0 6px 12px;
+  border-color: transparent transparent transparent var(--manim-lavender);
+}
+
+.manim-nl-tick {
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background: var(--manim-white);
+  transform: translateX(-50%);
+  top: -7px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.manim-nl-tick.major {
+  height: 28px;
+  top: -11px;
+  opacity: 1;
+  background: var(--manim-gold);
+  box-shadow: 0 0 10px rgba(255, 217, 61, 0.5);
+}
+
+.manim-nl-num {
+  position: absolute;
+  top: 32px;
+  font-family: 'Fredoka One', 'Comic Sans MS', cursive;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--manim-text);
+  transform: translateX(-50%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.manim-nl-num:hover {
+  color: var(--manim-teal);
+  font-size: 26px;
+  text-shadow: 0 0 15px rgba(78, 205, 196, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.manim-nl-num.active {
+  color: var(--manim-coral);
+  font-size: 32px;
+  top: 28px;
+  text-shadow:
+    0 0 20px rgba(255, 107, 107, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.4);
+  animation: manimNumGlow 1.5s ease-in-out infinite;
+  transform: translateX(-50%) scale(1);
+}
+
+@keyframes manimNumGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(255, 107, 107, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 40px rgba(255, 107, 107, 0.9),
+      0 0 60px rgba(255, 107, 107, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+/* Animated jumping character on number line */
+.manim-jumper {
+  position: absolute;
+  top: -50px;
+  font-size: 40px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  z-index: 10;
+  /* Don't use transition on left - we'll animate it via keyframes */
+  will-change: left, transform, filter;
+}
+
+.manim-jumper.jumping {
+  animation: manimArcJump 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Use forwards to maintain final state during transition */
+  animation-fill-mode: both;
+}
+
+@keyframes manimArcJump {
+  0% {
+    left: var(--jump-start);
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  }
+
+  /* Anticipation - slight crouch before jump */
+  15% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.05);
+    transform: translateX(-50%) translateY(8px) scaleY(0.85) scaleX(1.1) rotate(0deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+
+  /* Rising arc - playful tilt */
+  35% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.35);
+    transform: translateX(-50%) translateY(-55px) scale(1.12) rotate(-8deg);
+    filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.25));
+  }
+
+  /* Peak of arc - elongated for natural look */
+  50% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.5);
+    transform: translateX(-50%) translateY(-65px) scaleY(1.15) scaleX(0.95) rotate(0deg);
+    filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.2));
+  }
+
+  /* Falling arc - opposite tilt */
+  65% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.65);
+    transform: translateX(-50%) translateY(-55px) scale(1.12) rotate(8deg);
+    filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.25));
+  }
+
+  /* Landing preparation - stretch */
+  85% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.9);
+    transform: translateX(-50%) translateY(4px) scaleY(0.9) scaleX(1.08) rotate(0deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+
+  /* Landing - slight bounce */
+  92% {
+    left: calc(var(--jump-start) + (var(--jump-end) - var(--jump-start)) * 0.98);
+    transform: translateX(-50%) translateY(-8px) scale(1.05) rotate(0deg);
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+  }
+
+  100% {
+    left: var(--jump-end);
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  }
+}
+
+/* Arc trail for jumps */
+.manim-jump-arc {
+  position: absolute;
+  top: -40px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.manim-jump-arc svg {
+  overflow: visible;
+}
+
+.manim-jump-arc path {
+  fill: none;
+  stroke: var(--manim-gold);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  filter: drop-shadow(0 0 8px rgba(255, 217, 61, 0.6));
+  opacity: 0.9;
+  animation: manimDrawArc 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes manimDrawArc {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.7;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATED COUNTERS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.manim-counter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  position: relative;
+  max-width: 420px;
+  min-height: 84px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-counter-group:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.manim-counter-group::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--manim-gold);
+  color: var(--manim-bg-dark);
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  box-shadow: 0 4px 12px rgba(255, 217, 61, 0.4);
+  transition: all 0.3s var(--ease-smooth);
+  animation: manimCountBadgePop 0.6s var(--ease-elastic) backwards;
+  animation-delay: 0.8s;
+}
+
+.manim-counter-group:hover::after {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(255, 217, 61, 0.6);
+}
+
+@keyframes manimCountBadgePop {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.counter-item,
+.manim-counter {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  line-height: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05));
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  animation: manimCounterPop 0.5s var(--ease-elastic) backwards;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.counter-item:hover,
+.manim-counter:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    0 0 25px rgba(78, 205, 196, 0.3);
+  z-index: 10;
+}
+
+/* Staggered animation delays for counters */
+.counter-item:nth-child(1),
+.manim-counter:nth-child(1) { animation-delay: 0s; }
+.counter-item:nth-child(2),
+.manim-counter:nth-child(2) { animation-delay: 0.1s; }
+.counter-item:nth-child(3),
+.manim-counter:nth-child(3) { animation-delay: 0.2s; }
+.counter-item:nth-child(4),
+.manim-counter:nth-child(4) { animation-delay: 0.3s; }
+.counter-item:nth-child(5),
+.manim-counter:nth-child(5) { animation-delay: 0.4s; }
+.counter-item:nth-child(6),
+.manim-counter:nth-child(6) { animation-delay: 0.5s; }
+.counter-item:nth-child(7),
+.manim-counter:nth-child(7) { animation-delay: 0.6s; }
+.counter-item:nth-child(8),
+.manim-counter:nth-child(8) { animation-delay: 0.7s; }
+.counter-item:nth-child(9),
+.manim-counter:nth-child(9) { animation-delay: 0.8s; }
+.counter-item:nth-child(10),
+.manim-counter:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes manimCounterPop {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.manim-counter.slide-in {
+  animation: manimSlideIn 0.6s var(--ease-smooth);
+}
+
+@keyframes manimSlideIn {
+  0% { transform: translateX(-80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.manim-counter.grouping {
+  animation: manimGroupPulse 0.8s var(--ease-bounce);
+}
+
+@keyframes manimGroupPulse {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(0.8) translateY(8px); }
+  60% { transform: scale(1.15); box-shadow: 0 0 30px var(--manim-gold); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATED TEN FRAME
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-ten-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+}
+
+.manim-tf-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ten-frame-cell,
+.manim-tf-cell {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s var(--ease-smooth);
+  cursor: pointer;
+  position: relative;
+}
+
+.ten-frame-cell:hover,
+.manim-tf-cell:hover {
+  background: rgba(78, 205, 196, 0.1);
+  border-color: var(--manim-teal);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.3);
+}
+
+.manim-tf-cell.filled {
+  background: rgba(78, 205, 196, 0.15);
+  border-color: var(--manim-teal);
+  box-shadow:
+    inset 0 0 20px rgba(78, 205, 196, 0.3),
+    0 0 15px rgba(78, 205, 196, 0.25);
+  animation: manimCellGlow 2s ease-in-out infinite;
+}
+
+@keyframes manimCellGlow {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 20px rgba(78, 205, 196, 0.3),
+      0 0 15px rgba(78, 205, 196, 0.25);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 25px rgba(78, 205, 196, 0.4),
+      0 0 20px rgba(78, 205, 196, 0.35);
+  }
+}
+
+.manim-tf-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+    var(--manim-coral-light),
+    var(--manim-coral));
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 4px 8px rgba(255, 255, 255, 0.3);
+  animation: manimDotDrop 0.5s var(--ease-bounce) backwards;
+}
+
+/* Staggered animation for ten frame dots */
+.manim-tf-cell:nth-child(1) .manim-tf-dot { animation-delay: 0s; }
+.manim-tf-cell:nth-child(2) .manim-tf-dot { animation-delay: 0.08s; }
+.manim-tf-cell:nth-child(3) .manim-tf-dot { animation-delay: 0.16s; }
+.manim-tf-cell:nth-child(4) .manim-tf-dot { animation-delay: 0.24s; }
+.manim-tf-cell:nth-child(5) .manim-tf-dot { animation-delay: 0.32s; }
+.manim-tf-cell:nth-child(6) .manim-tf-dot { animation-delay: 0.4s; }
+.manim-tf-cell:nth-child(7) .manim-tf-dot { animation-delay: 0.48s; }
+.manim-tf-cell:nth-child(8) .manim-tf-dot { animation-delay: 0.56s; }
+.manim-tf-cell:nth-child(9) .manim-tf-dot { animation-delay: 0.64s; }
+.manim-tf-cell:nth-child(10) .manim-tf-dot { animation-delay: 0.72s; }
+
+@keyframes manimDotDrop {
+  0% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px) scale(1.25);
+  }
+  65% {
+    transform: translateY(-5px) scale(0.9);
+  }
+  80% {
+    transform: translateY(3px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Emoji style for stars and fish */
+.manim-tf-dot.emoji-style {
+  background: transparent !important;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.manim-tf-equation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: var(--manim-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: manimEquationSlideIn 0.6s var(--ease-overshoot) backwards;
+}
+
+@keyframes manimEquationSlideIn {
+  0% {
+    transform: translateY(30px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.manim-tf-equation .num {
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  animation: manimNumFadeIn 0.4s var(--ease-smooth) backwards;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-tf-equation .num:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+@keyframes manimNumFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.manim-tf-equation .op {
+  color: var(--manim-gold);
+  animation: manimOpPop 0.4s var(--ease-bounce) backwards;
+}
+
+@keyframes manimOpPop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATED 2D SHAPES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-shapes-2d,
+.manim-shapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  padding: 28px;
+}
+
+.manim-shape-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s var(--ease-smooth);
+  animation: manimShapeReveal 0.6s var(--ease-overshoot) backwards;
+  cursor: pointer;
+}
+
+/* Staggered animations for shape cards */
+.manim-shape-card:nth-child(1) { animation-delay: 0s; }
+.manim-shape-card:nth-child(2) { animation-delay: 0.12s; }
+.manim-shape-card:nth-child(3) { animation-delay: 0.24s; }
+.manim-shape-card:nth-child(4) { animation-delay: 0.36s; }
+.manim-shape-card:nth-child(5) { animation-delay: 0.48s; }
+.manim-shape-card:nth-child(6) { animation-delay: 0.6s; }
+
+.manim-shape-card:hover {
+  transform: translateY(-10px) scale(1.06);
+  border-color: var(--manim-gold);
+  box-shadow: 0 16px 40px rgba(255, 217, 61, 0.2);
+}
+
+.manim-shape-card.highlighted {
+  border-color: var(--manim-gold);
+  background: rgba(255, 217, 61, 0.08);
+  box-shadow:
+    0 0 40px rgba(255, 217, 61, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: manimHighlightPulse 2s ease-in-out infinite;
+}
+
+@keyframes manimShapeReveal {
+  0% {
+    transform: scale(0) rotate(-30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes manimHighlightPulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 217, 61, 0.3), 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255, 217, 61, 0.5), 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.manim-shape-svg {
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.manim-shape-svg path,
+.manim-shape-svg circle,
+.manim-shape-svg rect,
+.manim-shape-svg polygon,
+.manim-shape-svg ellipse,
+.manim-shape-svg line {
+  transition: all 0.3s var(--ease-smooth);
+}
+
+/* Hover effects for SVG shapes */
+.manim-shape-card:hover .manim-shape-svg path,
+.manim-shape-card:hover .manim-shape-svg circle,
+.manim-shape-card:hover .manim-shape-svg rect,
+.manim-shape-card:hover .manim-shape-svg polygon {
+  filter: brightness(1.2);
+  stroke-width: 3;
+}
+
+
+/* Subtle rotation animation on hover */
+.manim-shape-card:hover .manim-shape-svg {
+  animation: manimShapeRotate 2s ease-in-out infinite;
+}
+
+.manim-shape-card.highlighted .manim-shape-svg {
+  animation: manimShapeRotate 3s ease-in-out infinite;
+}
+
+@keyframes manimShapeRotate {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+/* Enhanced glow effect on hover for shapes */
+.manim-shape-card:hover .manim-shape-svg path,
+.manim-shape-card:hover .manim-shape-svg circle,
+.manim-shape-card:hover .manim-shape-svg rect,
+.manim-shape-card:hover .manim-shape-svg polygon,
+.manim-shape-card:hover .manim-shape-svg ellipse {
+  filter: brightness(1.15) drop-shadow(0 0 12px currentColor);
+}
+.manim-shape-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  color: var(--manim-text);
+  text-transform: capitalize;
+}
+
+/* Shape attribute badges */
+.manim-attr-badge {
+  position: absolute;
+  background: var(--manim-coral);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  animation: manimAttrPop 0.4s var(--ease-overshoot);
+}
+
+
+/* Shape attribute badges - shown on hover */
+.manim-shape-attributes {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+}
+
+.manim-shape-card:hover .manim-shape-attributes {
+  display: flex;
+}
+
+.manim-attr-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--manim-bg-dark);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: manimAttrPop 0.3s var(--ease-overshoot);
+  white-space: nowrap;
+}
+
+.manim-attr-badge.sides {
+  background: linear-gradient(135deg, var(--manim-teal), var(--manim-teal-light));
+  color: white;
+}
+
+.manim-attr-badge.corners {
+  background: linear-gradient(135deg, var(--manim-coral), var(--manim-coral-light));
+  color: white;
+}
+
+@keyframes manimAttrPop {
+  0% { transform: scale(0) rotate(-12deg); opacity: 0; }
+  70% { transform: scale(1.1) rotate(3deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATED 3D SHAPES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-3d-shape,
+.manim-3d-container {
+  perspective: 700px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 3D Cube */
+.manim-cube {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: manimCubeRotate 12s linear infinite;
+  cursor: pointer;
+  transition: animation-play-state 0.3s;
+}
+
+.manim-cube:hover {
+  animation-play-state: paused;
+}
+
+.manim-cube-face {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  backface-visibility: visible;
+}
+
+.manim-cube-face.front {
+  background: rgba(255, 107, 107, 0.85);
+  transform: translateZ(65px);
+}
+
+.manim-cube-face.back {
+  background: rgba(78, 205, 196, 0.85);
+  transform: rotateY(180deg) translateZ(65px);
+}
+
+.manim-cube-face.right {
+  background: rgba(116, 185, 255, 0.85);
+  transform: rotateY(90deg) translateZ(65px);
+}
+
+.manim-cube-face.left {
+  background: rgba(162, 155, 254, 0.85);
+  transform: rotateY(-90deg) translateZ(65px);
+}
+
+.manim-cube-face.top {
+  background: rgba(255, 217, 61, 0.85);
+  transform: rotateX(90deg) translateZ(65px);
+}
+
+.manim-cube-face.bottom {
+  background: rgba(253, 121, 168, 0.85);
+  transform: rotateX(-90deg) translateZ(65px);
+}
+
+@keyframes manimCubeRotate {
+  0% { transform: rotateX(-20deg) rotateY(0deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+.manim-cube.paused {
+  animation-play-state: paused;
+}
+
+/* 3D Sphere */
+.manim-sphere {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+    #ff8e8e,
+    var(--manim-coral) 50%,
+    #b83b3b 100%);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    inset 0 -12px 35px rgba(0, 0, 0, 0.3),
+    inset 0 12px 35px rgba(255, 255, 255, 0.3);
+  animation: manimFloat 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.manim-sphere:hover {
+  transform: translateY(-15px) scale(1.1);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.5),
+    inset 0 -12px 35px rgba(0, 0, 0, 0.3),
+    inset 0 12px 35px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 107, 107, 0.4);
+}
+
+/* 3D Cylinder */
+.manim-cylinder {
+  width: 110px;
+  height: 150px;
+  background: linear-gradient(90deg,
+    #2980b9,
+    var(--manim-blue) 30%,
+    #5dade2 50%,
+    var(--manim-blue) 70%,
+    #2980b9);
+  border-radius: 55px / 28px;
+  position: relative;
+  animation: manimFloat 3s ease-in-out infinite 0.5s;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.manim-cylinder:hover {
+  transform: translateY(-15px) scale(1.08);
+  filter: brightness(1.15) drop-shadow(0 15px 35px rgba(116, 185, 255, 0.4));
+}
+
+.manim-cylinder::before,
+.manim-cylinder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.manim-cylinder::before {
+  top: -18px;
+  background: linear-gradient(180deg, #5dade2, var(--manim-blue));
+  box-shadow: inset 0 12px 22px rgba(255, 255, 255, 0.3);
+}
+
+.manim-cylinder::after {
+  bottom: -18px;
+  background: #2471a3;
+}
+
+/* 3D Cone */
+.manim-cone {
+  width: 0;
+  height: 0;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 130px solid var(--manim-lavender);
+  position: relative;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.3));
+  animation: manimFloat 3s ease-in-out infinite 1s;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-cone:hover {
+  transform: translateY(-15px) scale(1.08);
+  filter: drop-shadow(0 20px 40px rgba(162, 155, 254, 0.5)) brightness(1.15);
+}
+
+.manim-cone::after {
+  content: '';
+  position: absolute;
+  top: 125px;
+  left: -65px;
+  width: 130px;
+  height: 35px;
+  background: #8b7fc7;
+  border-radius: 50%;
+}
+
+@keyframes manimFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EQUATION ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 36px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 72px;
+  color: var(--manim-white);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.manim-eq-part {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 18px 32px;
+  border-radius: 20px;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.manim-eq-num,
+.number {
+  background: rgba(255, 255, 255, 0.08);
+  animation: manimNumFlyIn 0.6s var(--ease-overshoot) backwards;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-eq-num:hover,
+.number:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Staggered number animations */
+.manim-eq-num:nth-child(1) { animation-delay: 0s; }
+.manim-eq-num:nth-child(3) { animation-delay: 0.3s; }
+
+.manim-eq-op,
+.operator {
+  color: var(--manim-gold);
+  font-size: 80px;
+  animation: manimOpAppear 0.5s var(--ease-bounce) backwards;
+  transition: all 0.3s var(--ease-smooth);
+  text-shadow: 0 4px 16px rgba(255, 217, 61, 0.4);
+}
+
+.manim-eq-op:hover,
+.operator:hover {
+  color: var(--manim-gold-light);
+  transform: scale(1.15) rotate(10deg);
+  text-shadow: 0 0 30px rgba(255, 217, 61, 0.6);
+}
+
+.manim-eq-equals {
+  color: var(--manim-teal);
+  font-size: 80px;
+  animation: manimEqualsBalance 0.7s var(--ease-elastic) backwards;
+  text-shadow: 0 4px 16px rgba(78, 205, 196, 0.4);
+}
+
+.manim-eq-result {
+  background: linear-gradient(135deg,
+    rgba(255, 217, 61, 0.25),
+    rgba(255, 217, 61, 0.12));
+  border: 3px solid var(--manim-gold);
+  color: var(--manim-gold);
+  animation: manimResultReveal 0.9s var(--ease-overshoot) backwards;
+  box-shadow: 0 0 25px rgba(255, 217, 61, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.manim-eq-blank {
+  background: rgba(255, 255, 255, 0.06);
+  border: 4px dashed var(--manim-coral);
+  min-width: 120px;
+  animation: manimBlankPulse 1.5s ease-in-out infinite;
+  font-size: 80px;
+}
+
+@keyframes manimNumFlyIn {
+  0% {
+    transform: translateY(-70px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes manimOpAppear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes manimEqualsBalance {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1.4);
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes manimResultReveal {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes manimBlankPulse {
+  0%, 100% {
+    border-color: var(--manim-coral);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+  50% {
+    border-color: var(--manim-coral-light);
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.4);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CPA MORPH TRANSITIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-cpa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 35px;
+  position: relative;
+}
+
+.manim-cpa-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.6s var(--ease-smooth);
+  min-width: 180px;
+  cursor: pointer;
+  animation: manimFadeIn 0.6s var(--ease-smooth) backwards;
+}
+
+.manim-cpa-stage:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.manim-cpa-stage.active {
+  border-color: var(--manim-gold);
+  background: linear-gradient(135deg, rgba(255, 217, 61, 0.15), rgba(255, 217, 61, 0.08));
+  transform: scale(1.15);
+  box-shadow: 0 0 60px rgba(255, 217, 61, 0.45), 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: manimHighlightPulse 2s ease-in-out infinite;
+}
+
+.manim-cpa-stage.completed {
+  opacity: 0.5;
+}
+
+.manim-cpa-icon {
+  font-size: 64px;
+  transition: transform 0.5s var(--ease-elastic);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.manim-cpa-stage.active .manim-cpa-icon {
+  animation: manimCpaBounce 0.8s var(--ease-bounce) infinite;
+  filter: drop-shadow(0 6px 12px rgba(255, 217, 61, 0.4));
+}
+
+@keyframes manimCpaBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+}
+
+.manim-cpa-label {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  color: var(--manim-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.manim-cpa-arrow {
+  font-size: 36px;
+  color: var(--manim-gold);
+  opacity: 0.5;
+  animation: manimArrowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes manimArrowPulse {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
+
+/* Morph container */
+.manim-morph {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manim-morph-item {
+  position: absolute;
+  transition: all 0.8s var(--ease-smooth);
+}
+
+.manim-morph-item.concrete {
+  font-size: 44px;
+}
+
+.manim-morph-item.pictorial svg {
+  width: 110px;
+  height: 90px;
+}
+
+.manim-morph-item.abstract {
+  font-family: 'Fredoka One', cursive;
+  font-size: 54px;
+  color: var(--manim-gold);
+}
+
+.manim-morph-item.hidden {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.manim-morph-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTERACTIVE ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-interactive {
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-smooth);
+}
+
+.manim-interactive:hover {
+  transform: scale(1.08);
+}
+
+.manim-interactive:active {
+  transform: scale(0.94);
+}
+
+.manim-clickable {
+  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 14px;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.manim-clickable:hover {
+  background: rgba(255, 217, 61, 0.15);
+}
+
+.manim-clickable.selected {
+  background: var(--manim-gold);
+  color: var(--manim-bg-dark);
+}
+
+/* Celebration particles */
+.manim-celebrate,
+.manim-celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.manim-particle {
+  position: absolute;
+  font-size: 36px;
+  animation: manimCelebrate 1.2s var(--ease-smooth) forwards;
+  will-change: transform, opacity;
+}
+
+/* Variety of celebration animations */
+.manim-particle.burst {
+  animation: manimCelebrateBurst 1.5s var(--ease-smooth) forwards;
+}
+
+.manim-particle.fountain {
+  animation: manimCelebrateFountain 2s var(--ease-smooth) forwards;
+}
+
+.manim-particle.rain {
+  animation: manimCelebrateRain 2.5s linear forwards;
+}
+
+.manim-particle.spiral {
+  animation: manimCelebrateSpiral 2s var(--ease-smooth) forwards;
+}
+
+/* Stagger particle animations */
+.manim-particle:nth-child(1) { animation-delay: 0s; }
+.manim-particle:nth-child(2) { animation-delay: 0.05s; }
+.manim-particle:nth-child(3) { animation-delay: 0.1s; }
+.manim-particle:nth-child(4) { animation-delay: 0.15s; }
+.manim-particle:nth-child(5) { animation-delay: 0.2s; }
+.manim-particle:nth-child(6) { animation-delay: 0.25s; }
+.manim-particle:nth-child(7) { animation-delay: 0.3s; }
+.manim-particle:nth-child(8) { animation-delay: 0.35s; }
+.manim-particle:nth-child(9) { animation-delay: 0.4s; }
+.manim-particle:nth-child(10) { animation-delay: 0.45s; }
+
+@keyframes manimCelebrate {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@keyframes manimCelebrateBurst {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes manimCelebrateFountain {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(calc(var(--tx) * 0.3), calc(var(--ty) * 0.5)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), calc(var(--ty) + 200px)) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes manimCelebrateRain {
+  0% {
+    transform: translate(var(--tx), -100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), 100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes manimCelebrateSpiral {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(
+        calc(var(--tx) * cos(var(--rot))),
+        calc(var(--ty) * sin(var(--rot)))
+      )
+      scale(1)
+      rotate(1080deg);
+    opacity: 0;
+  }
+}
+
+/* Loading dots */
+.manim-loading {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+}
+
+.manim-loading-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--manim-teal);
+  animation: manimLoadBounce 0.6s ease-in-out infinite;
+}
+
+.manim-loading-dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.manim-loading-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes manimLoadBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-14px);
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADDITION/SUBTRACTION ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-operation {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 30px;
+}
+
+.manim-op-visual {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.manim-op-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  min-width: 100px;
+  min-height: 80px;
+  max-width: 280px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s var(--ease-smooth);
+  position: relative;
+}
+
+.manim-op-group:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.manim-op-item {
+  font-size: 38px;
+  line-height: 1;
+  flex-shrink: 0;
+  animation: manimItemAppear 0.4s var(--ease-elastic) backwards;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.manim-op-item:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes manimItemAppear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.manim-op-symbol {
+  font-size: 56px;
+  color: var(--manim-gold);
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  animation: manimSymbolPop 0.5s var(--ease-bounce);
+  text-shadow: 0 2px 8px rgba(255, 217, 61, 0.4);
+  transition: all 0.3s var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.manim-op-symbol:hover {
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 0 4px 12px rgba(255, 217, 61, 0.6);
+}
+
+@keyframes manimSymbolPop {
+  0% {
+    transform: scale(0) rotate(-90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Merge animation for addition */
+.manim-merge-left {
+  animation: manimMergeLeft 0.8s var(--ease-smooth) forwards;
+}
+
+.manim-merge-right {
+  animation: manimMergeRight 0.8s var(--ease-smooth) forwards;
+}
+
+@keyframes manimMergeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+
+@keyframes manimMergeRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40px); }
+}
+
+/* Subtract fade out */
+.manim-subtract-out {
+  animation: manimSubtractOut 0.6s var(--ease-smooth) forwards;
+}
+
+@keyframes manimSubtractOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0) translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPARISON ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.manim-compare-side,
+.manim-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  min-width: 180px;
+  max-width: 250px;
+  transition: all 0.4s var(--ease-smooth);
+  cursor: pointer;
+}
+
+.manim-compare-side:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.manim-compare-side.bigger {
+  transform: scale(1.08);
+  background: rgba(78, 205, 196, 0.15);
+  border: 3px solid var(--manim-teal);
+  box-shadow:
+    0 0 30px rgba(78, 205, 196, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: manimBiggerPulse 2s ease-in-out infinite;
+}
+
+.manim-compare-side.smaller {
+  transform: scale(0.95);
+  opacity: 0.75;
+}
+
+.manim-compare-side.equal {
+  border: 2px solid var(--manim-gold);
+  box-shadow: 0 0 25px rgba(255, 217, 61, 0.3);
+}
+
+.manim-compare-icons {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+}
+
+.manim-compare-dot {
+  display: inline-block;
+  transition: all 0.3s var(--ease-smooth);
+  cursor: pointer;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.manim-compare-dot:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.manim-compare-number {
+  font-size: 36px;
+  font-family: 'Fredoka One', cursive;
+  color: var(--manim-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: manimNumberReveal 0.5s var(--ease-overshoot) backwards;
+  animation-delay: 0.6s;
+}
+
+.manim-compare-symbol {
+  font-size: 64px;
+  font-weight: bold;
+  color: var(--manim-gold);
+  text-shadow: 0 4px 12px rgba(255, 217, 61, 0.5);
+  animation: manimCompareReveal 0.8s var(--ease-elastic) backwards;
+  animation-delay: 0.4s;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-compare-symbol:hover {
+  transform: scale(1.15) rotate(5deg);
+  text-shadow:
+    0 4px 12px rgba(255, 217, 61, 0.7),
+    0 0 30px rgba(255, 217, 61, 0.5);
+}
+
+@keyframes manimCompareDotAppear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes manimCompareReveal {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes manimNumberReveal {
+  0% {
+    transform: translateY(30px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes manimBiggerPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(78, 205, 196, 0.4),
+      0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 45px rgba(78, 205, 196, 0.6),
+      0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PLACE VALUE ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-place-value {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.manim-place-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  min-width: 100px;
+  transition: all 0.3s var(--ease-smooth);
+  cursor: pointer;
+}
+
+.manim-place-column:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.manim-place-column.tens {
+  border: 2px solid var(--manim-blue);
+  box-shadow: 0 0 20px rgba(116, 185, 255, 0.2);
+}
+
+.manim-place-column.ones {
+  border: 2px solid var(--manim-coral);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+}
+
+.manim-place-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  color: var(--manim-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.manim-place-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.manim-block-ten {
+  display: flex;
+  gap: 2px;
+  padding: 6px;
+  background: rgba(116, 185, 255, 0.12);
+  border: 2px solid rgba(116, 185, 255, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s var(--ease-smooth);
+  animation: manimBlockAppear 0.4s var(--ease-elastic) backwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.manim-block-ten:hover {
+  background: rgba(116, 185, 255, 0.25);
+  border-color: var(--manim-blue);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(116, 185, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.manim-block-unit {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--manim-blue), #5dade2);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  animation: manimBlockAppear 0.3s var(--ease-bounce) backwards;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.manim-block-unit:hover {
+  background: linear-gradient(135deg, #5dade2, #a3d5ff);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(116, 185, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.manim-block-one {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--manim-coral), #ff8e8e);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  animation: manimBlockAppear 0.3s var(--ease-bounce) backwards;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.manim-block-one:hover {
+  background: linear-gradient(135deg, var(--manim-coral-light), #ffa3a3);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(255, 107, 107, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes manimBlockAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Regrouping animation */
+.manim-regroup {
+  animation: manimRegroup 1s var(--ease-smooth);
+}
+
+@keyframes manimRegroup {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50px) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MEASUREMENT ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-ruler {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding: 20px;
+  background: linear-gradient(180deg,
+    rgba(255, 217, 61, 0.9),
+    rgba(253, 203, 110, 0.9));
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.manim-ruler-unit {
+  width: 40px;
+  height: 30px;
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 14px;
+  color: var(--manim-bg-dark);
+}
+
+.manim-ruler-unit:last-child {
+  border-right: none;
+}
+
+.manim-measuring-object {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.manim-measure-line {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  background: var(--manim-coral);
+  border-radius: 2px;
+  animation: manimMeasure 1s var(--ease-smooth) forwards;
+}
+
+@keyframes manimMeasure {
+  0% { width: 0; }
+  100% { width: var(--measure-width); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TIME TELLING ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.manim-clock {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    #f8f9fa,
+    #e9ecef);
+  border: 6px solid var(--manim-bg-dark);
+  position: relative;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.manim-clock:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(78, 205, 196, 0.3);
+}
+
+.manim-clock-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--manim-bg-dark);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.manim-clock-hour {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 6px;
+  height: 50px;
+  background: var(--manim-bg-dark);
+  border-radius: 3px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(var(--hour-angle));
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.manim-clock-minute {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 4px;
+  height: 70px;
+  background: var(--manim-coral);
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(var(--minute-angle));
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.manim-clock-number {
+  position: absolute;
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  color: var(--manim-bg-dark);
+  transform: translate(-50%, -50%);
+}
+
+/* Clock number positions */
+.manim-clock-number[data-num="12"] { top: 12%; left: 50%; }
+.manim-clock-number[data-num="1"] { top: 18%; left: 73%; }
+.manim-clock-number[data-num="2"] { top: 33%; left: 87%; }
+.manim-clock-number[data-num="3"] { top: 50%; left: 92%; }
+.manim-clock-number[data-num="4"] { top: 67%; left: 87%; }
+.manim-clock-number[data-num="5"] { top: 82%; left: 73%; }
+.manim-clock-number[data-num="6"] { top: 88%; left: 50%; }
+.manim-clock-number[data-num="7"] { top: 82%; left: 27%; }
+.manim-clock-number[data-num="8"] { top: 67%; left: 13%; }
+.manim-clock-number[data-num="9"] { top: 50%; left: 8%; }
+.manim-clock-number[data-num="10"] { top: 33%; left: 13%; }
+.manim-clock-number[data-num="11"] { top: 18%; left: 27%; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES AND HELPERS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* General animation states */
+.manim-fade-in {
+  animation: manimFadeIn 0.6s var(--ease-smooth) forwards;
+}
+
+.manim-fade-out {
+  animation: manimFadeOut 0.6s var(--ease-smooth) forwards;
+}
+
+.manim-scale-up {
+  animation: manimScaleUp 0.5s var(--ease-overshoot) forwards;
+}
+
+.manim-scale-down {
+  animation: manimScaleDown 0.5s var(--ease-smooth) forwards;
+}
+
+.manim-shake {
+  animation: manimShake 0.6s var(--ease-smooth);
+}
+
+.manim-wiggle {
+  animation: manimWiggle 0.8s var(--ease-smooth);
+}
+
+.manim-pulse {
+  animation: manimPulse 1.2s ease-in-out infinite;
+}
+
+.manim-glow {
+  animation: manimGlow 2s ease-in-out infinite;
+}
+
+/* Utility keyframes */
+@keyframes manimFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes manimFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes manimScaleUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes manimScaleDown {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes manimShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+  20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+@keyframes manimWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes manimPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@keyframes manimGlow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: brightness(1.15) drop-shadow(0 0 20px var(--manim-gold));
+  }
+}
+
+/* Hide/show utilities */
+.manim-hidden {
+  display: none !important;
+}
+
+.manim-invisible {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.manim-visible {
+  opacity: 1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PERFORMANCE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* GPU acceleration for animated elements */
+.manim-jumper,
+.manim-counter,
+.counter-item,
+.manim-tf-dot,
+.manim-particle,
+.manim-cube,
+.manim-sphere,
+.manim-cylinder,
+.manim-cone,
+.manim-shape-card {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth text rendering */
+.manim-stage,
+.manim-equation,
+.manim-eq-num,
+.number,
+.operator {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media screen and (max-width: 640px) {
+  .manim-stage {
+    padding: 16px;
+    border-radius: 16px;
+    margin: 12px 0;
+  }
+
+  .manim-number-line {
+    height: 100px;
+    padding: 15px 20px;
+  }
+
+  .manim-nl-track {
+    height: 5px;
+  }
+
+  .manim-nl-num {
+    font-size: 18px;
+  }
+
+  .manim-nl-num.active {
+    font-size: 24px;
+  }
+
+  .manim-jumper {
+    font-size: 32px;
+    top: -40px;
+  }
+
+  .counter-item,
+  .manim-counter {
+    width: 44px;
+    height: 44px;
+    font-size: 30px;
+  }
+
+  .manim-tf-cell {
+    width: 50px;
+    height: 50px;
+  }
+
+  .manim-tf-dot {
+    width: 36px;
+    height: 36px;
+  }
+
+  .manim-tf-equation,
+  .manim-equation {
+    font-size: 36px;
+    gap: 10px;
+  }
+
+  .manim-eq-op,
+  .operator {
+    font-size: 48px;
+  }
+
+  .manim-eq-equals {
+    font-size: 48px;
+  }
+
+  .manim-shape-svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .manim-shape-label {
+    font-size: 16px;
+  }
+
+  .manim-cube {
+    width: 100px;
+    height: 100px;
+  }
+
+  .manim-cube-face {
+    width: 100px;
+    height: 100px;
+    font-size: 38px;
+  }
+
+  .manim-sphere,
+  .manim-cylinder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .manim-clock {
+    width: 150px;
+    height: 150px;
+  }
+
+  .manim-clock-hour {
+    width: 5px;
+    height: 40px;
+  }
+
+  .manim-clock-minute {
+    width: 3px;
+    height: 55px;
+  }
+
+  .manim-clock-number {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manim-equation {
+    font-size: 28px;
+    flex-wrap: wrap;
+  }
+
+  .manim-eq-num,
+  .number {
+    min-width: 60px;
+    padding: 10px 18px;
+  }
+
+  .manim-compare {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .manim-compare-symbol {
+    font-size: 48px;
+    transform: rotate(90deg);
+  }
+
+  .manim-compare-side {
+    min-width: 140px;
+    max-width: 200px;
+    padding: 16px;
+  }
+
+  .manim-compare-icons {
+    min-height: 50px;
+  }
+
+  .manim-compare-number {
+    font-size: 28px;
+  }
+
+  .manim-cpa {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .manim-cpa-arrow {
+    transform: rotate(90deg);
+  }
+
+  .manim-place-value {
+    gap: 16px;
+  }
+
+  .manim-counters {
+    gap: 12px;
+  }
+
+  .manim-counter-group {
+    gap: 8px;
+    padding: 12px 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   END OF MANIM ANIMATIONS
+   Version: 1.0 - Optimized for Grade 1 Math Learning
+   ═══════════════════════════════════════════════════════════════════════════ */

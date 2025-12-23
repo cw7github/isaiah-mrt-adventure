@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Shapes Interactive Demo - Isaiah's Math</title>
+
+  <!-- Original Manim CSS -->
+  <link rel="stylesheet" href="manim-animations.css">
+
+  <!-- Enhanced 3D CSS -->
+  <link rel="stylesheet" href="manim-3d-enhancements.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffd93d;
+      font-family: 'Fredoka One', cursive;
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #a29bfe;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .demo-section {
+      margin: 40px 0;
+    }
+
+    .demo-title {
+      text-align: center;
+      color: #4ecdc4;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid #ffd93d;
+      padding: 15px 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 8px;
+      color: #f8f9fa;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .instructions strong {
+      color: #ffd93d;
+    }
+
+    .shape-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .shape-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .shape-label {
+      color: #f8f9fa;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 3D Shapes Playground 🎨</h1>
+  <p class="subtitle">Click and drag to rotate the shapes!</p>
+
+  <div class="instructions">
+    <strong>How to play:</strong>
+    <ul style="margin: 10px 0; padding-left: 20px;">
+      <li><strong>Desktop:</strong> Click and drag any shape to rotate it</li>
+      <li><strong>Mobile:</strong> Touch and drag with your finger</li>
+      <li>The shape will pause its animation while you're dragging</li>
+      <li>After you release, it will resume auto-rotation</li>
+      <li>Explore all six faces of the cube!</li>
+    </ul>
+  </div>
+
+  <div class="demo-section">
+    <div class="demo-title">All 3D Shapes</div>
+    <div class="shape-grid">
+      <div class="shape-container">
+        <div id="cube-demo"></div>
+        <div class="shape-label">Cube</div>
+      </div>
+      <div class="shape-container">
+        <div id="sphere-demo"></div>
+        <div class="shape-label">Sphere</div>
+      </div>
+      <div class="shape-container">
+        <div id="cylinder-demo"></div>
+        <div class="shape-label">Cylinder</div>
+      </div>
+      <div class="shape-container">
+        <div id="cone-demo"></div>
+        <div class="shape-label">Cone</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Original Manim JS -->
+  <script src="manim-animations.js"></script>
+
+  <!-- Enhanced 3D Drag Rotation JS -->
+  <script src="manim-3d-drag.js"></script>
+
+  <script>
+    // Initialize all shapes with drag rotation
+    ManimEngine.render3DShape(document.getElementById('cube-demo'), {
+      shape: 'cube',
+      showFaces: true,
+      autoRotate: true
+    });
+
+    ManimEngine.render3DShape(document.getElementById('sphere-demo'), {
+      shape: 'sphere',
+      autoRotate: true
+    });
+
+    ManimEngine.render3DShape(document.getElementById('cylinder-demo'), {
+      shape: 'cylinder',
+      autoRotate: true
+    });
+
+    ManimEngine.render3DShape(document.getElementById('cone-demo'), {
+      shape: 'cone',
+      autoRotate: true
+    });
+
+    console.log('✅ 3D Shapes with drag-to-rotate loaded successfully!');
+  </script>
+</body>
+</html>

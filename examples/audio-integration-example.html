@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELA Audio System - Integration Example</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin: 20px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #4A90C2;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #4A90C2;
+      font-size: 18px;
+    }
+
+    button {
+      background: #4A90C2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #3A7DB0;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .status {
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 6px;
+      background: #E8F3FA;
+      color: #2C5F7F;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    .sentence {
+      font-size: 20px;
+      line-height: 1.6;
+      margin: 20px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .word {
+      display: inline-block;
+      padding: 2px 4px;
+      margin: 2px;
+      transition: all 0.2s;
+    }
+
+    .word.highlight {
+      background: #FFD166;
+      color: #333;
+      font-weight: bold;
+      transform: scale(1.1);
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px solid #E8F3FA;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #4A90C2;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ELA Audio System Demo</h1>
+    <p class="subtitle">Interactive demonstration of the audio playback system</p>
+
+    <div class="section">
+      <h2>System Status</h2>
+      <div id="status" class="status">Initializing...</div>
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-value" id="totalClips">-</div>
+          <div class="stat-label">Total Audio Clips</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="cachedClips">0</div>
+          <div class="stat-label">Cached Clips</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="queueLength">0</div>
+          <div class="stat-label">Queue Length</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Single Audio Playback</h2>
+      <p>Play individual audio clips</p>
+      <div class="controls">
+        <button onclick="playAudio('rf_f1_print_concepts_announcement')">
+          Play Station Announcement
+        </button>
+        <button onclick="playAudio('rf_f1_print_concepts_page0_sentence')">
+          Play Sentence (Page 0)
+        </button>
+        <button onclick="playAudio('rf_f1_print_concepts_page0_readingtip')">
+          Play Reading Tip
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Word-by-Word Highlighting</h2>
+      <div class="sentence" id="sentenceDisplay"></div>
+      <button onclick="playWithHighlighting()">
+        Play with Word Highlighting
+      </button>
+    </div>
+
+    <div class="section">
+      <h2>Queue Playback</h2>
+      <p>Play multiple audio clips in sequence</p>
+      <div class="controls">
+        <button onclick="playReadPage()">
+          Play Full Read Page (Sentence + Tip)
+        </button>
+        <button onclick="playQuestionPage()">
+          Play Question Page
+        </button>
+        <button onclick="stopAudio()">
+          Stop
+        </button>
+        <button onclick="skipAudio()">
+          Skip
+        </button>
+        <button onclick="clearQueue()">
+          Clear Queue
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Preloading Demo</h2>
+      <div class="controls">
+        <button onclick="preloadStation()">
+          Preload Station Audio
+        </button>
+        <button onclick="clearCache()">
+          Clear Cache
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Volume Control</h2>
+      <input type="range" min="0" max="100" value="80"
+             oninput="setVolume(this.value)"
+             style="width: 100%; margin: 10px 0;">
+      <div style="text-align: center; color: #666;">
+        <span id="volumeDisplay">80%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Audio Libraries -->
+  <script src="../lib/audio-player.js"></script>
+  <script src="../lib/ela-audio-helper.js"></script>
+
+  <script>
+    let audioPlayer;
+
+    // Initialize on load
+    async function init() {
+      try {
+        updateStatus('Initializing audio player...');
+
+        audioPlayer = new AudioPlayer({
+          manifestPath: '../content/cpa-grade1-ela/audio-manifest.json',
+          volume: 0.8,
+          onWordHighlight: (data) => {
+            highlightWord(data.index);
+          },
+          onPlaybackComplete: (audioId) => {
+            updateStatus(`Completed: ${audioId}`);
+            updateStats();
+          },
+          onQueueComplete: () => {
+            updateStatus('Queue playback complete!');
+            updateStats();
+          },
+          onError: (error) => {
+            updateStatus(`Error: ${error.message}`, true);
+          }
+        });
+
+        const success = await audioPlayer.initialize();
+
+        if (success) {
+          updateStatus('Audio player ready!');
+          document.getElementById('totalClips').textContent =
+            audioPlayer.manifest.totalAudioClips.toLocaleString();
+          updateStats();
+        } else {
+          updateStatus('Failed to initialize audio player', true);
+        }
+      } catch (error) {
+        updateStatus(`Initialization error: ${error.message}`, true);
+        console.error(error);
+      }
+    }
+
+    // Update status display
+    function updateStatus(message, isError = false) {
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      statusEl.style.background = isError ? '#FFE5EA' : '#E8F3FA';
+      statusEl.style.color = isError ? '#A02040' : '#2C5F7F';
+    }
+
+    // Update statistics
+    function updateStats() {
+      const stats = audioPlayer.getCacheStats();
+      document.getElementById('cachedClips').textContent = stats.cachedItems;
+      document.getElementById('queueLength').textContent = stats.queueLength;
+    }
+
+    // Play single audio
+    async function playAudio(audioId) {
+      try {
+        updateStatus(`Playing: ${audioId}`);
+        await audioPlayer.play(audioId);
+      } catch (error) {
+        updateStatus(`Error playing ${audioId}: ${error.message}`, true);
+      }
+    }
+
+    // Play with word highlighting
+    async function playWithHighlighting() {
+      const text = "I am at the library. I pick a book. I read the words left to right.";
+      const words = text.split(' ');
+
+      // Create sentence display
+      const sentenceEl = document.getElementById('sentenceDisplay');
+      sentenceEl.innerHTML = words.map((word, i) =>
+        `<span class="word" id="word-${i}">${word}</span>`
+      ).join(' ');
+
+      // Generate timing estimates (in real app, these would come from the API)
+      const wordTimings = generateWordTimings(text, 6.0); // Assume 6 second duration
+
+      try {
+        await audioPlayer.play('rf_f1_print_concepts_page0_sentence', {
+          wordTimings: wordTimings
+        });
+      } catch (error) {
+        updateStatus(`Error: ${error.message}`, true);
+      }
+    }
+
+    // Highlight word
+    function highlightWord(index) {
+      // Clear previous highlights
+      document.querySelectorAll('.word').forEach(el => {
+        el.classList.remove('highlight');
+      });
+
+      // Highlight current word
+      const wordEl = document.getElementById(`word-${index}`);
+      if (wordEl) {
+        wordEl.classList.add('highlight');
+      }
+    }
+
+    // Play full read page
+    async function playReadPage() {
+      audioPlayer.clearQueue();
+      audioPlayer.enqueue(ELAAudio.sentence('rf_f1_print_concepts', 0));
+      audioPlayer.enqueue(ELAAudio.readingTip('rf_f1_print_concepts', 0));
+
+      updateStatus('Playing read page (2 clips queued)');
+      updateStats();
+
+      await audioPlayer.processQueue();
+    }
+
+    // Play question page
+    async function playQuestionPage() {
+      audioPlayer.clearQueue();
+      audioPlayer.enqueue(ELAAudio.question('rf_f1_print_concepts', 1));
+      audioPlayer.enqueue(ELAAudio.passage('rf_f1_print_concepts', 1));
+      audioPlayer.enqueue(ELAAudio.hint('rf_f1_print_concepts', 1));
+
+      updateStatus('Playing question page (3 clips queued)');
+      updateStats();
+
+      await audioPlayer.processQueue();
+    }
+
+    // Stop playback
+    function stopAudio() {
+      audioPlayer.stop();
+      updateStatus('Playback stopped');
+      updateStats();
+    }
+
+    // Skip to next
+    async function skipAudio() {
+      updateStatus('Skipping to next...');
+      await audioPlayer.skip();
+    }
+
+    // Clear queue
+    function clearQueue() {
+      audioPlayer.clearQueue();
+      updateStatus('Queue cleared');
+      updateStats();
+    }
+
+    // Preload station audio
+    async function preloadStation() {
+      updateStatus('Preloading station audio...');
+
+      try {
+        const preloadIds = getPreloadStrategy('rf_f1_print_concepts', 0, 3);
+        updateStatus(`Preloading ${preloadIds.length} audio files...`);
+
+        await audioPlayer.preloadBatch(preloadIds);
+
+        updateStatus(`Preloaded ${preloadIds.length} audio files`);
+        updateStats();
+      } catch (error) {
+        updateStatus(`Preload error: ${error.message}`, true);
+      }
+    }
+
+    // Clear cache
+    function clearCache() {
+      audioPlayer.clearCache();
+      updateStatus('Cache cleared');
+      updateStats();
+    }
+
+    // Set volume
+    function setVolume(value) {
+      const volume = value / 100;
+      audioPlayer.setVolume(volume);
+      document.getElementById('volumeDisplay').textContent = `${value}%`;
+    }
+
+    // Initialize when page loads
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>

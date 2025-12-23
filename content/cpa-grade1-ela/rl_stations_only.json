@@ -1,0 +1,2157 @@
+{
+  "rl_l1_key_details_wh": {
+    "name": "Bakery Story",
+    "icon": "\ud83e\udd50",
+    "level": 1,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.1"
+    ],
+    "stickers": [
+      "\ud83e\udd50",
+      "\ud83c\udf70",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "am",
+      "at",
+      "the",
+      "see",
+      "a",
+      "on",
+      "in",
+      "want",
+      "is"
+    ],
+    "previewWords": [
+      {
+        "word": "bakery",
+        "icon": "\ud83e\udd50",
+        "isSightWord": false,
+        "phonicsNote": "ba-ke-ry"
+      },
+      {
+        "word": "pies",
+        "icon": "\ud83e\udd67",
+        "isSightWord": false,
+        "phonicsNote": "pies"
+      },
+      {
+        "word": "cake",
+        "icon": "\ud83c\udf70",
+        "isSightWord": false,
+        "phonicsNote": "cake"
+      },
+      {
+        "word": "buns",
+        "icon": "\ud83c\udf5e",
+        "isSightWord": false,
+        "phonicsNote": "buns"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm story narration"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83e\udd50",
+        "sentence": "I am at the bakery. I see the open door. I smell warm bread.",
+        "targetWords": [
+          "bakery",
+          "see",
+          "open",
+          "door",
+          "smell",
+          "warm",
+          "bread"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Read each sentence and picture it in your mind.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Cozy bakery storefront at a station, warm light, calm style."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Where am I?",
+        "passage": "I am at the bakery.",
+        "comprehensionHint": "Read the sentence. Find the place name.",
+        "answers": [
+          {
+            "name": "At the bakery",
+            "icon": "\ud83e\udd50"
+          },
+          {
+            "name": "At the park",
+            "icon": "\ud83c\udfa2"
+          },
+          {
+            "name": "At the zoo",
+            "icon": "\ud83e\udd81"
+          }
+        ],
+        "correctAnswerName": "At the bakery",
+        "successMessage": "Yes! You found the setting."
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd67\ud83c\udf70",
+        "sentence": "I see little pies on a tray. I see a big cake on the top shelf. I see warm buns.",
+        "targetWords": [
+          "see",
+          "little",
+          "pies",
+          "tray",
+          "big",
+          "cake",
+          "top",
+          "shelf",
+          "buns"
+        ],
+        "sightWordFocus": "see",
+        "readingTip": "Little tells size. Big tells size too.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Bakery counter with labeled tray of pies and a cake on a high shelf."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What do I smell?",
+        "passage": "I smell warm bread.",
+        "comprehensionHint": "Read the sentence. Find the smell words.",
+        "answers": [
+          {
+            "name": "Warm bread",
+            "icon": "\ud83c\udf5e"
+          },
+          {
+            "name": "Flowers",
+            "icon": "\ud83c\udf38"
+          },
+          {
+            "name": "Smoke",
+            "icon": "\ud83d\udca8"
+          }
+        ],
+        "correctAnswerName": "Warm bread",
+        "successMessage": "Nice! You used the story to find it."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a treat!",
+        "menuStory": "The treats look good. What will I pick?",
+        "items": [
+          {
+            "name": "Pies",
+            "icon": "\ud83e\udd67",
+            "description": "little pies"
+          },
+          {
+            "name": "Cake",
+            "icon": "\ud83c\udf70",
+            "description": "big cake"
+          },
+          {
+            "name": "Buns",
+            "icon": "\ud83c\udf5e",
+            "description": "warm buns"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three bakery item cards with simple icons."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What was little?",
+        "passage": "I see little pies on a tray.",
+        "comprehensionHint": "Read the sentence. Find the word after little.",
+        "answers": [
+          {
+            "name": "Pies",
+            "icon": "\ud83e\udd67"
+          },
+          {
+            "name": "Cake",
+            "icon": "\ud83c\udf70"
+          },
+          {
+            "name": "Buns",
+            "icon": "\ud83c\udf5e"
+          }
+        ],
+        "correctAnswerName": "Pies",
+        "successMessage": "Yes! You found the detail."
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\ude0a\ud83e\udd67",
+        "sentence": "I want a sweet treat. I pick a pie. It tastes so good!",
+        "targetWords": [
+          "want",
+          "sweet",
+          "treat",
+          "pick",
+          "pie",
+          "tastes",
+          "good"
+        ],
+        "sightWordFocus": "want",
+        "readingTip": "Go back and read the key sentence if you forget.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child holding a pie happily at a table, cozy bakery."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Where is the cake?",
+        "passage": "I see a big cake on the top shelf.",
+        "comprehensionHint": "Read the sentence. Find where the cake is.",
+        "answers": [
+          {
+            "name": "On the top shelf",
+            "icon": "\u2b06\ufe0f"
+          },
+          {
+            "name": "On the floor",
+            "icon": "\u2b07\ufe0f"
+          },
+          {
+            "name": "In my bag",
+            "icon": "\ud83c\udf92"
+          }
+        ],
+        "correctAnswerName": "On the top shelf",
+        "successMessage": "Yes! You found where it is."
+      }
+    ]
+  },
+  "rl_l2_retell_message": {
+    "name": "Lost Hat Story",
+    "icon": "\ud83e\udde2",
+    "level": 2,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.2"
+    ],
+    "stickers": [
+      "\ud83e\udde2",
+      "\ud83e\udd1d",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "find",
+      "a",
+      "the",
+      "see",
+      "to",
+      "is",
+      "and",
+      "it",
+      "my"
+    ],
+    "previewWords": [
+      {
+        "word": "bench",
+        "icon": "\ud83e\ude91",
+        "isSightWord": false,
+        "phonicsNote": "bench"
+      },
+      {
+        "word": "lost",
+        "icon": "\ud83d\udd0e",
+        "isSightWord": false,
+        "phonicsNote": "lost"
+      },
+      {
+        "word": "kind",
+        "icon": "\ud83d\udc9b",
+        "isSightWord": false,
+        "phonicsNote": "kind"
+      },
+      {
+        "word": "help",
+        "icon": "\ud83e\udd1d",
+        "isSightWord": false,
+        "phonicsNote": "help"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, gentle moral tone"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83e\udde2",
+        "sentence": "I find a blue hat on a bench. No one is holding it.",
+        "targetWords": [
+          "find",
+          "blue",
+          "hat",
+          "bench",
+          "one",
+          "holding"
+        ],
+        "sightWordFocus": "find",
+        "readingTip": "Think: first, next, last.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Train stop with a bench and a blue hat left on it, calm style."
+        }
+      },
+      {
+        "type": "activitySpec",
+        "activityType": "order3",
+        "prompt": "Put the events in order.",
+        "data": {
+          "cards": [
+            {
+              "id": "first",
+              "text": "I find a hat."
+            },
+            {
+              "id": "next",
+              "text": "I look for the owner."
+            },
+            {
+              "id": "last",
+              "text": "I give it back."
+            }
+          ]
+        },
+        "successCriteria": "Student orders first, next, last."
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc40\ud83e\uddcd",
+        "sentence": "I look around. I see a boy. He looks sad.",
+        "targetWords": [
+          "look",
+          "around",
+          "see",
+          "boy",
+          "sad"
+        ],
+        "sightWordFocus": "see",
+        "readingTip": "Retell by saying the steps.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child looking around; another child nearby looking sad but calm."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd1d\ud83e\udde2",
+        "sentence": "I ask if the hat is his. The boy says yes. I give it back.",
+        "targetWords": [
+          "ask",
+          "hat",
+          "his",
+          "says",
+          "yes",
+          "give",
+          "back"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Use the story to answer the question.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Handing the hat back kindly, gentle smiles."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "What should I do?",
+        "menuStory": "I have the hat. What is the kind choice?",
+        "items": [
+          {
+            "name": "Give it back",
+            "icon": "\ud83e\udd1d",
+            "description": "help the owner"
+          },
+          {
+            "name": "Ask a teacher",
+            "icon": "\ud83d\udc69\u200d\ud83c\udfeb",
+            "description": "get help"
+          },
+          {
+            "name": "Keep it",
+            "icon": "\ud83c\udf92",
+            "description": "not kind"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three choice cards with simple icons, calm colors."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2b50\ud83d\udc9b",
+        "sentence": "The boy smiles and I feel proud. Helping is a kind thing to do.",
+        "targetWords": [
+          "smiles",
+          "feel",
+          "proud",
+          "helping",
+          "kind"
+        ],
+        "sightWordFocus": "and",
+        "readingTip": "The message is what the author teaches.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Warm scene of two kids smiling; small heart sticker."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What happens first?",
+        "passage": "I find a blue hat on a bench.",
+        "comprehensionHint": "Read the sentence. This is the first event.",
+        "answers": [
+          {
+            "name": "I find a hat",
+            "icon": "\ud83e\udde2"
+          },
+          {
+            "name": "I eat a snack",
+            "icon": "\ud83c\udf4e"
+          },
+          {
+            "name": "I go to bed",
+            "icon": "\ud83d\udecf\ufe0f"
+          }
+        ],
+        "correctAnswerName": "I find a hat",
+        "successMessage": "Yes! You found the first event."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What happens last?",
+        "passage": "I give it back.",
+        "comprehensionHint": "Read the sentence. This is the last event.",
+        "answers": [
+          {
+            "name": "I give it back",
+            "icon": "\ud83e\udd1d"
+          },
+          {
+            "name": "I lose the hat",
+            "icon": "\u2753"
+          },
+          {
+            "name": "I hide the hat",
+            "icon": "\ud83d\ude48"
+          }
+        ],
+        "correctAnswerName": "I give it back",
+        "successMessage": "Nice! You found the last event."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What did the author teach me?",
+        "passage": "Helping is a kind thing to do.",
+        "comprehensionHint": "Read the sentence. It tells the message.",
+        "answers": [
+          {
+            "name": "Helping is kind",
+            "icon": "\ud83d\udc9b"
+          },
+          {
+            "name": "Hats are blue",
+            "icon": "\ud83e\udde2"
+          },
+          {
+            "name": "Benches are hard",
+            "icon": "\ud83e\ude91"
+          }
+        ],
+        "correctAnswerName": "Helping is kind",
+        "successMessage": "Yes! You found the message."
+      }
+    ]
+  },
+  "rl_l3_character_setting_events": {
+    "name": "Pet Shop Visit",
+    "icon": "\ud83d\udc3e",
+    "level": 2,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.3"
+    ],
+    "stickers": [
+      "\ud83d\udc3e",
+      "\ud83d\udc1f",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "am",
+      "at",
+      "the",
+      "with",
+      "me",
+      "see",
+      "a",
+      "and",
+      "we"
+    ],
+    "previewWords": [
+      {
+        "word": "pet",
+        "icon": "\ud83d\udc3e",
+        "isSightWord": false,
+        "phonicsNote": "pet"
+      },
+      {
+        "word": "shop",
+        "icon": "\ud83c\udfea",
+        "isSightWord": false,
+        "phonicsNote": "shop"
+      },
+      {
+        "word": "tank",
+        "icon": "\ud83d\udc1f",
+        "isSightWord": false,
+        "phonicsNote": "tank"
+      },
+      {
+        "word": "feed",
+        "icon": "\ud83c\udf7d\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "feed"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear character/setting labels"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83d\udc3e",
+        "sentence": "I am at the pet shop. Mia is with me.",
+        "targetWords": [
+          "pet",
+          "shop",
+          "Mia",
+          "with",
+          "me"
+        ],
+        "sightWordFocus": "am",
+        "readingTip": "Characters are who. Setting is where.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Pet shop station with a friendly fish tank, calm style."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Who is with me?",
+        "passage": "Mia is with me.",
+        "comprehensionHint": "Read the sentence. Find the name.",
+        "answers": [
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "A dog",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "A fish",
+            "icon": "\ud83d\udc1f"
+          }
+        ],
+        "correctAnswerName": "Mia",
+        "successMessage": "Yes! Mia is with you."
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc1f\ud83d\udca7",
+        "sentence": "Mia looks at a fish tank. The fish swims in the water.",
+        "targetWords": [
+          "Mia",
+          "looks",
+          "fish",
+          "tank",
+          "swims",
+          "water"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Look for the sentence that answers the question.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Close-up of fish tank with a fish swimming, kid-friendly."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a pet!",
+        "menuStory": "We can choose one pet to watch.",
+        "items": [
+          {
+            "name": "Fish",
+            "icon": "\ud83d\udc1f",
+            "description": "swims in a tank"
+          },
+          {
+            "name": "Cat",
+            "icon": "\ud83d\udc31",
+            "description": "purrs and naps"
+          },
+          {
+            "name": "Bird",
+            "icon": "\ud83d\udc26",
+            "description": "sings a song"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three pet choice cards: fish, cat, bird."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udf7d\ufe0f\ud83d\udc1f",
+        "sentence": "We pick a fish. Mia feeds the fish.",
+        "targetWords": [
+          "pick",
+          "fish",
+          "Mia",
+          "feeds"
+        ],
+        "sightWordFocus": "we",
+        "readingTip": "Events are what happens in the story.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Mia gently feeding fish flakes into a tank, calm."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Where am I?",
+        "passage": "I am at the pet shop.",
+        "comprehensionHint": "Read the sentence. Find the place.",
+        "answers": [
+          {
+            "name": "At the pet shop",
+            "icon": "\ud83d\udc3e"
+          },
+          {
+            "name": "At the bakery",
+            "icon": "\ud83e\udd50"
+          },
+          {
+            "name": "At the library",
+            "icon": "\ud83d\udcda"
+          }
+        ],
+        "correctAnswerName": "At the pet shop",
+        "successMessage": "Yes! You found the setting."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What does Mia look at?",
+        "passage": "Mia looks at a fish tank.",
+        "comprehensionHint": "Read the sentence. Find what Mia looks at.",
+        "answers": [
+          {
+            "name": "A fish tank",
+            "icon": "\ud83d\udc1f"
+          },
+          {
+            "name": "A cake",
+            "icon": "\ud83c\udf70"
+          },
+          {
+            "name": "A book",
+            "icon": "\ud83d\udcd6"
+          }
+        ],
+        "correctAnswerName": "A fish tank",
+        "successMessage": "Nice! You used the story details."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What happens in the story?",
+        "passage": "Mia feeds the fish.",
+        "comprehensionHint": "Read the sentence. Find the action.",
+        "answers": [
+          {
+            "name": "Mia feeds the fish",
+            "icon": "\ud83c\udf7d\ufe0f"
+          },
+          {
+            "name": "Mia sleeps",
+            "icon": "\ud83d\ude34"
+          },
+          {
+            "name": "Mia flies",
+            "icon": "\ud83e\ude81"
+          }
+        ],
+        "correctAnswerName": "Mia feeds the fish",
+        "successMessage": "Yes! You found the event."
+      }
+    ]
+  },
+  "rl_l4_feeling_words": {
+    "name": "Feelings Picnic",
+    "icon": "\ud83d\ude0a",
+    "level": 2,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.4"
+    ],
+    "stickers": [
+      "\ud83d\ude0a",
+      "\ud83d\ude22",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "feel",
+      "a",
+      "the",
+      "and",
+      "then",
+      "it",
+      "is",
+      "my",
+      "can"
+    ],
+    "previewWords": [
+      {
+        "word": "happy",
+        "icon": "\ud83d\ude0a",
+        "isSightWord": false,
+        "phonicsNote": "hap-py"
+      },
+      {
+        "word": "sad",
+        "icon": "\ud83d\ude22",
+        "isSightWord": false,
+        "phonicsNote": "sad"
+      },
+      {
+        "word": "proud",
+        "icon": "\u2b50",
+        "isSightWord": false,
+        "phonicsNote": "proud"
+      },
+      {
+        "word": "spill",
+        "icon": "\ud83e\udd64",
+        "isSightWord": false,
+        "phonicsNote": "spill"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "gentle emotion words, calm reassurance"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83e\uddfa",
+        "sentence": "I go on a picnic. I feel happy.",
+        "targetWords": [
+          "picnic",
+          "feel",
+          "happy"
+        ],
+        "sightWordFocus": "feel",
+        "readingTip": "Feeling words tell emotions.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Calm picnic blanket scene with simple food and smiles."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd64\ud83d\udca7",
+        "sentence": "Then I spill my drink. I feel sad.",
+        "targetWords": [
+          "then",
+          "spill",
+          "drink",
+          "feel",
+          "sad"
+        ],
+        "sightWordFocus": "then",
+        "readingTip": "Go back to the sentence to find the answer.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Small spill on the blanket; calm cleanup, not upsetting."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a feeling word!",
+        "menuStory": "I practice finding feeling words.",
+        "items": [
+          {
+            "name": "happy",
+            "icon": "\ud83d\ude0a",
+            "description": "a good feeling"
+          },
+          {
+            "name": "sad",
+            "icon": "\ud83d\ude22",
+            "description": "a down feeling"
+          },
+          {
+            "name": "proud",
+            "icon": "\u2b50",
+            "description": "a strong feeling"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three feeling word cards with simple faces."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\uddfb\u2b50",
+        "sentence": "I clean it up. I feel proud.",
+        "targetWords": [
+          "clean",
+          "feel",
+          "proud"
+        ],
+        "sightWordFocus": "I",
+        "readingTip": "Find the word that tells a feeling.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child calmly cleaning up and smiling with a star."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "How do I feel at the picnic?",
+        "passage": "I feel happy.",
+        "comprehensionHint": "Read the sentence. Find the feeling word.",
+        "answers": [
+          {
+            "name": "Happy",
+            "icon": "\ud83d\ude0a"
+          },
+          {
+            "name": "Sad",
+            "icon": "\ud83d\ude22"
+          },
+          {
+            "name": "Mad",
+            "icon": "\ud83d\ude20"
+          }
+        ],
+        "correctAnswerName": "Happy",
+        "successMessage": "Yes! You found the feeling word."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What happens?",
+        "passage": "Then I spill my drink.",
+        "comprehensionHint": "Read the sentence. Find the action.",
+        "answers": [
+          {
+            "name": "I spill my drink",
+            "icon": "\ud83e\udd64"
+          },
+          {
+            "name": "I fly a kite",
+            "icon": "\ud83e\ude81"
+          },
+          {
+            "name": "I build a sand castle",
+            "icon": "\ud83c\udff0"
+          }
+        ],
+        "correctAnswerName": "I spill my drink",
+        "successMessage": "Nice! You found what happened."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "How do I feel after the spill?",
+        "passage": "I feel sad.",
+        "comprehensionHint": "Read the sentence. Find the feeling word.",
+        "answers": [
+          {
+            "name": "Sad",
+            "icon": "\ud83d\ude22"
+          },
+          {
+            "name": "Happy",
+            "icon": "\ud83d\ude0a"
+          },
+          {
+            "name": "Silly",
+            "icon": "\ud83e\udd2a"
+          }
+        ],
+        "correctAnswerName": "Sad",
+        "successMessage": "Yes! You used the story."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a feeling word?",
+        "passage": "I feel proud.",
+        "comprehensionHint": "Read the sentence. Find the feeling word.",
+        "answers": [
+          {
+            "name": "proud",
+            "icon": "\u2b50"
+          },
+          {
+            "name": "clean",
+            "icon": "\ud83e\uddfb"
+          },
+          {
+            "name": "spill",
+            "icon": "\ud83e\udd64"
+          }
+        ],
+        "correctAnswerName": "proud",
+        "successMessage": "Nice! Proud is a feeling word."
+      }
+    ]
+  },
+  "rl_l5_fiction_vs_nonfiction": {
+    "name": "Story or Facts?",
+    "icon": "\ud83d\udcda",
+    "level": 2,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.5"
+    ],
+    "stickers": [
+      "\ud83d\udcda",
+      "\ud83d\udc31",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "a",
+      "the",
+      "is",
+      "and",
+      "to",
+      "can",
+      "have",
+      "in",
+      "it"
+    ],
+    "previewWords": [
+      {
+        "word": "fiction",
+        "icon": "\u2728",
+        "isSightWord": false,
+        "phonicsNote": "fic-tion"
+      },
+      {
+        "word": "nonfiction",
+        "icon": "\ud83d\udcd8",
+        "isSightWord": false,
+        "phonicsNote": "non-fic-tion"
+      },
+      {
+        "word": "real",
+        "icon": "\u2705",
+        "isSightWord": false,
+        "phonicsNote": "real"
+      },
+      {
+        "word": "make-believe",
+        "icon": "\u2728",
+        "isSightWord": false,
+        "phonicsNote": "make be-lieve"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear definition, calm"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udc31\ud83d\udcac",
+        "sentence": "My cat talks to me. He says hello.",
+        "targetWords": [
+          "cat",
+          "talks",
+          "me",
+          "says",
+          "hello"
+        ],
+        "sightWordFocus": "my",
+        "readingTip": "Fiction can have make-believe events.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Cute cat with a small hello speech bubble, friendly and calm."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc31\ud83d\udcd8",
+        "sentence": "Cats have whiskers. Whiskers help cats feel.",
+        "targetWords": [
+          "cats",
+          "have",
+          "whiskers",
+          "help",
+          "feel"
+        ],
+        "sightWordFocus": "have",
+        "readingTip": "Nonfiction tells real facts.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Simple nonfiction page about cats with labeled whiskers."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick what to read!",
+        "menuStory": "I can read a story or facts.",
+        "items": [
+          {
+            "name": "Story",
+            "icon": "\u2728",
+            "description": "fiction"
+          },
+          {
+            "name": "Facts",
+            "icon": "\ud83d\udcd8",
+            "description": "nonfiction"
+          },
+          {
+            "name": "Both",
+            "icon": "\ud83d\udcda",
+            "description": "story and facts"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three book cards: story, facts, both."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2705\u2728",
+        "sentence": "Fiction is make-believe. Nonfiction is real.",
+        "targetWords": [
+          "fiction",
+          "make-believe",
+          "nonfiction",
+          "real"
+        ],
+        "sightWordFocus": "is",
+        "readingTip": "Ask: Did this really happen?",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two labels: fiction and nonfiction with simple icons."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence is fiction?",
+        "passage": "My cat talks to me.",
+        "comprehensionHint": "Read the sentence. Can a cat really talk?",
+        "answers": [
+          {
+            "name": "My cat talks to me",
+            "icon": "\ud83d\udc31"
+          },
+          {
+            "name": "Cats have whiskers",
+            "icon": "\ud83d\udcd8"
+          },
+          {
+            "name": "Whiskers help cats feel",
+            "icon": "\u2705"
+          }
+        ],
+        "correctAnswerName": "My cat talks to me",
+        "successMessage": "Yes! That is make-believe."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence is nonfiction?",
+        "passage": "Cats have whiskers.",
+        "comprehensionHint": "Read the sentence. Is it a real fact?",
+        "answers": [
+          {
+            "name": "Cats have whiskers",
+            "icon": "\ud83d\udcd8"
+          },
+          {
+            "name": "My cat talks to me",
+            "icon": "\u2728"
+          },
+          {
+            "name": "My cat says hello",
+            "icon": "\ud83d\udcac"
+          }
+        ],
+        "correctAnswerName": "Cats have whiskers",
+        "successMessage": "Nice! That is a real fact."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What does fiction mean?",
+        "passage": "Fiction is make-believe.",
+        "comprehensionHint": "Read the sentence. Find the meaning word.",
+        "answers": [
+          {
+            "name": "Make-believe",
+            "icon": "\u2728"
+          },
+          {
+            "name": "Real",
+            "icon": "\u2705"
+          },
+          {
+            "name": "Sad",
+            "icon": "\ud83d\ude22"
+          }
+        ],
+        "correctAnswerName": "Make-believe",
+        "successMessage": "Yes! Fiction is make-believe."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What does nonfiction mean?",
+        "passage": "Nonfiction is real.",
+        "comprehensionHint": "Read the sentence. Find the meaning word.",
+        "answers": [
+          {
+            "name": "Real",
+            "icon": "\u2705"
+          },
+          {
+            "name": "Make-believe",
+            "icon": "\u2728"
+          },
+          {
+            "name": "A poem",
+            "icon": "\ud83d\udcdc"
+          }
+        ],
+        "correctAnswerName": "Real",
+        "successMessage": "Nice! Nonfiction is real."
+      }
+    ]
+  },
+  "rl_l6_narrator": {
+    "name": "Who Tells the Story?",
+    "icon": "\ud83d\udde3\ufe0f",
+    "level": 3,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.6"
+    ],
+    "stickers": [
+      "\ud83d\udde3\ufe0f",
+      "\ud83d\udc40",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "me",
+      "my",
+      "the",
+      "a",
+      "to",
+      "and",
+      "in",
+      "is",
+      "see"
+    ],
+    "previewWords": [
+      {
+        "word": "narrator",
+        "icon": "\ud83d\udde3\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "nar-ra-tor"
+      },
+      {
+        "word": "pond",
+        "icon": "\ud83e\udd86",
+        "isSightWord": false,
+        "phonicsNote": "pond"
+      },
+      {
+        "word": "ducks",
+        "icon": "\ud83e\udd86",
+        "isSightWord": false,
+        "phonicsNote": "ducks"
+      },
+      {
+        "word": "points",
+        "icon": "\ud83d\udc46",
+        "isSightWord": false,
+        "phonicsNote": "points"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear point-of-view coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83e\udd86",
+        "sentence": "I walk to the pond. I see ducks.",
+        "targetWords": [
+          "walk",
+          "pond",
+          "see",
+          "ducks"
+        ],
+        "sightWordFocus": "I",
+        "readingTip": "If the text says I, the narrator is I.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Calm pond scene with ducks, first-person viewpoint."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc67\ud83e\udd86",
+        "sentence": "Mia walks to the pond. She sees ducks.",
+        "targetWords": [
+          "Mia",
+          "walks",
+          "pond",
+          "She",
+          "sees",
+          "ducks"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "If the text uses a name, the narrator is not that name.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Same pond scene but showing Mia from the outside (third-person)."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick the narrator!",
+        "menuStory": "Who is telling this part?",
+        "items": [
+          {
+            "name": "I",
+            "icon": "\ud83d\udde3\ufe0f",
+            "description": "first person"
+          },
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67",
+            "description": "third person"
+          },
+          {
+            "name": "Ducks",
+            "icon": "\ud83e\udd86",
+            "description": "not the narrator"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three narrator choice cards: I, Mia, Ducks."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc46\ud83d\udcdd",
+        "sentence": "The narrator is the one who tells the story.",
+        "targetWords": [
+          "narrator",
+          "one",
+          "tells",
+          "story"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Look for I or a name.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Simple definition card for narrator with a pointing finger."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Who tells this part?",
+        "passage": "I walk to the pond.",
+        "comprehensionHint": "Look for the word I.",
+        "answers": [
+          {
+            "name": "I",
+            "icon": "\ud83d\udde3\ufe0f"
+          },
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "A duck",
+            "icon": "\ud83e\udd86"
+          }
+        ],
+        "correctAnswerName": "I",
+        "successMessage": "Yes! I tells this part."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Who tells this part?",
+        "passage": "Mia walks to the pond.",
+        "comprehensionHint": "Look for the name Mia.",
+        "answers": [
+          {
+            "name": "Someone else",
+            "icon": "\ud83d\udde3\ufe0f"
+          },
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "A duck",
+            "icon": "\ud83e\udd86"
+          }
+        ],
+        "correctAnswerName": "Someone else",
+        "successMessage": "Nice! Someone else tells about Mia."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What is a narrator?",
+        "passage": "The narrator is the one who tells the story.",
+        "comprehensionHint": "Read the sentence. Find who tells the story.",
+        "answers": [
+          {
+            "name": "The one who tells the story",
+            "icon": "\ud83d\udde3\ufe0f"
+          },
+          {
+            "name": "A duck at the pond",
+            "icon": "\ud83e\udd86"
+          },
+          {
+            "name": "A book on a shelf",
+            "icon": "\ud83d\udcda"
+          }
+        ],
+        "correctAnswerName": "The one who tells the story",
+        "successMessage": "Yes! You found the meaning."
+      }
+    ]
+  },
+  "rl_l7_pictures_and_words": {
+    "name": "Kite Park Pictures",
+    "icon": "\ud83e\ude81",
+    "level": 2,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.7"
+    ],
+    "stickers": [
+      "\ud83e\ude81",
+      "\ud83c\udf2c\ufe0f",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "am",
+      "at",
+      "the",
+      "a",
+      "see",
+      "is",
+      "in",
+      "my",
+      "can"
+    ],
+    "previewWords": [
+      {
+        "word": "kite",
+        "icon": "\ud83e\ude81",
+        "isSightWord": false,
+        "phonicsNote": "kite"
+      },
+      {
+        "word": "wind",
+        "icon": "\ud83c\udf2c\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "wind"
+      },
+      {
+        "word": "high",
+        "icon": "\u2b06\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "high"
+      },
+      {
+        "word": "string",
+        "icon": "\ud83e\uddf5",
+        "isSightWord": false,
+        "phonicsNote": "string"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "story + picture support"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83e\ude81",
+        "sentence": "I am at the kite park. I hold a red kite.",
+        "targetWords": [
+          "kite",
+          "park",
+          "hold",
+          "red"
+        ],
+        "sightWordFocus": "am",
+        "readingTip": "Use the picture and the words.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imageAlt": "Picture shows a child holding a red kite.",
+          "imagePrompt": "Sunny park with a red kite, gentle style."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udf2c\ufe0f\u2b06\ufe0f",
+        "sentence": "The wind is strong. The kite goes high in the sky.",
+        "targetWords": [
+          "wind",
+          "strong",
+          "kite",
+          "goes",
+          "high",
+          "sky"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Find the sentence that tells the answer.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imageAlt": "Picture shows the kite high in the sky.",
+          "imagePrompt": "Kite flying high with soft clouds, calm."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a kite!",
+        "menuStory": "What kite will I fly?",
+        "items": [
+          {
+            "name": "Red kite",
+            "icon": "\ud83d\udd34",
+            "description": "bright red"
+          },
+          {
+            "name": "Blue kite",
+            "icon": "\ud83d\udd35",
+            "description": "sky blue"
+          },
+          {
+            "name": "Yellow kite",
+            "icon": "\ud83d\udfe1",
+            "description": "sunny yellow"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three kite color cards, simple and bright."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\ude0a\ud83e\uddf5",
+        "sentence": "I pull the string gently. I can keep the kite steady.",
+        "targetWords": [
+          "pull",
+          "string",
+          "gently",
+          "keep",
+          "kite",
+          "steady"
+        ],
+        "sightWordFocus": "can",
+        "readingTip": "Read the words, then look at the picture.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child holding kite string, calm smile."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What do I hold?",
+        "passage": "I hold a red kite.",
+        "comprehensionHint": "Read the sentence. Find what I hold.",
+        "answers": [
+          {
+            "name": "A kite",
+            "icon": "\ud83e\ude81"
+          },
+          {
+            "name": "A book",
+            "icon": "\ud83d\udcd6"
+          },
+          {
+            "name": "A cake",
+            "icon": "\ud83c\udf70"
+          }
+        ],
+        "correctAnswerName": "A kite",
+        "successMessage": "Yes! You used the words to find it."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "How is the wind?",
+        "passage": "The wind is strong.",
+        "comprehensionHint": "Read the sentence. Find the describing word.",
+        "answers": [
+          {
+            "name": "Strong",
+            "icon": "\ud83c\udf2c\ufe0f"
+          },
+          {
+            "name": "Quiet",
+            "icon": "\ud83e\udd2b"
+          },
+          {
+            "name": "Wet",
+            "icon": "\ud83d\udca7"
+          }
+        ],
+        "correctAnswerName": "Strong",
+        "successMessage": "Nice! You found the describing word."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Where does the kite go?",
+        "passage": "The kite goes high in the sky.",
+        "comprehensionHint": "Read the sentence. Find where it goes.",
+        "answers": [
+          {
+            "name": "High in the sky",
+            "icon": "\u2b06\ufe0f"
+          },
+          {
+            "name": "Under the water",
+            "icon": "\ud83c\udf0a"
+          },
+          {
+            "name": "In a box",
+            "icon": "\ud83d\udce6"
+          }
+        ],
+        "correctAnswerName": "High in the sky",
+        "successMessage": "Yes! You found where it goes."
+      }
+    ]
+  },
+  "rl_l8_compare_characters": {
+    "name": "Sam and Mia",
+    "icon": "\ud83c\udfb5",
+    "level": 3,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.9"
+    ],
+    "stickers": [
+      "\ud83c\udfb5",
+      "\ud83e\udd41",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "Sam",
+      "Mia",
+      "likes",
+      "the",
+      "and",
+      "but",
+      "both",
+      "when",
+      "they",
+      "play"
+    ],
+    "previewWords": [
+      {
+        "word": "drum",
+        "icon": "\ud83e\udd41",
+        "isSightWord": false,
+        "phonicsNote": "drum"
+      },
+      {
+        "word": "flute",
+        "icon": "\ud83c\udfb6",
+        "isSightWord": false,
+        "phonicsNote": "flute"
+      },
+      {
+        "word": "loud",
+        "icon": "\ud83d\udce3",
+        "isSightWord": false,
+        "phonicsNote": "loud"
+      },
+      {
+        "word": "soft",
+        "icon": "\ud83e\udd2b",
+        "isSightWord": false,
+        "phonicsNote": "soft"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "compare language, clear contrast"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\ude82\ud83c\udfb5",
+        "sentence": "Sam likes the drum. Mia likes the flute.",
+        "targetWords": [
+          "Sam",
+          "likes",
+          "drum",
+          "Mia",
+          "flute"
+        ],
+        "sightWordFocus": "likes",
+        "readingTip": "Compare means same and different.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Music room station with a drum and a flute, calm style."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udce3\ud83e\udd2b",
+        "sentence": "Sam plays loud. Mia plays soft.",
+        "targetWords": [
+          "Sam",
+          "plays",
+          "loud",
+          "Mia",
+          "soft"
+        ],
+        "sightWordFocus": "plays",
+        "readingTip": "Look for words that show differences.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Split scene: drum with loud icon, flute with soft icon."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick the music!",
+        "menuStory": "What music should we play?",
+        "items": [
+          {
+            "name": "Drum",
+            "icon": "\ud83e\udd41",
+            "description": "loud beats"
+          },
+          {
+            "name": "Flute",
+            "icon": "\ud83c\udfb6",
+            "description": "soft sounds"
+          },
+          {
+            "name": "Both",
+            "icon": "\ud83c\udfb5",
+            "description": "together"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three music choice cards with simple instruments."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\ude0a\ud83c\udfb5",
+        "sentence": "Both kids smile when they play music.",
+        "targetWords": [
+          "Both",
+          "kids",
+          "smile",
+          "when",
+          "they",
+          "play",
+          "music"
+        ],
+        "sightWordFocus": "Both",
+        "readingTip": "Both means Sam and Mia.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two kids smiling while playing music, gentle style."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Who likes the drum?",
+        "passage": "Sam likes the drum.",
+        "comprehensionHint": "Read the sentence. Find the name.",
+        "answers": [
+          {
+            "name": "Sam",
+            "icon": "\ud83e\uddd2"
+          },
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "Both",
+            "icon": "\ud83d\udc65"
+          }
+        ],
+        "correctAnswerName": "Sam",
+        "successMessage": "Yes! Sam likes the drum."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Who likes the flute?",
+        "passage": "Mia likes the flute.",
+        "comprehensionHint": "Read the sentence. Find the name.",
+        "answers": [
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "Sam",
+            "icon": "\ud83e\uddd2"
+          },
+          {
+            "name": "Both",
+            "icon": "\ud83d\udc65"
+          }
+        ],
+        "correctAnswerName": "Mia",
+        "successMessage": "Nice! Mia likes the flute."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "How are Sam and Mia different?",
+        "passage": "Sam plays loud. Mia plays soft.",
+        "comprehensionHint": "Read the sentence. Find loud and soft.",
+        "answers": [
+          {
+            "name": "Sam plays loud, and Mia plays soft",
+            "icon": "\u2705"
+          },
+          {
+            "name": "Sam and Mia both play loud",
+            "icon": "\ud83d\udce3"
+          },
+          {
+            "name": "Sam and Mia both play soft",
+            "icon": "\ud83e\udd2b"
+          }
+        ],
+        "correctAnswerName": "Sam plays loud, and Mia plays soft",
+        "successMessage": "Yes! You compared the two characters."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What do both kids do?",
+        "passage": "Both kids smile when they play music.",
+        "comprehensionHint": "Read the sentence. Find the action word.",
+        "answers": [
+          {
+            "name": "Smile",
+            "icon": "\ud83d\ude0a"
+          },
+          {
+            "name": "Cry",
+            "icon": "\ud83d\ude22"
+          },
+          {
+            "name": "Sleep",
+            "icon": "\ud83d\ude34"
+          }
+        ],
+        "correctAnswerName": "Smile",
+        "successMessage": "Nice! Both kids smile."
+      }
+    ]
+  },
+  "rl_l9_stories_poems_prediction": {
+    "name": "Poem and Prediction",
+    "icon": "\ud83d\udcdc",
+    "level": 3,
+    "line": "RL",
+    "checklistTargets": [
+      "RL.1.10",
+      "RL.1.10.A",
+      "RL.1.10.B"
+    ],
+    "stickers": [
+      "\ud83d\udcdc",
+      "\ud83c\udf27\ufe0f",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "the",
+      "a",
+      "to",
+      "and",
+      "in",
+      "my",
+      "will",
+      "think",
+      "before"
+    ],
+    "previewWords": [
+      {
+        "word": "poem",
+        "icon": "\ud83d\udcdc",
+        "isSightWord": false,
+        "phonicsNote": "po-em"
+      },
+      {
+        "word": "predict",
+        "icon": "\ud83d\udd2e",
+        "isSightWord": false,
+        "phonicsNote": "pre-dict"
+      },
+      {
+        "word": "umbrella",
+        "icon": "\u2602\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "um-brel-la"
+      },
+      {
+        "word": "rain",
+        "icon": "\ud83c\udf27\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "rain"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "poem rhythm + prediction coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udcdc\ud83d\ude82",
+        "sentence": "Rain on the train. Tap, tap, tap. I wear my cap. Clap, clap, clap.",
+        "targetWords": [
+          "Rain",
+          "train",
+          "Tap",
+          "wear",
+          "cap",
+          "Clap"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "A poem can have a rhythm.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Train in gentle rain; poem text on a scroll, calm style."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udde0\ud83c\udf27\ufe0f",
+        "sentence": "Before I read, I think about what I know about rain. Rain can make the ground wet.",
+        "targetWords": [
+          "Before",
+          "think",
+          "know",
+          "rain",
+          "ground",
+          "wet"
+        ],
+        "sightWordFocus": "Before",
+        "readingTip": "Use prior knowledge to get ready to read.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Thought bubble with rain and wet ground, gentle style."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick what to bring!",
+        "menuStory": "If it rains, what will help me?",
+        "items": [
+          {
+            "name": "Umbrella",
+            "icon": "\u2602\ufe0f",
+            "description": "stay dry"
+          },
+          {
+            "name": "Raincoat",
+            "icon": "\ud83e\udde5",
+            "description": "stay warm"
+          },
+          {
+            "name": "Sunglasses",
+            "icon": "\ud83d\udd76\ufe0f",
+            "description": "for sun"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three item cards: umbrella, raincoat, sunglasses."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udf27\ufe0f\u2602\ufe0f",
+        "sentence": "The sky is dark. Gray clouds move in. I think it will rain.",
+        "targetWords": [
+          "sky",
+          "dark",
+          "clouds",
+          "move",
+          "think",
+          "will",
+          "rain"
+        ],
+        "sightWordFocus": "will",
+        "readingTip": "A prediction is a smart guess.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Dark clouds rolling in; child holding umbrella."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2705\ud83c\udf27\ufe0f",
+        "sentence": "Raindrops tap on my umbrella. My prediction was right.",
+        "targetWords": [
+          "Raindrops",
+          "tap",
+          "umbrella",
+          "prediction",
+          "right"
+        ],
+        "sightWordFocus": "my",
+        "readingTip": "Confirm your prediction by checking the text.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Raindrops on umbrella with a small check mark, calm."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What is in the poem?",
+        "passage": "Rain on the train.",
+        "comprehensionHint": "Read the sentence. Find the word rain.",
+        "answers": [
+          {
+            "name": "Rain",
+            "icon": "\ud83c\udf27\ufe0f"
+          },
+          {
+            "name": "Snow",
+            "icon": "\u2744\ufe0f"
+          },
+          {
+            "name": "Sand",
+            "icon": "\ud83c\udfd6\ufe0f"
+          }
+        ],
+        "correctAnswerName": "Rain",
+        "successMessage": "Yes! The poem has rain."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What do I do before I read?",
+        "passage": "Before I read, I think about what I know about rain.",
+        "comprehensionHint": "Read the sentence. Find what I think about.",
+        "answers": [
+          {
+            "name": "Think about what I know",
+            "icon": "\ud83e\udde0"
+          },
+          {
+            "name": "Eat a cake",
+            "icon": "\ud83c\udf70"
+          },
+          {
+            "name": "Go to sleep",
+            "icon": "\ud83d\ude34"
+          }
+        ],
+        "correctAnswerName": "Think about what I know",
+        "successMessage": "Nice! You used prior knowledge."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "What do I predict?",
+        "passage": "I think it will rain.",
+        "comprehensionHint": "Read the sentence. Find will rain.",
+        "answers": [
+          {
+            "name": "It will rain",
+            "icon": "\ud83c\udf27\ufe0f"
+          },
+          {
+            "name": "It will snow",
+            "icon": "\u2744\ufe0f"
+          },
+          {
+            "name": "It will be hot",
+            "icon": "\ud83d\udd25"
+          }
+        ],
+        "correctAnswerName": "It will rain",
+        "successMessage": "Yes! That is your prediction."
+      },
+      {
+        "type": "question",
+        "questionType": "comprehension",
+        "questionMode": "multipleChoice",
+        "question": "Was my prediction correct?",
+        "passage": "My prediction was right.",
+        "comprehensionHint": "Read the sentence. Right means correct.",
+        "answers": [
+          {
+            "name": "Yes, it was correct",
+            "icon": "\u2705"
+          },
+          {
+            "name": "No, it was not correct",
+            "icon": "\u274c"
+          },
+          {
+            "name": "The story did not say",
+            "icon": "\u2753"
+          }
+        ],
+        "correctAnswerName": "Yes, it was correct",
+        "successMessage": "Nice! You confirmed the prediction."
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Waffle Cone at bottom -->
+  <path d="M24 32L32 58L40 32Z" fill="#D7A86E"/>
+
+  <!-- Waffle pattern on cone -->
+  <line x1="26" y1="38" x2="30" y2="38" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+  <line x1="34" y1="38" x2="38" y2="38" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+  <line x1="27" y1="44" x2="30" y2="44" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+  <line x1="34" y1="44" x2="37" y2="44" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+  <line x1="28.5" y1="50" x2="31" y2="50" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+  <line x1="33" y1="50" x2="35.5" y2="50" stroke="#C69556" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Diagonal waffle lines -->
+  <line x1="26" y1="35" x2="28" y2="41" stroke="#C69556" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="32" y1="35" x2="29" y2="47" stroke="#C69556" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="38" y1="35" x2="35" y2="47" stroke="#C69556" stroke-width="0.8" stroke-linecap="round"/>
+
+  <!-- Cone outline -->
+  <path d="M24 32L32 58L40 32Z" stroke="#B8894D" stroke-width="1.5" stroke-linejoin="miter"/>
+
+  <!-- Bottom ice cream scoop (mint) -->
+  <circle cx="32" cy="28" r="9" fill="#B2DFDB"/>
+  <circle cx="32" cy="28" r="9" stroke="#9AC9C5" stroke-width="1"/>
+
+  <!-- Middle ice cream scoop (vanilla) -->
+  <circle cx="28" cy="20" r="8" fill="#FFF9C4"/>
+  <circle cx="28" cy="20" r="8" stroke="#F0E9A8" stroke-width="1"/>
+
+  <!-- Top ice cream scoop (pink) with face -->
+  <circle cx="35" cy="14" r="8.5" fill="#F8BBD9"/>
+  <circle cx="35" cy="14" r="8.5" stroke="#F0A5C8" stroke-width="1"/>
+
+  <!-- Kawaii face on top scoop -->
+  <!-- Left eye -->
+  <circle cx="32.5" cy="13" r="1.2" fill="#000000"/>
+  <!-- Right eye -->
+  <circle cx="37.5" cy="13" r="1.2" fill="#000000"/>
+
+  <!-- Cute smile -->
+  <path d="M31 16C32.2 16.6 33.2 16.8 34.5 16.8C35.8 16.8 36.8 16.6 38 16" stroke="#000000" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Sprinkles on top scoop -->
+  <rect x="29" y="10" width="1.5" height="3" fill="#FF6B9D" rx="0.5" transform="rotate(-20 29 10)"/>
+  <rect x="39" y="11" width="1.5" height="3" fill="#FFD700" rx="0.5" transform="rotate(25 39 11)"/>
+  <rect x="34" y="8" width="1.5" height="3" fill="#87CEEB" rx="0.5" transform="rotate(45 34 8)"/>
+
+  <!-- Cherry on top -->
+  <circle cx="41" cy="9" r="2" fill="#E74C3C"/>
+  <circle cx="41" cy="9" r="2" stroke="#C0392B" stroke-width="0.8"/>
+  <path d="M41 9Q41 7 42 6" stroke="#8B4513" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+</svg>

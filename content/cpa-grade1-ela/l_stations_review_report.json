@@ -1,0 +1,380 @@
+{
+  "excellent": [
+    {
+      "id": "l_g10_spelling_strategies",
+      "name": "Spelling Strategies",
+      "standards": [
+        "L.1.2.D",
+        "L.1.2.E"
+      ],
+      "level": 2,
+      "pages": 14,
+      "read_count": 4,
+      "question_count": 9,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Read page 4 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Q6: Well-formed with clear answer",
+        "Q7: Well-formed with clear answer",
+        "Q8: Well-formed with clear answer",
+        "Q9: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g1_capitals_endmarks",
+      "name": "Capitals and End Marks",
+      "standards": [
+        "L.1.1.A",
+        "L.1.2.A",
+        "L.1.2.B"
+      ],
+      "level": 1,
+      "pages": 8,
+      "read_count": 2,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g2_nouns",
+      "name": "Nouns",
+      "standards": [
+        "L.1.1.B"
+      ],
+      "level": 2,
+      "pages": 8,
+      "read_count": 3,
+      "question_count": 4,
+      "issues": [],
+      "warnings": [
+        "Read page 3: Very short sentence (4 words)"
+      ],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g3_plurals_verbs",
+      "name": "Plurals and Verbs",
+      "standards": [
+        "L.1.1.C"
+      ],
+      "level": 2,
+      "pages": 6,
+      "read_count": 1,
+      "question_count": 4,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g4_pronouns",
+      "name": "Pronouns",
+      "standards": [
+        "L.1.1.D"
+      ],
+      "level": 2,
+      "pages": 9,
+      "read_count": 3,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g5_verb_tense",
+      "name": "Verb Tense",
+      "standards": [
+        "L.1.1.E"
+      ],
+      "level": 2,
+      "pages": 7,
+      "read_count": 1,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g6_adjectives_determiners",
+      "name": "Adjectives and Determiners",
+      "standards": [
+        "L.1.1.F",
+        "L.1.1.H"
+      ],
+      "level": 2,
+      "pages": 9,
+      "read_count": 3,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [
+        "Read page 1: Very short sentence (4 words)"
+      ],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g7_conjunctions_prepositions",
+      "name": "Conjunctions and Prepositions",
+      "standards": [
+        "L.1.1.G",
+        "L.1.1.I"
+      ],
+      "level": 2,
+      "pages": 11,
+      "read_count": 3,
+      "question_count": 7,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Q6: Well-formed with clear answer",
+        "Q7: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g8_sentence_types_compound",
+      "name": "Sentence Types and Compound Sentences",
+      "standards": [
+        "L.1.1.J"
+      ],
+      "level": 3,
+      "pages": 9,
+      "read_count": 3,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_g9_commas_dates_lists",
+      "name": "Commas in Dates and Lists",
+      "standards": [
+        "L.1.2.C"
+      ],
+      "level": 3,
+      "pages": 9,
+      "read_count": 2,
+      "question_count": 6,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Q6: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_v1_context_word_parts",
+      "name": "Meaning From Context and Word Parts",
+      "standards": [
+        "L.1.4",
+        "L.1.4.A",
+        "L.1.4.B",
+        "L.1.4.C"
+      ],
+      "level": 3,
+      "pages": 10,
+      "read_count": 4,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Read page 4 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_v2_categories",
+      "name": "Categories",
+      "standards": [
+        "L.1.5.A",
+        "L.1.5.B"
+      ],
+      "level": 2,
+      "pages": 7,
+      "read_count": 2,
+      "question_count": 3,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_v3_real_life_word_use",
+      "name": "Real-Life Word Use",
+      "standards": [
+        "L.1.5.C"
+      ],
+      "level": 2,
+      "pages": 9,
+      "read_count": 3,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_v4_shades_of_meaning",
+      "name": "Shades of Meaning",
+      "standards": [
+        "L.1.5.D",
+        "L.1.5.E"
+      ],
+      "level": 3,
+      "pages": 10,
+      "read_count": 4,
+      "question_count": 5,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Read page 4 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Q5: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    },
+    {
+      "id": "l_v5_use_new_words",
+      "name": "Use New Words",
+      "standards": [
+        "L.1.6"
+      ],
+      "level": 3,
+      "pages": 10,
+      "read_count": 4,
+      "question_count": 4,
+      "issues": [],
+      "warnings": [],
+      "strengths": [
+        "Read page 1 provides clear instruction and context",
+        "Read page 2 provides clear instruction and context",
+        "Read page 3 provides clear instruction and context",
+        "Read page 4 provides clear instruction and context",
+        "Q1: Well-formed with clear answer",
+        "Q2: Well-formed with clear answer",
+        "Q3: Well-formed with clear answer",
+        "Q4: Well-formed with clear answer",
+        "Includes 1 interactive menu(s) for engagement"
+      ]
+    }
+  ],
+  "minor_issues": [],
+  "major_issues": [],
+  "total_stations": 15
+}

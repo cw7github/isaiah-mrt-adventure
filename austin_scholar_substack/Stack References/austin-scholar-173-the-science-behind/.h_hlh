@@ -1,0 +1,23 @@
+HTTP/2 404 
+date: Sun, 05 Oct 2025 23:35:48 GMT
+content-type: text/html; charset=UTF-8
+server: cloudflare
+cf-ray: 98a0bcceccedfa8e-SJC
+cf-cache-status: HIT
+age: 29
+cache-control: public, max-age=86400
+expires: Mon, 06 Oct 2025 23:35:48 GMT
+strict-transport-security: max-age=10886400; includeSubDomains; preload
+vary: Accept-Encoding
+pragma: no-cache
+content-security-policy: frame-ancestors 'self'
+permissions-policy: geolocation=(), microphone=(), camera=(), payment=(self)
+referrer-policy: no-referrer-when-downgrade
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-permitted-cross-domain-policies: none
+x-ua-compatible: IE=Edge
+x-xss-protection: 1;  mode=block
+set-cookie: __cf_bm=SMbVEXr.r_HVRgeoKUgE8ekSQ_cr54XL.vPUJ3Goo7g-1759707348-1.0.1.1-DWssZomrbC8DqOkM2Ad9BuZnj.1KjPbKOL5prLDB0CGej2sBDsHU6yj6tAXYCtSAKwepYiNI74xjGAriIuh2oIwvuV5ntbHIyIkJAH1cGQU; path=/; expires=Mon, 06-Oct-25 00:05:48 GMT; domain=.routledge.com; HttpOnly; Secure; SameSite=None
+alt-svc: h3=":443"; ma=86400
+

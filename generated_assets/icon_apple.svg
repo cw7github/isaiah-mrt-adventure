@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="apple">
+    <circle id="body" cx="100" cy="100" r="60" fill="#E85D75"/>
+    <g id="shadow">
+    <ellipse cx="130" cy="110" rx="35" ry="25" fill="#C74B5F" opacity="0.3"/>
+    </g>
+
+<g id="highlights">
+    <ellipse cx="70" cy="70" rx="25" ry="20" fill="white" opacity="0.2"/>
+    <ellipse cx="130" cy="70" rx="20" ry="15" fill="white" opacity="0.2"/>
+</g>
+
+
+    <g id="eye_left">
+        <path d="M75 85 C 80 80 85 80 90 85" stroke="black" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="eye_right">
+        <path d="M110 85 C 115 80 120 80 125 85" stroke="black" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="mouth">
+        <path d="M100 110 C 90 115 110 115 100 120" stroke="black" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="leaf">
+        <path d="M100 40 C 90 30 80 35 75 50 C 85 55 95 50 105 45 C 115 35 110 30 100 40" fill="#7CB342"/>
+        <line x1="100" y1="40" x2="100" y2="25" stroke="black" stroke-width="2" stroke-linecap="round"/>
+    </g>
+</g>
+</svg>

@@ -1,0 +1,87 @@
+{
+  "stationId": "math-station-1",
+  "name": "Number Line Adventure",
+  "level": 1,
+  "pages": [
+    {
+      "type": "question",
+      "questionType": "computation",
+      "question": "I start at 7. I count up two numbers. Where do I land?",
+      "mathContext": "I am counting on the number line.",
+      "numberSentence": "7 + 1 + 1 = ____",
+      "mathHint": "Start at seven. Count up one, then up one more.",
+      "questionMode": "multipleChoice",
+      "answers": [
+        { "name": "9" },
+        { "name": "8" },
+        { "name": "10" }
+      ],
+      "correctAnswerName": "9",
+      "successMessage": "Great! 7 plus 1 plus 1 equals 9!"
+    },
+    {
+      "type": "question",
+      "questionType": "wordProblem",
+      "question": "Maya has 5 apples. Her friend gives her 3 more apples. How many apples does Maya have now?",
+      "mathContext": "Think about adding the apples together.",
+      "numberSentence": "5 + 3 = ____",
+      "mathHint": "Start with 5 apples. Count up 3 more: 6, 7, 8.",
+      "questionMode": "multipleChoice",
+      "answers": [
+        { "name": "8" },
+        { "name": "7" },
+        { "name": "9" }
+      ],
+      "correctAnswerName": "8",
+      "successMessage": "Correct! 5 plus 3 equals 8 apples!"
+    },
+    {
+      "type": "question",
+      "questionType": "computation",
+      "question": "What number comes next when counting by 2s?",
+      "mathContext": "We are skip counting by 2s on the number line.",
+      "numberSentence": "2, 4, 6, ____",
+      "mathHint": "Count: two, four, six... what comes next when we count by twos?",
+      "questionMode": "multipleChoice",
+      "answers": [
+        { "name": "8" },
+        { "name": "7" },
+        { "name": "10" }
+      ],
+      "correctAnswerName": "8",
+      "successMessage": "Yes! When we count by 2s, we get 2, 4, 6, 8!"
+    },
+    {
+      "type": "question",
+      "questionType": "wordProblem",
+      "question": "There are 10 birds on a tree. 4 birds fly away. How many birds are still on the tree?",
+      "mathContext": "Think about taking away birds from the tree.",
+      "numberSentence": "10 - 4 = ____",
+      "mathHint": "Start with 10 birds. Count back 4: 9, 8, 7, 6.",
+      "questionMode": "multipleChoice",
+      "answers": [
+        { "name": "6" },
+        { "name": "5" },
+        { "name": "7" }
+      ],
+      "correctAnswerName": "6",
+      "successMessage": "Excellent! 10 minus 4 equals 6 birds!"
+    },
+    {
+      "type": "question",
+      "questionType": "computation",
+      "question": "Which number makes this number sentence true?",
+      "mathContext": "Find the missing number to make both sides equal.",
+      "numberSentence": "3 + ____ = 7",
+      "mathHint": "Start at 3. Count up until you reach 7. How many did you count?",
+      "questionMode": "multipleChoice",
+      "answers": [
+        { "name": "4" },
+        { "name": "3" },
+        { "name": "5" }
+      ],
+      "correctAnswerName": "4",
+      "successMessage": "Perfect! 3 plus 4 equals 7!"
+    }
+  ]
+}

@@ -1,0 +1,4016 @@
+{
+  "l_g1_capitals_endmarks": {
+    "name": "Capitals and End Marks",
+    "icon": "\ud83d\udd20",
+    "level": 1,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.A",
+      "L.1.2.A",
+      "L.1.2.B"
+    ],
+    "stickers": [
+      "\ud83d\udd20",
+      "\u2753",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "write",
+      "a",
+      "the",
+      "is",
+      "my",
+      "in",
+      "to",
+      "and",
+      "Mia"
+    ],
+    "previewWords": [
+      {
+        "word": "capital",
+        "icon": "\ud83d\udd20",
+        "isSightWord": false,
+        "phonicsNote": "cap-i-tal"
+      },
+      {
+        "word": "period",
+        "icon": "\u26aa",
+        "isSightWord": false,
+        "phonicsNote": "pe-ri-od"
+      },
+      {
+        "word": "question",
+        "icon": "\u2753",
+        "isSightWord": false,
+        "phonicsNote": "ques-tion"
+      },
+      {
+        "word": "exclaim",
+        "icon": "\u2757",
+        "isSightWord": false,
+        "phonicsNote": "ex-claim"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear, explicit mechanics coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udcdd\ud83d\udd20",
+        "sentence": "I write a note to Mia. I start my sentence with a capital letter.",
+        "targetWords": [
+          "write",
+          "note",
+          "Mia",
+          "start",
+          "sentence",
+          "capital"
+        ],
+        "sightWordFocus": "write",
+        "readingTip": "Sentences start with a capital letter.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Simple note card with a capital letter highlighted, calm."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udcdd\u2753",
+        "sentence": "A statement ends with a period. A question ends with a question mark.",
+        "targetWords": [
+          "statement",
+          "ends",
+          "period",
+          "question",
+          "mark"
+        ],
+        "sightWordFocus": "a",
+        "readingTip": "Pick the right end mark.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two sentence strips labeled statement and question with end marks."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick an end mark!",
+        "menuStory": "What end mark will you use?",
+        "items": [
+          {
+            "name": "Period",
+            "icon": "\u26aa",
+            "description": "end a statement"
+          },
+          {
+            "name": "Question mark",
+            "icon": "\u2753",
+            "description": "end a question"
+          },
+          {
+            "name": "Exclamation mark",
+            "icon": "\u2757",
+            "description": "show a strong feeling"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three punctuation cards: period, question mark, exclamation mark."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What ends a question?",
+        "passage": "A question ends with a question mark.",
+        "comprehensionHint": "Read the sentence. Find the end mark name.",
+        "answers": [
+          {
+            "name": "Question mark",
+            "icon": "\u2753"
+          },
+          {
+            "name": "Period",
+            "icon": "\u26aa"
+          },
+          {
+            "name": "Exclamation mark",
+            "icon": "\u2757"
+          }
+        ],
+        "correctAnswerName": "Question mark",
+        "successMessage": "Yes! A question ends with a question mark."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word needs a capital letter?",
+        "passage": "I write to Mia on May 5.",
+        "comprehensionHint": "Names and months start with capital letters.",
+        "answers": [
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "write",
+            "icon": "\u270f\ufe0f"
+          },
+          {
+            "name": "on",
+            "icon": "\ud83d\udcc5"
+          }
+        ],
+        "correctAnswerName": "Mia",
+        "successMessage": "Yes! Mia is a name. Names start with capitals."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What starts a sentence?",
+        "passage": "I start my sentence with a capital letter.",
+        "comprehensionHint": "Read the sentence. Find what I start with.",
+        "answers": [
+          {
+            "name": "A capital letter",
+            "icon": "\ud83d\udd20"
+          },
+          {
+            "name": "A comma",
+            "icon": "\u2796"
+          },
+          {
+            "name": "A number",
+            "icon": "\ud83d\udd22"
+          }
+        ],
+        "correctAnswerName": "A capital letter",
+        "successMessage": "Nice! You found the rule."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What ends a statement?",
+        "passage": "A statement ends with a period.",
+        "comprehensionHint": "Read the sentence. Find the end mark for a statement.",
+        "answers": [
+          {
+            "name": "Period",
+            "icon": "\u26aa"
+          },
+          {
+            "name": "Question mark",
+            "icon": "\u2753"
+          },
+          {
+            "name": "Exclamation mark",
+            "icon": "\u2757"
+          }
+        ],
+        "correctAnswerName": "Period",
+        "successMessage": "Yes! A statement ends with a period."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What ends an exclamation?",
+        "passage": "An exclamation shows strong feeling and ends with an exclamation mark.",
+        "comprehensionHint": "Read the sentence. Find what shows strong feeling.",
+        "answers": [
+          {
+            "name": "Exclamation mark",
+            "icon": "\u2757"
+          },
+          {
+            "name": "Period",
+            "icon": "\u26aa"
+          },
+          {
+            "name": "Question mark",
+            "icon": "\u2753"
+          }
+        ],
+        "correctAnswerName": "Exclamation mark",
+        "successMessage": "Yes! An exclamation mark shows strong feeling."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g1_capitals_endmarks.png"
+  },
+  "l_g2_nouns": {
+    "name": "Nouns",
+    "icon": "\ud83c\udff7\ufe0f",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.B"
+    ],
+    "stickers": [
+      "\ud83c\udff7\ufe0f",
+      "\ud83e\uddcd",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "A",
+      "noun",
+      "is",
+      "a",
+      "person",
+      "place",
+      "or",
+      "thing",
+      "Mia",
+      "my"
+    ],
+    "previewWords": [
+      {
+        "word": "noun",
+        "icon": "\ud83c\udff7\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "noun"
+      },
+      {
+        "word": "person",
+        "icon": "\ud83e\uddcd",
+        "isSightWord": false,
+        "phonicsNote": "per-son"
+      },
+      {
+        "word": "place",
+        "icon": "\ud83d\udccd",
+        "isSightWord": false,
+        "phonicsNote": "place"
+      },
+      {
+        "word": "thing",
+        "icon": "\ud83d\udce6",
+        "isSightWord": false,
+        "phonicsNote": "thing"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear parts-of-speech coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83c\udff7\ufe0f\ud83e\udde0",
+        "sentence": "A noun is a person, a place, or a thing.",
+        "targetWords": [
+          "noun",
+          "person",
+          "place",
+          "thing"
+        ],
+        "sightWordFocus": "noun",
+        "readingTip": "Find the naming word.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three icons labeled person, place, thing."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc67\ud83d\udc36",
+        "sentence": "Mia is a proper noun. A dog is a common noun.",
+        "targetWords": [
+          "Mia",
+          "proper",
+          "noun",
+          "dog",
+          "common"
+        ],
+        "sightWordFocus": "is",
+        "readingTip": "Names are proper nouns.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Name tag Mia and a dog icon, simple and calm."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a noun type!",
+        "menuStory": "Nouns can name different things.",
+        "items": [
+          {
+            "name": "Person",
+            "icon": "\ud83e\uddcd",
+            "description": "a person"
+          },
+          {
+            "name": "Place",
+            "icon": "\ud83d\udccd",
+            "description": "a place"
+          },
+          {
+            "name": "Thing",
+            "icon": "\ud83d\udce6",
+            "description": "a thing"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three noun-type cards."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udde2\ud83c\udff7\ufe0f",
+        "sentence": "Mia's hat is red.",
+        "targetWords": [
+          "Mia's",
+          "hat",
+          "red"
+        ],
+        "sightWordFocus": "Mia's",
+        "readingTip": "A possessive noun shows who has something.",
+        "ui": {
+          "scene": "enjoy",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Hat with a name tag Mia, calm."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a noun?",
+        "passage": "The dog runs.",
+        "comprehensionHint": "A noun is a person, place, or thing.",
+        "answers": [
+          {
+            "name": "dog",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "runs",
+            "icon": "\ud83c\udfc3"
+          },
+          {
+            "name": "the",
+            "icon": "\ud83d\udc49"
+          }
+        ],
+        "correctAnswerName": "dog",
+        "successMessage": "Yes! Dog is a noun."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which noun is a proper noun?",
+        "passage": "Mia is a proper noun.",
+        "comprehensionHint": "A proper noun is a name.",
+        "answers": [
+          {
+            "name": "Mia",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "dog",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "hat",
+            "icon": "\ud83e\udde2"
+          }
+        ],
+        "correctAnswerName": "Mia",
+        "successMessage": "Nice! Mia is a name."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word shows who has something?",
+        "passage": "Mia's hat is red.",
+        "comprehensionHint": "Look for the word with 's.",
+        "answers": [
+          {
+            "name": "Mia's",
+            "icon": "\ud83c\udff7\ufe0f"
+          },
+          {
+            "name": "hat",
+            "icon": "\ud83e\udde2"
+          },
+          {
+            "name": "red",
+            "icon": "\ud83d\udd34"
+          }
+        ],
+        "correctAnswerName": "Mia's",
+        "successMessage": "Yes! Mia's shows possession."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a place noun?",
+        "passage": "The park is big.",
+        "comprehensionHint": "A place is where you can go.",
+        "answers": [
+          {
+            "name": "park",
+            "icon": "\ud83c\udfde\ufe0f"
+          },
+          {
+            "name": "big",
+            "icon": "\ud83d\udccf"
+          },
+          {
+            "name": "is",
+            "icon": "\u27a1\ufe0f"
+          }
+        ],
+        "correctAnswerName": "park",
+        "successMessage": "Yes! Park is a place noun."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g2_nouns.png"
+  },
+  "l_g3_plurals_verbs": {
+    "name": "Plurals and Verbs",
+    "icon": "\ud83d\udc65",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.C"
+    ],
+    "stickers": [
+      "\ud83d\udc65",
+      "\ud83c\udfc3",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "One",
+      "Two",
+      "cats",
+      "cat",
+      "run",
+      "runs",
+      "and",
+      "the",
+      "a",
+      "I"
+    ],
+    "previewWords": [
+      {
+        "word": "one",
+        "icon": "1\ufe0f\u20e3",
+        "isSightWord": true
+      },
+      {
+        "word": "two",
+        "icon": "2\ufe0f\u20e3",
+        "isSightWord": true
+      },
+      {
+        "word": "cat",
+        "icon": "\ud83d\udc31",
+        "isSightWord": false,
+        "phonicsNote": "cat"
+      },
+      {
+        "word": "run",
+        "icon": "\ud83c\udfc3",
+        "isSightWord": false,
+        "phonicsNote": "run"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear one vs many, verb matching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udc311\ufe0f\u20e3",
+        "sentence": "One cat runs. Two cats run.",
+        "targetWords": [
+          "One",
+          "cat",
+          "runs",
+          "Two",
+          "cats",
+          "run"
+        ],
+        "sightWordFocus": "One",
+        "readingTip": "One uses runs. Two uses run.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "One cat vs two cats with matching verb labels."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick how many!",
+        "menuStory": "Match the noun and the verb.",
+        "items": [
+          {
+            "name": "One",
+            "icon": "1\ufe0f\u20e3",
+            "description": "one thing"
+          },
+          {
+            "name": "Two",
+            "icon": "2\ufe0f\u20e3",
+            "description": "two things"
+          },
+          {
+            "name": "Many",
+            "icon": "\ud83d\udc65",
+            "description": "more than one"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three count cards: one, two, many."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Two cats ____.",
+        "passage": "Two cats ____.",
+        "comprehensionHint": "Two means more than one. Use run.",
+        "answers": [
+          {
+            "name": "run",
+            "icon": "\ud83c\udfc3"
+          },
+          {
+            "name": "runs",
+            "icon": "\ud83c\udfc3"
+          },
+          {
+            "name": "running",
+            "icon": "\ud83c\udfc3"
+          }
+        ],
+        "correctAnswerName": "run",
+        "successMessage": "Yes! Two cats run."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "One cat ____.",
+        "passage": "One cat ____.",
+        "comprehensionHint": "One means one. Use runs.",
+        "answers": [
+          {
+            "name": "runs",
+            "icon": "\u2705"
+          },
+          {
+            "name": "run",
+            "icon": "\u274c"
+          },
+          {
+            "name": "running",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "runs",
+        "successMessage": "Nice! One cat runs."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which noun is plural?",
+        "passage": "Two cats run.",
+        "comprehensionHint": "Plural means more than one.",
+        "answers": [
+          {
+            "name": "cats",
+            "icon": "\ud83d\udc65"
+          },
+          {
+            "name": "cat",
+            "icon": "\ud83d\udc31"
+          },
+          {
+            "name": "run",
+            "icon": "\ud83c\udfc3"
+          }
+        ],
+        "correctAnswerName": "cats",
+        "successMessage": "Yes! Cats means more than one."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "The dogs ____.",
+        "passage": "The dogs jump.",
+        "comprehensionHint": "Dogs is plural. Use jump without s.",
+        "answers": [
+          {
+            "name": "jump",
+            "icon": "\ud83d\udc15"
+          },
+          {
+            "name": "jumps",
+            "icon": "\u274c"
+          },
+          {
+            "name": "jumped",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "jump",
+        "successMessage": "Yes! The dogs jump."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g3_plurals_verbs.png"
+  },
+  "l_g4_pronouns": {
+    "name": "Pronouns",
+    "icon": "\ud83d\udc64",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.D"
+    ],
+    "stickers": [
+      "\ud83d\udc64",
+      "\ud83d\udc65",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "me",
+      "my",
+      "he",
+      "she",
+      "they",
+      "them",
+      "their",
+      "it",
+      "is"
+    ],
+    "previewWords": [
+      {
+        "word": "I",
+        "icon": "\ud83d\udde3\ufe0f",
+        "isSightWord": true
+      },
+      {
+        "word": "she",
+        "icon": "\ud83d\udc67",
+        "isSightWord": true
+      },
+      {
+        "word": "they",
+        "icon": "\ud83d\udc65",
+        "isSightWord": true
+      },
+      {
+        "word": "their",
+        "icon": "\ud83c\udf92",
+        "isSightWord": true
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear pronoun substitution coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udc67\ud83e\ude81",
+        "sentence": "Mia has a kite. She flies it.",
+        "targetWords": [
+          "Mia",
+          "has",
+          "kite",
+          "She",
+          "flies",
+          "it"
+        ],
+        "sightWordFocus": "She",
+        "readingTip": "A pronoun can take the place of a noun.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Mia flying a kite; the word She highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc65\ud83c\udf92",
+        "sentence": "Two kids have backpacks. Their backpacks are blue.",
+        "targetWords": [
+          "kids",
+          "have",
+          "backpacks",
+          "Their",
+          "blue"
+        ],
+        "sightWordFocus": "Their",
+        "readingTip": "Their shows who has something.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two kids with matching backpacks; their highlighted."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a pronoun!",
+        "menuStory": "Pronouns can replace nouns.",
+        "items": [
+          {
+            "name": "I",
+            "icon": "\ud83d\udde3\ufe0f",
+            "description": "me"
+          },
+          {
+            "name": "she",
+            "icon": "\ud83d\udc67",
+            "description": "a girl"
+          },
+          {
+            "name": "they",
+            "icon": "\ud83d\udc65",
+            "description": "more than one"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three pronoun cards: I, she, they."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udf81\ud83d\udc64",
+        "sentence": "Give the ball to me. Give it to them.",
+        "targetWords": [
+          "Give",
+          "ball",
+          "to",
+          "me",
+          "them"
+        ],
+        "sightWordFocus": "me",
+        "readingTip": "Use me and them after words like to or for.",
+        "ui": {
+          "scene": "practice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Ball being passed to someone; me and them highlighted."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a pronoun?",
+        "passage": "She flies it.",
+        "comprehensionHint": "A pronoun can take the place of a noun.",
+        "answers": [
+          {
+            "name": "She",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "kite",
+            "icon": "\ud83e\ude81"
+          },
+          {
+            "name": "flies",
+            "icon": "\ud83d\udd4a\ufe0f"
+          }
+        ],
+        "correctAnswerName": "She",
+        "successMessage": "Yes! She is a pronoun."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word shows who has something?",
+        "passage": "Their backpacks are blue.",
+        "comprehensionHint": "Find the word that tells whose.",
+        "answers": [
+          {
+            "name": "Their",
+            "icon": "\ud83c\udf92"
+          },
+          {
+            "name": "backpacks",
+            "icon": "\ud83c\udf92"
+          },
+          {
+            "name": "blue",
+            "icon": "\ud83d\udd35"
+          }
+        ],
+        "correctAnswerName": "Their",
+        "successMessage": "Nice! Their is a possessive pronoun."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which pronoun can replace Mia?",
+        "passage": "Mia has a kite. She flies it.",
+        "comprehensionHint": "Look at the second sentence. Which pronoun means Mia?",
+        "answers": [
+          {
+            "name": "She",
+            "icon": "\ud83d\udc67"
+          },
+          {
+            "name": "it",
+            "icon": "\ud83e\ude81"
+          },
+          {
+            "name": "Their",
+            "icon": "\ud83d\udc65"
+          }
+        ],
+        "correctAnswerName": "She",
+        "successMessage": "Yes! She can replace Mia."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which is correct?",
+        "passage": "Give the ball to me.",
+        "comprehensionHint": "After to, use me not I.",
+        "answers": [
+          {
+            "name": "Give the ball to me.",
+            "icon": "\u2705"
+          },
+          {
+            "name": "Give the ball to I.",
+            "icon": "\u274c"
+          },
+          {
+            "name": "Give the ball to my.",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "Give the ball to me.",
+        "successMessage": "Yes! Use me after to."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which pronoun fits?",
+        "passage": "I see them at the park.",
+        "comprehensionHint": "After see or with, use them.",
+        "answers": [
+          {
+            "name": "them",
+            "icon": "\ud83d\udc65"
+          },
+          {
+            "name": "they",
+            "icon": "\u274c"
+          },
+          {
+            "name": "their",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "them",
+        "successMessage": "Nice! Them is correct after see."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g4_pronouns.png"
+  },
+  "l_g5_verb_tense": {
+    "name": "Verb Tense",
+    "icon": "\u23f0",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.E"
+    ],
+    "stickers": [
+      "\u23f0",
+      "\ud83d\udcc6",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "Yesterday",
+      "Today",
+      "Tomorrow",
+      "I",
+      "walk",
+      "walked",
+      "will",
+      "am",
+      "the",
+      "to"
+    ],
+    "previewWords": [
+      {
+        "word": "yesterday",
+        "icon": "\u23ea",
+        "isSightWord": false,
+        "phonicsNote": "yes-ter-day"
+      },
+      {
+        "word": "today",
+        "icon": "\ud83d\udccd",
+        "isSightWord": false,
+        "phonicsNote": "to-day"
+      },
+      {
+        "word": "tomorrow",
+        "icon": "\u23e9",
+        "isSightWord": false,
+        "phonicsNote": "to-mor-row"
+      },
+      {
+        "word": "will",
+        "icon": "\u23e9",
+        "isSightWord": true
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear past/present/future framing"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\u23ea\u23f0",
+        "sentence": "Yesterday I walked. Today I walk. Tomorrow I will walk.",
+        "targetWords": [
+          "Yesterday",
+          "walked",
+          "Today",
+          "walk",
+          "Tomorrow",
+          "will"
+        ],
+        "sightWordFocus": "Yesterday",
+        "readingTip": "Past, present, future.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Simple timeline with yesterday, today, tomorrow."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a time word!",
+        "menuStory": "Time words help you choose the verb tense.",
+        "items": [
+          {
+            "name": "Yesterday",
+            "icon": "\u23ea",
+            "description": "past"
+          },
+          {
+            "name": "Today",
+            "icon": "\ud83d\udccd",
+            "description": "present"
+          },
+          {
+            "name": "Tomorrow",
+            "icon": "\u23e9",
+            "description": "future"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three time cards: yesterday, today, tomorrow."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which verb tells past time?",
+        "passage": "Yesterday I walked.",
+        "comprehensionHint": "Past time often ends with ed.",
+        "answers": [
+          {
+            "name": "walked",
+            "icon": "\u23ea"
+          },
+          {
+            "name": "walk",
+            "icon": "\ud83d\udccd"
+          },
+          {
+            "name": "will walk",
+            "icon": "\u23e9"
+          }
+        ],
+        "correctAnswerName": "walked",
+        "successMessage": "Yes! Walked tells past time."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which words tell future time?",
+        "passage": "Tomorrow I will walk.",
+        "comprehensionHint": "Future time often uses will.",
+        "answers": [
+          {
+            "name": "will walk",
+            "icon": "\u23e9"
+          },
+          {
+            "name": "walked",
+            "icon": "\u23ea"
+          },
+          {
+            "name": "walk",
+            "icon": "\ud83d\udccd"
+          }
+        ],
+        "correctAnswerName": "will walk",
+        "successMessage": "Nice! Will walk tells future time."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which verb tells present time?",
+        "passage": "Today I walk.",
+        "comprehensionHint": "Present time is now.",
+        "answers": [
+          {
+            "name": "walk",
+            "icon": "\ud83d\udccd"
+          },
+          {
+            "name": "walked",
+            "icon": "\u23ea"
+          },
+          {
+            "name": "will walk",
+            "icon": "\u23e9"
+          }
+        ],
+        "correctAnswerName": "walk",
+        "successMessage": "Nice! Walk tells present time."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Yesterday we ____.",
+        "passage": "Yesterday we played.",
+        "comprehensionHint": "Yesterday is past. Use played with ed.",
+        "answers": [
+          {
+            "name": "played",
+            "icon": "\u23ea"
+          },
+          {
+            "name": "play",
+            "icon": "\ud83d\udccd"
+          },
+          {
+            "name": "will play",
+            "icon": "\u23e9"
+          }
+        ],
+        "correctAnswerName": "played",
+        "successMessage": "Yes! Played tells past time."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Tomorrow I ____ to school.",
+        "passage": "Tomorrow I will go to school.",
+        "comprehensionHint": "Tomorrow is future. Use will go.",
+        "answers": [
+          {
+            "name": "will go",
+            "icon": "\u23e9"
+          },
+          {
+            "name": "went",
+            "icon": "\u23ea"
+          },
+          {
+            "name": "go",
+            "icon": "\ud83d\udccd"
+          }
+        ],
+        "correctAnswerName": "will go",
+        "successMessage": "Nice! Will go tells future time."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g5_verb_tense.png"
+  },
+  "l_g6_adjectives_determiners": {
+    "name": "Adjectives and Determiners",
+    "icon": "\ud83e\udde9",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.F",
+      "L.1.1.H"
+    ],
+    "stickers": [
+      "\ud83e\udde9",
+      "\ud83c\udfa8",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "this",
+      "that",
+      "my",
+      "many",
+      "few",
+      "a",
+      "the",
+      "is",
+      "big",
+      "red"
+    ],
+    "previewWords": [
+      {
+        "word": "adjective",
+        "icon": "\ud83c\udfa8",
+        "isSightWord": false,
+        "phonicsNote": "ad-jec-tive"
+      },
+      {
+        "word": "determiner",
+        "icon": "\ud83e\udde9",
+        "isSightWord": false,
+        "phonicsNote": "de-ter-mi-ner"
+      },
+      {
+        "word": "big",
+        "icon": "\ud83d\udccf",
+        "isSightWord": true
+      },
+      {
+        "word": "many",
+        "icon": "\ud83d\udc65",
+        "isSightWord": true
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear adjective vs determiner coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83c\udfa8\ud83d\udc36",
+        "sentence": "This big dog runs.",
+        "targetWords": [
+          "This",
+          "big",
+          "dog",
+          "runs"
+        ],
+        "sightWordFocus": "This",
+        "readingTip": "This is a determiner. Big is an adjective.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Big dog with the words this and big highlighted in different colors."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udde2\ud83d\udd34",
+        "sentence": "My red hat is new.",
+        "targetWords": [
+          "My",
+          "red",
+          "hat",
+          "new"
+        ],
+        "sightWordFocus": "My",
+        "readingTip": "Adjectives describe. Determiners point or tell whose.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Red hat with the words my and red highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc36\ud83d\udcd6",
+        "sentence": "I see a dog. The dog is happy.",
+        "targetWords": [
+          "see",
+          "a",
+          "dog",
+          "The",
+          "happy"
+        ],
+        "sightWordFocus": "a",
+        "readingTip": "Use a for any one. Use the for a specific one.",
+        "ui": {
+          "scene": "learning",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "First a dog, then the same dog identified as the dog."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a determiner!",
+        "menuStory": "A determiner comes before a noun.",
+        "items": [
+          {
+            "name": "this",
+            "icon": "\ud83d\udc46",
+            "description": "this dog"
+          },
+          {
+            "name": "my",
+            "icon": "\ud83e\uddcd",
+            "description": "my hat"
+          },
+          {
+            "name": "many",
+            "icon": "\ud83d\udc65",
+            "description": "many cats"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three determiner cards: this, my, many."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is an adjective?",
+        "passage": "My red hat is new.",
+        "comprehensionHint": "An adjective describes a noun.",
+        "answers": [
+          {
+            "name": "red",
+            "icon": "\ud83d\udd34"
+          },
+          {
+            "name": "My",
+            "icon": "\ud83e\uddcd"
+          },
+          {
+            "name": "hat",
+            "icon": "\ud83e\udde2"
+          }
+        ],
+        "correctAnswerName": "red",
+        "successMessage": "Yes! Red describes the hat."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a determiner?",
+        "passage": "This big dog runs.",
+        "comprehensionHint": "A determiner points to a noun.",
+        "answers": [
+          {
+            "name": "This",
+            "icon": "\ud83d\udc46"
+          },
+          {
+            "name": "big",
+            "icon": "\ud83d\udccf"
+          },
+          {
+            "name": "dog",
+            "icon": "\ud83d\udc36"
+          }
+        ],
+        "correctAnswerName": "This",
+        "successMessage": "Nice! This is a determiner."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a determiner?",
+        "passage": "My red hat is new.",
+        "comprehensionHint": "A determiner tells whose or which one.",
+        "answers": [
+          {
+            "name": "My",
+            "icon": "\ud83e\uddcd"
+          },
+          {
+            "name": "red",
+            "icon": "\ud83d\udd34"
+          },
+          {
+            "name": "new",
+            "icon": "\u2728"
+          }
+        ],
+        "correctAnswerName": "My",
+        "successMessage": "Yes! My tells whose hat."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word points to any dog?",
+        "passage": "I see a dog.",
+        "comprehensionHint": "A means any one, not a specific one.",
+        "answers": [
+          {
+            "name": "a",
+            "icon": "\ud83d\udd24"
+          },
+          {
+            "name": "the",
+            "icon": "\ud83d\udc49"
+          },
+          {
+            "name": "this",
+            "icon": "\ud83d\udc46"
+          }
+        ],
+        "correctAnswerName": "a",
+        "successMessage": "Yes! A means any dog."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which determiner tells how many?",
+        "passage": "I see many cats.",
+        "comprehensionHint": "Many tells how many cats.",
+        "answers": [
+          {
+            "name": "many",
+            "icon": "\ud83d\udc65"
+          },
+          {
+            "name": "see",
+            "icon": "\ud83d\udc40"
+          },
+          {
+            "name": "cats",
+            "icon": "\ud83d\udc31"
+          }
+        ],
+        "correctAnswerName": "many",
+        "successMessage": "Nice! Many is a determiner that tells how many."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g6_adjectives_determiners.jpeg"
+  },
+  "l_g7_conjunctions_prepositions": {
+    "name": "Conjunctions and Prepositions",
+    "icon": "\ud83d\udd17",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.G",
+      "L.1.1.I"
+    ],
+    "stickers": [
+      "\ud83d\udd17",
+      "\ud83d\udccd",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "and",
+      "but",
+      "or",
+      "so",
+      "because",
+      "on",
+      "in",
+      "under",
+      "to",
+      "from"
+    ],
+    "previewWords": [
+      {
+        "word": "and",
+        "icon": "\u2795",
+        "isSightWord": true
+      },
+      {
+        "word": "because",
+        "icon": "\u27a1\ufe0f",
+        "isSightWord": true
+      },
+      {
+        "word": "on",
+        "icon": "\u2b06\ufe0f",
+        "isSightWord": true
+      },
+      {
+        "word": "under",
+        "icon": "\u2b07\ufe0f",
+        "isSightWord": true
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear connector word coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83c\udf4e\u2795",
+        "sentence": "I like apples and bananas.",
+        "targetWords": [
+          "like",
+          "apples",
+          "and",
+          "bananas"
+        ],
+        "sightWordFocus": "and",
+        "readingTip": "A conjunction joins words or ideas.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two fruit with a plus sign and the word and highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\ude91\ud83d\udccd",
+        "sentence": "I sit on the bench.",
+        "targetWords": [
+          "sit",
+          "on",
+          "bench"
+        ],
+        "sightWordFocus": "on",
+        "readingTip": "A preposition tells where.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child sitting on a bench with the word on highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2600\ufe0f\u2614",
+        "sentence": "I like sun but I need rain.",
+        "targetWords": [
+          "like",
+          "sun",
+          "but",
+          "need",
+          "rain"
+        ],
+        "sightWordFocus": "but",
+        "readingTip": "But joins two ideas that are different.",
+        "ui": {
+          "scene": "contrast",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Sun and rain with the word but between them."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick the word type!",
+        "menuStory": "Is it a conjunction or a preposition?",
+        "items": [
+          {
+            "name": "Conjunction",
+            "icon": "\ud83d\udd17",
+            "description": "joins ideas"
+          },
+          {
+            "name": "Preposition",
+            "icon": "\ud83d\udccd",
+            "description": "tells where"
+          },
+          {
+            "name": "Both",
+            "icon": "\u2705",
+            "description": "not used here"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three category cards."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a conjunction?",
+        "passage": "I like apples and bananas.",
+        "comprehensionHint": "A conjunction joins words.",
+        "answers": [
+          {
+            "name": "and",
+            "icon": "\u2795"
+          },
+          {
+            "name": "apples",
+            "icon": "\ud83c\udf4e"
+          },
+          {
+            "name": "bananas",
+            "icon": "\ud83c\udf4c"
+          }
+        ],
+        "correctAnswerName": "and",
+        "successMessage": "Yes! And joins the words."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a preposition?",
+        "passage": "I sit on the bench.",
+        "comprehensionHint": "A preposition tells where.",
+        "answers": [
+          {
+            "name": "on",
+            "icon": "\ud83d\udccd"
+          },
+          {
+            "name": "sit",
+            "icon": "\ud83e\ude91"
+          },
+          {
+            "name": "bench",
+            "icon": "\ud83e\ude91"
+          }
+        ],
+        "correctAnswerName": "on",
+        "successMessage": "Nice! On tells where."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence has a preposition?",
+        "passage": "I sit on the bench.",
+        "comprehensionHint": "A preposition tells where or when.",
+        "answers": [
+          {
+            "name": "I sit on the bench.",
+            "icon": "\ud83d\udccd"
+          },
+          {
+            "name": "I like apples and bananas.",
+            "icon": "\ud83d\udd17"
+          },
+          {
+            "name": "I have a cat.",
+            "icon": "\ud83d\udc31"
+          }
+        ],
+        "correctAnswerName": "I sit on the bench.",
+        "successMessage": "Yes! On is a preposition."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which conjunction shows contrast?",
+        "passage": "I like sun but I need rain.",
+        "comprehensionHint": "But joins different ideas.",
+        "answers": [
+          {
+            "name": "but",
+            "icon": "\u2194\ufe0f"
+          },
+          {
+            "name": "and",
+            "icon": "\u2795"
+          },
+          {
+            "name": "like",
+            "icon": "\u2764\ufe0f"
+          }
+        ],
+        "correctAnswerName": "but",
+        "successMessage": "Yes! But shows contrast."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which conjunction tells why?",
+        "passage": "I run because I am late.",
+        "comprehensionHint": "Because tells the reason.",
+        "answers": [
+          {
+            "name": "because",
+            "icon": "\u27a1\ufe0f"
+          },
+          {
+            "name": "and",
+            "icon": "\u2795"
+          },
+          {
+            "name": "but",
+            "icon": "\u2194\ufe0f"
+          }
+        ],
+        "correctAnswerName": "because",
+        "successMessage": "Nice! Because tells why."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Where is the cat?",
+        "passage": "The cat sits under the table.",
+        "comprehensionHint": "Under tells where the cat is.",
+        "answers": [
+          {
+            "name": "under the table",
+            "icon": "\u2b07\ufe0f"
+          },
+          {
+            "name": "on the table",
+            "icon": "\u2b06\ufe0f"
+          },
+          {
+            "name": "near the table",
+            "icon": "\u2194\ufe0f"
+          }
+        ],
+        "correctAnswerName": "under the table",
+        "successMessage": "Yes! Under tells the position."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which shows direction?",
+        "passage": "I go to school.",
+        "comprehensionHint": "To shows where you are going.",
+        "answers": [
+          {
+            "name": "to",
+            "icon": "\u27a1\ufe0f"
+          },
+          {
+            "name": "go",
+            "icon": "\ud83d\udeb6"
+          },
+          {
+            "name": "school",
+            "icon": "\ud83c\udfeb"
+          }
+        ],
+        "correctAnswerName": "to",
+        "successMessage": "Nice! To is a preposition showing direction."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g7_conjunctions_prepositions.jpeg"
+  },
+  "l_g8_sentence_types_compound": {
+    "name": "Sentence Types and Compound Sentences",
+    "icon": "\ud83d\udcdd",
+    "level": 3,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.1.J"
+    ],
+    "stickers": [
+      "\ud83d\udcdd",
+      "\u2753",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "have",
+      "a",
+      "dog",
+      "and",
+      "cat",
+      "please",
+      "where",
+      "stop",
+      "now"
+    ],
+    "previewWords": [
+      {
+        "word": "statement",
+        "icon": "\ud83d\udcdd",
+        "isSightWord": false,
+        "phonicsNote": "state-ment"
+      },
+      {
+        "word": "question",
+        "icon": "\u2753",
+        "isSightWord": false,
+        "phonicsNote": "ques-tion"
+      },
+      {
+        "word": "command",
+        "icon": "\ud83d\udc49",
+        "isSightWord": false,
+        "phonicsNote": "com-mand"
+      },
+      {
+        "word": "compound",
+        "icon": "\ud83d\udd17",
+        "isSightWord": false,
+        "phonicsNote": "com-pound"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear sentence-type coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udcdd\ud83d\udc36",
+        "sentence": "I have a dog and I have a cat.",
+        "targetWords": [
+          "have",
+          "dog",
+          "and",
+          "cat"
+        ],
+        "sightWordFocus": "and",
+        "readingTip": "And can join two ideas.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Dog and cat with the word and linking them."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2753\ud83d\udc49",
+        "sentence": "Where is my hat? Please sit down.",
+        "targetWords": [
+          "Where",
+          "hat",
+          "Please",
+          "sit",
+          "down"
+        ],
+        "sightWordFocus": "Where",
+        "readingTip": "Questions ask. Commands tell.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two sentence strips: a question and a polite command."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\u2757\ud83d\ude0a",
+        "sentence": "Wow! I love this game!",
+        "targetWords": [
+          "Wow",
+          "love",
+          "this",
+          "game"
+        ],
+        "sightWordFocus": "this",
+        "readingTip": "An exclamation shows strong feeling and ends with !",
+        "ui": {
+          "scene": "excitement",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Excited child with exclamation marks."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick the sentence type!",
+        "menuStory": "What kind of sentence is it?",
+        "items": [
+          {
+            "name": "Statement",
+            "icon": "\ud83d\udcdd",
+            "description": "tells"
+          },
+          {
+            "name": "Question",
+            "icon": "\u2753",
+            "description": "asks"
+          },
+          {
+            "name": "Exclamation",
+            "icon": "\u2757",
+            "description": "shows feeling"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three sentence-type cards."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which is a question?",
+        "passage": "Where is my hat?",
+        "comprehensionHint": "A question asks and ends with a question mark.",
+        "answers": [
+          {
+            "name": "Where is my hat?",
+            "icon": "\u2753"
+          },
+          {
+            "name": "I have a hat.",
+            "icon": "\ud83d\udcdd"
+          },
+          {
+            "name": "Please sit down.",
+            "icon": "\ud83d\udc49"
+          }
+        ],
+        "correctAnswerName": "Where is my hat?",
+        "successMessage": "Yes! That is a question."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence is compound?",
+        "passage": "I have a dog and I have a cat.",
+        "comprehensionHint": "A compound sentence can join two ideas with and.",
+        "answers": [
+          {
+            "name": "I have a dog and I have a cat.",
+            "icon": "\ud83d\udd17"
+          },
+          {
+            "name": "I have a dog.",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "I have a cat.",
+            "icon": "\ud83d\udc31"
+          }
+        ],
+        "correctAnswerName": "I have a dog and I have a cat.",
+        "successMessage": "Nice! And joins the ideas."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which is a command?",
+        "passage": "Please sit down.",
+        "comprehensionHint": "A command tells you to do something.",
+        "answers": [
+          {
+            "name": "Please sit down.",
+            "icon": "\ud83d\udc49"
+          },
+          {
+            "name": "Where is my hat?",
+            "icon": "\u2753"
+          },
+          {
+            "name": "I have a dog.",
+            "icon": "\ud83d\udcdd"
+          }
+        ],
+        "correctAnswerName": "Please sit down.",
+        "successMessage": "Nice! That is a command."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which is an exclamation?",
+        "passage": "Wow! I love this game!",
+        "comprehensionHint": "An exclamation shows strong feeling.",
+        "answers": [
+          {
+            "name": "Wow! I love this game!",
+            "icon": "\u2757"
+          },
+          {
+            "name": "Where is my hat?",
+            "icon": "\u2753"
+          },
+          {
+            "name": "I have a hat.",
+            "icon": "\ud83d\udcdd"
+          }
+        ],
+        "correctAnswerName": "Wow! I love this game!",
+        "successMessage": "Yes! That shows strong feeling!"
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word joins the two ideas?",
+        "passage": "I have a dog and I have a cat.",
+        "comprehensionHint": "Look for the word that connects the ideas.",
+        "answers": [
+          {
+            "name": "and",
+            "icon": "\ud83d\udd17"
+          },
+          {
+            "name": "have",
+            "icon": "\u270b"
+          },
+          {
+            "name": "dog",
+            "icon": "\ud83d\udc36"
+          }
+        ],
+        "correctAnswerName": "and",
+        "successMessage": "Nice! And joins two simple sentences."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g8_sentence_types_compound.png"
+  },
+  "l_g9_commas_dates_lists": {
+    "name": "Commas in Dates and Lists",
+    "icon": "\ud83d\udcc5",
+    "level": 3,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.2.C"
+    ],
+    "stickers": [
+      "\ud83d\udcc5",
+      "\ud83e\uddfa",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "write",
+      "the",
+      "date",
+      "and",
+      "a",
+      "list",
+      "in",
+      "my",
+      "note"
+    ],
+    "previewWords": [
+      {
+        "word": "comma",
+        "icon": "\u2796",
+        "isSightWord": false,
+        "phonicsNote": "com-ma"
+      },
+      {
+        "word": "date",
+        "icon": "\ud83d\udcc5",
+        "isSightWord": false,
+        "phonicsNote": "date"
+      },
+      {
+        "word": "list",
+        "icon": "\ud83e\uddfa",
+        "isSightWord": false,
+        "phonicsNote": "list"
+      },
+      {
+        "word": "items",
+        "icon": "\ud83d\udce6",
+        "isSightWord": false,
+        "phonicsNote": "i-tems"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear punctuation coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udcc5\u2796",
+        "sentence": "I write the date: May 5, 2025.",
+        "targetWords": [
+          "write",
+          "date",
+          "May",
+          "5,",
+          "2025"
+        ],
+        "sightWordFocus": "write",
+        "readingTip": "Use a comma in a date.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Calendar and a date written with a comma, simple."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\uddfa\u2796",
+        "sentence": "I write a list: apples, bananas, and pears.",
+        "targetWords": [
+          "write",
+          "list",
+          "apples,",
+          "bananas,",
+          "and",
+          "pears"
+        ],
+        "sightWordFocus": "and",
+        "readingTip": "Use commas to separate items in a list.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Simple grocery list with commas, calm."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick where to use commas!",
+        "menuStory": "Commas help writing look clear.",
+        "items": [
+          {
+            "name": "Date",
+            "icon": "\ud83d\udcc5",
+            "description": "May 5, 2025"
+          },
+          {
+            "name": "List",
+            "icon": "\ud83e\uddfa",
+            "description": "apples, bananas, pears"
+          },
+          {
+            "name": "Both",
+            "icon": "\u2705",
+            "description": "date and list"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three choice cards: date, list, both."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Where is the comma used?",
+        "passage": "May 5, 2025.",
+        "comprehensionHint": "Look at the date. Find the comma.",
+        "answers": [
+          {
+            "name": "In the date",
+            "icon": "\ud83d\udcc5"
+          },
+          {
+            "name": "In the title",
+            "icon": "\ud83c\udff7\ufe0f"
+          },
+          {
+            "name": "In the picture",
+            "icon": "\ud83d\uddbc\ufe0f"
+          }
+        ],
+        "correctAnswerName": "In the date",
+        "successMessage": "Yes! A date can use a comma."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What is being listed?",
+        "passage": "I write a list: apples, bananas, and pears.",
+        "comprehensionHint": "Read the sentence. Find the items in the list.",
+        "answers": [
+          {
+            "name": "Apples, bananas, and pears",
+            "icon": "\ud83c\udf4e"
+          },
+          {
+            "name": "Dogs, cats, and fish",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "Red, blue, and yellow",
+            "icon": "\ud83c\udfa8"
+          }
+        ],
+        "correctAnswerName": "Apples, bananas, and pears",
+        "successMessage": "Nice! You found the list items."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "How many items are in the list?",
+        "passage": "I write a list: apples, bananas, and pears.",
+        "comprehensionHint": "Count the items. Use commas and and to help.",
+        "answers": [
+          {
+            "name": "Three",
+            "icon": "3\ufe0f\u20e3"
+          },
+          {
+            "name": "Two",
+            "icon": "2\ufe0f\u20e3"
+          },
+          {
+            "name": "Four",
+            "icon": "4\ufe0f\u20e3"
+          }
+        ],
+        "correctAnswerName": "Three",
+        "successMessage": "Yes! There are three items."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which date is written correctly?",
+        "passage": "I write the date: May 5, 2025.",
+        "comprehensionHint": "Use a comma between the day and year.",
+        "answers": [
+          {
+            "name": "May 5, 2025",
+            "icon": "\u2705"
+          },
+          {
+            "name": "May, 5 2025",
+            "icon": "\u274c"
+          },
+          {
+            "name": "May 5 2025",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "May 5, 2025",
+        "successMessage": "Yes! Put a comma after the day."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which list is written correctly?",
+        "passage": "I write a list: apples, bananas, and pears.",
+        "comprehensionHint": "Use commas to separate items.",
+        "answers": [
+          {
+            "name": "apples, bananas, and pears",
+            "icon": "\u2705"
+          },
+          {
+            "name": "apples bananas and pears",
+            "icon": "\u274c"
+          },
+          {
+            "name": "apples, bananas and, pears",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "apples, bananas, and pears",
+        "successMessage": "Nice! Commas separate the items."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence needs commas?",
+        "passage": "I like dogs, cats, and fish.",
+        "comprehensionHint": "Lists need commas between items.",
+        "answers": [
+          {
+            "name": "I like dogs, cats, and fish.",
+            "icon": "\u2705"
+          },
+          {
+            "name": "I have a dog.",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "The dog runs.",
+            "icon": "\ud83c\udfc3"
+          }
+        ],
+        "correctAnswerName": "I like dogs, cats, and fish.",
+        "successMessage": "Yes! The list needs commas."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g9_commas_dates_lists.jpeg"
+  },
+  "l_g10_spelling_strategies": {
+    "name": "Spelling Strategies",
+    "icon": "\u270d\ufe0f",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.2.D",
+      "L.1.2.E"
+    ],
+    "stickers": [
+      "\u270d\ufe0f",
+      "\ud83d\udd24",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "use",
+      "sight",
+      "words",
+      "to",
+      "spell",
+      "new",
+      "word",
+      "the",
+      "and"
+    ],
+    "previewWords": [
+      {
+        "word": "sound",
+        "icon": "\ud83d\udd0a",
+        "isSightWord": false,
+        "phonicsNote": "sound"
+      },
+      {
+        "word": "spell",
+        "icon": "\u270d\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "spell"
+      },
+      {
+        "word": "sight word",
+        "icon": "\ud83d\udc40",
+        "isSightWord": false,
+        "phonicsNote": "sight word"
+      },
+      {
+        "word": "check",
+        "icon": "\u2705",
+        "isSightWord": false,
+        "phonicsNote": "check"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "practical spelling coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udc40\u270d\ufe0f",
+        "sentence": "I use sight words to help me spell.",
+        "targetWords": [
+          "use",
+          "sight",
+          "words",
+          "help",
+          "spell"
+        ],
+        "sightWordFocus": "use",
+        "readingTip": "Some words are spelled the same every time.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Word cards with a pencil, calm."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udd0a\ud83d\udd24",
+        "sentence": "I listen to sounds to spell a new word.",
+        "targetWords": [
+          "listen",
+          "sounds",
+          "spell",
+          "new",
+          "word"
+        ],
+        "sightWordFocus": "to",
+        "readingTip": "Say the word slowly. Hear each sound.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Sound waves leading into letter tiles."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udd24\ud83d\udcda",
+        "sentence": "Words with the same pattern sound alike: cat, bat, hat.",
+        "targetWords": [
+          "Words",
+          "same",
+          "pattern",
+          "sound",
+          "alike",
+          "cat",
+          "bat",
+          "hat"
+        ],
+        "sightWordFocus": "Words",
+        "readingTip": "Look for patterns like -at, -an, -op.",
+        "ui": {
+          "scene": "patterns",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three words in -at family with pattern highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udd24\ud83d\udcda",
+        "sentence": "Words with the same pattern sound alike: cat, bat, hat.",
+        "targetWords": [
+          "Words",
+          "same",
+          "pattern",
+          "sound",
+          "alike",
+          "cat",
+          "bat",
+          "hat"
+        ],
+        "sightWordFocus": "same",
+        "readingTip": "Look for patterns like -at, -an, -op.",
+        "ui": {
+          "scene": "patterns",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three words in -at family with pattern highlighted."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a spelling plan!",
+        "menuStory": "What will help you spell?",
+        "items": [
+          {
+            "name": "Sight word",
+            "icon": "\ud83d\udc40",
+            "description": "remember it"
+          },
+          {
+            "name": "Sound it out",
+            "icon": "\ud83d\udd0a",
+            "description": "hear each sound"
+          },
+          {
+            "name": "Check",
+            "icon": "\u2705",
+            "description": "look again"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three spelling strategy cards."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is spelled correctly?",
+        "passage": "went",
+        "comprehensionHint": "Look carefully. Which spelling looks right?",
+        "answers": [
+          {
+            "name": "went",
+            "icon": "\u2705"
+          },
+          {
+            "name": "wint",
+            "icon": "\u274c"
+          },
+          {
+            "name": "wet",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "went",
+        "successMessage": "Nice! Went is spelled correctly."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is spelled correctly?",
+        "passage": "cat",
+        "comprehensionHint": "Listen for c a t.",
+        "answers": [
+          {
+            "name": "cat",
+            "icon": "\ud83d\udc31"
+          },
+          {
+            "name": "kat",
+            "icon": "\u274c"
+          },
+          {
+            "name": "ct",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "cat",
+        "successMessage": "Yes! Cat matches the sounds."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is spelled correctly?",
+        "passage": "I listen to sounds to spell a new word.",
+        "comprehensionHint": "Listen for d o g.",
+        "answers": [
+          {
+            "name": "dog",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "dg",
+            "icon": "\u274c"
+          },
+          {
+            "name": "dawg",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "dog",
+        "successMessage": "Yes! Dog matches the sounds."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word has the same pattern as cat?",
+        "passage": "Words with the same pattern sound alike: cat, bat, hat.",
+        "comprehensionHint": "Look for the -at pattern.",
+        "answers": [
+          {
+            "name": "bat",
+            "icon": "\u26be"
+          },
+          {
+            "name": "car",
+            "icon": "\ud83d\ude97"
+          },
+          {
+            "name": "cup",
+            "icon": "\u2615"
+          }
+        ],
+        "correctAnswerName": "bat",
+        "successMessage": "Yes! Bat has the -at pattern like cat."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is spelled correctly?",
+        "passage": "I use sight words to help me spell.",
+        "comprehensionHint": "The is a sight word. Remember how it looks.",
+        "answers": [
+          {
+            "name": "the",
+            "icon": "\u2705"
+          },
+          {
+            "name": "teh",
+            "icon": "\u274c"
+          },
+          {
+            "name": "thee",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "the",
+        "successMessage": "Yes! The is spelled correctly."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word follows the -an pattern?",
+        "passage": "I can spell: can, man, pan.",
+        "comprehensionHint": "Listen for c-an, m-an, p-an.",
+        "answers": [
+          {
+            "name": "man",
+            "icon": "\ud83d\udc68"
+          },
+          {
+            "name": "map",
+            "icon": "\ud83d\uddfa\ufe0f"
+          },
+          {
+            "name": "mat",
+            "icon": "\ud83d\udfeb"
+          }
+        ],
+        "correctAnswerName": "man",
+        "successMessage": "Nice! Man has the -an pattern."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word has the same pattern as cat?",
+        "passage": "Words with the same pattern sound alike: cat, bat, hat.",
+        "comprehensionHint": "Look for the -at pattern.",
+        "answers": [
+          {
+            "name": "bat",
+            "icon": "\u26be"
+          },
+          {
+            "name": "car",
+            "icon": "\ud83d\ude97"
+          },
+          {
+            "name": "cup",
+            "icon": "\u2615"
+          }
+        ],
+        "correctAnswerName": "bat",
+        "successMessage": "Yes! Bat has the -at pattern like cat."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is spelled correctly?",
+        "passage": "I use sight words to help me spell.",
+        "comprehensionHint": "The is a sight word. Remember how it looks.",
+        "answers": [
+          {
+            "name": "the",
+            "icon": "\u2705"
+          },
+          {
+            "name": "teh",
+            "icon": "\u274c"
+          },
+          {
+            "name": "thee",
+            "icon": "\u274c"
+          }
+        ],
+        "correctAnswerName": "the",
+        "successMessage": "Yes! The is spelled correctly."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word follows the -an pattern?",
+        "passage": "I can spell: can, man, pan.",
+        "comprehensionHint": "Listen for c-an, m-an, p-an.",
+        "answers": [
+          {
+            "name": "man",
+            "icon": "\ud83d\udc68"
+          },
+          {
+            "name": "map",
+            "icon": "\ud83d\uddfa\ufe0f"
+          },
+          {
+            "name": "mat",
+            "icon": "\ud83d\udfeb"
+          }
+        ],
+        "correctAnswerName": "man",
+        "successMessage": "Nice! Man has the -an pattern."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_g10_spelling_strategies.png"
+  },
+  "l_v1_context_word_parts": {
+    "name": "Meaning From Context and Word Parts",
+    "icon": "\ud83e\udde0",
+    "level": 3,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.4",
+      "L.1.4.A",
+      "L.1.4.B",
+      "L.1.4.C"
+    ],
+    "stickers": [
+      "\ud83e\udde0",
+      "\ud83d\udcd8",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "means",
+      "in",
+      "the",
+      "sentence",
+      "help",
+      "me",
+      "to",
+      "find",
+      "word",
+      "root"
+    ],
+    "previewWords": [
+      {
+        "word": "playful",
+        "icon": "\ud83c\udfb2",
+        "isSightWord": false,
+        "phonicsNote": "play-ful"
+      },
+      {
+        "word": "unhappy",
+        "icon": "\ud83d\ude22",
+        "isSightWord": false,
+        "phonicsNote": "un-hap-py"
+      },
+      {
+        "word": "redo",
+        "icon": "\ud83d\udd04",
+        "isSightWord": false,
+        "phonicsNote": "re-do"
+      },
+      {
+        "word": "jumping",
+        "icon": "\ud83e\udd38",
+        "isSightWord": false,
+        "phonicsNote": "jump-ing"
+      },
+      {
+        "word": "root",
+        "icon": "\ud83c\udf31",
+        "isSightWord": false,
+        "phonicsNote": "root"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "explicit meaning strategy coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83c\udfb2\ud83e\udde0",
+        "sentence": "The playful puppy runs and jumps all day.",
+        "targetWords": [
+          "playful",
+          "puppy",
+          "runs",
+          "jumps"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Use the sentence to figure out what playful means.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Happy puppy running and playing."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\ude0a\ud83d\ude22",
+        "sentence": "She was happy. Then she was unhappy.",
+        "targetWords": [
+          "happy",
+          "unhappy"
+        ],
+        "sightWordFocus": "was",
+        "readingTip": "Un at the start means NOT.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Two faces: happy then sad, with un- highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd98\ud83c\udfc3",
+        "sentence": "I jump. I am jumping now.",
+        "targetWords": [
+          "jump",
+          "jumping",
+          "now"
+        ],
+        "sightWordFocus": "am",
+        "readingTip": "The ending ing means doing it now.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Person mid-jump with -ing highlighted."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udf31\ud83d\udd04",
+        "sentence": "The root word help is in helping, helped, and helper.",
+        "targetWords": [
+          "root",
+          "help",
+          "helping",
+          "helped",
+          "helper"
+        ],
+        "sightWordFocus": "is",
+        "readingTip": "Find the root word to know the meaning.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Word tree showing help with different endings."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a strategy!",
+        "menuStory": "How can you figure out a word?",
+        "items": [
+          {
+            "name": "Use the sentence",
+            "icon": "\ud83d\udcd6",
+            "description": "context clue"
+          },
+          {
+            "name": "Look at word parts",
+            "icon": "\ud83e\udde9",
+            "description": "prefix or suffix"
+          },
+          {
+            "name": "Find the root word",
+            "icon": "\ud83c\udf31",
+            "description": "base word"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three strategy cards."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does playful mean?",
+        "passage": "The playful puppy runs and jumps all day.",
+        "comprehensionHint": "What does the puppy do? That shows playful.",
+        "answers": [
+          {
+            "name": "Likes to play",
+            "icon": "\ud83c\udfb2"
+          },
+          {
+            "name": "Likes to sleep",
+            "icon": "\ud83d\ude34"
+          },
+          {
+            "name": "Likes to eat",
+            "icon": "\ud83c\udf56"
+          }
+        ],
+        "correctAnswerName": "Likes to play",
+        "successMessage": "Yes! You used the sentence clue."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does un mean in unhappy?",
+        "passage": "She was happy. Then she was unhappy.",
+        "comprehensionHint": "Un changes happy to the opposite.",
+        "answers": [
+          {
+            "name": "not",
+            "icon": "\ud83d\udeab"
+          },
+          {
+            "name": "very",
+            "icon": "\u2b50"
+          },
+          {
+            "name": "little",
+            "icon": "\ud83e\udd0f"
+          }
+        ],
+        "correctAnswerName": "not",
+        "successMessage": "Yes! Un means not."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does ing mean in jumping?",
+        "passage": "I jump. I am jumping now.",
+        "comprehensionHint": "The ending ing tells when it happens.",
+        "answers": [
+          {
+            "name": "doing it now",
+            "icon": "\u23f1\ufe0f"
+          },
+          {
+            "name": "did it before",
+            "icon": "\u23ee\ufe0f"
+          },
+          {
+            "name": "will do it later",
+            "icon": "\u23ed\ufe0f"
+          }
+        ],
+        "correctAnswerName": "doing it now",
+        "successMessage": "Yes! Ing means doing it now."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What is the root word in helper?",
+        "passage": "The root word help is in helping, helped, and helper.",
+        "comprehensionHint": "Look for the smallest word that makes sense.",
+        "answers": [
+          {
+            "name": "help",
+            "icon": "\ud83c\udf31"
+          },
+          {
+            "name": "er",
+            "icon": "\ud83e\udde9"
+          },
+          {
+            "name": "helper",
+            "icon": "\ud83d\udc77"
+          }
+        ],
+        "correctAnswerName": "help",
+        "successMessage": "Nice! Help is the root word."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does redo mean?",
+        "passage": "I will redo my work. I will do it again.",
+        "comprehensionHint": "Use the second sentence as a clue.",
+        "answers": [
+          {
+            "name": "do again",
+            "icon": "\ud83d\udd04"
+          },
+          {
+            "name": "do first",
+            "icon": "1\ufe0f\u20e3"
+          },
+          {
+            "name": "stop doing",
+            "icon": "\ud83d\uded1"
+          }
+        ],
+        "correctAnswerName": "do again",
+        "successMessage": "Great! You used context and the prefix re!"
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_v1_context_word_parts.jpeg"
+  },
+  "l_v2_categories": {
+    "name": "Categories",
+    "icon": "\ud83e\uddfa",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.5.A",
+      "L.1.5.B"
+    ],
+    "stickers": [
+      "\ud83e\uddfa",
+      "\ud83c\udfa8",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "I",
+      "can",
+      "sort",
+      "into",
+      "groups",
+      "color",
+      "food",
+      "animal",
+      "is",
+      "a"
+    ],
+    "previewWords": [
+      {
+        "word": "group",
+        "icon": "\ud83e\uddfa",
+        "isSightWord": false,
+        "phonicsNote": "group"
+      },
+      {
+        "word": "color",
+        "icon": "\ud83c\udfa8",
+        "isSightWord": false,
+        "phonicsNote": "col-or"
+      },
+      {
+        "word": "food",
+        "icon": "\ud83c\udf4e",
+        "isSightWord": false,
+        "phonicsNote": "food"
+      },
+      {
+        "word": "animal",
+        "icon": "\ud83d\udc36",
+        "isSightWord": false,
+        "phonicsNote": "an-i-mal"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear sorting language, calm"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83e\uddfa\ud83e\udde0",
+        "sentence": "I can sort words into groups. A group can be colors or foods.",
+        "targetWords": [
+          "sort",
+          "words",
+          "groups",
+          "group",
+          "colors",
+          "foods"
+        ],
+        "sightWordFocus": "can",
+        "readingTip": "Groups help you organize words.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three baskets labeled Colors, Foods, Animals."
+        }
+      },
+      {
+        "type": "activitySpec",
+        "activityType": "sort",
+        "prompt": "Sort the words into groups.",
+        "data": {
+          "bins": [
+            "Colors",
+            "Foods",
+            "Animals"
+          ],
+          "cards": [
+            "red",
+            "blue",
+            "apple",
+            "bread",
+            "dog",
+            "cat"
+          ]
+        },
+        "successCriteria": "Student sorts each card into the correct category."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a group!",
+        "menuStory": "Which group name matches?",
+        "items": [
+          {
+            "name": "Colors",
+            "icon": "\ud83c\udfa8",
+            "description": "red, blue"
+          },
+          {
+            "name": "Foods",
+            "icon": "\ud83c\udf4e",
+            "description": "apple, bread"
+          },
+          {
+            "name": "Animals",
+            "icon": "\ud83d\udc36",
+            "description": "dog, cat"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three category cards with simple icons."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83c\udfa8\ud83c\udf4e",
+        "sentence": "Red is a color. Apple is a food. Dog is an animal.",
+        "targetWords": [
+          "Red",
+          "color",
+          "Apple",
+          "food",
+          "Dog",
+          "animal"
+        ],
+        "sightWordFocus": "is",
+        "readingTip": "Say why a word belongs in a group.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three example cards: red, apple, dog with labels."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is a color?",
+        "passage": "Red is a color.",
+        "comprehensionHint": "Read the sentence. Find the color word.",
+        "answers": [
+          {
+            "name": "Red",
+            "icon": "\ud83d\udd34"
+          },
+          {
+            "name": "Apple",
+            "icon": "\ud83c\udf4e"
+          },
+          {
+            "name": "Dog",
+            "icon": "\ud83d\udc36"
+          }
+        ],
+        "correctAnswerName": "Red",
+        "successMessage": "Yes! Red is a color."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Why does apple belong in a group?",
+        "passage": "Apple is a food.",
+        "comprehensionHint": "Read the sentence. It tells the group name.",
+        "answers": [
+          {
+            "name": "It is a food",
+            "icon": "\ud83c\udf4e"
+          },
+          {
+            "name": "It is a color",
+            "icon": "\ud83c\udfa8"
+          },
+          {
+            "name": "It is a place",
+            "icon": "\ud83d\udccd"
+          }
+        ],
+        "correctAnswerName": "It is a food",
+        "successMessage": "Nice! You explained the group."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word is an animal?",
+        "passage": "Dog is an animal.",
+        "comprehensionHint": "Read the sentence. Find the animal word.",
+        "answers": [
+          {
+            "name": "Dog",
+            "icon": "\ud83d\udc36"
+          },
+          {
+            "name": "Red",
+            "icon": "\ud83d\udd34"
+          },
+          {
+            "name": "Apple",
+            "icon": "\ud83c\udf4e"
+          }
+        ],
+        "correctAnswerName": "Dog",
+        "successMessage": "Yes! Dog is an animal."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_v2_categories.jpeg"
+  },
+  "l_v3_real_life_word_use": {
+    "name": "Real-Life Word Use",
+    "icon": "\ud83c\udfe0",
+    "level": 2,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.5.C"
+    ],
+    "stickers": [
+      "\ud83c\udfe0",
+      "\ud83d\udc9b",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "cozy",
+      "means",
+      "a",
+      "place",
+      "can",
+      "be",
+      "is",
+      "warm",
+      "and",
+      "safe",
+      "curious",
+      "wants",
+      "know"
+    ],
+    "previewWords": [
+      {
+        "word": "cozy",
+        "icon": "\ud83e\uddf8",
+        "isSightWord": false,
+        "phonicsNote": "co-zy"
+      },
+      {
+        "word": "warm",
+        "icon": "\ud83e\udde3",
+        "isSightWord": false,
+        "phonicsNote": "warm"
+      },
+      {
+        "word": "safe",
+        "icon": "\ud83d\udee1\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "safe"
+      },
+      {
+        "word": "blanket",
+        "icon": "\ud83d\udecc",
+        "isSightWord": false,
+        "phonicsNote": "blan-ket"
+      },
+      {
+        "word": "curious",
+        "icon": "\ud83e\udd14",
+        "isSightWord": false,
+        "phonicsNote": "cu-ri-ous"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "warm, concrete examples"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83e\uddf8\ud83c\udfe0",
+        "sentence": "A cozy place feels warm and safe.",
+        "targetWords": [
+          "cozy",
+          "place",
+          "feels",
+          "warm",
+          "safe"
+        ],
+        "sightWordFocus": "cozy",
+        "readingTip": "Think of a place that feels cozy.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Cozy corner with blanket and pillow, calm."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a cozy place!",
+        "menuStory": "Which place can be cozy?",
+        "items": [
+          {
+            "name": "Bed",
+            "icon": "\ud83d\udecc",
+            "description": "soft and warm"
+          },
+          {
+            "name": "Sink",
+            "icon": "\ud83d\udeb0",
+            "description": "for washing"
+          },
+          {
+            "name": "Street",
+            "icon": "\ud83d\udee3\ufe0f",
+            "description": "outside"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three place cards: bed, sink, street."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udecc\ud83e\udde3",
+        "sentence": "A bed can be cozy with a blanket.",
+        "targetWords": [
+          "bed",
+          "cozy",
+          "blanket"
+        ],
+        "sightWordFocus": "can",
+        "readingTip": "Use the word in a real-life example.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Bed with blanket, cozy style."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does cozy mean?",
+        "passage": "A cozy place feels warm and safe.",
+        "comprehensionHint": "Read the sentence. It tells the meaning.",
+        "answers": [
+          {
+            "name": "Warm and safe",
+            "icon": "\ud83e\udde3"
+          },
+          {
+            "name": "Loud and bright",
+            "icon": "\ud83d\udce3"
+          },
+          {
+            "name": "Cold and wet",
+            "icon": "\ud83d\udca7"
+          }
+        ],
+        "correctAnswerName": "Warm and safe",
+        "successMessage": "Yes! Cozy means warm and safe."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which place can be cozy?",
+        "passage": "A bed can be cozy with a blanket.",
+        "comprehensionHint": "Read the sentence. Find the cozy place.",
+        "answers": [
+          {
+            "name": "Bed",
+            "icon": "\ud83d\udecc"
+          },
+          {
+            "name": "Sink",
+            "icon": "\ud83d\udeb0"
+          },
+          {
+            "name": "Street",
+            "icon": "\ud83d\udee3\ufe0f"
+          }
+        ],
+        "correctAnswerName": "Bed",
+        "successMessage": "Nice! Bed is a cozy place."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which makes a place cozy?",
+        "passage": "A bed can be cozy with a blanket.",
+        "comprehensionHint": "Read the sentence. Find what helps make it cozy.",
+        "answers": [
+          {
+            "name": "Blanket",
+            "icon": "\ud83d\udecc"
+          },
+          {
+            "name": "Street",
+            "icon": "\ud83d\udee3\ufe0f"
+          },
+          {
+            "name": "Sink",
+            "icon": "\ud83d\udeb0"
+          }
+        ],
+        "correctAnswerName": "Blanket",
+        "successMessage": "Yes! A blanket makes a place cozy."
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd14\u2753",
+        "sentence": "Curious means you want to know about things.",
+        "targetWords": [
+          "Curious",
+          "want",
+          "know",
+          "things"
+        ],
+        "sightWordFocus": "about",
+        "readingTip": "Learn what the word means first.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child looking at something with wonder."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does curious mean?",
+        "passage": "Curious means you want to know about things.",
+        "comprehensionHint": "Read the sentence. It tells the meaning.",
+        "answers": [
+          {
+            "name": "Want to know",
+            "icon": "\u2753"
+          },
+          {
+            "name": "Want to sleep",
+            "icon": "\ud83d\ude34"
+          },
+          {
+            "name": "Want to run",
+            "icon": "\ud83c\udfc3"
+          }
+        ],
+        "correctAnswerName": "Want to know",
+        "successMessage": "Yes! Curious means want to know."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which shows being curious?",
+        "passage": "Curious means you want to know about things.",
+        "comprehensionHint": "Think about what curious people do.",
+        "answers": [
+          {
+            "name": "Asking questions",
+            "icon": "\u2753"
+          },
+          {
+            "name": "Sleeping all day",
+            "icon": "\ud83d\ude34"
+          },
+          {
+            "name": "Running away",
+            "icon": "\ud83c\udfc3"
+          }
+        ],
+        "correctAnswerName": "Asking questions",
+        "successMessage": "Yes! Curious people ask questions."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_v3_real_life_word_use.png"
+  },
+  "l_v4_shades_of_meaning": {
+    "name": "Shades of Meaning",
+    "icon": "\ud83c\udf08",
+    "level": 3,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.5.D",
+      "L.1.5.E"
+    ],
+    "stickers": [
+      "\ud83c\udf08",
+      "\ud83d\udc40",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "peek",
+      "stare",
+      "look",
+      "big",
+      "large",
+      "gigantic",
+      "is",
+      "the",
+      "most",
+      "very",
+      "small",
+      "tiny",
+      "huge"
+    ],
+    "previewWords": [
+      {
+        "word": "peek",
+        "icon": "\ud83d\udc40",
+        "isSightWord": false,
+        "phonicsNote": "peek"
+      },
+      {
+        "word": "stare",
+        "icon": "\ud83d\udc41\ufe0f",
+        "isSightWord": false,
+        "phonicsNote": "stare"
+      },
+      {
+        "word": "gigantic",
+        "icon": "\ud83d\udc18",
+        "isSightWord": false,
+        "phonicsNote": "gi-gan-tic"
+      },
+      {
+        "word": "large",
+        "icon": "\ud83d\udce6",
+        "isSightWord": false,
+        "phonicsNote": "large"
+      },
+      {
+        "word": "tiny",
+        "icon": "\ud83d\udc1c",
+        "isSightWord": false,
+        "phonicsNote": "ti-ny"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "clear nuance coaching"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83d\udc40\ud83c\udf08",
+        "sentence": "Look, peek, and stare are all ways to see.",
+        "targetWords": [
+          "Look",
+          "peek",
+          "stare",
+          "ways",
+          "see"
+        ],
+        "sightWordFocus": "are",
+        "readingTip": "Some words mean almost the same thing.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three eye icons showing different looking intensity."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc41\ufe0f\u23f1\ufe0f",
+        "sentence": "Peek is quick. Look is longer. Stare is very long.",
+        "targetWords": [
+          "Peek",
+          "quick",
+          "Look",
+          "longer",
+          "Stare",
+          "long"
+        ],
+        "sightWordFocus": "is",
+        "readingTip": "Order the words from weakest to strongest.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Timeline showing peek, look, stare with arrows."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc1c\ud83d\udce6\ud83d\udc18",
+        "sentence": "Tiny, big, and gigantic are all size words.",
+        "targetWords": [
+          "Tiny",
+          "big",
+          "gigantic",
+          "size",
+          "words"
+        ],
+        "sightWordFocus": "all",
+        "readingTip": "Words can show different amounts.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three objects: ant, box, elephant showing size."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udccf\ud83d\udd22",
+        "sentence": "Tiny is smallest. Big is larger. Gigantic is the biggest.",
+        "targetWords": [
+          "Tiny",
+          "smallest",
+          "Big",
+          "larger",
+          "Gigantic",
+          "biggest"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Put size words in order from small to big.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Size ladder: tiny \u2192 big \u2192 gigantic."
+        }
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a word type!",
+        "menuStory": "Words can be close in meaning.",
+        "items": [
+          {
+            "name": "Action words",
+            "icon": "\ud83d\udc40",
+            "description": "peek, look, stare"
+          },
+          {
+            "name": "Size words",
+            "icon": "\ud83d\udccf",
+            "description": "tiny, big, gigantic"
+          },
+          {
+            "name": "Feeling words",
+            "icon": "\ud83d\ude0a",
+            "description": "happy, glad, joyful"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three category cards."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word means look quickly?",
+        "passage": "Peek is quick. Look is longer. Stare is very long.",
+        "comprehensionHint": "Find the word that is quick.",
+        "answers": [
+          {
+            "name": "peek",
+            "icon": "\ud83d\udc40"
+          },
+          {
+            "name": "look",
+            "icon": "\ud83d\udc41\ufe0f"
+          },
+          {
+            "name": "stare",
+            "icon": "\ud83d\ude33"
+          }
+        ],
+        "correctAnswerName": "peek",
+        "successMessage": "Yes! Peek is the quickest way to look."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word means look the longest?",
+        "passage": "Peek is quick. Look is longer. Stare is very long.",
+        "comprehensionHint": "Find the strongest word.",
+        "answers": [
+          {
+            "name": "stare",
+            "icon": "\ud83d\ude33"
+          },
+          {
+            "name": "look",
+            "icon": "\ud83d\udc41\ufe0f"
+          },
+          {
+            "name": "peek",
+            "icon": "\ud83d\udc40"
+          }
+        ],
+        "correctAnswerName": "stare",
+        "successMessage": "Yes! Stare is the longest way to look."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word means the smallest?",
+        "passage": "Tiny is smallest. Big is larger. Gigantic is the biggest.",
+        "comprehensionHint": "Find the word for the smallest size.",
+        "answers": [
+          {
+            "name": "tiny",
+            "icon": "\ud83d\udc1c"
+          },
+          {
+            "name": "big",
+            "icon": "\ud83d\udce6"
+          },
+          {
+            "name": "gigantic",
+            "icon": "\ud83d\udc18"
+          }
+        ],
+        "correctAnswerName": "tiny",
+        "successMessage": "Yes! Tiny means very small."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which word means the biggest?",
+        "passage": "Tiny is smallest. Big is larger. Gigantic is the biggest.",
+        "comprehensionHint": "Find the strongest size word.",
+        "answers": [
+          {
+            "name": "gigantic",
+            "icon": "\ud83d\udc18"
+          },
+          {
+            "name": "big",
+            "icon": "\ud83d\udce6"
+          },
+          {
+            "name": "tiny",
+            "icon": "\ud83d\udc1c"
+          }
+        ],
+        "correctAnswerName": "gigantic",
+        "successMessage": "Yes! Gigantic is the biggest!"
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Put these in order from smallest to biggest.",
+        "passage": "Tiny is smallest. Big is larger. Gigantic is the biggest.",
+        "comprehensionHint": "Think about the size order.",
+        "answers": [
+          {
+            "name": "tiny, big, gigantic",
+            "icon": "\ud83d\udccf"
+          },
+          {
+            "name": "gigantic, big, tiny",
+            "icon": "\ud83d\udcd0"
+          },
+          {
+            "name": "big, tiny, gigantic",
+            "icon": "\ud83d\udcca"
+          }
+        ],
+        "correctAnswerName": "tiny, big, gigantic",
+        "successMessage": "Perfect! You ordered the words by size."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_v4_shades_of_meaning.jpeg"
+  },
+  "l_v5_use_new_words": {
+    "name": "Use New Words",
+    "icon": "\ud83d\udde3\ufe0f",
+    "level": 3,
+    "line": "L",
+    "checklistTargets": [
+      "L.1.6"
+    ],
+    "stickers": [
+      "\ud83d\udde3\ufe0f",
+      "\u270d\ufe0f",
+      "\u2b50",
+      "\ud83d\ude82"
+    ],
+    "sightWords": [
+      "gentle",
+      "means",
+      "soft",
+      "and",
+      "kind",
+      "I",
+      "use",
+      "in",
+      "a",
+      "sentence",
+      "brave",
+      "not",
+      "afraid"
+    ],
+    "previewWords": [
+      {
+        "word": "gentle",
+        "icon": "\ud83e\uddf8",
+        "isSightWord": false,
+        "phonicsNote": "gen-tle"
+      },
+      {
+        "word": "soft",
+        "icon": "\ud83e\udeb6",
+        "isSightWord": false,
+        "phonicsNote": "soft"
+      },
+      {
+        "word": "kind",
+        "icon": "\ud83d\udc9b",
+        "isSightWord": false,
+        "phonicsNote": "kind"
+      },
+      {
+        "word": "hands",
+        "icon": "\ud83d\udc50",
+        "isSightWord": false,
+        "phonicsNote": "hands"
+      },
+      {
+        "word": "brave",
+        "icon": "\ud83e\udd81",
+        "isSightWord": false,
+        "phonicsNote": "brave"
+      }
+    ],
+    "audio": {
+      "voice": "elevenlabs:angela",
+      "style": "modeling word use in sentences"
+    },
+    "pages": [
+      {
+        "type": "read",
+        "image": "\ud83e\uddf8\ud83e\udde0",
+        "sentence": "Gentle means soft and kind.",
+        "targetWords": [
+          "Gentle",
+          "means",
+          "soft",
+          "kind"
+        ],
+        "sightWordFocus": "gentle",
+        "readingTip": "Learn the meaning first.",
+        "ui": {
+          "scene": "arrival",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Definition card for gentle with soft colors."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83d\udc31\ud83d\udc50",
+        "sentence": "I pet the cat with gentle hands.",
+        "targetWords": [
+          "pet",
+          "cat",
+          "with",
+          "gentle",
+          "hands"
+        ],
+        "sightWordFocus": "I",
+        "readingTip": "Use the new word in a sentence.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child gently petting a cat, calm."
+        }
+      },
+      {
+        "type": "activitySpec",
+        "activityType": "writingScaffold",
+        "prompt": "Use the word gentle in your own sentence.",
+        "data": {
+          "wordBank": [
+            "I",
+            "am",
+            "gentle",
+            "with",
+            "my",
+            "hands",
+            "cat",
+            "dog"
+          ],
+          "frame": "I am gentle with ____."
+        },
+        "successCriteria": "Student builds a sentence using the target word (parent check if needed)."
+      },
+      {
+        "type": "menu",
+        "prompt": "Pick a sentence!",
+        "menuStory": "Which sentence uses gentle correctly?",
+        "items": [
+          {
+            "name": "Gentle hands",
+            "icon": "\ud83d\udc50",
+            "description": "soft and kind"
+          },
+          {
+            "name": "Gentle rock",
+            "icon": "\ud83e\udea8",
+            "description": "does not fit"
+          },
+          {
+            "name": "Gentle shout",
+            "icon": "\ud83d\udce3",
+            "description": "does not fit"
+          }
+        ],
+        "ui": {
+          "scene": "choice",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Three sentence choice cards, simple."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does gentle mean?",
+        "passage": "Gentle means soft and kind.",
+        "comprehensionHint": "Read the sentence. It tells the meaning.",
+        "answers": [
+          {
+            "name": "Soft and kind",
+            "icon": "\ud83d\udc9b"
+          },
+          {
+            "name": "Loud and fast",
+            "icon": "\ud83d\udce3"
+          },
+          {
+            "name": "Hot and spicy",
+            "icon": "\ud83c\udf36\ufe0f"
+          }
+        ],
+        "correctAnswerName": "Soft and kind",
+        "successMessage": "Yes! Gentle means soft and kind."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence uses gentle correctly?",
+        "passage": "I pet the cat with gentle hands.",
+        "comprehensionHint": "Read the sentence. Gentle fits with hands.",
+        "answers": [
+          {
+            "name": "I pet the cat with gentle hands",
+            "icon": "\ud83d\udc31"
+          },
+          {
+            "name": "I pet the cat with loud hands",
+            "icon": "\ud83d\udce3"
+          },
+          {
+            "name": "I pet the cat with hot hands",
+            "icon": "\ud83d\udd25"
+          }
+        ],
+        "correctAnswerName": "I pet the cat with gentle hands",
+        "successMessage": "Nice! That sentence uses gentle correctly."
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\udd81\ud83d\udcaa",
+        "sentence": "Brave means you are not afraid.",
+        "targetWords": [
+          "Brave",
+          "not",
+          "afraid"
+        ],
+        "sightWordFocus": "are",
+        "readingTip": "Learn the meaning first.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Lion standing tall, confident."
+        }
+      },
+      {
+        "type": "read",
+        "image": "\ud83e\uddd2\ud83d\udc15",
+        "sentence": "The brave kid helps the lost dog.",
+        "targetWords": [
+          "brave",
+          "kid",
+          "helps",
+          "lost",
+          "dog"
+        ],
+        "sightWordFocus": "the",
+        "readingTip": "Use the new word in a sentence.",
+        "ui": {
+          "scene": "explore",
+          "backgroundImageSuggested": true,
+          "imagePrompt": "Child helping scared dog."
+        }
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "What does brave mean?",
+        "passage": "Brave means you are not afraid.",
+        "comprehensionHint": "Read the sentence. It tells the meaning.",
+        "answers": [
+          {
+            "name": "Not afraid",
+            "icon": "\ud83d\udcaa"
+          },
+          {
+            "name": "Very scared",
+            "icon": "\ud83d\ude31"
+          },
+          {
+            "name": "Very tired",
+            "icon": "\ud83d\ude34"
+          }
+        ],
+        "correctAnswerName": "Not afraid",
+        "successMessage": "Yes! Brave means not afraid."
+      },
+      {
+        "type": "question",
+        "questionType": "sightWord",
+        "questionMode": "multipleChoice",
+        "question": "Which sentence uses brave correctly?",
+        "passage": "The brave kid helps the lost dog.",
+        "comprehensionHint": "Think about what brave people do.",
+        "answers": [
+          {
+            "name": "The brave kid helps the dog",
+            "icon": "\ud83d\udc15"
+          },
+          {
+            "name": "The brave kid runs away",
+            "icon": "\ud83c\udfc3"
+          },
+          {
+            "name": "The brave kid is sleeping",
+            "icon": "\ud83d\ude34"
+          }
+        ],
+        "correctAnswerName": "The brave kid helps the dog",
+        "successMessage": "Yes! That shows being brave."
+      }
+    ],
+    "sceneImage": "assets/station_scenes/l_v5_use_new_words.png"
+  }
+}

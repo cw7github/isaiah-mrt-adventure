@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "plan": "docs/cpa-grade1-math-checklist-plan.md",
+    "contentStandards": "docs/content-standards.md",
+    "checklistPdf": "Gr._1_Mathematics_I_Can_Checklist_CPA_23-24.pdf"
+  },
+  "uiDefaults": {
+    "voice": "elevenlabs:angela",
+    "keySentenceHighlightPolicy": "afterWrongOrHint",
+    "evidenceTapRequired": false,
+    "backgroundStyle": "taipei-ghibli",
+    "trainAnnouncementTemplate": "All aboard! Next stop: {stationName}.",
+    "mathVisualDefault": "counters"
+  },
+  "stationOrder": [
+    "oa_counting_up_down",
+    "oa_add_word_problems",
+    "oa_sub_word_problems",
+    "oa_add_three_numbers",
+    "oa_fact_families",
+    "oa_add_facts_20",
+    "oa_sub_facts_20",
+    "oa_equal_sign",
+    "oa_missing_number",
+    "nbt_count_to_120",
+    "nbt_tens_and_ones",
+    "nbt_teen_numbers",
+    "nbt_count_by_tens",
+    "nbt_compare_numbers",
+    "nbt_add_no_regroup",
+    "nbt_add_with_regroup",
+    "nbt_ten_more_less",
+    "nbt_subtract_tens",
+    "md_compare_lengths",
+    "md_measure_length",
+    "md_tell_time",
+    "md_organize_data",
+    "md_interpret_data",
+    "g_shape_attributes",
+    "g_2d_shapes",
+    "g_3d_shapes",
+    "g_compose_shapes",
+    "g_halves_quarters",
+    "review_math_sprint_1",
+    "review_math_sprint_2"
+  ],
+  "stations": {}
+}
