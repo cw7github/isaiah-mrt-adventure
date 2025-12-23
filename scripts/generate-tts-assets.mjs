@@ -103,6 +103,12 @@ function normalizeTextForElevenLabs(text) {
   if (/^_+[A-Za-z]+$/.test(raw)) return raw.replace(/_/g, '');
   if (/^_+$/.test(raw)) return 'blank';
 
+  // Blank markers like "____" appear in cloze questions; make them speakable.
+  // (Also avoids ElevenLabs failures on underscore runs.)
+  if (/_\_/.test(raw) || /_{2,}/.test(raw)) {
+    return raw.replace(/_{2,}/g, 'blank');
+  }
+
   return raw;
 }
 

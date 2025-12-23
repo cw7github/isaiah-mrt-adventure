@@ -2,6 +2,10 @@
 
 An interactive Grade 1 learning app (ELA + Math) with a Taipei MRT-themed journey through learning stations.
 
+**Live Site:** https://isaiah-mrt-adventure.vercel.app/
+
+**Repository:** https://github.com/cw7github/isaiah-mrt-adventure
+
 ## Quick Start
 
 ### Running Locally

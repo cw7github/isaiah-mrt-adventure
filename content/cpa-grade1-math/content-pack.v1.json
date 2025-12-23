@@ -414,7 +414,6 @@
           "questionMode": "multipleChoice",
           "question": "How many apples do I have now?",
           "mathContext": "I have three apples in my bag. I pick two more apples.",
-          "numberSentence": "3 + 2 = ____",
           "mathHint": "Count all the apples. Start with three. Add two more.",
           "visual": {
             "type": "counters",
@@ -467,7 +466,6 @@
           "questionMode": "multipleChoice",
           "question": "How many oranges are there in all?",
           "mathContext": "There are six oranges on the left. There are five oranges on the right.",
-          "numberSentence": "6 + 5 = ____",
           "mathHint": "Add the two groups together.",
           "answers": [
             {
@@ -517,7 +515,6 @@
           "questionMode": "multipleChoice",
           "question": "How many pieces of fruit does she have now?",
           "mathContext": "My sister has seven strawberries. I give her four more strawberries.",
-          "numberSentence": "7 + 4 = ____",
           "mathHint": "Start with seven. Count on four more.",
           "answers": [
             {
@@ -560,7 +557,6 @@
           "questionMode": "multipleChoice",
           "question": "How many fruits are in the box now?",
           "mathContext": "There are nine apples in a box. The farmer adds six more apples.",
-          "numberSentence": "9 + 6 = ____",
           "mathHint": "Start at nine. Count on six more: ten, eleven, twelve, thirteen, fourteen, fifteen.",
           "answers": [
             {
@@ -588,7 +584,6 @@
           "questionMode": "multipleChoice",
           "question": "How many total fruits do I buy?",
           "mathContext": "I buy eight oranges and seven lemons.",
-          "numberSentence": "8 + 7 = ____",
           "mathHint": "Add eight and seven. You can make ten first: 8 + 2 = 10, then add 5 more.",
           "answers": [
             {
@@ -672,7 +667,6 @@
           "questionMode": "multipleChoice",
           "question": "How many bowls are left?",
           "mathContext": "There are seven bowls of noodles. Three customers take bowls.",
-          "numberSentence": "7 - 3 = ____",
           "mathHint": "Start with seven. Take away three. Count what is left.",
           "visual": {
             "type": "counters",
@@ -723,7 +717,6 @@
           "questionMode": "multipleChoice",
           "question": "How many chopsticks are left?",
           "mathContext": "There are twelve chopsticks in the jar. I take out five chopsticks.",
-          "numberSentence": "12 - 5 = ____",
           "mathHint": "Start at twelve. Count back five.",
           "answers": [
             {
@@ -773,7 +766,6 @@
           "questionMode": "multipleChoice",
           "question": "How many napkins are left in the holder?",
           "mathContext": "There are fifteen napkins in the holder. Customers use eight napkins.",
-          "numberSentence": "15 - 8 = ____",
           "mathHint": "Start with fifteen. Take away eight. Count what remains.",
           "answers": [
             {
@@ -816,7 +808,6 @@
           "questionMode": "multipleChoice",
           "question": "How many spring rolls are left?",
           "mathContext": "The cook makes sixteen spring rolls. He sells nine spring rolls.",
-          "numberSentence": "16 - 9 = ____",
           "mathHint": "Start at sixteen. Count back nine, or think: nine plus what equals sixteen?",
           "answers": [
             {
@@ -844,7 +835,6 @@
           "questionMode": "multipleChoice",
           "question": "How many customers are still waiting?",
           "mathContext": "There are thirteen customers waiting. Seven customers get their food and leave.",
-          "numberSentence": "13 - 7 = ____",
           "mathHint": "Start with thirteen. Take away seven. You can count back.",
           "answers": [
             {
@@ -4038,9 +4028,9 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many fruits in total?",
-          "mathContext": "I count 34 apples and 21 oranges.",
-          "mathHint": "Add ones: 4 + 1 = 5. Add tens: 30 + 20 = 50. Total: 55.",
-          "numberSentence": "34 + 21 = ___",
+          "mathContext": "I count 34 apples and 20 oranges.",
+          "mathHint": "Add tens: 30 + 20 = 50. Add ones: 4 + 0 = 4. Total: 54.",
+          "numberSentence": "34 + 20 = ___",
           "visual": {
             "type": "blocks",
             "data": {
@@ -4051,7 +4041,7 @@
                 },
                 {
                   "tens": 2,
-                  "ones": 1
+                  "ones": 0
                 }
               ],
               "showLabels": false
@@ -4059,17 +4049,17 @@
           },
           "answers": [
             {
-              "name": "55"
+              "name": "54"
             },
             {
-              "name": "45"
+              "name": "44"
             },
             {
-              "name": "65"
+              "name": "64"
             }
           ],
-          "correctAnswerName": "55",
-          "successMessage": "Excellent! 34 + 21 = 55. You added ones then tens!"
+          "correctAnswerName": "54",
+          "successMessage": "Yes! 34 + 20 = 54."
         },
         {
           "type": "menu",
@@ -4131,22 +4121,22 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many fruits in all?",
-          "mathContext": "I have 52 fruits in one basket and 33 fruits in another.",
-          "mathHint": "Ones: 2 + 3 = 5. Tens: 50 + 30 = 80. Total: 85.",
-          "numberSentence": "52 + 33 = ___",
+          "mathContext": "I have 52 fruits in one basket. I add 7 more fruits.",
+          "mathHint": "Add the ones: 2 + 7 = 9. The tens stay 5. So 52 + 7 = 59.",
+          "numberSentence": "52 + 7 = ___",
           "answers": [
             {
-              "name": "85"
+              "name": "59"
             },
             {
-              "name": "75"
+              "name": "69"
             },
             {
-              "name": "95"
+              "name": "49"
             }
           ],
-          "correctAnswerName": "85",
-          "successMessage": "Great! 52 + 33 = 85. You used the add ones then tens strategy!"
+          "correctAnswerName": "59",
+          "successMessage": "Great! 52 + 7 = 59."
         },
         {
           "type": "question",
@@ -4213,22 +4203,22 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many apples in total?",
-          "mathContext": "I count 14 red apples and 32 green apples.",
-          "mathHint": "Ones: 4 + 2 = 6. Tens: 10 + 30 = 40. Total: 46.",
-          "numberSentence": "14 + 32 = ___",
+          "mathContext": "I count 14 red apples and 30 green apples.",
+          "mathHint": "Add tens: 10 + 30 = 40. Add ones: 4 + 0 = 4. Total: 44.",
+          "numberSentence": "14 + 30 = ___",
           "answers": [
             {
-              "name": "46"
+              "name": "44"
             },
             {
-              "name": "56"
+              "name": "34"
             },
             {
-              "name": "36"
+              "name": "54"
             }
           ],
-          "correctAnswerName": "46",
-          "successMessage": "Perfect! 14 + 32 = 46!"
+          "correctAnswerName": "44",
+          "successMessage": "Nice! 14 + 30 = 44."
         }
       ],
       "sceneImage": "assets/math_station_scenes/nbt_add_no_regroup.png"
@@ -4385,9 +4375,9 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many buns in total?",
-          "mathContext": "I make 36 buns in the morning and 17 buns in the afternoon.",
-          "mathHint": "Ones: 6 + 7 = 13. Regroup to 1 ten and 3 ones. Tens: 3 + 1 + 1 = 5. Answer: 53.",
-          "numberSentence": "36 + 17 = ___",
+          "mathContext": "I make 36 buns in the morning. I add 8 more buns.",
+          "mathHint": "Add ones: 6 + 8 = 14. Regroup to 1 ten and 4 ones. Tens: 3 + 1 = 4. Answer: 44.",
+          "numberSentence": "36 + 8 = ___",
           "visual": {
             "type": "blocks",
             "data": {
@@ -4397,8 +4387,8 @@
                   "ones": 6
                 },
                 {
-                  "tens": 1,
-                  "ones": 7
+                  "tens": 0,
+                  "ones": 8
                 }
               ],
               "showLabels": false
@@ -4406,17 +4396,17 @@
           },
           "answers": [
             {
-              "name": "53"
+              "name": "44"
             },
             {
-              "name": "43"
+              "name": "34"
             },
             {
-              "name": "63"
+              "name": "54"
             }
           ],
-          "correctAnswerName": "53",
-          "successMessage": "Great work! 36 + 17 = 53. You regrouped correctly!"
+          "correctAnswerName": "44",
+          "successMessage": "Excellent! 36 + 8 = 44. You regrouped 14 ones into 1 ten and 4 ones!"
         },
         {
           "type": "menu",
@@ -4469,22 +4459,22 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many buns in all?",
-          "mathContext": "I have 48 buns on one tray and 26 buns on another.",
-          "mathHint": "Ones: 8 + 6 = 14. Regroup to 1 ten and 4 ones. Tens: 4 + 2 + 1 = 7. Answer: 74.",
-          "numberSentence": "48 + 26 = ___",
+          "mathContext": "I have 48 buns on one tray. I add 7 more buns.",
+          "mathHint": "Add ones: 8 + 7 = 15. Regroup to 1 ten and 5 ones. Tens: 4 + 1 = 5. Answer: 55.",
+          "numberSentence": "48 + 7 = ___",
           "answers": [
             {
-              "name": "74"
+              "name": "55"
             },
             {
-              "name": "64"
+              "name": "45"
             },
             {
-              "name": "84"
+              "name": "65"
             }
           ],
-          "correctAnswerName": "74",
-          "successMessage": "Perfect! 48 + 26 = 74. You regrouped 14 ones!"
+          "correctAnswerName": "55",
+          "successMessage": "Great job! 48 + 7 = 55."
         },
         {
           "type": "read",
@@ -4504,22 +4494,22 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many total?",
-          "mathContext": "The baker makes 29 buns in the first batch and 15 in the second.",
-          "mathHint": "Ones: 9 + 5 = 14. Regroup. Tens: 2 + 1 + 1 = 4. Answer: 44.",
-          "numberSentence": "29 + 15 = ___",
+          "mathContext": "The baker makes 29 buns in the first batch and 8 in the second.",
+          "mathHint": "Add ones: 9 + 8 = 17. Regroup to 1 ten and 7 ones. Tens: 2 + 1 = 3. Answer: 37.",
+          "numberSentence": "29 + 8 = ___",
           "answers": [
             {
-              "name": "44"
+              "name": "37"
             },
             {
-              "name": "34"
+              "name": "27"
             },
             {
-              "name": "54"
+              "name": "47"
             }
           ],
-          "correctAnswerName": "44",
-          "successMessage": "Yes! 29 + 15 = 44. Great regrouping!"
+          "correctAnswerName": "37",
+          "successMessage": "Yes! 29 + 8 = 37."
         },
         {
           "type": "question",
@@ -4532,22 +4522,22 @@
           "questionType": "computation",
           "questionMode": "multipleChoice",
           "question": "How many buns in total?",
-          "mathContext": "I count 57 pork buns and 38 veggie buns.",
-          "mathHint": "Ones: 7 + 8 = 15. Regroup to 1 ten and 5 ones. Tens: 5 + 3 + 1 = 9. Answer: 95.",
-          "numberSentence": "57 + 38 = ___",
+          "mathContext": "I count 57 pork buns and 8 veggie buns.",
+          "mathHint": "Add ones: 7 + 8 = 15. Regroup to 1 ten and 5 ones. Tens: 5 + 1 = 6. Answer: 65.",
+          "numberSentence": "57 + 8 = ___",
           "answers": [
             {
-              "name": "95"
+              "name": "65"
             },
             {
-              "name": "85"
+              "name": "55"
             },
             {
-              "name": "105"
+              "name": "75"
             }
           ],
-          "correctAnswerName": "95",
-          "successMessage": "Excellent! 57 + 38 = 95. You are a regrouping expert!"
+          "correctAnswerName": "65",
+          "successMessage": "Awesome! 57 + 8 = 65."
         }
       ],
       "sceneImage": "assets/math_station_scenes/nbt_add_with_regroup.jpeg"
@@ -7651,7 +7641,6 @@
           "question": "The graph shows 6 people like dumplings and 4 people like spring rolls. How many more people like dumplings?",
           "mathContext": "I need to compare dumplings and spring rolls to find the difference.",
           "mathHint": "Subtract to find how many more. 6 minus 4.",
-          "numberSentence": "6 - 4 = ___",
           "answers": [
             {
               "name": "1 more",
@@ -8450,7 +8439,7 @@
       "pages": [
         {
           "type": "read",
-          "sentence": "I arrive at the Drink Station. I see many drinks. The drinks come in 3D shapes. 3D shapes are solid. They are not flat.",
+          "sentence": "I arrive at the Drink Station. I see many drinks. The drinks come in 3D shapes. 3D shapes are solid. They are not flat. I can put shapes together to make a new shape.",
           "mathConcept": "3D shapes are solid shapes that are not flat",
           "mathTip": "3D means solid. You can hold 3D shapes in your hand.",
           "image": "🧃🥤",
@@ -8613,7 +8602,7 @@
         },
         {
           "type": "read",
-          "sentence": "I see an ice cream cone. The ice cream cone is a cone. It has 1 flat face on the bottom. It has 1 point at the top. It cannot roll.",
+          "sentence": "I see an ice cream cone. The ice cream cone is a cone. It has 1 flat face on the bottom. It has 1 point at the top. It can roll and slide.",
           "mathConcept": "A cone has 1 flat circular face and 1 point",
           "mathTip": "A cone has a point. It has a circle at the bottom.",
           "visual": {
@@ -8685,57 +8674,27 @@
           "type": "question",
           "questionType": "geometry",
           "questionMode": "multipleChoice",
-          "question": "How many faces does a cube have?",
-          "mathContext": "I see ice cubes in my drink. A cube has 6 square faces.",
-          "mathHint": "Count the faces of a cube. How many are there?",
+          "question": "What two shapes can you put together to make an ice cream cone on a cup?",
+          "mathContext": "A cone can sit on top of a cylinder cup. Together they make a new shape.",
+          "mathHint": "Ice cream cone = cone. Cup = cylinder.",
           "answers": [
             {
-              "name": "6",
-              "icon": "6️⃣"
+              "name": "Cone and cylinder",
+              "icon": "🍦🥫"
             },
             {
-              "name": "4",
-              "icon": "4️⃣"
+              "name": "Cube and cone",
+              "icon": "🧊🍦"
             },
             {
-              "name": "8",
-              "icon": "8️⃣"
+              "name": "Rectangular prism and cube",
+              "icon": "📦🧊"
             }
           ],
-          "correctAnswerName": "6",
-          "successMessage": "Great! A cube has 6 faces.",
-          "itemId": "g_3d_q5",
-          "skillId": "count_cube_faces",
-          "difficulty": 2,
-          "checklistTargets": [
-            "1.G.A.2"
-          ]
-        },
-        {
-          "type": "question",
-          "questionType": "geometry",
-          "questionMode": "multipleChoice",
-          "question": "Which shape can roll?",
-          "mathContext": "A cylinder can roll. A cone has a point and cannot roll. A cube has flat faces.",
-          "mathHint": "Think about which shapes are round. Round shapes can roll.",
-          "answers": [
-            {
-              "name": "Cylinder",
-              "icon": "🥫"
-            },
-            {
-              "name": "Cube",
-              "icon": "🧊"
-            },
-            {
-              "name": "Rectangular prism",
-              "icon": "📦"
-            }
-          ],
-          "correctAnswerName": "Cylinder",
-          "successMessage": "Yes! A cylinder can roll.",
-          "itemId": "g_3d_q6",
-          "skillId": "identify_rolling_shape",
+          "correctAnswerName": "Cone and cylinder",
+          "successMessage": "Yes! Cone + cylinder makes a new shape.",
+          "itemId": "g_3d_compose_q1",
+          "skillId": "compose_3d_cone_cylinder",
           "difficulty": 3,
           "checklistTargets": [
             "1.G.A.2"
@@ -8745,27 +8704,57 @@
           "type": "question",
           "questionType": "geometry",
           "questionMode": "multipleChoice",
-          "question": "Which shape has a point at the top?",
-          "mathContext": "A cone has 1 point at the top. A cylinder has flat ends. A cube has square faces.",
-          "mathHint": "Think about the shapes. Which one comes to a point?",
+          "question": "A juice box with a straw looks like what two shapes together?",
+          "mathContext": "A juice box is a rectangular prism. A straw is like a cylinder.",
+          "mathHint": "Match each object to a 3D shape.",
           "answers": [
             {
-              "name": "Cone",
-              "icon": "🍦"
+              "name": "Rectangular prism and cylinder",
+              "icon": "📦🥫"
             },
             {
-              "name": "Cylinder",
-              "icon": "🥫"
+              "name": "Cone and cube",
+              "icon": "🍦🧊"
             },
             {
-              "name": "Cube",
-              "icon": "🧊"
+              "name": "Cylinder and cube",
+              "icon": "🥫🧊"
             }
           ],
-          "correctAnswerName": "Cone",
-          "successMessage": "Nice! A cone has a point at the top.",
-          "itemId": "g_3d_q7",
-          "skillId": "identify_pointed_shape",
+          "correctAnswerName": "Rectangular prism and cylinder",
+          "successMessage": "Great! Juice box (rectangular prism) + straw (cylinder).",
+          "itemId": "g_3d_compose_q2",
+          "skillId": "compose_3d_prism_cylinder",
+          "difficulty": 3,
+          "checklistTargets": [
+            "1.G.A.2"
+          ]
+        },
+        {
+          "type": "question",
+          "questionType": "geometry",
+          "questionMode": "multipleChoice",
+          "question": "Which two shapes could you put together to make a drink with ice cubes?",
+          "mathContext": "A cup is like a cylinder. Ice cubes are cubes. Together they make a new shape.",
+          "mathHint": "Cup = cylinder. Ice cubes = cubes.",
+          "answers": [
+            {
+              "name": "Cylinder and cube",
+              "icon": "🥫🧊"
+            },
+            {
+              "name": "Cone and rectangular prism",
+              "icon": "🍦📦"
+            },
+            {
+              "name": "Rectangular prism and cone",
+              "icon": "📦🍦"
+            }
+          ],
+          "correctAnswerName": "Cylinder and cube",
+          "successMessage": "Yes! Cubes in a cylinder cup make a new shape.",
+          "itemId": "g_3d_compose_q3",
+          "skillId": "compose_3d_cylinder_cube",
           "difficulty": 2,
           "checklistTargets": [
             "1.G.A.2"
@@ -9588,6 +9577,93 @@
           ],
           "correctAnswerName": "9",
           "successMessage": "Yes! 4 + 5 = 9."
+        },
+        {
+          "type": "question",
+          "questionType": "computation",
+          "questionMode": "multipleChoice",
+          "question": "I have 13 grapes. I eat 6. How many grapes are left?",
+          "mathContext": "Start with 13. Take away 6.",
+          "mathHint": "Count back 6 or use a ten-frame idea.",
+          "answers": [
+            {
+              "name": "7"
+            },
+            {
+              "name": "9"
+            },
+            {
+              "name": "19"
+            }
+          ],
+          "correctAnswerName": "7",
+          "successMessage": "Yes! 13 − 6 = 7."
+        },
+        {
+          "type": "question",
+          "questionType": "placeValue",
+          "questionMode": "multipleChoice",
+          "question": "In the number 37, what does the 3 mean?",
+          "mathContext": "37 has tens and ones.",
+          "mathHint": "The first digit tells how many tens.",
+          "answers": [
+            {
+              "name": "3 tens"
+            },
+            {
+              "name": "3 ones"
+            },
+            {
+              "name": "37 tens"
+            }
+          ],
+          "correctAnswerName": "3 tens",
+          "successMessage": "Correct! 37 is 3 tens and 7 ones."
+        },
+        {
+          "type": "question",
+          "questionType": "placeValue",
+          "questionMode": "multipleChoice",
+          "question": "Which shows 14?",
+          "mathContext": "14 is a teen number.",
+          "mathHint": "Teen numbers are 1 ten and some ones.",
+          "answers": [
+            {
+              "name": "1 ten and 4 ones"
+            },
+            {
+              "name": "4 tens and 1 one"
+            },
+            {
+              "name": "14 tens"
+            }
+          ],
+          "correctAnswerName": "1 ten and 4 ones",
+          "successMessage": "Great! 14 = 1 ten and 4 ones."
+        },
+        {
+          "type": "question",
+          "questionType": "geometry",
+          "questionMode": "multipleChoice",
+          "question": "Which shape has 3 sides?",
+          "mathContext": "Look at the shape names.",
+          "mathHint": "A triangle has 3 sides.",
+          "answers": [
+            {
+              "name": "Triangle",
+              "icon": "🔺"
+            },
+            {
+              "name": "Square",
+              "icon": "⬜"
+            },
+            {
+              "name": "Circle",
+              "icon": "⚪"
+            }
+          ],
+          "correctAnswerName": "Triangle",
+          "successMessage": "Yes! A triangle has 3 sides."
         }
       ],
       "sceneImage": "assets/math_station_scenes/review_math_sprint_1.png"
@@ -9676,6 +9752,90 @@
           ],
           "correctAnswerName": "6",
           "successMessage": "Yes! 6 + 4 = 10."
+        },
+        {
+          "type": "question",
+          "questionType": "computation",
+          "questionMode": "multipleChoice",
+          "question": "I had 12 stickers. Now I have 9. How many did I give away? 12 − ____ = 9",
+          "mathContext": "This is a missing number problem.",
+          "mathHint": "What number makes 12 − ____ equal 9?",
+          "answers": [
+            {
+              "name": "3"
+            },
+            {
+              "name": "2"
+            },
+            {
+              "name": "21"
+            }
+          ],
+          "correctAnswerName": "3",
+          "successMessage": "Yes! 12 − 3 = 9."
+        },
+        {
+          "type": "question",
+          "questionType": "placeValue",
+          "questionMode": "multipleChoice",
+          "question": "What is 47 + 6?",
+          "mathContext": "Add tens and ones.",
+          "mathHint": "Add ones: 7 + 6 = 13. Regroup 1 ten. Tens: 4 + 1 = 5. Answer: 53.",
+          "answers": [
+            {
+              "name": "53"
+            },
+            {
+              "name": "43"
+            },
+            {
+              "name": "63"
+            }
+          ],
+          "correctAnswerName": "53",
+          "successMessage": "Great! 47 + 6 = 53."
+        },
+        {
+          "type": "question",
+          "questionType": "geometry",
+          "questionMode": "multipleChoice",
+          "question": "A cookie is cut into 4 equal parts. One part is called a ____.",
+          "mathContext": "4 equal parts means fourths.",
+          "mathHint": "Fourth means 1 out of 4 equal parts.",
+          "answers": [
+            {
+              "name": "fourth"
+            },
+            {
+              "name": "half"
+            },
+            {
+              "name": "whole"
+            }
+          ],
+          "correctAnswerName": "fourth",
+          "successMessage": "Yes! One out of 4 equal parts is a fourth (a quarter)."
+        },
+        {
+          "type": "question",
+          "questionType": "geometry",
+          "questionMode": "multipleChoice",
+          "question": "If you cut a sandwich into more equal parts, each part is ____.",
+          "mathContext": "More equal parts means smaller shares.",
+          "mathHint": "More shares makes each share smaller.",
+          "answers": [
+            {
+              "name": "smaller"
+            },
+            {
+              "name": "bigger"
+            },
+            {
+              "name": "the same size"
+            }
+          ],
+          "correctAnswerName": "smaller",
+          "successMessage": "Correct! More equal parts makes smaller parts."
         }
       ],
       "sceneImage": "assets/math_station_scenes/review_math_sprint_2.png"

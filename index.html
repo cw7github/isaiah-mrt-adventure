@@ -29553,8 +29553,8 @@
         questionSection.insertBefore(contextDiv, questionText);
       }
 
-      // Show number sentence if present
-      if (page.numberSentence) {
+      // Show number sentence if present (but don't reveal the operation for word problems)
+      if (page.numberSentence && page.questionType !== 'wordProblem') {
         const sentenceBox = document.createElement('div');
         sentenceBox.className = 'number-sentence-box';
 
