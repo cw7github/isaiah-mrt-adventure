@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 
 const IMAGE_PROMPTS = {
   1: `Interior view of a child's cozy bedroom at midnight. A young Asian American boy (Isaiah, age 6) sits up in bed, looking out a frost-covered window. Moonlight streams in, casting silvery blue light. The room has warm wood paneling, vintage toys, a brass bedside lamp. Outside the window, distant train tracks glow mysteriously. Warm pajamas, quilted blanket with train pattern.`,
