@@ -297,11 +297,9 @@ function loadPage(pageNumber) {
   document.getElementById('pageNum').textContent = pageNumber;
 
   // Update scene with AI-generated image or fallback to emoji
-  const sceneVisual = document.getElementById('sceneVisual');
   const sceneLabel = document.getElementById('sceneLabel');
   const illustrationContainer = document.getElementById('illustrationContainer');
 
-  sceneVisual.dataset.scene = pageData.scene;
   sceneLabel.textContent = pageData.sceneLabel;
 
   // Check if we have a generated image for this page
@@ -313,13 +311,10 @@ function loadPage(pageNumber) {
     const imageUrl = `assets/images/${imageInfo.file}`;
     illustrationContainer.innerHTML = `<img src="${imageUrl}" alt="${pageData.sceneLabel}" class="scene-image" />`;
     illustrationContainer.classList.add('has-image');
-    sceneVisual.style.display = 'none';
   } else {
     // Fallback to emoji placeholder
-    illustrationContainer.innerHTML = `<div class="illustration-placeholder"><div class="placeholder-scene" id="sceneVisual" data-scene="${pageData.scene}">${pageData.sceneEmoji}</div></div>`;
+    illustrationContainer.innerHTML = `<div class="illustration-placeholder"><div class="placeholder-scene" data-scene="${pageData.scene}">${pageData.sceneEmoji}</div></div>`;
     illustrationContainer.classList.remove('has-image');
-    sceneVisual.style.display = '';
-    sceneVisual.textContent = pageData.sceneEmoji;
   }
 
   // Render story text with clickable words
