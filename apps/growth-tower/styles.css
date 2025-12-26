@@ -1,0 +1,2243 @@
+/* ===================================
+   THE GROWTH TOWER - ORGANIC MAXIMALISM
+   William Morris meets Studio Ghibli
+   =================================== */
+
+/* ===== CSS RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* Color Palette: Organic Maximalism */
+  --forest-deep: #1b4332;
+  --leaf-green: #40916c;
+  --sunflower-gold: #ffd60a;
+  --petal-pink: #ff758f;
+  --soil-brown: #6b4423;
+  --sky-blue: #90e0ef;
+
+  /* Supporting Colors */
+  --cream: #fefae0;
+  --moss: #52b788;
+  --earth: #5a3e2b;
+  --honey: #ffc857;
+  --lavender: #b8a9c9;
+
+  /* Fonts */
+  --font-header: 'Playfair Display', serif;
+  --font-body: 'Source Serif Pro', serif;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(27, 67, 50, 0.15);
+  --shadow-medium: 0 8px 30px rgba(27, 67, 50, 0.25);
+  --shadow-deep: 0 12px 40px rgba(27, 67, 50, 0.35);
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--forest-deep) 0%, var(--leaf-green) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== LIVING BACKGROUND ===== */
+.garden-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.breathing-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(64, 145, 108, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(82, 183, 136, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(27, 67, 50, 0.2) 0%, transparent 70%);
+  animation: breathing-wall 6s ease-in-out infinite;
+}
+
+@keyframes breathing-wall {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Vine Borders */
+.vine-border {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--leaf-green) 0px,
+    var(--moss) 30px,
+    var(--leaf-green) 60px
+  );
+  opacity: 0.4;
+  animation: vine-grow 8s ease-in-out infinite;
+}
+
+.vine-left {
+  left: 0;
+  clip-path: polygon(0 0, 100% 5%, 100% 15%, 0 10%, 0 20%, 100% 25%, 100% 35%, 0 30%, 0 40%, 100% 45%, 100% 55%, 0 50%, 0 60%, 100% 65%, 100% 75%, 0 70%, 0 80%, 100% 85%, 100% 95%, 0 90%, 0 100%);
+}
+
+.vine-right {
+  right: 0;
+  clip-path: polygon(0 5%, 100% 0, 100% 10%, 0 15%, 0 25%, 100% 20%, 100% 30%, 0 35%, 0 45%, 100% 40%, 100% 50%, 0 55%, 0 65%, 100% 60%, 100% 70%, 0 75%, 0 85%, 100% 80%, 100% 90%, 0 95%, 0 100%, 100% 100%);
+  animation-delay: -2s;
+}
+
+@keyframes vine-grow {
+  0%, 100% {
+    transform: scaleY(1) translateY(0);
+  }
+  50% {
+    transform: scaleY(1.02) translateY(-10px);
+  }
+}
+
+/* Companion Insects */
+.companion-butterfly {
+  position: absolute;
+  font-size: 2rem;
+  animation: butterfly-flutter 8s ease-in-out infinite;
+}
+
+.butterfly-1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.butterfly-2 {
+  top: 60%;
+  right: 20%;
+  animation-delay: -3s;
+}
+
+@keyframes butterfly-flutter {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -20px) rotate(5deg);
+  }
+  50% {
+    transform: translate(60px, 10px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(30px, 30px) rotate(4deg);
+  }
+}
+
+.companion-bee {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  font-size: 1.8rem;
+  animation: bee-zigzag 6s linear infinite;
+}
+
+@keyframes bee-zigzag {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-40px, -30px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(-50px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.companion-ladybug {
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+  font-size: 1.5rem;
+  animation: ladybug-crawl 10s linear infinite;
+}
+
+@keyframes ladybug-crawl {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(100px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* ===== MAIN CONTAINER ===== */
+.growth-tower-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ===== SCENE SYSTEM ===== */
+.scene {
+  display: none;
+  opacity: 0;
+  animation: scene-fade-in 0.8s ease-out forwards;
+}
+
+.scene.active {
+  display: block;
+}
+
+@keyframes scene-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SCENE 1: GARDEN LOBBY ===== */
+.greenhouse-entrance {
+  position: relative;
+  background: linear-gradient(180deg, rgba(254, 250, 224, 0.95) 0%, rgba(144, 224, 239, 0.85) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  border: 4px solid var(--leaf-green);
+  overflow: hidden;
+}
+
+.glass-panels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 26%,
+    transparent 49%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 51%,
+    transparent 74%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 76%
+  );
+  pointer-events: none;
+}
+
+.hanging-vines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 80px,
+    var(--leaf-green) 80px,
+    var(--leaf-green) 85px,
+    transparent 85px,
+    transparent 165px
+  );
+  clip-path: polygon(
+    0 0, 5% 100%, 10% 0, 15% 100%, 20% 0, 25% 100%, 30% 0, 35% 100%,
+    40% 0, 45% 100%, 50% 0, 55% 100%, 60% 0, 65% 100%, 70% 0, 75% 100%,
+    80% 0, 85% 100%, 90% 0, 95% 100%, 100% 0
+  );
+  opacity: 0.5;
+  animation: vines-sway 4s ease-in-out infinite;
+}
+
+@keyframes vines-sway {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.lobby-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.tower-title {
+  font-family: var(--font-header);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--forest-deep);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+}
+
+.decorative-leaf {
+  display: inline-block;
+  animation: leaf-wiggle 3s ease-in-out infinite;
+}
+
+@keyframes leaf-wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.tower-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--leaf-green);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+/* Floor Indicator */
+.floor-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+}
+
+.floor-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  border: 3px solid var(--leaf-green);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.floor-badge:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow-medium);
+}
+
+.floor-icon {
+  font-size: 2rem;
+}
+
+.floor-name {
+  font-family: var(--font-header);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--forest-deep);
+}
+
+/* ===== BUTTONS ===== */
+.start-button,
+.garden-button {
+  font-family: var(--font-header);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--cream);
+  background: linear-gradient(135deg, var(--leaf-green) 0%, var(--moss) 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1.2rem 2.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-button::before,
+.garden-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.start-button:hover::before,
+.garden-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.start-button:hover,
+.garden-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-deep);
+}
+
+.start-button:active,
+.garden-button:active {
+  transform: translateY(0);
+}
+
+.button-vine {
+  display: inline-block;
+  animation: vine-pulse 2s ease-in-out infinite;
+}
+
+@keyframes vine-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.garden-button.secondary {
+  background: linear-gradient(135deg, var(--sunflower-gold) 0%, var(--honey) 100%);
+  color: var(--forest-deep);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== SCENE 2: RECEIVE SEED ===== */
+.seed-presentation {
+  background: linear-gradient(180deg, var(--sky-blue) 0%, var(--cream) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--sunflower-gold);
+}
+
+.scene-title {
+  font-family: var(--font-header);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--forest-deep);
+  margin-bottom: 2rem;
+}
+
+.seed-gift-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+}
+
+.gift-lid {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--sunflower-gold) 0%, var(--honey) 100%);
+  border-radius: 15px 15px 0 0;
+  box-shadow: var(--shadow-soft);
+  animation: gift-open 2s ease-in-out 1s forwards;
+}
+
+@keyframes gift-open {
+  0% {
+    transform: translateX(-50%) translateY(0) rotateX(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-40px) rotateX(-45deg);
+  }
+}
+
+.magical-seed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, var(--sunflower-gold) 0%, var(--soil-brown) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow:
+    inset 0 -10px 20px rgba(0, 0, 0, 0.3),
+    0 10px 30px rgba(255, 214, 10, 0.5);
+  animation: seed-appear 2s ease-out 1s forwards, seed-glow 2s ease-in-out 3s infinite;
+  opacity: 0;
+}
+
+@keyframes seed-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes seed-glow {
+  0%, 100% {
+    box-shadow:
+      inset 0 -10px 20px rgba(0, 0, 0, 0.3),
+      0 10px 30px rgba(255, 214, 10, 0.5);
+  }
+  50% {
+    box-shadow:
+      inset 0 -10px 20px rgba(0, 0, 0, 0.3),
+      0 10px 50px rgba(255, 214, 10, 0.8);
+  }
+}
+
+.sparkles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+  content: '✨';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: sparkle-float 3s ease-in-out infinite;
+}
+
+.sparkles::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkles::after {
+  top: 30%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+@keyframes sparkle-float {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-30px) scale(1);
+  }
+}
+
+.seed-description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.seed-name {
+  font-family: var(--font-header);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--sunflower-gold);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.seed-info,
+.seed-quest {
+  font-size: 1.2rem;
+  color: var(--forest-deep);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== SCENE 3: VINE LIFT ===== */
+.vine-lift-chamber {
+  background: linear-gradient(180deg, var(--forest-deep) 0%, var(--leaf-green) 50%, var(--soil-brown) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--moss);
+}
+
+.vine-lift-chamber .scene-title {
+  color: var(--cream);
+}
+
+.vine-pod {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto 2rem;
+}
+
+.vine-structure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.main-vine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--leaf-green) 0px,
+    var(--moss) 20px,
+    var(--leaf-green) 40px
+  );
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: vine-breathe 3s ease-in-out infinite;
+}
+
+@keyframes vine-breathe {
+  0%, 100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+  50% {
+    transform: translateX(-50%) scaleY(1.05);
+  }
+}
+
+.vine-tendrils {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.tendril {
+  position: absolute;
+  width: 8px;
+  background: var(--moss);
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.tendril-1 {
+  left: 40%;
+  top: 20%;
+  height: 100px;
+  transform: rotate(25deg);
+  animation: tendril-wave 4s ease-in-out infinite;
+}
+
+.tendril-2 {
+  right: 40%;
+  top: 40%;
+  height: 80px;
+  transform: rotate(-30deg);
+  animation: tendril-wave 4s ease-in-out infinite 1s;
+}
+
+.tendril-3 {
+  left: 35%;
+  bottom: 30%;
+  height: 90px;
+  transform: rotate(15deg);
+  animation: tendril-wave 4s ease-in-out infinite 2s;
+}
+
+@keyframes tendril-wave {
+  0%, 100% {
+    transform: rotate(var(--start-rotation, 0deg));
+  }
+  50% {
+    transform: rotate(calc(var(--start-rotation, 0deg) + 10deg));
+  }
+}
+
+.pod-interior {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(254, 250, 224, 0.95) 0%, rgba(144, 224, 239, 0.9) 100%);
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  border: 5px solid var(--leaf-green);
+  box-shadow: var(--shadow-medium);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pod-window {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(144, 224, 239, 0.6) 0%, rgba(254, 250, 224, 0.6) 100%);
+  border-radius: 50%;
+  border: 3px solid var(--moss);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.floor-leaves {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaf-indicator {
+  font-size: 1.5rem;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.leaf-indicator.active {
+  opacity: 1;
+  transform: scale(1.3);
+  animation: leaf-unfurl 0.6s ease-out;
+}
+
+@keyframes leaf-unfurl {
+  0% {
+    transform: scale(0.5) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.3) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.lift-message {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--forest-deep);
+  font-weight: 600;
+  text-align: center;
+}
+
+.traveling-insects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.insect-companion {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: insect-ride 5s ease-in-out infinite;
+}
+
+.insect-companion:first-child {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.insect-companion:last-child {
+  bottom: 25%;
+  right: 15%;
+  animation-delay: 2.5s;
+}
+
+@keyframes insect-ride {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+
+/* ===== SCENE 4: SEED FLOOR ===== */
+.underground-chamber {
+  background: linear-gradient(180deg, var(--soil-brown) 0%, var(--earth) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--leaf-green);
+}
+
+.underground-chamber .scene-title {
+  color: var(--cream);
+}
+
+.floor-description {
+  font-size: 1.2rem;
+  color: var(--honey);
+  margin-bottom: 2rem;
+}
+
+.soil-cross-section {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.soil-layers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.soil-layer {
+  position: absolute;
+  width: 100%;
+}
+
+.topsoil {
+  top: 0;
+  height: 35%;
+  background: linear-gradient(180deg, #6b4423 0%, #5a3e2b 100%);
+}
+
+.subsoil {
+  top: 35%;
+  height: 40%;
+  background: linear-gradient(180deg, #5a3e2b 0%, #4a2f1e 100%);
+}
+
+.bedrock {
+  top: 75%;
+  height: 25%;
+  background: linear-gradient(180deg, #4a2f1e 0%, #3a2314 100%);
+}
+
+.planting-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.planting-hole {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  background: radial-gradient(circle, #2a1810 0%, #1a100a 100%);
+  border-radius: 50%;
+  border: 3px dashed var(--honey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.planting-hole:hover {
+  transform: scale(1.1);
+  border-color: var(--sunflower-gold);
+}
+
+.hole-prompt {
+  font-size: 0.9rem;
+  color: var(--honey);
+  text-align: center;
+  padding: 1rem;
+}
+
+.planted-seed {
+  width: 40px;
+  height: 50px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at center, var(--sunflower-gold) 0%, var(--soil-brown) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow:
+    inset 0 -5px 10px rgba(0, 0, 0, 0.3),
+    0 5px 15px rgba(255, 214, 10, 0.4);
+  opacity: 0;
+  animation: seed-plant 1s ease-out forwards;
+}
+
+.planted-seed:not(.hidden) {
+  opacity: 1;
+}
+
+@keyframes seed-plant {
+  0% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.underground-friends {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.worm {
+  position: absolute;
+  bottom: 20%;
+  left: 15%;
+  font-size: 2rem;
+  animation: worm-wiggle 4s ease-in-out infinite;
+}
+
+@keyframes worm-wiggle {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(20px) rotate(15deg);
+  }
+}
+
+.beetle {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  font-size: 1.8rem;
+  animation: beetle-crawl 6s linear infinite;
+}
+
+@keyframes beetle-crawl {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.planting-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(254, 250, 224, 0.1);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid var(--moss);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.instruction-step.active {
+  opacity: 1;
+  background: rgba(254, 250, 224, 0.2);
+  border-color: var(--sunflower-gold);
+  box-shadow: 0 0 20px rgba(255, 214, 10, 0.3);
+}
+
+.step-number {
+  font-family: var(--font-header);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--sunflower-gold);
+  width: 40px;
+  height: 40px;
+  background: var(--forest-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text {
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 600;
+}
+
+/* ===== SCENE 5: WATERING ===== */
+.watering-chamber {
+  background: linear-gradient(180deg, var(--sky-blue) 0%, var(--soil-brown) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--moss);
+}
+
+.water-instruction {
+  font-size: 1.3rem;
+  color: var(--forest-deep);
+  margin-bottom: 2rem;
+}
+
+.watering-area {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 0 auto 2rem;
+}
+
+.watering-can {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--sky-blue) 0%, #5fa9cf 100%);
+  border-radius: 10px 10px 20px 20px;
+  box-shadow: var(--shadow-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.watering-can:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.can-spout {
+  position: absolute;
+  bottom: -15px;
+  right: -30px;
+  width: 60px;
+  height: 20px;
+  background: #5fa9cf;
+  border-radius: 0 0 20px 20px;
+  transform: rotate(-30deg);
+}
+
+.water-drops {
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  width: 20px;
+  pointer-events: none;
+}
+
+.water-drops .drop {
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  background: var(--sky-blue);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0;
+  animation: water-drop 1s ease-in infinite;
+}
+
+@keyframes water-drop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+}
+
+.planted-seed-watering {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 50px;
+  background: radial-gradient(ellipse at center, var(--sunflower-gold) 0%, var(--soil-brown) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow:
+    inset 0 -5px 10px rgba(0, 0, 0, 0.3),
+    0 5px 15px rgba(255, 214, 10, 0.4);
+}
+
+.water-counter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  border: 3px solid var(--sky-blue);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.counter-label,
+.counter-target {
+  font-size: 1.2rem;
+  color: var(--forest-deep);
+  font-weight: 600;
+}
+
+.counter-value {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sky-blue);
+}
+
+/* ===== SCENE 6: GERMINATION ===== */
+.germination-chamber {
+  background: linear-gradient(180deg, var(--earth) 0%, var(--soil-brown) 50%, var(--leaf-green) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--moss);
+}
+
+.germination-chamber .scene-title {
+  color: var(--cream);
+}
+
+.germination-animation {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 2rem;
+}
+
+.seed-cracking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 100px;
+}
+
+.seed-shell {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background: radial-gradient(ellipse at center, var(--sunflower-gold) 0%, var(--soil-brown) 100%);
+  border-radius: 50% 50% 0 0;
+}
+
+.seed-top {
+  top: 0;
+  animation: seed-germinate-top 2s ease-out forwards;
+}
+
+.seed-bottom {
+  bottom: 0;
+  border-radius: 0 0 50% 50%;
+  animation: seed-germinate-bottom 2s ease-out forwards;
+}
+
+@keyframes seed-germinate-top {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-30px) rotate(-25deg);
+  }
+}
+
+@keyframes seed-germinate-bottom {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(30px) rotate(15deg);
+  }
+}
+
+.emerging-root {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 0;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--soil-brown) 100%);
+  border-radius: 4px;
+  animation: root-spread 2s ease-out 1s forwards;
+}
+
+@keyframes root-spread {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+.emerging-shoot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 0;
+  background: linear-gradient(180deg, var(--leaf-green) 0%, var(--moss) 100%);
+  border-radius: 3px;
+  animation: shoot-grow 2s ease-out 1.5s forwards;
+}
+
+@keyframes shoot-grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+
+.germination-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--leaf-green);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest-deep);
+  opacity: 0;
+  animation: label-appear 0.6s ease-out forwards;
+}
+
+.label-root {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.label-shoot {
+  top: 10%;
+  left: 10%;
+  animation-delay: 2.5s;
+}
+
+@keyframes label-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.label-arrow {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: var(--leaf-green);
+}
+
+.label-root .label-arrow {
+  top: 50%;
+  left: -35px;
+}
+
+.label-shoot .label-arrow {
+  top: 50%;
+  right: -35px;
+}
+
+.science-fact {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background: rgba(254, 250, 224, 0.95);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 3px solid var(--sunflower-gold);
+  box-shadow: var(--shadow-soft);
+}
+
+.science-fact h3 {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  color: var(--forest-deep);
+  margin-bottom: 1rem;
+}
+
+.science-fact p {
+  font-size: 1.1rem;
+  color: var(--forest-deep);
+  line-height: 1.6;
+}
+
+/* ===== SCENE 7: STORY TIME ===== */
+.story-chamber {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sky-blue) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--sunflower-gold);
+}
+
+.story-book {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.book-page {
+  padding: 2rem;
+}
+
+.page-illustration {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.baby-sunflower {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--sunflower-gold) 30%, var(--honey) 100%);
+  border-radius: 50%;
+  position: relative;
+  animation: sunflower-breathe 3s ease-in-out infinite;
+}
+
+@keyframes sunflower-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.baby-sunflower.talking::before {
+  content: '💬';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-size: 2rem;
+  animation: speech-bubble 2s ease-in-out infinite;
+}
+
+@keyframes speech-bubble {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.page-text {
+  font-size: 1.2rem;
+  color: var(--forest-deep);
+  line-height: 1.8;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.story-progress {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  border: 3px solid var(--leaf-green);
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--leaf-green) 0%, var(--moss) 100%);
+  width: 0%;
+  transition: width 0.5s ease;
+  border-radius: 12px;
+}
+
+.progress-label {
+  font-size: 1rem;
+  color: var(--forest-deep);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* ===== SCENE 8: GROWING UP ===== */
+.growth-montage {
+  background: linear-gradient(180deg, var(--soil-brown) 0%, var(--leaf-green) 50%, var(--sky-blue) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--moss);
+  min-height: 600px;
+}
+
+.growth-montage .scene-title {
+  color: var(--cream);
+}
+
+.vine-lift-growing {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.growth-journey {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.journey-floor {
+  background: rgba(254, 250, 224, 0.95);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 3px solid var(--leaf-green);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  animation: floor-appear 1s ease-out forwards;
+}
+
+.journey-floor:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.journey-floor:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.journey-floor:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+@keyframes floor-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floor-icon-large {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.journey-floor h3 {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  color: var(--forest-deep);
+  margin-bottom: 0.5rem;
+}
+
+.journey-floor p {
+  font-size: 1.1rem;
+  color: var(--leaf-green);
+}
+
+.growing-plant {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  pointer-events: none;
+}
+
+.plant-stem {
+  width: 12px;
+  height: 0;
+  background: linear-gradient(180deg, var(--leaf-green) 0%, var(--moss) 100%);
+  border-radius: 6px;
+  margin: 0 auto;
+  animation: stem-grow 3s ease-out forwards;
+}
+
+@keyframes stem-grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+.plant-leaves {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 40px;
+  opacity: 0;
+  animation: leaves-appear 1s ease-out 2s forwards;
+}
+
+@keyframes leaves-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.plant-leaves::before,
+.plant-leaves::after {
+  content: '🍃';
+  position: absolute;
+  font-size: 1.5rem;
+}
+
+.plant-leaves::before {
+  left: -20px;
+  transform: rotate(-45deg);
+}
+
+.plant-leaves::after {
+  right: -20px;
+  transform: rotate(45deg);
+}
+
+.growth-timer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--leaf-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest-deep);
+}
+
+/* ===== SCENE 9: FLOWER BLOOMS ===== */
+.bloom-chamber {
+  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sunflower-gold) 50%, var(--petal-pink) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--sunflower-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.blooming-sunflower {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto 2rem;
+}
+
+.sunflower-complete {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+}
+
+.flower-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #8B4513 0%, #654321 100%);
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.flower-petals {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: flower-bloom-spin 30s linear infinite;
+}
+
+@keyframes flower-bloom-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--sunflower-gold) 0%, var(--honey) 100%);
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  transform-origin: center bottom;
+  opacity: 0;
+  animation: flower-bloom 1s ease-out forwards;
+}
+
+@keyframes flower-bloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--petal-rotation));
+  }
+}
+
+.petal-1 { --petal-rotation: 0deg; animation-delay: 0s; }
+.petal-2 { --petal-rotation: 45deg; animation-delay: 0.1s; }
+.petal-3 { --petal-rotation: 90deg; animation-delay: 0.2s; }
+.petal-4 { --petal-rotation: 135deg; animation-delay: 0.3s; }
+.petal-5 { --petal-rotation: 180deg; animation-delay: 0.4s; }
+.petal-6 { --petal-rotation: 225deg; animation-delay: 0.5s; }
+.petal-7 { --petal-rotation: 270deg; animation-delay: 0.6s; }
+.petal-8 { --petal-rotation: 315deg; animation-delay: 0.7s; }
+
+.flower-stem-full {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 150px;
+  background: linear-gradient(180deg, var(--leaf-green) 0%, var(--moss) 100%);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.flower-leaves-full {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 60px;
+}
+
+.flower-leaves-full::before,
+.flower-leaves-full::after {
+  content: '🍃';
+  position: absolute;
+  font-size: 2rem;
+}
+
+.flower-leaves-full::before {
+  left: -30px;
+  transform: rotate(-45deg);
+}
+
+.flower-leaves-full::after {
+  right: -30px;
+  transform: rotate(45deg);
+}
+
+.celebration-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--sunflower-gold);
+  border-radius: 50%;
+  animation: photosynthesis-sparkle 2s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  top: 30%;
+  right: 25%;
+  animation-delay: 0.4s;
+}
+
+.particle:nth-child(3) {
+  top: 50%;
+  left: 15%;
+  animation-delay: 0.8s;
+}
+
+.particle:nth-child(4) {
+  top: 40%;
+  right: 20%;
+  animation-delay: 1.2s;
+}
+
+.particle:nth-child(5) {
+  top: 60%;
+  left: 30%;
+  animation-delay: 1.6s;
+}
+
+@keyframes photosynthesis-sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+}
+
+.pollination-friends {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.friend-bee,
+.friend-butterfly {
+  position: absolute;
+  font-size: 2rem;
+  animation: pollinator-visit 4s ease-in-out infinite;
+}
+
+.friend-bee:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.friend-butterfly:nth-child(2) {
+  top: 25%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.friend-bee:nth-child(3) {
+  top: 40%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+@keyframes pollinator-visit {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -15px);
+  }
+}
+
+.completion-message {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 3px solid var(--sunflower-gold);
+  box-shadow: var(--shadow-soft);
+}
+
+.completion-message h3 {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--forest-deep);
+  margin-bottom: 1rem;
+}
+
+.completion-message p {
+  font-size: 1.3rem;
+  color: var(--leaf-green);
+  line-height: 1.6;
+}
+
+.badge-earned {
+  margin: 2rem auto;
+}
+
+.badge-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  background: radial-gradient(circle, var(--sunflower-gold) 0%, var(--honey) 100%);
+  border-radius: 50%;
+  border: 5px solid var(--forest-deep);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: badge-appear 1s ease-out 1s forwards;
+  opacity: 0;
+}
+
+@keyframes badge-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.badge-shine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+  border-radius: 50%;
+  animation: badge-shine 3s ease-in-out infinite;
+}
+
+@keyframes badge-shine {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.badge-icon {
+  font-size: 4rem;
+  z-index: 10;
+}
+
+.badge-name {
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--forest-deep);
+  margin-top: 1rem;
+}
+
+.completion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== BONUS: SKY GARDEN ===== */
+.sky-garden-chamber {
+  background: linear-gradient(180deg, var(--sky-blue) 0%, var(--cream) 100%);
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-deep);
+  text-align: center;
+  border: 4px solid var(--sunflower-gold);
+  min-height: 600px;
+}
+
+.sky-description {
+  font-size: 1.2rem;
+  color: var(--leaf-green);
+  margin-bottom: 2rem;
+}
+
+.sky-garden-view {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(180deg, var(--sky-blue) 0%, var(--leaf-green) 100%);
+  border-radius: 20px;
+  border: 4px solid var(--moss);
+  overflow: hidden;
+}
+
+.garden-bed {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(180deg, var(--leaf-green) 0%, var(--moss) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.grown-sunflower {
+  width: 100px;
+  height: 150px;
+  background:
+    radial-gradient(circle at 50% 30%, var(--sunflower-gold) 20%, transparent 20%),
+    linear-gradient(180deg, transparent 30%, var(--leaf-green) 30%);
+  position: relative;
+  animation: garden-flower-sway 5s ease-in-out infinite;
+}
+
+@keyframes garden-flower-sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+.grown-sunflower::before {
+  content: '🌻';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+}
+
+.garden-path {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--earth) 0px,
+    var(--earth) 30px,
+    var(--soil-brown) 30px,
+    var(--soil-brown) 60px
+  );
+}
+
+.garden-fountain {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  width: 60px;
+  height: 60px;
+  background: var(--sky-blue);
+  border-radius: 50%;
+  border: 3px solid var(--moss);
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.garden-fountain::before {
+  content: '💧';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  animation: fountain-spray 2s ease-in-out infinite;
+}
+
+@keyframes fountain-spray {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+.sky-clouds {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40%;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cloud-1 {
+  top: 20%;
+  left: 10%;
+  width: 100px;
+  height: 40px;
+  animation: cloud-drift 20s linear infinite;
+}
+
+.cloud-2 {
+  top: 40%;
+  right: 15%;
+  width: 80px;
+  height: 35px;
+  animation: cloud-drift 25s linear infinite reverse;
+}
+
+.cloud-3 {
+  top: 60%;
+  left: 50%;
+  width: 90px;
+  height: 38px;
+  animation: cloud-drift 22s linear infinite;
+}
+
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+.garden-trains {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mini-train {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  font-size: 1.2rem;
+  animation: train-journey 15s linear infinite;
+}
+
+.water-train {
+  top: 15%;
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.seed-train {
+  top: 50%;
+  left: -50px;
+  animation-delay: 5s;
+}
+
+.sun-train {
+  top: 75%;
+  left: -50px;
+  animation-delay: 10s;
+}
+
+@keyframes train-journey {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: calc(100% + 50px);
+  }
+}
+
+.garden-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  border: 3px solid var(--leaf-green);
+  box-shadow: var(--shadow-soft);
+  min-width: 120px;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-value {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sunflower-gold);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--forest-deep);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .growth-tower-container {
+    padding: 1rem;
+  }
+
+  .tower-title {
+    font-size: 2rem;
+  }
+
+  .floor-indicator {
+    gap: 0.8rem;
+  }
+
+  .floor-badge {
+    padding: 0.8rem 1rem;
+  }
+
+  .floor-name {
+    font-size: 1.1rem;
+  }
+
+  .vine-pod {
+    width: 250px;
+    height: 350px;
+  }
+
+  .soil-cross-section {
+    height: 300px;
+  }
+
+  .watering-area {
+    width: 250px;
+    height: 300px;
+  }
+
+  .germination-animation {
+    width: 250px;
+    height: 250px;
+  }
+
+  .blooming-sunflower {
+    width: 250px;
+    height: 350px;
+  }
+
+  .sunflower-complete {
+    width: 150px;
+    height: 150px;
+  }
+
+  .petal {
+    width: 45px;
+    height: 60px;
+  }
+
+  .garden-stats {
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 0.8rem 1.5rem;
+    min-width: 100px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .garden-button,
+  .start-button {
+    border: 3px solid currentColor;
+  }
+
+  .floor-badge {
+    border-width: 4px;
+  }
+}

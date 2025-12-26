@@ -1,0 +1,435 @@
+{
+  "storyId": "ember-dragon-treasure",
+  "version": "1.0.0",
+  "metadata": {
+    "title": "The Ember Dragon's Hidden Treasure",
+    "gradeLevel": 1,
+    "readingLevel": "beginner",
+    "subject": "reading",
+    "estimatedDurationSeconds": 180,
+    "totalWords": 295,
+    "totalSentences": 24,
+    "totalParagraphs": 8,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "audioFiles": {
+      "fullNarration": {
+        "path": "audio/stories/ember-dragon/full-narration.mp3",
+        "durationSeconds": 178.5,
+        "format": "mp3",
+        "bitrate": 128,
+        "sampleRate": 44100,
+        "narrator": "Professional Voice Actor",
+        "notes": "Warm, engaging voice suitable for Grade 1"
+      },
+      "wordsDirectory": "audio/stories/ember-dragon/words/",
+      "wordFileFormat": "{word}.mp3"
+    }
+  },
+  "paragraphs": [
+    {
+      "id": "p1",
+      "paragraphNumber": 1,
+      "startTime": 0.0,
+      "endTime": 4.80,
+      "sentences": [
+        {
+          "id": "p1s1",
+          "sentenceNumber": 1,
+          "text": "Long ago, deep in the mountain caves, there lived a wise dragon named Ember.",
+          "startTime": 0.0,
+          "endTime": 4.80,
+          "words": [
+            {
+              "id": "w001",
+              "text": "Long",
+              "displayText": "Long",
+              "startTime": 0.0,
+              "endTime": 0.35,
+              "duration": 0.35,
+              "phonetic": "/lɔːŋ/",
+              "syllables": ["Long"],
+              "syllableCount": 1,
+              "partOfSpeech": "adjective",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "high",
+              "definition": "A measure of much time",
+              "audioFile": "long.mp3",
+              "position": {
+                "charStart": 0,
+                "charEnd": 4,
+                "wordIndex": 0
+              }
+            },
+            {
+              "id": "w002",
+              "text": "ago",
+              "displayText": "ago,",
+              "startTime": 0.35,
+              "endTime": 0.72,
+              "duration": 0.37,
+              "phonetic": "/əˈɡoʊ/",
+              "syllables": ["a", "go"],
+              "syllableCount": 2,
+              "partOfSpeech": "adverb",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "high",
+              "audioFile": "ago.mp3",
+              "punctuationAfter": ",",
+              "position": {
+                "charStart": 5,
+                "charEnd": 9,
+                "wordIndex": 1
+              }
+            },
+            {
+              "id": "w003",
+              "text": "deep",
+              "displayText": "deep",
+              "startTime": 0.72,
+              "endTime": 1.05,
+              "duration": 0.33,
+              "phonetic": "/diːp/",
+              "syllables": ["deep"],
+              "syllableCount": 1,
+              "partOfSpeech": "adjective",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "high",
+              "audioFile": "deep.mp3",
+              "position": {
+                "charStart": 10,
+                "charEnd": 14,
+                "wordIndex": 2
+              }
+            },
+            {
+              "id": "w004",
+              "text": "in",
+              "displayText": "in",
+              "startTime": 1.05,
+              "endTime": 1.20,
+              "duration": 0.15,
+              "phonetic": "/ɪn/",
+              "syllables": ["in"],
+              "syllableCount": 1,
+              "partOfSpeech": "preposition",
+              "wordType": "sight",
+              "isSightWord": true,
+              "isChallenge": false,
+              "frequencyLevel": "very-high",
+              "dolchLevel": "pre-primer",
+              "audioFile": "in.mp3",
+              "position": {
+                "charStart": 15,
+                "charEnd": 17,
+                "wordIndex": 3
+              }
+            },
+            {
+              "id": "w005",
+              "text": "the",
+              "displayText": "the",
+              "startTime": 1.20,
+              "endTime": 1.35,
+              "duration": 0.15,
+              "phonetic": "/ðə/",
+              "syllables": ["the"],
+              "syllableCount": 1,
+              "partOfSpeech": "article",
+              "wordType": "sight",
+              "isSightWord": true,
+              "isChallenge": false,
+              "frequencyLevel": "very-high",
+              "dolchLevel": "pre-primer",
+              "audioFile": "the.mp3",
+              "position": {
+                "charStart": 18,
+                "charEnd": 21,
+                "wordIndex": 4
+              }
+            },
+            {
+              "id": "w006",
+              "text": "mountain",
+              "displayText": "mountain",
+              "startTime": 1.35,
+              "endTime": 1.85,
+              "duration": 0.50,
+              "phonetic": "/ˈmaʊntən/",
+              "syllables": ["moun", "tain"],
+              "syllableCount": 2,
+              "partOfSpeech": "noun",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "medium",
+              "audioFile": "mountain.mp3",
+              "position": {
+                "charStart": 22,
+                "charEnd": 30,
+                "wordIndex": 5
+              }
+            },
+            {
+              "id": "w007",
+              "text": "caves",
+              "displayText": "caves,",
+              "startTime": 1.85,
+              "endTime": 2.25,
+              "duration": 0.40,
+              "phonetic": "/keɪvz/",
+              "syllables": ["caves"],
+              "syllableCount": 1,
+              "partOfSpeech": "noun",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "medium",
+              "audioFile": "caves.mp3",
+              "punctuationAfter": ",",
+              "position": {
+                "charStart": 31,
+                "charEnd": 37,
+                "wordIndex": 6
+              }
+            },
+            {
+              "id": "w008",
+              "text": "there",
+              "displayText": "there",
+              "startTime": 2.25,
+              "endTime": 2.50,
+              "duration": 0.25,
+              "phonetic": "/ðɛr/",
+              "syllables": ["there"],
+              "syllableCount": 1,
+              "partOfSpeech": "adverb",
+              "wordType": "sight",
+              "isSightWord": true,
+              "isChallenge": false,
+              "frequencyLevel": "very-high",
+              "dolchLevel": "primer",
+              "audioFile": "there.mp3",
+              "position": {
+                "charStart": 38,
+                "charEnd": 43,
+                "wordIndex": 7
+              }
+            },
+            {
+              "id": "w009",
+              "text": "lived",
+              "displayText": "lived",
+              "startTime": 2.50,
+              "endTime": 2.85,
+              "duration": 0.35,
+              "phonetic": "/lɪvd/",
+              "syllables": ["lived"],
+              "syllableCount": 1,
+              "partOfSpeech": "verb",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "high",
+              "audioFile": "lived.mp3",
+              "position": {
+                "charStart": 44,
+                "charEnd": 49,
+                "wordIndex": 8
+              }
+            },
+            {
+              "id": "w010",
+              "text": "a",
+              "displayText": "a",
+              "startTime": 2.85,
+              "endTime": 2.95,
+              "duration": 0.10,
+              "phonetic": "/ə/",
+              "syllables": ["a"],
+              "syllableCount": 1,
+              "partOfSpeech": "article",
+              "wordType": "sight",
+              "isSightWord": true,
+              "isChallenge": false,
+              "frequencyLevel": "very-high",
+              "dolchLevel": "pre-primer",
+              "audioFile": "a.mp3",
+              "position": {
+                "charStart": 50,
+                "charEnd": 51,
+                "wordIndex": 9
+              }
+            },
+            {
+              "id": "w011",
+              "text": "wise",
+              "displayText": "wise",
+              "startTime": 2.95,
+              "endTime": 3.35,
+              "duration": 0.40,
+              "phonetic": "/waɪz/",
+              "syllables": ["wise"],
+              "syllableCount": 1,
+              "partOfSpeech": "adjective",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "medium",
+              "audioFile": "wise.mp3",
+              "position": {
+                "charStart": 52,
+                "charEnd": 56,
+                "wordIndex": 10
+              }
+            },
+            {
+              "id": "w012",
+              "text": "dragon",
+              "displayText": "dragon",
+              "startTime": 3.35,
+              "endTime": 3.90,
+              "duration": 0.55,
+              "phonetic": "/ˈdræɡən/",
+              "syllables": ["drag", "on"],
+              "syllableCount": 2,
+              "partOfSpeech": "noun",
+              "wordType": "thematic",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "medium",
+              "audioFile": "dragon.mp3",
+              "position": {
+                "charStart": 57,
+                "charEnd": 63,
+                "wordIndex": 11
+              }
+            },
+            {
+              "id": "w013",
+              "text": "named",
+              "displayText": "named",
+              "startTime": 3.90,
+              "endTime": 4.25,
+              "duration": 0.35,
+              "phonetic": "/neɪmd/",
+              "syllables": ["named"],
+              "syllableCount": 1,
+              "partOfSpeech": "verb",
+              "wordType": "regular",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "high",
+              "audioFile": "named.mp3",
+              "position": {
+                "charStart": 64,
+                "charEnd": 69,
+                "wordIndex": 12
+              }
+            },
+            {
+              "id": "w014",
+              "text": "Ember",
+              "displayText": "Ember.",
+              "startTime": 4.25,
+              "endTime": 4.80,
+              "duration": 0.55,
+              "phonetic": "/ˈɛmbər/",
+              "syllables": ["Em", "ber"],
+              "syllableCount": 2,
+              "partOfSpeech": "proper noun",
+              "wordType": "character",
+              "isSightWord": false,
+              "isChallenge": false,
+              "frequencyLevel": "low",
+              "isProperNoun": true,
+              "audioFile": "ember.mp3",
+              "punctuationAfter": ".",
+              "position": {
+                "charStart": 70,
+                "charEnd": 76,
+                "wordIndex": 13
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "wordLists": {
+    "sightWords": {
+      "description": "Dolch/Fry sight words present in this story",
+      "dolchPrePrimer": ["a", "in", "the", "is", "it", "I", "to", "and", "you", "for"],
+      "dolchPrimer": ["there", "was", "not", "but", "with", "all", "at", "this", "have"],
+      "dolchFirstGrade": ["could", "every", "from", "just", "know", "live", "may", "old", "open"],
+      "totalCount": 45
+    },
+    "challengeWords": {
+      "description": "Vocabulary building words that may be new",
+      "words": [
+        {
+          "word": "precious",
+          "definition": "Very valuable or important",
+          "sentenceContext": "collected something far more precious",
+          "audioFile": "precious.mp3"
+        },
+        {
+          "word": "ancient",
+          "definition": "Very, very old",
+          "sentenceContext": "stories written on ancient scrolls",
+          "audioFile": "ancient.mp3"
+        },
+        {
+          "word": "scrolls",
+          "definition": "Rolled up papers with writing",
+          "sentenceContext": "stories written on ancient scrolls",
+          "audioFile": "scrolls.mp3"
+        },
+        {
+          "word": "treasure",
+          "definition": "Something very special and valuable",
+          "sentenceContext": "the greatest treasure in all the land",
+          "audioFile": "treasure.mp3"
+        },
+        {
+          "word": "worthy",
+          "definition": "Good enough or deserving",
+          "sentenceContext": "prove yourself worthy",
+          "audioFile": "worthy.mp3"
+        }
+      ],
+      "totalCount": 5
+    },
+    "thematicWords": {
+      "description": "Story-specific vocabulary related to theme",
+      "words": ["dragon", "cave", "fire", "flame", "scales", "lair", "scroll", "magic"],
+      "totalCount": 8
+    }
+  },
+  "timingNotes": {
+    "generationMethod": "manual-with-audio-sync",
+    "audioSyncSoftware": "Audacity",
+    "accuracyMs": 50,
+    "lastVerified": "2025-01-01T00:00:00Z",
+    "notes": [
+      "Timing captured from professional narrator recording",
+      "Word boundaries marked at speech onset/offset",
+      "Punctuation pauses included in preceding word timing",
+      "Compound words treated as single timing units"
+    ]
+  },
+  "accessibilityFeatures": {
+    "hasPhonetics": true,
+    "hasSyllableBreakdown": true,
+    "hasPartOfSpeech": true,
+    "hasDefinitions": true,
+    "supportedLanguages": ["en-US"],
+    "ttsCompatible": true,
+    "screenReaderOptimized": true
+  }
+}

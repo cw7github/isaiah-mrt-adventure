@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔧 ELEVATOR REPAIR CREW - Isaiah's Troubleshooting Adventure</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Hub Navigation Styles -->
+  <style>
+    .hub-nav-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .hub-nav-btn:hover {
+      background: rgba(0,0,0,0.7);
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+  <!-- Hub Navigation Button -->
+  <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+
+  <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-icon">🔧</div>
+      <h1 class="loading-title">REPAIR CREW HQ</h1>
+      <p class="loading-subtitle">Loading...</p>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       MAIN APP CONTAINER
+       ============================================ -->
+  <div class="repair-crew-app" role="main" id="main-content">
+
+    <!-- Industrial Background Effects -->
+    <div class="workshop-background"></div>
+    <div class="metal-grid"></div>
+
+    <!-- ============================================
+         SCREEN 1: REPAIR HQ / WORKSHOP
+         ============================================ -->
+    <div id="repairHQ" class="repair-hq">
+
+      <!-- Workshop Title -->
+      <div class="workshop-header">
+        <h1 class="workshop-title">REPAIR CREW HQ</h1>
+        <p class="workshop-subtitle">Little Mechanic's Workshop</p>
+        <div class="caution-stripe"></div>
+      </div>
+
+      <!-- Tool Belt Display (Always Visible When Active) -->
+      <div id="toolBelt" class="tool-belt hidden">
+        <div class="tool-belt-label">YOUR TOOLS</div>
+        <div class="tool-belt-items">
+          <button class="tool-item" data-tool="wrench" aria-label="Wrench">
+            <div class="tool-icon">🔧</div>
+            <div class="tool-name">Wrench</div>
+          </button>
+          <button class="tool-item" data-tool="screwdriver" aria-label="Screwdriver">
+            <div class="tool-icon">🪛</div>
+            <div class="tool-name">Screwdriver</div>
+          </button>
+          <button class="tool-item" data-tool="brush" aria-label="Brush">
+            <div class="tool-icon">🧹</div>
+            <div class="tool-name">Brush</div>
+          </button>
+          <button class="tool-item" data-tool="measure" aria-label="Tape Measure">
+            <div class="tool-icon">📏</div>
+            <div class="tool-name">Measure</div>
+          </button>
+          <button class="tool-item" data-tool="flashlight" aria-label="Flashlight">
+            <div class="tool-icon">🔦</div>
+            <div class="tool-name">Flashlight</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Radio / Dispatch Center -->
+      <div class="radio-dispatch">
+        <div class="radio-box">
+          <div class="radio-speaker">
+            <div class="speaker-grille"></div>
+            <div class="speaker-grille"></div>
+            <div class="speaker-grille"></div>
+          </div>
+          <div class="radio-light" id="radioLight"></div>
+          <h2 class="radio-label">DISPATCH RADIO</h2>
+        </div>
+
+        <!-- Trouble Ticket Display -->
+        <div id="troubleTicket" class="trouble-ticket hidden">
+          <div class="ticket-header">
+            <span class="ticket-label">TROUBLE TICKET</span>
+            <span class="ticket-number" id="ticketNumber">#001</span>
+          </div>
+          <div class="ticket-content">
+            <div class="ticket-field">
+              <span class="field-label">LOCATION:</span>
+              <span class="field-value" id="ticketLocation">Elevator 3, Floor 5</span>
+            </div>
+            <div class="ticket-field">
+              <span class="field-label">PROBLEM:</span>
+              <span class="field-value" id="ticketProblem">Door won't close</span>
+            </div>
+            <div class="ticket-field">
+              <span class="field-label">URGENCY:</span>
+              <span class="field-value urgency-high" id="ticketUrgency">HIGH</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Start Repair Button -->
+        <button id="startRepairBtn" class="start-repair-btn" aria-label="Receive dispatch call to start repair">
+          <span class="btn-text">RECEIVE DISPATCH CALL</span>
+          <span class="btn-icon">📻</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ============================================
+         SCREEN 2: ELEVATOR REPAIR SITE
+         ============================================ -->
+    <div id="repairSite" class="repair-site hidden">
+
+      <!-- Site Header -->
+      <div class="site-header">
+        <h2 class="site-title" id="siteTitle">Elevator 3 - Floor 5</h2>
+        <div class="caution-stripe small"></div>
+      </div>
+
+      <!-- Elevator Visualization -->
+      <div class="elevator-container">
+
+        <!-- Elevator Frame -->
+        <div class="elevator-frame">
+
+          <!-- Floor Indicator Panel -->
+          <div class="floor-indicator">
+            <div class="indicator-display" id="floorDisplay">5</div>
+            <div class="indicator-label">FLOOR</div>
+          </div>
+
+          <!-- Elevator Door (The Problem Area) -->
+          <div class="elevator-doors" id="elevatorDoors">
+            <div class="door-left" id="doorLeft"></div>
+            <div class="door-right" id="doorRight"></div>
+
+            <!-- Door Track (Interactive) -->
+            <div class="door-track" id="doorTrack" role="button" tabindex="0" aria-label="Click to clean door track">
+              <div class="track-dirt" id="trackDirt"></div>
+            </div>
+          </div>
+
+          <!-- Control Panel -->
+          <div class="control-panel">
+            <div class="panel-title">CONTROLS</div>
+            <button class="control-btn" id="testDoorBtn" disabled aria-label="Test elevator door after repair">
+              <span class="btn-led"></span>
+              <span>TEST DOOR</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Inspection Points -->
+        <div class="inspection-points">
+          <button class="inspect-btn" data-inspect="door-track" aria-label="Inspect Door Track">
+            <div class="inspect-icon">🔍</div>
+            <div class="inspect-label">Check Door Track</div>
+          </button>
+          <button class="inspect-btn" data-inspect="motor" aria-label="Inspect Motor">
+            <div class="inspect-icon">🔍</div>
+            <div class="inspect-label">Check Motor</div>
+          </button>
+          <button class="inspect-btn" data-inspect="sensor" aria-label="Inspect Sensor">
+            <div class="inspect-icon">🔍</div>
+            <div class="inspect-label">Check Sensor</div>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Repair Manual Panel -->
+      <div id="repairManual" class="repair-manual hidden">
+        <div class="manual-header">
+          <span class="manual-icon">📋</span>
+          <span class="manual-title">REPAIR MANUAL</span>
+        </div>
+        <div class="manual-content" id="manualContent">
+          <p><strong>Problem:</strong> Stuck Door</p>
+          <p><strong>Solution:</strong> Check track for obstructions. Clean with brush if dirty.</p>
+        </div>
+      </div>
+
+      <!-- Diagnosis Feedback -->
+      <div id="diagnosisFeedback" class="diagnosis-feedback hidden">
+        <div class="feedback-icon" id="feedbackIcon">✓</div>
+        <div class="feedback-text" id="feedbackText">Problem found! The track is blocked with dirt.</div>
+      </div>
+
+    </div>
+
+    <!-- ============================================
+         SCREEN 3: REPAIR SUCCESS / CELEBRATION
+         ============================================ -->
+    <div id="repairSuccess" class="repair-success hidden">
+
+      <!-- Success Banner -->
+      <div class="success-banner">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">REPAIR COMPLETE!</h2>
+        <p class="success-subtitle">Elevator working perfectly!</p>
+      </div>
+
+      <!-- Happy Passengers -->
+      <div class="passengers-happy">
+        <div class="passenger">👨‍💼</div>
+        <div class="passenger">👩‍⚕️</div>
+        <div class="passenger">🧑‍🎓</div>
+        <div class="speech-bubble">"Thank you, little mechanic!"</div>
+      </div>
+
+      <!-- Badge Earned -->
+      <div class="badge-earned">
+        <div class="badge-stamp" id="badgeStamp">
+          <div class="badge-icon">🏆</div>
+          <div class="badge-name" id="badgeName">DOOR EXPERT</div>
+        </div>
+        <p class="badge-message">You earned a new repair badge!</p>
+      </div>
+
+      <!-- Next Repair Button -->
+      <button id="nextRepairBtn" class="next-repair-btn" aria-label="Ready for next repair call">
+        <span>READY FOR NEXT CALL</span>
+        <span class="btn-arrow">→</span>
+      </button>
+
+    </div>
+
+    <!-- Sparks Effect Container -->
+    <div id="sparksEffect" class="sparks-effect"></div>
+
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+
+  <!-- Problem Library -->
+  <script src="problems.js"></script>
+
+  <!-- Main App Logic -->
+  <script src="app.js"></script>
+
+  <!-- Debug Console (Development Only) -->
+  <script>
+    console.log('%c🔧 ELEVATOR REPAIR CREW 🔧', 'font-size: 24px; color: #ff6b35; font-weight: bold;');
+    console.log('%cWelcome to Isaiah\'s Troubleshooting Adventure!', 'font-size: 14px; color: #06d6a0;');
+    console.log('%cAvailable commands:', 'font-weight: bold; color: #1d3557;');
+    console.log('  RepairCrewApp.resetApp() - Return to HQ');
+    console.log('  RepairCrewApp.state - View current app state');
+    console.log('');
+
+    // Expose useful debug functions
+    window.debugRepairCrew = {
+      skipToRepair: () => {
+        document.getElementById('repairHQ').classList.add('hidden');
+        RepairCrewApp.showRepairSite();
+      },
+      completeRepair: () => {
+        RepairCrewApp.showRepairSuccess();
+      },
+      showManual: () => {
+        document.getElementById('repairManual').classList.remove('hidden');
+      }
+    };
+
+    console.log('%cDebug functions:', 'font-weight: bold; color: #ff6b35;');
+    console.log('  debugRepairCrew.skipToRepair() - Skip to repair site');
+    console.log('  debugRepairCrew.completeRepair() - Show success screen');
+    console.log('  debugRepairCrew.showManual() - Show repair manual');
+  </script>
+
+  <!-- Loading Screen Handler -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

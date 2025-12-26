@@ -1,0 +1,1200 @@
+/* =====================================================
+   ISAIAH'S GRAND MAGICAL ELEVATOR LOBBY
+   Where Grand Central Station Meets Hogwarts
+   ===================================================== */
+
+/* Elegant Display Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600&display=swap');
+
+/* ===== CSS RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* Grand Lobby Palette */
+  --navy-deep: #0a1128;
+  --navy-rich: #1e2749;
+  --navy-medium: #2d3561;
+  --gold-bright: #d4af37;
+  --gold-warm: #b8960f;
+  --gold-antique: #8b7500;
+  --cream-marble: #faf6ee;
+  --cream-warm: #f5f0e6;
+  --brass-shine: #b5a642;
+  --brass-aged: #8c7853;
+
+  /* Magical Accents */
+  --starlight: #e8f4f8;
+  --glow-blue: #4fc3f7;
+  --glow-purple: #9c27b0;
+
+  /* App-Specific Themes */
+  --repair-orange: #ff6b35;
+  --repair-caution: #ffd700;
+  --creature-purple: #9b5de5;
+  --creature-sparkle: #e0aaff;
+  --rhythm-pink: #ff006e;
+  --rhythm-neon: #ff69b4;
+  --transform-iridescent-1: #667eea;
+  --transform-iridescent-2: #764ba2;
+  --transform-iridescent-3: #f093fb;
+  --transform-iridescent-4: #4facfe;
+  --detective-sepia: #d4a373;
+  --detective-warm: #a67c52;
+
+  /* Typography */
+  --font-elegant: 'Cinzel', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-playful: 'Fredoka', sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  font-family: var(--font-body);
+  background: var(--navy-deep);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--cream-marble);
+  position: relative;
+}
+
+/* ===== THE GRAND MAGICAL LOBBY ===== */
+.hub-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Marble Floor with Reflections */
+.hub-container::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background:
+    linear-gradient(to top,
+      rgba(29, 39, 73, 0.95) 0%,
+      rgba(29, 39, 73, 0.7) 30%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(250, 246, 238, 0.02) 0px,
+      rgba(250, 246, 238, 0.02) 2px,
+      transparent 2px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(250, 246, 238, 0.02) 0px,
+      rgba(250, 246, 238, 0.02) 2px,
+      transparent 2px,
+      transparent 80px
+    );
+  pointer-events: none;
+  z-index: 1;
+  animation: marble-shimmer 8s ease-in-out infinite;
+}
+
+@keyframes marble-shimmer {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+/* Starfield Ceiling */
+.hub-container::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 35% 15%, rgba(232, 244, 248, 0.8) 50%, transparent 100%),
+    radial-gradient(2px 2px at 55% 35%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 75% 20%, rgba(232, 244, 248, 0.7) 50%, transparent 100%),
+    radial-gradient(2px 2px at 85% 45%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 20% 60%, rgba(232, 244, 248, 0.6) 50%, transparent 100%),
+    radial-gradient(2px 2px at 40% 75%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 60% 80%, rgba(232, 244, 248, 0.8) 50%, transparent 100%),
+    radial-gradient(2px 2px at 80% 65%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 10% 90%, rgba(232, 244, 248, 0.7) 50%, transparent 100%),
+    radial-gradient(2px 2px at 90% 85%, var(--starlight) 50%, transparent 100%),
+    radial-gradient(1px 1px at 50% 50%, rgba(232, 244, 248, 0.9) 50%, transparent 100%);
+  animation: starfield-twinkle 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes starfield-twinkle {
+  0%, 100% { opacity: 0.5; }
+  25% { opacity: 0.8; }
+  50% { opacity: 1; }
+  75% { opacity: 0.7; }
+}
+
+/* Ambient Light Rays */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translateX(-50%) rotate(30deg);
+  background:
+    linear-gradient(to right,
+      transparent 0%,
+      rgba(212, 175, 55, 0.03) 20%,
+      transparent 40%,
+      rgba(79, 195, 247, 0.02) 60%,
+      transparent 80%,
+      rgba(212, 175, 55, 0.03) 100%
+    );
+  pointer-events: none;
+  z-index: 0;
+  animation: light-rays 20s linear infinite;
+}
+
+@keyframes light-rays {
+  0% { transform: translateX(-50%) rotate(30deg); }
+  100% { transform: translateX(-50%) rotate(390deg); }
+}
+
+/* Dust Motes Animation */
+@keyframes float-mote {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ===== HEADER - GRAND WELCOME ===== */
+.hub-header {
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 10;
+  animation: header-entrance 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes header-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hub-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg,
+    var(--gold-bright) 0%,
+    var(--cream-marble) 20%,
+    var(--gold-warm) 40%,
+    var(--cream-marble) 60%,
+    var(--gold-bright) 80%,
+    var(--cream-marble) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow:
+    0 0 60px rgba(212, 175, 55, 0.6),
+    0 0 100px rgba(212, 175, 55, 0.3);
+  margin-bottom: 16px;
+  animation: gold-shimmer 6s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes gold-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Ornamental underline */
+.hub-title::after {
+  content: '✦  ━━━  ✦';
+  display: block;
+  font-size: 0.3em;
+  margin-top: 20px;
+  color: var(--gold-bright);
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.hub-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--cream-warm);
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== THE ELEVATOR BANK ===== */
+.elevator-bank {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1600px;
+  width: 100%;
+  z-index: 10;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+/* ===== INDIVIDUAL ELEVATOR DOORS ===== */
+.elevator-door {
+  position: relative;
+  aspect-ratio: 3/4;
+  min-height: 400px;
+  border-radius: 12px 12px 4px 4px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: visible;
+  transform-style: preserve-3d;
+  animation: elevator-idle 4s ease-in-out infinite;
+}
+
+@keyframes elevator-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.elevator-door:hover {
+  transform: translateY(-20px) scale(1.03);
+  animation: none;
+  filter: brightness(1.15);
+}
+
+.elevator-door:active {
+  transform: translateY(-10px) scale(0.99);
+}
+
+/* Ornate Brass Frame */
+.elevator-door::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 16px 16px 8px 8px;
+  background:
+    linear-gradient(135deg,
+      var(--gold-bright) 0%,
+      var(--brass-aged) 25%,
+      var(--gold-warm) 50%,
+      var(--brass-aged) 75%,
+      var(--gold-bright) 100%
+    );
+  z-index: -1;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(212, 175, 55, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  animation: brass-gleam 8s ease-in-out infinite;
+}
+
+@keyframes brass-gleam {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* Decorative Corner Flourishes */
+.elevator-door::after {
+  content: '✦';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: var(--gold-bright);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+  z-index: 20;
+  animation: flourish-sparkle 3s ease-in-out infinite;
+}
+
+@keyframes flourish-sparkle {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Door Interior Background */
+.door-interior {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px 12px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Magical glow behind interior */
+.door-interior::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.elevator-door:hover .door-interior::before {
+  opacity: 1;
+}
+
+/* Door Panels (The Sliding Doors) */
+.door-panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  border-radius: 12px 12px 4px 4px;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.door-left, .door-right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Vertical Brass Seams on Doors */
+.door-left::before,
+.door-right::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  width: 3px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--brass-shine) 10%,
+    var(--brass-aged) 50%,
+    var(--brass-shine) 90%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.door-left::before {
+  right: 8px;
+}
+
+.door-right::before {
+  left: 8px;
+}
+
+/* Decorative Brass Handle */
+.door-left::after,
+.door-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 40px;
+  background: var(--brass-shine);
+  border-radius: 6px;
+  transform: translateY(-50%);
+  box-shadow:
+    inset 2px 0 4px rgba(255, 255, 255, 0.4),
+    inset -2px 0 4px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.door-left::after {
+  right: 16px;
+}
+
+.door-right::after {
+  left: 16px;
+}
+
+.door-left {
+  border-right: 3px solid var(--brass-aged);
+  transform-origin: left center;
+}
+
+.door-right {
+  border-left: 3px solid var(--brass-aged);
+  transform-origin: right center;
+}
+
+/* Door Opening Animation - DRAMATIC SLIDE */
+.elevator-door:hover .door-left {
+  transform: translateX(-100%);
+}
+
+.elevator-door:hover .door-right {
+  transform: translateX(100%);
+}
+
+/* Central Door Seam */
+.door-panels::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--gold-bright) 5%,
+    var(--brass-aged) 50%,
+    var(--gold-bright) 95%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.elevator-door:hover .door-panels::after {
+  opacity: 0;
+}
+
+/* ===== APP-SPECIFIC THEMED ELEVATORS ===== */
+
+/* 🔧 REPAIR CREW - Industrial Orange with Caution Stripes */
+.elevator-door.repair .door-interior {
+  background:
+    linear-gradient(135deg, #1a1410 0%, #2d2520 100%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 107, 53, 0.05) 10px,
+      rgba(255, 107, 53, 0.05) 20px
+    );
+}
+
+.elevator-door.repair .door-left,
+.elevator-door.repair .door-right {
+  background:
+    linear-gradient(180deg, #ff6b35 0%, #ff4500 50%, #d63900 100%),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 215, 0, 0.3) 0px,
+      rgba(255, 215, 0, 0.3) 15px,
+      transparent 15px,
+      transparent 30px
+    );
+}
+
+.elevator-door.repair .app-icon {
+  background: linear-gradient(135deg, var(--repair-orange), var(--repair-caution));
+  box-shadow:
+    0 0 40px rgba(255, 107, 53, 0.7),
+    0 0 80px rgba(255, 215, 0, 0.4);
+  animation: tool-spin 8s linear infinite;
+}
+
+@keyframes tool-spin {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(5deg) scale(1.05); }
+  50% { transform: rotate(0deg) scale(1); }
+  75% { transform: rotate(-5deg) scale(1.05); }
+}
+
+.elevator-door.repair:hover .door-interior {
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #1a1410 0%, #2d2520 100%);
+}
+
+/* 🐙 CREATURE TRANSIT - Purple with Magical Sparkles */
+.elevator-door.creature .door-interior {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(224, 170, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(156, 39, 176, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #1a0f2e 0%, #2d1a4d 100%);
+}
+
+.elevator-door.creature .door-left,
+.elevator-door.creature .door-right {
+  background: linear-gradient(180deg,
+    #9b5de5 0%,
+    #7b2cbf 50%,
+    #5a1f9e 100%
+  );
+}
+
+.elevator-door.creature .app-icon {
+  background: linear-gradient(135deg,
+    var(--creature-purple),
+    var(--creature-sparkle),
+    var(--creature-purple)
+  );
+  background-size: 200% 200%;
+  box-shadow:
+    0 0 40px rgba(155, 93, 229, 0.8),
+    0 0 80px rgba(224, 170, 255, 0.5);
+  animation: magical-sparkle 4s ease-in-out infinite;
+}
+
+@keyframes magical-sparkle {
+  0%, 100% {
+    background-position: 0% 50%;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    background-position: 100% 50%;
+    transform: scale(1.08) rotate(5deg);
+  }
+  66% {
+    background-position: 0% 100%;
+    transform: scale(1.08) rotate(-5deg);
+  }
+}
+
+/* Sparkle particles */
+.elevator-door.creature::before {
+  animation: sparkle-particles 3s ease-in-out infinite;
+}
+
+@keyframes sparkle-particles {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; filter: brightness(1.3); }
+}
+
+/* 🎵 RHYTHM RAILWAY - Neon Pink with Musical Notes */
+.elevator-door.rhythm .door-interior {
+  background:
+    linear-gradient(135deg, #2a0a1f 0%, #44102d 100%);
+  position: relative;
+}
+
+/* Musical note decorations */
+.elevator-door.rhythm .door-interior::after {
+  content: '♪ ♫ ♪';
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 105, 180, 0.15);
+  top: 20%;
+  left: 15%;
+  animation: notes-bounce 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes notes-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.elevator-door.rhythm .door-left,
+.elevator-door.rhythm .door-right {
+  background: linear-gradient(180deg,
+    #ff006e 0%,
+    #ff1493 50%,
+    #d00060 100%
+  );
+  box-shadow:
+    inset 0 0 30px rgba(255, 105, 180, 0.4);
+}
+
+.elevator-door.rhythm .app-icon {
+  background: linear-gradient(135deg,
+    var(--rhythm-pink),
+    var(--rhythm-neon)
+  );
+  box-shadow:
+    0 0 40px rgba(255, 0, 110, 0.8),
+    0 0 80px rgba(255, 105, 180, 0.5);
+  animation: rhythm-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes rhythm-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 40px rgba(255, 0, 110, 0.8),
+      0 0 80px rgba(255, 105, 180, 0.5);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow:
+      0 0 60px rgba(255, 0, 110, 1),
+      0 0 100px rgba(255, 105, 180, 0.7);
+  }
+}
+
+/* 🦋 TRANSFORMATION - Iridescent Shifting Colors */
+.elevator-door.transform .door-interior {
+  background: linear-gradient(135deg,
+    #0f0a2e 0%,
+    #1f1044 50%,
+    #2a1555 100%
+  );
+}
+
+.elevator-door.transform .door-left,
+.elevator-door.transform .door-right {
+  background: linear-gradient(180deg,
+    var(--transform-iridescent-1) 0%,
+    var(--transform-iridescent-2) 33%,
+    var(--transform-iridescent-3) 66%,
+    var(--transform-iridescent-4) 100%
+  );
+  background-size: 100% 400%;
+  animation: iridescent-shift 6s ease-in-out infinite;
+}
+
+@keyframes iridescent-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+}
+
+.elevator-door.transform .app-icon {
+  background: linear-gradient(135deg,
+    var(--transform-iridescent-1),
+    var(--transform-iridescent-2),
+    var(--transform-iridescent-3),
+    var(--transform-iridescent-4)
+  );
+  background-size: 300% 300%;
+  box-shadow:
+    0 0 40px rgba(102, 126, 234, 0.6),
+    0 0 80px rgba(118, 75, 162, 0.4);
+  animation: morph-shimmer 8s ease-in-out infinite;
+}
+
+@keyframes morph-shimmer {
+  0%, 100% {
+    border-radius: 50%;
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 45% 55% 50% 50%;
+    background-position: 50% 0%;
+    transform: rotate(90deg);
+  }
+  50% {
+    border-radius: 50% 50% 45% 55%;
+    background-position: 100% 50%;
+    transform: rotate(180deg);
+  }
+  75% {
+    border-radius: 55% 45% 50% 50%;
+    background-position: 50% 100%;
+    transform: rotate(270deg);
+  }
+}
+
+/* 🔍 LOST & FOUND - Warm Sepia with Detective Elements */
+.elevator-door.detective .door-interior {
+  background:
+    radial-gradient(circle at 70% 30%, rgba(212, 163, 115, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #1a150f 0%, #2e261d 100%);
+  position: relative;
+}
+
+/* Magnifying glass spotlight effect */
+.elevator-door.detective .door-interior::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(212, 163, 115, 0.2);
+  top: 15%;
+  right: 10%;
+  box-shadow: inset 0 0 30px rgba(212, 163, 115, 0.1);
+  pointer-events: none;
+}
+
+.elevator-door.detective .door-left,
+.elevator-door.detective .door-right {
+  background: linear-gradient(180deg,
+    #d4a373 0%,
+    #b8936d 50%,
+    #a67c52 100%
+  );
+}
+
+.elevator-door.detective .app-icon {
+  background: linear-gradient(135deg,
+    var(--detective-sepia),
+    var(--detective-warm)
+  );
+  box-shadow:
+    0 0 40px rgba(212, 163, 115, 0.7),
+    0 0 80px rgba(166, 124, 82, 0.4);
+  animation: detective-scan 5s ease-in-out infinite;
+}
+
+@keyframes detective-scan {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.05) rotate(-3deg); }
+  50% { transform: scale(1.1) rotate(0deg); }
+  75% { transform: scale(1.05) rotate(3deg); }
+}
+
+/* ===== APP CONTENT ===== */
+.app-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.elevator-door:hover .app-icon {
+  transform: scale(1.2) translateY(-10px);
+}
+
+.app-name {
+  font-family: var(--font-elegant);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--cream-marble);
+  margin-bottom: 12px;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.elevator-door:hover .app-name {
+  transform: translateY(-5px);
+  text-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.app-tagline {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(250, 246, 238, 0.85);
+  line-height: 1.5;
+  max-width: 240px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.app-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-warm));
+  color: var(--navy-deep);
+  font-family: var(--font-playful);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(212, 175, 55, 0.6);
+  animation: badge-glow 2s ease-in-out infinite;
+}
+
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.6); }
+  50% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.9); }
+}
+
+/* ===== FLOOR INDICATOR ===== */
+.floor-indicator {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(135deg, var(--navy-rich), var(--navy-medium));
+  border: 3px solid var(--brass-aged);
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  z-index: 15;
+}
+
+.floor-number {
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Elevator Direction Indicator */
+.floor-indicator::before {
+  content: '▲';
+  font-size: 0.8rem;
+  color: var(--glow-blue);
+  animation: arrow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* Ding sound indicator on hover */
+.elevator-door:hover .floor-indicator {
+  animation: floor-ding 0.5s ease-in-out;
+}
+
+@keyframes floor-ding {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
+}
+
+/* ===== SKILLS LEARNED TAGS ===== */
+.skills-preview {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
+}
+
+.elevator-door:hover .skills-preview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-tag {
+  background: rgba(250, 246, 238, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-family: var(--font-playful);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cream-marble);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(250, 246, 238, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== PARTICLE EFFECTS ===== */
+/* These are created dynamically by JavaScript */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--gold-bright);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  animation: float-mote 12s linear infinite;
+}
+
+/* ===== LOADING STATE - Elevator Traveling ===== */
+.elevator-door.loading {
+  animation: elevator-depart 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes elevator-depart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-50px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.elevator-door.loading .door-panels {
+  animation: doors-shake 0.3s ease-in-out 3;
+}
+
+@keyframes doors-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+.elevator-door.loading .floor-indicator::before {
+  content: '●';
+  animation: loading-blink 0.5s linear infinite;
+}
+
+@keyframes loading-blink {
+  0%, 100% { opacity: 1; color: var(--gold-bright); }
+  50% { opacity: 0.3; }
+}
+
+/* Floor number change animation during traversal */
+@keyframes floor-number-change {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+/* Style for floor number during animation */
+.elevator-door.loading .floor-number {
+  font-size: 1.6rem;
+  color: var(--glow-blue);
+  text-shadow: 0 0 15px rgba(79, 195, 247, 0.9);
+  transition: color 0.1s ease;
+}
+
+/* ===== FOOTER ===== */
+.hub-footer {
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  color: rgba(250, 246, 238, 0.6);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-style: italic;
+  z-index: 10;
+  position: relative;
+}
+
+.hub-footer::before {
+  content: '━━━  ✦  ━━━';
+  display: block;
+  margin-bottom: 16px;
+  color: var(--gold-bright);
+  opacity: 0.5;
+  letter-spacing: 0.3em;
+}
+
+.hub-footer p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .elevator-bank {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hub-container {
+    padding: 30px 16px 40px;
+  }
+
+  .hub-header {
+    margin-bottom: 40px;
+  }
+
+  .hub-title::after {
+    font-size: 0.4em;
+    margin-top: 12px;
+  }
+
+  .elevator-bank {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 10px;
+    max-width: 400px;
+  }
+
+  .elevator-door {
+    min-height: 450px;
+  }
+
+  .app-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .app-name {
+    font-size: 1.5rem;
+  }
+
+  .app-tagline {
+    font-size: 1rem;
+  }
+
+  .floor-indicator {
+    top: -45px;
+    padding: 6px 16px;
+    font-size: 1.1rem;
+  }
+
+  .floor-number {
+    font-size: 1.2rem;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .elevator-door {
+    min-height: 400px;
+  }
+
+  .app-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .app-name {
+    font-size: 1.3rem;
+  }
+
+  .app-tagline {
+    font-size: 0.95rem;
+    max-width: 200px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.elevator-door:focus-visible {
+  outline: 4px solid var(--gold-bright);
+  outline-offset: 8px;
+  box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+.elevator-door:focus-visible::before {
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(212, 175, 55, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .elevator-door::before {
+    border: 3px solid currentColor;
+  }
+
+  .skill-tag {
+    border-width: 2px;
+  }
+
+  .door-left,
+  .door-right {
+    border-width: 4px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .hub-container::before,
+  .hub-container::after,
+  body::before,
+  .door-panels,
+  .app-badge {
+    display: none;
+  }
+
+  .elevator-bank {
+    display: block;
+  }
+
+  .elevator-door {
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+}

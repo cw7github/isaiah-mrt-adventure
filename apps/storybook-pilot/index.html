@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/apps/storybook-pilot/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>The Midnight Pizza Train - Isaiah's Story</title>
+
+  <!-- Fonts: Vintage Railway meets Italian Warmth -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Archivo+Black&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Atmospheric Background Layer -->
+  <div class="atmosphere">
+    <div class="train-steam"></div>
+    <div class="ember-particles"></div>
+    <div class="ambient-glow"></div>
+  </div>
+
+  <!-- ================================================
+       LOADING SCREEN - Vintage Train Departure Board
+       ================================================ -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="departure-board">
+        <div class="board-header">
+          <div class="rivets left"></div>
+          <span class="board-title">DEPARTURES</span>
+          <div class="rivets right"></div>
+        </div>
+        <div class="board-display">
+          <div class="flip-row">
+            <span class="flip-label">DESTINATION</span>
+            <span class="flip-value" id="loadingDest">DREAM KITCHEN</span>
+          </div>
+          <div class="flip-row">
+            <span class="flip-label">PLATFORM</span>
+            <span class="flip-value">MIDNIGHT</span>
+          </div>
+          <div class="flip-row">
+            <span class="flip-label">STATUS</span>
+            <span class="flip-value loading-status">BOARDING...</span>
+          </div>
+        </div>
+      </div>
+      <div class="loading-train">
+        <div class="train-icon">🚂</div>
+        <div class="train-smoke">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       TITLE SCREEN - Vintage Book Cover
+       ================================================ -->
+  <div id="titleScreen" class="title-screen hidden">
+    <div class="book-cover">
+      <!-- Decorative Corner Brackets -->
+      <div class="corner-bracket top-left"></div>
+      <div class="corner-bracket top-right"></div>
+      <div class="corner-bracket bottom-left"></div>
+      <div class="corner-bracket bottom-right"></div>
+
+      <!-- Book Spine Texture -->
+      <div class="book-spine"></div>
+
+      <!-- Cover Content -->
+      <div class="cover-content">
+        <div class="publisher-mark">
+          <span class="mark-icon">🍕</span>
+          <span class="mark-text">DREAM KITCHEN PRESS</span>
+        </div>
+
+        <h1 class="book-title">
+          <span class="title-line-1">The Midnight</span>
+          <span class="title-line-2">Pizza Train</span>
+        </h1>
+
+        <div class="title-illustration">
+          <div class="train-silhouette">
+            <div class="train-car main">🚂</div>
+            <div class="train-car pizza">🍕</div>
+            <div class="train-car pizza">🍕</div>
+          </div>
+          <div class="track-line"></div>
+        </div>
+
+        <div class="reader-name">
+          <span class="for-text">A Story for</span>
+          <span class="name-text">Isaiah</span>
+        </div>
+
+        <button id="openBookBtn" class="open-book-btn" aria-label="Open the storybook">
+          <span class="btn-text">Open Book</span>
+          <span class="btn-icon">📖</span>
+        </button>
+
+        <!-- Reading Level Badge -->
+        <div class="level-badge">
+          <span class="badge-icon">⭐</span>
+          <span class="badge-text">Grade 1 Reader</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hub Navigation -->
+    <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+  </div>
+
+  <!-- ================================================
+       READING MODE - Two-Page Spread
+       ================================================ -->
+  <div id="readingMode" class="reading-mode hidden">
+
+    <!-- Top Navigation Bar -->
+    <nav class="reading-nav">
+      <button id="closeBookBtn" class="nav-btn close-btn" aria-label="Close book">
+        <span class="btn-icon">✕</span>
+      </button>
+
+      <div class="page-indicator">
+        <span class="current-page" id="currentPage">1</span>
+        <span class="page-divider">/</span>
+        <span class="total-pages" id="totalPages">10</span>
+      </div>
+
+      <div class="reading-controls">
+        <button id="narrationToggle" class="nav-btn narration-btn active" aria-label="Toggle narration" title="Narration ON">
+          <span class="btn-icon">🔊</span>
+        </button>
+        <button id="settingsBtn" class="nav-btn settings-btn" aria-label="Settings">
+          <span class="btn-icon">⚙️</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Book Spread -->
+    <main class="book-spread">
+
+      <!-- Left Page: Illustration -->
+      <div class="page illustration-page">
+        <div class="page-inner">
+          <!-- Decorative Frame -->
+          <div class="illustration-frame">
+            <div class="frame-corner tl"></div>
+            <div class="frame-corner tr"></div>
+            <div class="frame-corner bl"></div>
+            <div class="frame-corner br"></div>
+
+            <!-- Illustration Container -->
+            <div class="illustration-container" id="illustrationContainer">
+              <!-- AI-generated illustration will go here -->
+              <div class="illustration-placeholder">
+                <div class="placeholder-scene" id="sceneVisual"></div>
+              </div>
+            </div>
+
+            <!-- Scene Label -->
+            <div class="scene-label" id="sceneLabel">The Train Station</div>
+          </div>
+        </div>
+        <div class="page-curl"></div>
+      </div>
+
+      <!-- Book Binding -->
+      <div class="book-binding">
+        <div class="binding-stitches">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Right Page: Text -->
+      <div class="page text-page">
+        <div class="page-inner">
+          <!-- Page Number Decoration -->
+          <div class="page-number-decor">
+            <span class="decor-line"></span>
+            <span class="page-num" id="pageNum">1</span>
+            <span class="decor-line"></span>
+          </div>
+
+          <!-- Story Text Container -->
+          <div class="story-text-container">
+            <div class="story-text" id="storyText" role="article" aria-live="polite">
+              <!-- Words will be inserted here dynamically -->
+            </div>
+          </div>
+
+          <!-- Sight Word Focus -->
+          <div class="sight-word-focus hidden" id="sightWordFocus">
+            <span class="focus-label">Sight Word:</span>
+            <span class="focus-word" id="focusWord"></span>
+          </div>
+        </div>
+        <div class="page-curl right"></div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="page-navigation">
+      <button id="prevPageBtn" class="page-nav-btn prev" aria-label="Previous page" disabled>
+        <span class="nav-arrow">←</span>
+        <span class="nav-label">Back</span>
+      </button>
+
+      <!-- Progress Bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+        <div class="progress-train" id="progressTrain">🚂</div>
+      </div>
+
+      <button id="nextPageBtn" class="page-nav-btn next" aria-label="Next page">
+        <span class="nav-label">Next</span>
+        <span class="nav-arrow">→</span>
+      </button>
+    </nav>
+
+    <!-- Reading Assistant Tooltip -->
+    <div id="wordTooltip" class="word-tooltip hidden" role="tooltip">
+      <span class="tooltip-word" id="tooltipWord"></span>
+      <button class="tooltip-speak" id="tooltipSpeak" aria-label="Hear word">🔊</button>
+    </div>
+
+  </div>
+
+  <!-- ================================================
+       COMPREHENSION CHECK - Question Modal
+       ================================================ -->
+  <div id="comprehensionModal" class="modal comprehension-modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content question-card">
+      <div class="question-header">
+        <div class="conductor-avatar">🧑‍✈️</div>
+        <h2 class="question-title">Conductor's Question!</h2>
+      </div>
+
+      <div class="question-body">
+        <p class="question-text" id="questionText">
+          Who did Isaiah meet at the train station?
+        </p>
+
+        <div class="answer-choices" id="answerChoices">
+          <!-- Answer buttons inserted dynamically -->
+        </div>
+      </div>
+
+      <div class="question-feedback hidden" id="questionFeedback">
+        <div class="feedback-icon" id="feedbackIcon">✓</div>
+        <p class="feedback-text" id="feedbackText">Great job!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       STORY COMPLETE - Celebration Screen
+       ================================================ -->
+  <div id="completeScreen" class="complete-screen hidden">
+    <div class="celebration-container">
+      <!-- Confetti Layer -->
+      <div class="confetti-layer"></div>
+
+      <!-- Completion Card -->
+      <div class="completion-card">
+        <div class="card-decorations">
+          <div class="corner-flourish tl"></div>
+          <div class="corner-flourish tr"></div>
+          <div class="corner-flourish bl"></div>
+          <div class="corner-flourish br"></div>
+        </div>
+
+        <div class="completion-header">
+          <div class="trophy-icon">🏆</div>
+          <h1 class="completion-title">Story Complete!</h1>
+        </div>
+
+        <div class="completion-stats">
+          <div class="stat-item">
+            <span class="stat-icon">📖</span>
+            <span class="stat-value" id="pagesRead">10</span>
+            <span class="stat-label">Pages Read</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-value" id="wordsLearned">10</span>
+            <span class="stat-label">Sight Words</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">✓</span>
+            <span class="stat-value" id="questionsCorrect">3</span>
+            <span class="stat-label">Questions</span>
+          </div>
+        </div>
+
+        <div class="earned-badge">
+          <div class="badge-glow"></div>
+          <div class="badge-icon">🍕</div>
+          <div class="badge-name">Pizza Chef Reader</div>
+        </div>
+
+        <div class="completion-actions">
+          <button id="playGameBtn" class="action-btn primary">
+            <span class="btn-icon">🎮</span>
+            <span class="btn-text">Play Mini-Game</span>
+          </button>
+          <button id="readAgainBtn" class="action-btn secondary">
+            <span class="btn-icon">🔄</span>
+            <span class="btn-text">Read Again</span>
+          </button>
+          <button id="returnHubBtn" class="action-btn tertiary">
+            <span class="btn-icon">🏠</span>
+            <span class="btn-text">Back to Hub</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       MINI-GAME - Pizza Kitchen
+       ================================================ -->
+  <div id="miniGameScreen" class="mini-game-screen hidden">
+    <div class="game-container">
+      <div class="game-header">
+        <h2 class="game-title">Dream Pizza Kitchen</h2>
+        <p class="game-instruction" id="gameInstruction">Sort the ingredients into the right bowls!</p>
+      </div>
+
+      <div class="kitchen-area">
+        <!-- Ingredient Queue -->
+        <div class="ingredient-queue" id="ingredientQueue">
+          <!-- Ingredients will be added dynamically -->
+        </div>
+
+        <!-- Sorting Bowls -->
+        <div class="sorting-bowls">
+          <div class="bowl" data-category="kindness" draggable="false">
+            <div class="bowl-label">Kindness</div>
+            <div class="bowl-icon">💛</div>
+            <div class="bowl-contents" id="kindnessBowl"></div>
+          </div>
+          <div class="bowl" data-category="courage" draggable="false">
+            <div class="bowl-label">Courage</div>
+            <div class="bowl-icon">🧡</div>
+            <div class="bowl-contents" id="courageBowl"></div>
+          </div>
+          <div class="bowl" data-category="love" draggable="false">
+            <div class="bowl-label">Love</div>
+            <div class="bowl-icon">❤️</div>
+            <div class="bowl-contents" id="loveBowl"></div>
+          </div>
+        </div>
+
+        <!-- Score Display -->
+        <div class="game-score">
+          <span class="score-label">Pizzas Made:</span>
+          <span class="score-value" id="pizzaScore">0</span>
+          <span class="score-target">/ 3</span>
+        </div>
+      </div>
+
+      <button id="finishGameBtn" class="finish-game-btn hidden">
+        <span class="btn-icon">🎉</span>
+        <span class="btn-text">Finish!</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ================================================
+       SETTINGS PANEL
+       ================================================ -->
+  <div id="settingsPanel" class="settings-panel hidden">
+    <div class="panel-header">
+      <h3 class="panel-title">Reading Settings</h3>
+      <button id="closeSettings" class="close-panel-btn">✕</button>
+    </div>
+
+    <div class="panel-content">
+      <div class="setting-group">
+        <label class="setting-label">Text Size</label>
+        <div class="size-controls">
+          <button class="size-btn" data-size="small">A</button>
+          <button class="size-btn active" data-size="medium">A</button>
+          <button class="size-btn" data-size="large">A</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label class="setting-label">Reading Speed</label>
+        <input type="range" id="speedSlider" min="0.5" max="1.5" step="0.1" value="1" class="speed-slider">
+        <div class="speed-labels">
+          <span>Slower</span>
+          <span>Faster</span>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label class="setting-label">
+          <input type="checkbox" id="highlightToggle" checked>
+          <span class="checkbox-custom"></span>
+          Highlight words while reading
+        </label>
+      </div>
+
+      <div class="setting-group">
+        <label class="setting-label">
+          <input type="checkbox" id="autoNarrate" checked>
+          <span class="checkbox-custom"></span>
+          Auto-read each page
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Elements (will be dynamically managed) -->
+  <div id="audioPool" class="audio-pool"></div>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+  <!-- Scripts -->
+  <script src="story.js"></script>
+  <script src="audio-engine.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

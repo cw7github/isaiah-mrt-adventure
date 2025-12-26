@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚇 CREATURE TRANSIT AUTHORITY - Isaiah's Logistics Adventure</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚇</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Hub Navigation Styles -->
+  <style>
+    .hub-nav-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .hub-nav-btn:hover {
+      background: rgba(0,0,0,0.7);
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+
+  <!-- Hub Navigation Button -->
+  <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+
+  <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-icon">🚇</div>
+      <h1 class="loading-title">CREATURE TRANSIT</h1>
+      <p class="loading-subtitle">Loading...</p>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       MAIN APP CONTAINER
+       ============================================ -->
+  <div class="transit-app" role="main" id="main-content">
+
+    <!-- Animated Background Elements -->
+    <div class="transit-background"></div>
+
+    <!-- ============================================
+         WELCOME SCREEN
+         ============================================ -->
+    <div id="welcomeScreen" class="welcome-screen">
+      <div class="welcome-content">
+        <div class="cta-logo">
+          <div class="logo-badge">
+            <span class="logo-icon">🚇</span>
+            <div class="logo-text">
+              <h1>CREATURE TRANSIT AUTHORITY</h1>
+              <p>Official Transit Operations Center</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome-message">
+          <h2>Welcome, Transit Operator Isaiah!</h2>
+          <p>Magical creatures need your help getting to their destinations safely and happily.</p>
+          <p>Read their tickets, match them to the right cars, and keep everyone comfortable!</p>
+        </div>
+
+        <button id="startShiftBtn" class="start-shift-btn" aria-label="Start your shift at Creature Transit Authority">
+          <span class="btn-icon">⏰</span>
+          START YOUR SHIFT
+          <span class="btn-shine"></span>
+        </button>
+
+        <div class="operator-stats">
+          <div class="stat-item">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-value" id="totalRating">0</span>
+            <span class="stat-label">Total Stars</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🎫</span>
+            <span class="stat-value" id="totalCreatures">0</span>
+            <span class="stat-label">Creatures Helped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         CONTROL ROOM (MAIN GAMEPLAY)
+         ============================================ -->
+    <div id="controlRoom" class="control-room hidden">
+
+      <!-- Header Panel -->
+      <div class="control-header">
+        <div class="header-left">
+          <div class="cta-badge">🚇 CTA</div>
+          <div class="shift-info">
+            <h2>RUSH HOUR</h2>
+            <p>Operator: Isaiah</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="stat-display">
+            <span class="stat-icon">⭐</span>
+            <span id="shiftRating">0</span>
+          </div>
+          <div class="stat-display">
+            <span class="stat-icon">🎫</span>
+            <span id="shiftCreatures">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Control Panel -->
+      <div class="control-panel">
+
+        <!-- Left Side: Incoming Creatures Queue -->
+        <div class="queue-section">
+          <div class="section-header">
+            <h3>📋 INCOMING CREATURES</h3>
+          </div>
+
+          <div id="creatureQueue" class="creature-queue">
+            <!-- Creatures will be added here dynamically -->
+          </div>
+
+          <div class="queue-info">
+            <p>Drag creatures to the correct car!</p>
+          </div>
+        </div>
+
+        <!-- Center: Transit Cars Display -->
+        <div class="cars-section">
+          <div class="section-header">
+            <h3>🚇 TRANSIT CARS</h3>
+          </div>
+
+          <div id="transitCars" class="transit-cars">
+            <!-- Cars will be generated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Right Side: Compatibility Guide -->
+        <div class="guide-section">
+          <div class="section-header">
+            <h3>📖 CREATURE GUIDE</h3>
+          </div>
+
+          <div class="creature-guide">
+            <div class="guide-entry">
+              <span class="guide-icon">🔥</span>
+              <div class="guide-info">
+                <strong>FLAMELING</strong>
+                <p>Needs HOT car</p>
+                <p class="guide-note">Takes 2 spaces</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">❄️</span>
+              <div class="guide-info">
+                <strong>FROSTIE</strong>
+                <p>Needs COLD car</p>
+                <p class="guide-note">Keep away from heat!</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">💧</span>
+              <div class="guide-info">
+                <strong>SPLASHY</strong>
+                <p>Needs WET car</p>
+                <p class="guide-note">Must stay wet</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">👻</span>
+              <div class="guide-info">
+                <strong>SHADELING</strong>
+                <p>Needs DARK car</p>
+                <p class="guide-note">Scared of Flamelings!</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">🌈</span>
+              <div class="guide-info">
+                <strong>GLIMMER</strong>
+                <p>Needs BRIGHT car</p>
+                <p class="guide-note">Makes others happy!</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">🪨</span>
+              <div class="guide-info">
+                <strong>RUMBLE</strong>
+                <p>Needs HEAVY car</p>
+                <p class="guide-note">Takes 3 spaces!</p>
+              </div>
+            </div>
+
+            <div class="guide-entry">
+              <span class="guide-icon">🌸</span>
+              <div class="guide-info">
+                <strong>PUFFLET</strong>
+                <p>Needs GENTLE car</p>
+                <p class="guide-note">3 fit in 1 space!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom: Action Buttons -->
+      <div class="control-footer">
+        <button id="departCarsBtn" class="depart-btn" disabled aria-label="Depart transit cars with passengers">
+          <span class="btn-icon">🚦</span>
+          DEPART READY CARS
+        </button>
+        <button id="endShiftBtn" class="end-shift-btn" aria-label="End current shift and view report">
+          <span class="btn-icon">🏠</span>
+          END SHIFT
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ============================================
+         SHIFT COMPLETE SCREEN
+         ============================================ -->
+    <div id="shiftComplete" class="shift-complete hidden">
+      <div class="complete-content">
+        <div class="celebration-burst"></div>
+
+        <h1 class="complete-title">SHIFT COMPLETE!</h1>
+
+        <div class="performance-report">
+          <div class="report-header">
+            <h2>Performance Report</h2>
+            <p>Operator: Isaiah</p>
+          </div>
+
+          <div class="report-stats">
+            <div class="report-stat">
+              <span class="report-icon">⭐</span>
+              <div class="report-info">
+                <h3 id="finalStars">0</h3>
+                <p>Stars Earned</p>
+              </div>
+            </div>
+
+            <div class="report-stat">
+              <span class="report-icon">🎫</span>
+              <div class="report-info">
+                <h3 id="finalCreatures">0</h3>
+                <p>Creatures Helped</p>
+              </div>
+            </div>
+
+            <div class="report-stat">
+              <span class="report-icon">😊</span>
+              <div class="report-info">
+                <h3 id="finalHappy">0</h3>
+                <p>Perfect Matches</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-grade">
+            <h2 id="gradeTitle">EXCELLENT WORK!</h2>
+            <p id="gradeMessage">All creatures arrived safely and happily!</p>
+          </div>
+        </div>
+
+        <button id="newShiftBtn" class="new-shift-btn" aria-label="Start a new shift">
+          <span class="btn-icon">🔄</span>
+          START NEW SHIFT
+        </button>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification hidden">
+      <span class="notification-icon"></span>
+      <span class="notification-text"></span>
+    </div>
+
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+
+  <!-- Creature Data & Logic -->
+  <script src="creatures.js"></script>
+
+  <!-- Main App Logic -->
+  <script src="app.js"></script>
+
+  <!-- Debug Console -->
+  <script>
+    console.log('%c🚇 CREATURE TRANSIT AUTHORITY 🚇', 'font-size: 24px; color: #9b5de5; font-weight: bold;');
+    console.log('%cWelcome to Isaiah\'s Logistics Adventure!', 'font-size: 14px; color: #00f5d4;');
+    console.log('%cAvailable commands:', 'font-weight: bold;');
+    console.log('  TransitApp.state - View current state');
+    console.log('  TransitApp.spawnCreature() - Add a creature');
+    console.log('  TransitApp.resetShift() - Start over');
+  </script>
+
+  <!-- Loading Screen Handler -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

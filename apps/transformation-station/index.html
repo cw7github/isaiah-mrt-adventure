@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Transformation Station - Become What You Learn</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Hub Navigation Styles -->
+  <style>
+    .hub-nav-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .hub-nav-btn:hover {
+      background: rgba(0,0,0,0.7);
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+
+  <!-- Hub Navigation Button -->
+  <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+
+  <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-icon">🦋</div>
+      <h1 class="loading-title">TRANSFORMATION STATION</h1>
+      <p class="loading-subtitle">Loading...</p>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOBBY: Choose Your Transformation -->
+  <div id="lobby" class="screen active" role="main" id="main-content">
+    <div class="lobby-background">
+      <!-- Floating magical particles -->
+      <div class="magic-particles"></div>
+    </div>
+
+    <div class="lobby-content">
+      <h1 class="lobby-title">
+        <span class="title-word morph-word">TRANSFORMATION</span>
+        <span class="title-word">STATION</span>
+      </h1>
+
+      <p class="lobby-subtitle">
+        Step into the elevator. Become what you learn.
+      </p>
+
+      <div class="elevator-entrance">
+        <div class="elevator-doors">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+          <div class="door-symbol">⚡</div>
+        </div>
+
+        <button class="enter-button" id="enterElevator" aria-label="Enter the transformation elevator">
+          <span class="button-glow"></span>
+          ENTER THE TRANSFORMATION ELEVATOR
+        </button>
+      </div>
+
+      <div class="floor-preview">
+        <h3>Available Transformations:</h3>
+        <div class="floor-list">
+          <div class="floor-item">💧 Floor 1: Become a Raindrop</div>
+          <div class="floor-item locked">📬 Floor 2: Become a Letter (Coming Soon)</div>
+          <div class="floor-item locked">🌱 Floor 3: Become a Seed (Coming Soon)</div>
+          <div class="floor-item locked">🌟 Floor 4: Become a Light Beam (Coming Soon)</div>
+          <div class="floor-item locked">🦋 Floor 5: Become a Butterfly (Coming Soon)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELEVATOR: Choose Your Floor -->
+  <div id="elevator" class="screen">
+    <div class="elevator-interior">
+      <!-- Mirror walls -->
+      <div class="mirror mirror-left"></div>
+      <div class="mirror mirror-right"></div>
+      <div class="mirror mirror-back"></div>
+
+      <!-- Your reflection -->
+      <div class="reflection" id="reflection">
+        <div class="reflection-body">👤</div>
+      </div>
+
+      <!-- Floor panel -->
+      <div class="floor-panel">
+        <h2 class="panel-title">Choose Your Transformation</h2>
+
+        <div class="floor-buttons">
+          <button class="floor-button active" data-floor="1" aria-label="Floor 1: Water Cycle transformation" data-journey="raindrop">
+            <span class="button-icon">💧</span>
+            <span class="button-label">Floor 1</span>
+            <span class="button-desc">Water Cycle</span>
+          </button>
+
+          <button class="floor-button locked" data-floor="2">
+            <span class="button-icon">📬</span>
+            <span class="button-label">Floor 2</span>
+            <span class="button-desc">Mail Journey</span>
+          </button>
+
+          <button class="floor-button locked" data-floor="3">
+            <span class="button-icon">🌱</span>
+            <span class="button-label">Floor 3</span>
+            <span class="button-desc">Seed to Flower</span>
+          </button>
+
+          <button class="floor-button locked" data-floor="4">
+            <span class="button-icon">🌟</span>
+            <span class="button-label">Floor 4</span>
+            <span class="button-desc">Light's Journey</span>
+          </button>
+
+          <button class="floor-button locked" data-floor="5">
+            <span class="button-icon">🦋</span>
+            <span class="button-label">Floor 5</span>
+            <span class="button-desc">Metamorphosis</span>
+          </button>
+        </div>
+
+        <button class="back-button" id="backToLobby" aria-label="Back to lobby">← Back to Lobby</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSFORMATION: The Magic Happens -->
+  <div id="transformation" class="screen">
+    <div class="transformation-space">
+      <div class="transformation-particles"></div>
+      <div class="transformation-rings"></div>
+
+      <div class="transformation-message">
+        <h2 id="transformText">You are becoming...</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOURNEY: First-Person Experience -->
+  <div id="journey" class="screen">
+    <!-- Dynamic background based on current stage -->
+    <div class="journey-background" id="journeyBg"></div>
+
+    <!-- First-person perspective elements -->
+    <div class="first-person-view" id="firstPersonView">
+      <!-- Hands/body parts of current form -->
+      <div class="form-body" id="formBody"></div>
+    </div>
+
+    <!-- Journey stage content -->
+    <div class="journey-content">
+      <div class="stage-title" id="stageTitle"></div>
+      <div class="stage-text" id="stageText"></div>
+
+      <!-- Interactive elements -->
+      <div class="stage-interaction" id="stageInteraction"></div>
+
+      <!-- Progress dots -->
+      <div class="journey-progress" id="journeyProgress"></div>
+
+      <!-- Navigation -->
+      <div class="journey-nav">
+        <button class="nav-button" id="prevStage" disabled>← Previous</button>
+        <button class="nav-button primary" id="nextStage">Continue →</button>
+      </div>
+    </div>
+
+    <!-- Particle effects -->
+    <div class="journey-particles" id="journeyParticles"></div>
+  </div>
+
+  <!-- COMPLETION: Badge & Reflection -->
+  <div id="completion" class="screen">
+    <div class="completion-glow"></div>
+
+    <div class="completion-content">
+      <div class="badge-container">
+        <div class="badge" id="completionBadge">
+          <div class="badge-icon">💧</div>
+          <div class="badge-title">Water Cycle Master</div>
+          <div class="badge-subtitle">You lived the journey</div>
+        </div>
+      </div>
+
+      <h2 class="completion-title">You've returned!</h2>
+      <p class="completion-text" id="completionText">
+        You experienced the water cycle from the inside.
+        You felt the rise of evaporation, the weight of the cloud,
+        and the rush of falling rain. This knowledge is now part of you.
+      </p>
+
+      <div class="completion-actions">
+        <button class="action-button primary" id="anotherJourney">
+          ⚡ Try Another Transformation
+        </button>
+        <button class="action-button" id="returnToLobby">
+          🏠 Return to Lobby
+        </button>
+      </div>
+
+      <div class="completion-memory" id="completionMemory">
+        <h3>Your Journey Memory:</h3>
+        <div class="memory-stages" id="memoryStages"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound effects (silent audio elements for interactions) -->
+  <audio id="transformSound" preload="auto">
+    <!-- Transformation whoosh sound would go here -->
+  </audio>
+  <audio id="ambientSound" preload="auto" loop>
+    <!-- Journey ambient sounds would go here -->
+  </audio>
+
+  <script src="journeys.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Loading Screen Handler -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

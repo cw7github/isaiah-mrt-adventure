@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Lost & Found Express - Detective Isaiah</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Hub Navigation Styles -->
+  <style>
+    .hub-nav-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .hub-nav-btn:hover {
+      background: rgba(0,0,0,0.7);
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+  <!-- Hub Navigation Button -->
+  <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+  <!-- Main Game Container -->
+  <div id="game-container" role="main" id="main-content">
+    <!-- Dynamic content will be inserted here by JavaScript -->
+    <div class="loading-screen">
+      <div class="loading-content">
+        <h1 class="loading-title">Lost & Found Express</h1>
+        <p class="loading-subtitle">Loading Detective Office...</p>
+        <div class="loading-spinner">🔍</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Initial Loading Styles -->
+  <style>
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: var(--paper-cream, #faf3e0);
+      animation: fadeIn 0.5s ease;
+    }
+
+    .loading-content {
+      text-align: center;
+      padding: 60px;
+      background: white;
+      border: 4px solid var(--detective-tan, #d4a373);
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .loading-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 3em;
+      color: var(--mystery-navy, #1d3557);
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 0 var(--detective-tan, #d4a373);
+    }
+
+    .loading-subtitle {
+      font-family: 'Lora', serif;
+      font-size: 1.4em;
+      color: var(--detective-tan, #d4a373);
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .loading-spinner {
+      font-size: 4em;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="cases.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Welcome Message in Console -->
+  <script>
+    console.log('%c🔍 LOST & FOUND EXPRESS 🔍', 'font-size: 24px; font-weight: bold; color: #1d3557; background: #ffd60a; padding: 10px;');
+    console.log('%cWelcome, Detective Isaiah!', 'font-size: 16px; color: #d4a373; font-weight: bold;');
+    console.log('%cYour mission: Help people find their lost items by solving mysteries!', 'font-size: 14px; color: #1d3557;');
+    console.log('%cEvery clue matters. Read carefully!', 'font-size: 14px; color: #e63946; font-weight: bold;');
+    console.log(' ');
+    console.log('%cGame Features:', 'font-size: 14px; font-weight: bold; color: #1d3557;');
+    console.log('• 5 unique mystery cases to solve');
+    console.log('• Examine items for clues');
+    console.log('• Read reports and interview witnesses');
+    console.log('• Match clues to find the rightful owner');
+    console.log('• Earn detective badges!');
+    console.log(' ');
+    console.log('%cTips for Success:', 'font-size: 14px; font-weight: bold; color: #52b788;');
+    console.log('• Pay attention to ALL details (color, pattern, train line, etc.)');
+    console.log('• Use the hint button if you need help');
+    console.log('• Compare clues carefully before making your choice');
+    console.log('• Have fun being a detective!');
+  </script>
+</body>
+
+</html>

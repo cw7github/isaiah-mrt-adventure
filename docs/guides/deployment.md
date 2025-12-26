@@ -1,17 +1,94 @@
-# Deployment Checklist
+# Deployment Guide
 
-This document provides a comprehensive checklist for deploying Isaiah's MRT Food Adventure.
+This document covers deploying Isaiah's MRT Food Adventure to Vercel.
+
+## Current Architecture (Dec 2025)
+
+The app has been **pivoted to Food-only** with interactive choose-your-adventure stories:
+
+| Component | Status |
+|-----------|--------|
+| Food stations (6 pilot) | ✅ Active - fruit, drink, bakery, pizza, bubbletea, icecream |
+| Food stations (9 more) | 🔜 Coming soon placeholders on map |
+| ELA content (56 stations) | 📦 Archived in `archive/` |
+| Math content (28 stations) | 📦 Archived in `archive/` |
+
+## Quick Deploy
+
+```bash
+# From repo root
+npm run deploy
+# or
+vercel --prod --yes
+```
+
+**Production URL:** https://isaiah-mrt-adventure.vercel.app
+
+## Vercel Account Requirements
+
+### Free Tier Limitations
+- 100 GB bandwidth/month
+- 6,000 build minutes/month
+- Function timeouts: 10s (Hobby)
+
+### Pro Tier Benefits (Recommended)
+- Higher bandwidth limits
+- Longer build times
+- Better support for large asset bundles (this repo has ~400MB of TTS audio in `assets/tts/`)
+
+If deploys hang or timeout on the free tier, upgrading to Pro typically resolves the issue.
+
+## Deploy Hygiene: `.vercelignore`
+
+The `.vercelignore` file excludes non-runtime content from deploys:
+
+```
+archive/           # Archived ELA/Math content
+docs/              # Documentation (not needed in prod)
+generated_assets/  # Build artifacts
+tmp_*/             # Scratch files
+*.pdf              # Large reference files
+index.html.backup* # Backup files
+```
+
+This keeps deploy bundles small and fast.
+
+## Troubleshooting Deployment
+
+### "Network timeout" or "ENOTFOUND api.vercel.com"
+
+This happens when the deployment environment can't reach Vercel's API (common in sandboxed CI/Codex environments).
+
+**Solution:** Deploy from a terminal with normal network access:
+```bash
+cd /path/to/isaiah_school
+vercel --prod --yes
+```
+
+### Deploy succeeds but site shows old content
+
+Vercel caches aggressively. Force a cache bust:
+```bash
+vercel --prod --yes --force
+```
+
+Or from the Vercel dashboard: Deployments → latest → Redeploy.
+
+### "Function bundle too large"
+
+The TTS audio files (`assets/tts/`, ~400MB) are static assets, not functions. If you see function size errors:
+1. Ensure `vercel.json` correctly routes `/api/*` functions
+2. Static assets should not be bundled with functions
 
 ## Pre-Deployment Checklist
 
 ### 1. Content Verification
 
-- [x] Validate JSON structure of content-pack.v1.json
-- [x] Verify all 56 stations are present
-- [x] Confirm 505+ pages are included
-- [ ] Review all text content for typos/errors
-- [ ] Verify all station names and descriptions
-- [ ] Check sticker assignments
+- [x] Story graphs defined for pilot stations (FOOD_STORY_GRAPHS)
+- [x] All pilot stations have scene images
+- [ ] Review story text for typos/errors
+- [ ] Verify comprehension questions have correct answers
+- [ ] Test all branching paths reach valid endings
 
 ### 2. Code Quality
 
@@ -153,34 +230,36 @@ Steps:
 
 ### Functionality Tests
 
-1. **Landing Page**
-   - [ ] Page loads without errors
-   - [ ] Title and description correct
-   - [ ] All styles load correctly
-   - [ ] Fonts load (Nunito, Fredoka, Outfit)
+1. **Welcome Screen**
+   - [ ] Train animation loops smoothly (no flash on restart)
+   - [ ] "Board the Train" button navigates to MRT map
+   - [ ] Platform doors animate open/closed
 
-2. **Station Selection**
-   - [ ] All 56 stations visible
-   - [ ] Lines display correctly (RF, RL, RI, L-G, L-V)
-   - [ ] Station icons show
-   - [ ] Click on first station works
-   - [ ] Locked stations show lock icon
-   - [ ] Unlocked stations are clickable
+2. **MRT Map (Food Network)**
+   - [ ] 6 pilot stations are clickable (fruit, drink, bakery, pizza, bubbletea, icecream)
+   - [ ] Other stations show "SOON" overlay
+   - [ ] Pan/drag navigation works on mobile
+   - [ ] Station icons and names display correctly
 
-3. **Reading Pages**
-   - [ ] First page loads
-   - [ ] Text displays correctly
-   - [ ] Navigation buttons work (Next/Back)
-   - [ ] Audio button appears (if enabled)
-   - [ ] Audio plays (if enabled)
-   - [ ] Images load (if present)
+3. **Story Flow (Choose Your Adventure)**
+   - [ ] Story starts with first read node
+   - [ ] Choice menus show icons and descriptions
+   - [ ] Branching paths lead to different content
+   - [ ] Comprehension questions ("Story Check") work
+   - [ ] Multiple endings are reachable
+   - [ ] "Try a different path" replay works
 
-4. **Progress System**
-   - [ ] Complete a page, check progress saves
+4. **Audio System**
+   - [ ] Sound button toggles narration
+   - [ ] Word-by-word highlighting syncs with audio
+   - [ ] Audio stops when navigating away
+   - [ ] No audio plays without user interaction (iOS Safari compliance)
+
+5. **Progress System**
+   - [ ] Stories completed are tracked
+   - [ ] Endings unlocked are saved
    - [ ] Refresh browser, progress persists
-   - [ ] Complete a station, unlock next station
-   - [ ] Stickers are awarded
-   - [ ] Reset progress button works
+   - [ ] Stickers are awarded on story completion
 
 5. **Cross-Browser Testing**
    - [ ] Chrome (desktop)
@@ -337,13 +416,23 @@ Final steps before announcing the app:
 ## Contact Information
 
 For deployment issues or questions:
-- Content packs: `content/cpa-grade1-ela/content-pack.v1.json`, `content/cpa-grade1-math/content-pack.v1.json`
+- Story content: `index.html` (inline `FOOD_STORY_GRAPHS` object)
+- Archived content: `archive/` directory
 
 ## Version History
 
+- v2.0 (2025-12-24): **Food-only pivot with Choose Your Adventure stories**
+  - Pivoted from curriculum-based ELA/Math to interactive food station stories
+  - 6 pilot stations with branching narratives (8+ choice points, 3-5 endings each)
+  - Archived all ELA (56 stations) and Math (28 stations) content
+  - Added `.vercelignore` to exclude archived content from deploys
+  - Fixed train animation flash on welcome screen
+  - Fixed audio/highlight cleanup on navigation
+  - Upgraded to Vercel Pro for reliable large-bundle deploys
+
 - v1.0 (2024-12-22): Initial deployment
-  - 56 stations
-  - 505 pages
+  - 56 ELA stations, 28 Math stations
+  - 505+ pages
   - Progress tracking
   - Audio support (optional)
   - Taipei MRT theme

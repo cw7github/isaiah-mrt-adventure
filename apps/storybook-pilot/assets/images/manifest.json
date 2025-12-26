@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2025-12-26T19:00:51.174Z",
+  "style": "Realistic Cozy / Miniature Diorama",
+  "pages": {
+    "1": {
+      "scene": "station",
+      "label": "The Station at Midnight",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Interior view of a child's cozy bedroom at midnight. A young boy silhouette stands at a large window, curtains drawn back. Outside the window, a magical golden glow illuminates misty train tracks. Warm wooden furniture, soft moonlight, brass lamp on nightstand. Miniature diorama style, warm honey lighting, realistic textures, cozy atmosphere. Horizontal 16:9 composition.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "2": {
+      "scene": "station",
+      "label": "The Magical Arrival",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: A magnificent golden steam locomotive emerging from swirling magical mist at a Victorian train platform. The train glows with warm amber light, brass details gleaming. Steam puffs form heart and star shapes. Pizza-shaped ornaments on the engine. Cobblestone platform with brass lanterns. Miniature diorama style, warm dramatic lighting, photorealistic materials with storybook magic. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "3": {
+      "scene": "train",
+      "label": "The Conductor's Welcome",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Interior of a luxurious vintage train car with warm mahogany wood paneling and brass fixtures. A friendly Italian chef conductor with a warm smile, wearing a white chef hat with a pizza badge, stands in the doorway. Brass lanterns cast golden light. Red velvet seats, art deco details. Through windows, magical starry night. Miniature diorama style, cozy warm lighting. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "4": {
+      "scene": "train",
+      "label": "The Special Ingredients",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Chef Marco holding an ancient glowing scroll in a train car filled with magical ingredients. The scroll shows three glowing symbols: a golden crumb, an orange spark, and a red seed. Jars of colorful spices and herbs line wooden shelves. Warm candlelight, floating magical particles. Rich wood textures, brass details. Miniature diorama style. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "5": {
+      "scene": "kitchen",
+      "label": "The Kindness Kitchen",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Cozy train kitchen car with copper pots, wooden counters, and a warm brick oven. A tiny adorable mouse with big sad eyes holds an empty bowl. Bread loaves and pastries on shelves. Warm amber lighting from the oven, steam rising. A child's hand offering bread to the mouse. Miniature diorama style, heartwarming atmosphere. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "6": {
+      "scene": "kitchen",
+      "label": "The First Ingredient",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Magical moment in the train kitchen. A happy mouse glowing with golden light, smiling joyfully. A sparkling golden crumb floats in the air, radiating warm light rays. Chef Marco watches in amazement. Magical sparkles fill the air. Warm honey and gold color palette. Miniature diorama style, ethereal lighting. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "7": {
+      "scene": "shadow",
+      "label": "The Dark Car",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Dark mysterious train car with shadows dancing on the walls. A small boy silhouette bravely stepping through the doorway into darkness. Eerie blue-grey tones with hints of warm orange light from behind. Shadow shapes that look almost like friendly creatures. Distant tiny orange spark glowing in the darkness. Dramatic lighting contrast. Miniature diorama style. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "8": {
+      "scene": "shadow",
+      "label": "Courage Found",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Triumphant scene in the train car as shadows transform into colorful butterflies and float away. A bright orange-golden spark floats toward a young boy, illuminating his amazed face. The darkness recedes to reveal beautiful warm colors. Magical transformation moment. Orange and gold burst of light. Miniature diorama style, dramatic uplighting. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "9": {
+      "scene": "dream",
+      "label": "The Heart of the Train",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Beautiful heart-shaped garden car inside the train. Heart-shaped plants and flowers in warm reds and pinks. Chef Marco kneeling beside Isaiah, pointing to the boy's heart where a gentle red glow emanates. A magnificent but cold Dream Oven in the background. Warm emotional lighting, love and warmth radiating. Miniature diorama style. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    },
+    "10": {
+      "scene": "dream",
+      "label": "The Dream Oven Glows",
+      "success": false,
+      "error": "API error: 401",
+      "prompt": "Generate a beautiful illustration: Magnificent celebration scene. A grand brass Dream Oven blazing with golden fire and magical flames. Golden glowing pizzas magically floating out of the oven. Chef Marco and Isaiah celebrating together, arms raised in joy. Magical sparkles and warm light filling the entire train car. Triumphant, joyful atmosphere. Rich golds, oranges, and warm colors. Miniature diorama style, dramatic celebratory lighting. Horizontal 16:9.\n\nCRITICAL STYLE REQUIREMENTS:\n- Miniature diorama / tilt-shift photography aesthetic\n- Warm, cozy, realistic textures (wood grain, brass, fabric)\n- NOT cartoon, NOT anime, NOT kawaii, NOT watercolor\n- Photorealistic materials with magical storybook charm\n- Warm honey-butter (#E8C882) and amber (#C4956A) color palette\n- Soft volumetric lighting like a cozy lamp\n- Child-friendly, magical but grounded in reality\n- High detail, cinematic quality like a Pixar still\n- Absolutely NO text, words, or letters in the image"
+    }
+  },
+  "page1": {
+    "file": "page1_scene.png",
+    "generated": "2025-12-26T19:59:57.622Z"
+  },
+  "page2": {
+    "file": "page2_scene.png",
+    "generated": "2025-12-26T20:00:41.615Z"
+  },
+  "page3": {
+    "file": "page3_scene.png",
+    "generated": "2025-12-26T20:01:10.977Z"
+  },
+  "page4": {
+    "file": "page4_scene.png",
+    "generated": "2025-12-26T20:01:38.536Z"
+  },
+  "page5": {
+    "file": "page5_scene.png",
+    "generated": "2025-12-26T20:02:05.172Z"
+  },
+  "page6": {
+    "file": "page6_scene.jpeg",
+    "generated": "2025-12-26T20:02:31.289Z"
+  },
+  "page7": {
+    "file": "page7_scene.png",
+    "generated": "2025-12-26T20:03:01.406Z"
+  },
+  "page8": {
+    "file": "page8_scene.jpeg",
+    "generated": "2025-12-26T20:03:26.186Z"
+  },
+  "page9": {
+    "file": "page9_scene.png",
+    "generated": "2025-12-26T20:03:54.688Z"
+  },
+  "page10": {
+    "file": "page10_scene.png",
+    "generated": "2025-12-26T20:04:31.029Z"
+  }
+}

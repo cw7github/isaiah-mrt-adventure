@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Express - Animation Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .test-container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--deep-navy);
+      min-height: 100vh;
+    }
+    .test-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(13, 27, 42, 0.8);
+      border: 2px solid var(--brass);
+      border-radius: 15px;
+    }
+    .test-title {
+      font-family: var(--font-header);
+      color: var(--bioluminescent-cyan);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px var(--bioluminescent-cyan);
+    }
+    .test-demo {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .test-creature {
+      font-size: 4rem;
+      animation: creature-drift 8s ease-in-out infinite;
+    }
+    .test-bubble {
+      width: 30px;
+      height: 30px;
+      animation: bubble-rise 4s ease-in infinite;
+    }
+    .test-bioluminescent {
+      font-size: 3rem;
+      animation: bioluminescent-pulse 2s ease-in-out infinite;
+      color: var(--bioluminescent-cyan);
+    }
+    .test-anglerfish {
+      font-size: 4rem;
+      position: relative;
+      animation: bioluminescent-pulse 2s ease-in-out infinite;
+      color: var(--bioluminescent-magenta);
+    }
+    .test-anglerfish::before {
+      content: '💡';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      animation: anglerfish-lantern 1.5s ease-in-out infinite;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-family: var(--font-header);
+      color: var(--abyss-black);
+      background: linear-gradient(135deg, var(--amber), var(--brass));
+      border: 3px solid var(--brass-dark);
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .back-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 30px rgba(255, 190, 11, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1 style="font-family: var(--font-header); color: var(--brass); text-align: center; font-size: 3rem; margin-bottom: 2rem;">
+      Ocean Express Animation Test
+    </h1>
+
+    <!-- Test 1: Creature Drift -->
+    <div class="test-section">
+      <h2 class="test-title">1. Creature Drift Animation</h2>
+      <div class="test-demo">
+        <div class="test-creature">🐠</div>
+        <div class="test-creature" style="color: #4ECDC4;">🐟</div>
+        <div class="test-creature" style="color: #45B7D1;">🐡</div>
+        <div class="test-creature" style="color: #FFA07A;">🐬</div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Creatures should drift across the screen smoothly
+      </p>
+    </div>
+
+    <!-- Test 2: Bubble Rise -->
+    <div class="test-section">
+      <h2 class="test-title">2. Bubble Rise Animation</h2>
+      <div class="test-demo" style="position: relative; height: 200px;">
+        <div class="test-bubble bubble"></div>
+        <div class="test-bubble bubble" style="left: 30%; animation-delay: 0.5s;"></div>
+        <div class="test-bubble bubble" style="left: 60%; animation-delay: 1s;"></div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Bubbles should rise from bottom to top
+      </p>
+    </div>
+
+    <!-- Test 3: Bioluminescent Pulse -->
+    <div class="test-section">
+      <h2 class="test-title">3. Bioluminescent Pulse</h2>
+      <div class="test-demo">
+        <div class="test-bioluminescent">🪼</div>
+        <div class="test-bioluminescent" style="color: var(--bioluminescent-magenta);">🦑</div>
+        <div class="test-bioluminescent" style="color: var(--amber);">🦐</div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Creatures should glow and pulse rhythmically
+      </p>
+    </div>
+
+    <!-- Test 4: Anglerfish Lantern -->
+    <div class="test-section">
+      <h2 class="test-title">4. Anglerfish Lantern (Special Effect)</h2>
+      <div class="test-demo">
+        <div class="test-anglerfish">🐡</div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        The anglerfish should have a glowing lantern above its head
+      </p>
+    </div>
+
+    <!-- Test 5: Gauges -->
+    <div class="test-section">
+      <h2 class="test-title">5. Depth & Pressure Gauges</h2>
+      <div class="test-demo">
+        <div class="depth-gauge-container">
+          <h3 class="gauge-label">Depth</h3>
+          <div class="gauge-circle">
+            <div class="gauge-needle" style="transform: translate(-50%, -100%) rotate(90deg);"></div>
+            <div class="gauge-center"></div>
+          </div>
+          <div class="depth-reading">5500 m</div>
+        </div>
+        <div class="pressure-gauge-container">
+          <h3 class="gauge-label">Pressure</h3>
+          <div class="pressure-bar">
+            <div class="pressure-fill" style="width: 50%;"></div>
+          </div>
+          <div class="pressure-reading">550 ATM</div>
+        </div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Gauges should display brass styling with glowing readings
+      </p>
+    </div>
+
+    <!-- Test 6: Water Caustics -->
+    <div class="test-section">
+      <h2 class="test-title">6. Water Caustics (Sunlight Zone)</h2>
+      <div class="test-demo">
+        <div style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; position: relative; background: radial-gradient(circle, rgba(0, 119, 190, 0.8), rgba(13, 27, 42, 0.9));">
+          <div class="water-caustics"></div>
+        </div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Light patterns should shimmer like underwater sunlight
+      </p>
+    </div>
+
+    <!-- Test 7: Brass Elements -->
+    <div class="test-section">
+      <h2 class="test-title">7. Brass Porthole Frame</h2>
+      <div class="test-demo">
+        <div style="width: 200px; height: 200px; position: relative;">
+          <div class="brass-ring"></div>
+          <div class="sphere-body">
+            <div class="porthole-outer">
+              <div class="porthole-glass"></div>
+            </div>
+            <div class="rivet rivet-1"></div>
+            <div class="rivet rivet-2"></div>
+            <div class="rivet rivet-3"></div>
+            <div class="rivet rivet-4"></div>
+          </div>
+        </div>
+      </div>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; text-align: center;">
+        Brass should have metallic gradient with rivets
+      </p>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-link">Launch Full App</a>
+    </div>
+  </div>
+</body>
+</html>

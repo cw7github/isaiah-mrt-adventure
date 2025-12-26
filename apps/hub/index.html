@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Isaiah's Grand Learning Lobby</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hub-container">
+    <!-- Grand Header -->
+    <header class="hub-header">
+      <h1 class="hub-title">Isaiah's Learning Lobby</h1>
+      <p class="hub-subtitle">Welcome to the Grand Magical Elevator Bank</p>
+    </header>
+
+    <!-- The Elevator Bank - 5 Magical Apps -->
+    <div class="elevator-bank">
+
+      <!-- App 1: Elevator Repair Crew -->
+      <div class="elevator-door repair" tabindex="0" role="button"
+           aria-label="Enter Elevator Repair Crew - Fix broken elevators and learn Reading, Math, Logic, and Science"
+           onclick="launchApp('repair-crew')">
+        <div class="floor-indicator">
+          <span class="floor-number">1</span>
+        </div>
+        <div class="door-interior">
+          <div class="app-icon">🔧</div>
+          <h2 class="app-name">Repair Crew</h2>
+          <p class="app-tagline">Fix broken elevators! Be a kid mechanic!</p>
+        </div>
+        <div class="door-panels">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+        </div>
+        <div class="skills-preview">
+          <span class="skill-tag">Reading</span>
+          <span class="skill-tag">Math</span>
+          <span class="skill-tag">Logic</span>
+          <span class="skill-tag">Science</span>
+        </div>
+        <span class="app-badge">NEW</span>
+      </div>
+
+      <!-- App 2: Creature Transit Authority -->
+      <div class="elevator-door creature" tabindex="0" role="button"
+           aria-label="Enter Creature Transit Authority - Run a magical transit system for creatures while learning Reading, Math, Matching, and Empathy"
+           onclick="launchApp('creature-transit')">
+        <div class="floor-indicator">
+          <span class="floor-number">2</span>
+        </div>
+        <div class="door-interior">
+          <div class="app-icon">🐙</div>
+          <h2 class="app-name">Creature Transit</h2>
+          <p class="app-tagline">Run a transit system for magical creatures!</p>
+        </div>
+        <div class="door-panels">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+        </div>
+        <div class="skills-preview">
+          <span class="skill-tag">Reading</span>
+          <span class="skill-tag">Math</span>
+          <span class="skill-tag">Matching</span>
+          <span class="skill-tag">Empathy</span>
+        </div>
+        <span class="app-badge">NEW</span>
+      </div>
+
+      <!-- App 3: Rhythm Railway -->
+      <div class="elevator-door rhythm" tabindex="0" role="button"
+           aria-label="Enter Rhythm Railway - Make the train move with your beats while learning Patterns, Counting, Rhythm, and Music"
+           onclick="launchApp('rhythm-railway')">
+        <div class="floor-indicator">
+          <span class="floor-number">3</span>
+        </div>
+        <div class="door-interior">
+          <div class="app-icon">🎵</div>
+          <h2 class="app-name">Rhythm Railway</h2>
+          <p class="app-tagline">The train moves to your beats!</p>
+        </div>
+        <div class="door-panels">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+        </div>
+        <div class="skills-preview">
+          <span class="skill-tag">Patterns</span>
+          <span class="skill-tag">Counting</span>
+          <span class="skill-tag">Rhythm</span>
+          <span class="skill-tag">Music</span>
+        </div>
+        <span class="app-badge">NEW</span>
+      </div>
+
+      <!-- App 4: Transformation Station -->
+      <div class="elevator-door transform" tabindex="0" role="button"
+           aria-label="Enter Transformation Station - Transform into what you're learning about while practicing Science, Reading, Sequences, and Empathy"
+           onclick="launchApp('transformation-station')">
+        <div class="floor-indicator">
+          <span class="floor-number">4</span>
+        </div>
+        <div class="door-interior">
+          <div class="app-icon">🦋</div>
+          <h2 class="app-name">Transformation</h2>
+          <p class="app-tagline">Become what you're learning about!</p>
+        </div>
+        <div class="door-panels">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+        </div>
+        <div class="skills-preview">
+          <span class="skill-tag">Science</span>
+          <span class="skill-tag">Reading</span>
+          <span class="skill-tag">Sequences</span>
+          <span class="skill-tag">Empathy</span>
+        </div>
+        <span class="app-badge">NEW</span>
+      </div>
+
+      <!-- App 5: Lost & Found Express -->
+      <div class="elevator-door detective" tabindex="0" role="button"
+           aria-label="Enter Lost and Found Express - Be a detective on the transit system while learning Reading, Logic, Matching, and Deduction"
+           onclick="launchApp('lost-found')">
+        <div class="floor-indicator">
+          <span class="floor-number">5</span>
+        </div>
+        <div class="door-interior">
+          <div class="app-icon">🔍</div>
+          <h2 class="app-name">Lost & Found</h2>
+          <p class="app-tagline">Detective work on the transit system!</p>
+        </div>
+        <div class="door-panels">
+          <div class="door-left"></div>
+          <div class="door-right"></div>
+        </div>
+        <div class="skills-preview">
+          <span class="skill-tag">Reading</span>
+          <span class="skill-tag">Logic</span>
+          <span class="skill-tag">Matching</span>
+          <span class="skill-tag">Deduction</span>
+        </div>
+        <span class="app-badge">NEW</span>
+      </div>
+
+    </div>
+
+    <!-- Elegant Footer -->
+    <footer class="hub-footer">
+      <p>All elevators arrive exactly when they mean to. Learning through play!</p>
+    </footer>
+  </div>
+
+  <script>
+    // Floor range for elevator animation (B4 to 10 = 15 floors total)
+    const FLOORS = ['B4', 'B3', 'B2', 'B1', 'G', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+    // App launcher function with dramatic elevator departure
+    function launchApp(appName) {
+      const door = event.currentTarget;
+      door.classList.add('loading');
+
+      // Play door opening sound (if available)
+      playSound('elevator-ding');
+
+      // Create dramatic exit particles
+      createDepartureEffect(door);
+
+      // Start floor traversal animation
+      const floorIndicator = door.querySelector('.floor-number');
+      animateFloorTraversal(floorIndicator, () => {
+        // Navigate after floor animation completes
+        window.location.href = `../${appName}/index.html`;
+      });
+    }
+
+    // Animate floor numbers cycling through B4 to 10
+    function animateFloorTraversal(floorElement, onComplete) {
+      let currentIndex = 0;
+      const totalFloors = FLOORS.length;
+      const animationDuration = 1500; // Total animation time in ms
+      const intervalTime = animationDuration / totalFloors; // Time per floor
+
+      const interval = setInterval(() => {
+        floorElement.textContent = FLOORS[currentIndex];
+        floorElement.style.animation = 'floor-number-change 0.1s ease-out';
+
+        // Reset animation for next iteration
+        setTimeout(() => {
+          floorElement.style.animation = '';
+        }, 100);
+
+        currentIndex++;
+
+        if (currentIndex >= totalFloors) {
+          clearInterval(interval);
+          if (onComplete) {
+            setTimeout(onComplete, 200);
+          }
+        }
+      }, intervalTime);
+    }
+
+    // Keyboard navigation support
+    document.querySelectorAll('.elevator-door').forEach(door => {
+      door.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          door.click();
+        }
+      });
+    });
+
+    // Sound system (placeholder for future implementation)
+    function playSound(soundName) {
+      console.log(`🔔 Playing sound: ${soundName}`);
+      // Future: Integrate actual audio files
+      // const audio = new Audio(`sounds/${soundName}.mp3`);
+      // audio.play();
+    }
+
+    // Dramatic departure particle effect
+    function createDepartureEffect(doorElement) {
+      const rect = doorElement.getBoundingClientRect();
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.cssText = `
+            position: fixed;
+            width: ${Math.random() * 6 + 3}px;
+            height: ${Math.random() * 6 + 3}px;
+            background: ${['#d4af37', '#b5a642', '#faf6ee'][Math.floor(Math.random() * 3)]};
+            border-radius: 50%;
+            left: ${rect.left + Math.random() * rect.width}px;
+            top: ${rect.top + rect.height / 2}px;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 0 20px currentColor;
+            animation: particle-burst ${Math.random() * 1 + 0.5}s ease-out forwards;
+          `;
+          document.body.appendChild(particle);
+          setTimeout(() => particle.remove(), 1500);
+        }, i * 30);
+      }
+    }
+
+    // Add particle burst animation
+    const particleStyle = document.createElement('style');
+    particleStyle.textContent = `
+      @keyframes particle-burst {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(${Math.random() * 200 - 100}px, ${-Math.random() * 300 - 100}px) scale(0);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(particleStyle);
+
+    // Ambient floating dust motes
+    function createDustMote() {
+      const mote = document.createElement('div');
+      mote.style.cssText = `
+        position: fixed;
+        width: ${Math.random() * 3 + 1}px;
+        height: ${Math.random() * 3 + 1}px;
+        background: ${['#d4af37', '#faf6ee', '#b5a642'][Math.floor(Math.random() * 3)]};
+        border-radius: 50%;
+        left: ${Math.random() * 100}vw;
+        bottom: -10px;
+        pointer-events: none;
+        z-index: 2;
+        opacity: ${Math.random() * 0.4 + 0.2};
+        box-shadow: 0 0 8px currentColor;
+        animation: float-mote ${Math.random() * 15 + 10}s linear forwards;
+      `;
+      document.body.appendChild(mote);
+
+      // Remove after animation completes
+      setTimeout(() => mote.remove(), 25000);
+    }
+
+    // Create dust motes periodically for magical ambiance
+    setInterval(createDustMote, 800);
+
+    // Initial burst of motes on page load
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createDustMote, i * 200);
+    }
+
+    // Hover sound effects (visual feedback for now)
+    document.querySelectorAll('.elevator-door').forEach(door => {
+      door.addEventListener('mouseenter', () => {
+        console.log('🎵 Elevator chime');
+      });
+    });
+
+    // Floor indicator animations
+    document.querySelectorAll('.elevator-door').forEach((door, index) => {
+      const indicator = door.querySelector('.floor-indicator');
+
+      // Random "elevator arriving" animation
+      setInterval(() => {
+        if (!door.classList.contains('loading') && Math.random() > 0.95) {
+          indicator.style.animation = 'floor-ding 0.5s ease-in-out';
+          setTimeout(() => {
+            indicator.style.animation = '';
+          }, 500);
+        }
+      }, 3000 + index * 500);
+    });
+
+    // Accessibility announcement
+    const srAnnouncement = document.createElement('div');
+    srAnnouncement.setAttribute('role', 'status');
+    srAnnouncement.setAttribute('aria-live', 'polite');
+    srAnnouncement.className = 'sr-only';
+    srAnnouncement.style.cssText = `
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    `;
+    document.body.appendChild(srAnnouncement);
+
+    // Announce page load
+    setTimeout(() => {
+      srAnnouncement.textContent = 'Welcome to Isaiah\'s Grand Learning Lobby. Five magical elevators available. Use arrow keys to navigate and Enter to select.';
+    }, 1000);
+
+    // Performance optimization: Reduce particles on lower-end devices
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      console.log('Reduced motion preferred - minimizing animations');
+      // Dust motes are already handled by CSS media query
+    }
+
+    // Log welcome message
+    console.log('%c🏛️ Welcome to the Grand Magical Elevator Lobby! 🏛️', 'font-size: 20px; color: #d4af37; font-weight: bold;');
+    console.log('%cChoose your learning adventure, Isaiah!', 'font-size: 14px; color: #faf6ee; font-style: italic;');
+  </script>
+</body>
+</html>

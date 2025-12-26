@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2025-12-26T19:00:14.530Z",
+  "effects": {
+    "page_turn": {
+      "file": "page_turn.mp3",
+      "duration": 1
+    },
+    "train_whistle": {
+      "file": "train_whistle.mp3",
+      "duration": 2
+    },
+    "train_chug": {
+      "file": "train_chug.mp3",
+      "duration": 3
+    },
+    "magic_sparkle": {
+      "file": "magic_sparkle.mp3",
+      "duration": 2
+    },
+    "success_chime": {
+      "file": "success_chime.mp3",
+      "duration": 1.5
+    },
+    "door_open": {
+      "file": "door_open.mp3",
+      "duration": 1.5
+    },
+    "oven_roar": {
+      "file": "oven_roar.mp3",
+      "duration": 2
+    },
+    "heartbeat_glow": {
+      "file": "heartbeat_glow.mp3",
+      "duration": 2
+    },
+    "shadow_dissolve": {
+      "file": "shadow_dissolve.mp3",
+      "duration": 2
+    },
+    "golden_appear": {
+      "file": "golden_appear.mp3",
+      "duration": 1.5
+    }
+  }
+}

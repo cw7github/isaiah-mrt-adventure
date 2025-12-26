@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/storybook-pilot", "destination": "/apps/storybook-pilot/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/storybook-pilot/:path*", "destination": "/apps/storybook-pilot/:path*" }
+  ]
 }

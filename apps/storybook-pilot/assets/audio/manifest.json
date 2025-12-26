@@ -1,0 +1,1604 @@
+{
+  "generatedAt": "2025-12-26T19:48:28.367Z",
+  "model": "eleven_v3",
+  "pages": {
+    "1": {
+      "pageNumber": 1,
+      "scene": "station",
+      "segments": [
+        {
+          "voice": "narrator",
+          "audioFile": "page1_narrator.mp3",
+          "duration": 6.058,
+          "wordTimings": [
+            {
+              "word": "It",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 80
+            },
+            {
+              "word": "was",
+              "index": 1,
+              "startMs": 140,
+              "endMs": 320
+            },
+            {
+              "word": "midnight.",
+              "index": 2,
+              "startMs": 391,
+              "endMs": 1559
+            },
+            {
+              "word": "Isaiah",
+              "index": 3,
+              "startMs": 1644,
+              "endMs": 2154
+            },
+            {
+              "word": "could",
+              "index": 4,
+              "startMs": 2180,
+              "endMs": 2310
+            },
+            {
+              "word": "not",
+              "index": 5,
+              "startMs": 2370,
+              "endMs": 2550
+            },
+            {
+              "word": "sleep.",
+              "index": 6,
+              "startMs": 2643,
+              "endMs": 3188
+            },
+            {
+              "word": "He",
+              "index": 7,
+              "startMs": 3428,
+              "endMs": 3908
+            },
+            {
+              "word": "went",
+              "index": 8,
+              "startMs": 3956,
+              "endMs": 4148
+            },
+            {
+              "word": "to",
+              "index": 9,
+              "startMs": 4174,
+              "endMs": 4226
+            },
+            {
+              "word": "the",
+              "index": 10,
+              "startMs": 4246,
+              "endMs": 4306
+            },
+            {
+              "word": "window",
+              "index": 11,
+              "startMs": 4397,
+              "endMs": 4943
+            },
+            {
+              "word": "and",
+              "index": 12,
+              "startMs": 4963,
+              "endMs": 5023
+            },
+            {
+              "word": "looked",
+              "index": 13,
+              "startMs": 5068,
+              "endMs": 5338
+            },
+            {
+              "word": "outside.",
+              "index": 14,
+              "startMs": 5418,
+              "endMs": 6058
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "pageNumber": 2,
+      "scene": "station",
+      "segments": [
+        {
+          "voice": "narrator",
+          "audioFile": "page2_narrator.mp3",
+          "duration": 7.345,
+          "wordTimings": [
+            {
+              "word": "There",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 80
+            },
+            {
+              "word": "was",
+              "index": 1,
+              "startMs": 120,
+              "endMs": 240
+            },
+            {
+              "word": "a",
+              "index": 2,
+              "startMs": 280,
+              "endMs": 320
+            },
+            {
+              "word": "train!",
+              "index": 3,
+              "startMs": 426,
+              "endMs": 1036
+            },
+            {
+              "word": "But",
+              "index": 4,
+              "startMs": 1276,
+              "endMs": 1996
+            },
+            {
+              "word": "this",
+              "index": 5,
+              "startMs": 2044,
+              "endMs": 2236
+            },
+            {
+              "word": "was",
+              "index": 6,
+              "startMs": 2276,
+              "endMs": 2396
+            },
+            {
+              "word": "not",
+              "index": 7,
+              "startMs": 2456,
+              "endMs": 2636
+            },
+            {
+              "word": "a",
+              "index": 8,
+              "startMs": 2676,
+              "endMs": 2716
+            },
+            {
+              "word": "normal",
+              "index": 9,
+              "startMs": 2773,
+              "endMs": 3115
+            },
+            {
+              "word": "train.",
+              "index": 10,
+              "startMs": 3208,
+              "endMs": 3753
+            },
+            {
+              "word": "It",
+              "index": 11,
+              "startMs": 3939,
+              "endMs": 4311
+            },
+            {
+              "word": "was",
+              "index": 12,
+              "startMs": 4351,
+              "endMs": 4471
+            },
+            {
+              "word": "made",
+              "index": 13,
+              "startMs": 4551,
+              "endMs": 4871
+            },
+            {
+              "word": "of",
+              "index": 14,
+              "startMs": 4897,
+              "endMs": 4949
+            },
+            {
+              "word": "gold",
+              "index": 15,
+              "startMs": 5061,
+              "endMs": 5509
+            },
+            {
+              "word": "and",
+              "index": 16,
+              "startMs": 5589,
+              "endMs": 5829
+            },
+            {
+              "word": "smelled",
+              "index": 17,
+              "startMs": 5899,
+              "endMs": 6389
+            },
+            {
+              "word": "like",
+              "index": 18,
+              "startMs": 6421,
+              "endMs": 6549
+            },
+            {
+              "word": "pizza!",
+              "index": 19,
+              "startMs": 6655,
+              "endMs": 7345
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "pageNumber": 3,
+      "scene": "train",
+      "segments": [
+        {
+          "voice": "chef_marco",
+          "emotion": "warm",
+          "audioFile": "page3_seg1_chef_marco.mp3",
+          "duration": 0.796,
+          "wordTimings": [
+            {
+              "word": "[warm]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 452
+            },
+            {
+              "word": "Welcome!",
+              "index": 1,
+              "startMs": 475,
+              "endMs": 796
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "calm",
+          "audioFile": "page3_seg2_narrator.mp3",
+          "duration": 1.12,
+          "wordTimings": [
+            {
+              "word": "said",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 160
+            },
+            {
+              "word": "the",
+              "index": 1,
+              "startMs": 180,
+              "endMs": 240
+            },
+            {
+              "word": "conductor.",
+              "index": 2,
+              "startMs": 312,
+              "endMs": 1120
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "expressive",
+          "audioFile": "page3_seg3_chef_marco.mp3",
+          "duration": 4.944,
+          "wordTimings": [
+            {
+              "word": "[friendly]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 76
+            },
+            {
+              "word": "I",
+              "index": 1,
+              "startMs": 156,
+              "endMs": 236
+            },
+            {
+              "word": "am",
+              "index": 2,
+              "startMs": 289,
+              "endMs": 395
+            },
+            {
+              "word": "Chef",
+              "index": 3,
+              "startMs": 459,
+              "endMs": 715
+            },
+            {
+              "word": "Marco.",
+              "index": 4,
+              "startMs": 821,
+              "endMs": 1551
+            },
+            {
+              "word": "Will",
+              "index": 5,
+              "startMs": 1591,
+              "endMs": 1751
+            },
+            {
+              "word": "you",
+              "index": 6,
+              "startMs": 1791,
+              "endMs": 1911
+            },
+            {
+              "word": "help",
+              "index": 7,
+              "startMs": 1959,
+              "endMs": 2151
+            },
+            {
+              "word": "me?",
+              "index": 8,
+              "startMs": 2231,
+              "endMs": 2471
+            },
+            {
+              "word": "[worried]",
+              "index": 9,
+              "startMs": 2831,
+              "endMs": 3249
+            },
+            {
+              "word": "The",
+              "index": 10,
+              "startMs": 3254,
+              "endMs": 3269
+            },
+            {
+              "word": "Dream",
+              "index": 11,
+              "startMs": 3322,
+              "endMs": 3587
+            },
+            {
+              "word": "Oven",
+              "index": 12,
+              "startMs": 3635,
+              "endMs": 3827
+            },
+            {
+              "word": "is",
+              "index": 13,
+              "startMs": 3880,
+              "endMs": 3986
+            },
+            {
+              "word": "broken!",
+              "index": 14,
+              "startMs": 4100,
+              "endMs": 4944
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "pageNumber": 4,
+      "scene": "train",
+      "segments": [
+        {
+          "voice": "chef_marco",
+          "emotion": "serious",
+          "audioFile": "page4_seg1_chef_marco.mp3",
+          "duration": 2.865,
+          "wordTimings": [
+            {
+              "word": "[serious]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 127
+            },
+            {
+              "word": "To",
+              "index": 1,
+              "startMs": 135,
+              "endMs": 151
+            },
+            {
+              "word": "fix",
+              "index": 2,
+              "startMs": 231,
+              "endMs": 471
+            },
+            {
+              "word": "the",
+              "index": 3,
+              "startMs": 511,
+              "endMs": 631
+            },
+            {
+              "word": "oven,",
+              "index": 4,
+              "startMs": 711,
+              "endMs": 1431
+            },
+            {
+              "word": "we",
+              "index": 5,
+              "startMs": 1484,
+              "endMs": 1590
+            },
+            {
+              "word": "need",
+              "index": 6,
+              "startMs": 1638,
+              "endMs": 1830
+            },
+            {
+              "word": "three",
+              "index": 7,
+              "startMs": 1883,
+              "endMs": 2148
+            },
+            {
+              "word": "things.",
+              "index": 8,
+              "startMs": 2239,
+              "endMs": 2865
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "mystical",
+          "audioFile": "page4_seg2_chef_marco.mp3",
+          "duration": 5.356,
+          "wordTimings": [
+            {
+              "word": "[mystical]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 318
+            },
+            {
+              "word": "A",
+              "index": 1,
+              "startMs": 358,
+              "endMs": 398
+            },
+            {
+              "word": "Kindness",
+              "index": 2,
+              "startMs": 414,
+              "endMs": 718
+            },
+            {
+              "word": "Crumb.",
+              "index": 3,
+              "startMs": 798,
+              "endMs": 1278
+            },
+            {
+              "word": "A",
+              "index": 4,
+              "startMs": 1998,
+              "endMs": 1998
+            },
+            {
+              "word": "Courage",
+              "index": 5,
+              "startMs": 2058,
+              "endMs": 2478
+            },
+            {
+              "word": "Spark.",
+              "index": 6,
+              "startMs": 2571,
+              "endMs": 3116
+            },
+            {
+              "word": "And",
+              "index": 7,
+              "startMs": 3356,
+              "endMs": 4076
+            },
+            {
+              "word": "a",
+              "index": 8,
+              "startMs": 4116,
+              "endMs": 4156
+            },
+            {
+              "word": "Love",
+              "index": 9,
+              "startMs": 4252,
+              "endMs": 4636
+            },
+            {
+              "word": "Seed.",
+              "index": 10,
+              "startMs": 4764,
+              "endMs": 5356
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "pageNumber": 5,
+      "scene": "kitchen",
+      "segments": [
+        {
+          "voice": "narrator",
+          "emotion": "gentle",
+          "audioFile": "page5_seg1_narrator.mp3",
+          "duration": 4.233,
+          "wordTimings": [
+            {
+              "word": "[gentle]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 64
+            },
+            {
+              "word": "In",
+              "index": 1,
+              "startMs": 69,
+              "endMs": 79
+            },
+            {
+              "word": "the",
+              "index": 2,
+              "startMs": 119,
+              "endMs": 239
+            },
+            {
+              "word": "kitchen",
+              "index": 3,
+              "startMs": 289,
+              "endMs": 639
+            },
+            {
+              "word": "car,",
+              "index": 4,
+              "startMs": 759,
+              "endMs": 1519
+            },
+            {
+              "word": "Isaiah",
+              "index": 5,
+              "startMs": 1599,
+              "endMs": 2079
+            },
+            {
+              "word": "saw",
+              "index": 6,
+              "startMs": 2159,
+              "endMs": 2399
+            },
+            {
+              "word": "a",
+              "index": 7,
+              "startMs": 2519,
+              "endMs": 2639
+            },
+            {
+              "word": "sad",
+              "index": 8,
+              "startMs": 2779,
+              "endMs": 3199
+            },
+            {
+              "word": "little",
+              "index": 9,
+              "startMs": 3233,
+              "endMs": 3437
+            },
+            {
+              "word": "mouse.",
+              "index": 10,
+              "startMs": 3543,
+              "endMs": 4233
+            }
+          ]
+        },
+        {
+          "voice": "mouse",
+          "emotion": "sad",
+          "audioFile": "page5_seg2_mouse.mp3",
+          "duration": 2.313,
+          "wordTimings": [
+            {
+              "word": "[sad]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 78
+            },
+            {
+              "word": "I",
+              "index": 1,
+              "startMs": 118,
+              "endMs": 158
+            },
+            {
+              "word": "am",
+              "index": 2,
+              "startMs": 238,
+              "endMs": 398
+            },
+            {
+              "word": "so",
+              "index": 3,
+              "startMs": 584,
+              "endMs": 956
+            },
+            {
+              "word": "hungry.",
+              "index": 4,
+              "startMs": 1047,
+              "endMs": 2313
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "warm",
+          "audioFile": "page5_seg3_narrator.mp3",
+          "duration": 3.188,
+          "wordTimings": [
+            {
+              "word": "[warm]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 58
+            },
+            {
+              "word": "the",
+              "index": 1,
+              "startMs": 63,
+              "endMs": 78
+            },
+            {
+              "word": "mouse",
+              "index": 2,
+              "startMs": 131,
+              "endMs": 396
+            },
+            {
+              "word": "said.",
+              "index": 3,
+              "startMs": 460,
+              "endMs": 796
+            },
+            {
+              "word": "Isaiah",
+              "index": 4,
+              "startMs": 990,
+              "endMs": 2154
+            },
+            {
+              "word": "gave",
+              "index": 5,
+              "startMs": 2202,
+              "endMs": 2394
+            },
+            {
+              "word": "it",
+              "index": 6,
+              "startMs": 2420,
+              "endMs": 2472
+            },
+            {
+              "word": "some",
+              "index": 7,
+              "startMs": 2520,
+              "endMs": 2712
+            },
+            {
+              "word": "bread.",
+              "index": 8,
+              "startMs": 2778,
+              "endMs": 3188
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "pageNumber": 6,
+      "scene": "kitchen",
+      "segments": [
+        {
+          "voice": "narrator",
+          "emotion": "gentle",
+          "audioFile": "page6_seg1_narrator.mp3",
+          "duration": 1.353,
+          "wordTimings": [
+            {
+              "word": "[gentle]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 64
+            },
+            {
+              "word": "The",
+              "index": 1,
+              "startMs": 68,
+              "endMs": 80
+            },
+            {
+              "word": "mouse",
+              "index": 2,
+              "startMs": 146,
+              "endMs": 476
+            },
+            {
+              "word": "smiled.",
+              "index": 3,
+              "startMs": 567,
+              "endMs": 1353
+            }
+          ]
+        },
+        {
+          "voice": "mouse",
+          "emotion": "joyful",
+          "audioFile": "page6_seg2_mouse.mp3",
+          "duration": 1.518,
+          "wordTimings": [
+            {
+              "word": "[happy]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 240
+            },
+            {
+              "word": "Thank",
+              "index": 1,
+              "startMs": 253,
+              "endMs": 318
+            },
+            {
+              "word": "you!",
+              "index": 2,
+              "startMs": 438,
+              "endMs": 1518
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "awe",
+          "audioFile": "page6_seg3_narrator.mp3",
+          "duration": 4.146,
+          "wordTimings": [
+            {
+              "word": "[awe]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 399
+            },
+            {
+              "word": "A",
+              "index": 1,
+              "startMs": 479,
+              "endMs": 559
+            },
+            {
+              "word": "golden",
+              "index": 2,
+              "startMs": 581,
+              "endMs": 713
+            },
+            {
+              "word": "crumb",
+              "index": 3,
+              "startMs": 819,
+              "endMs": 1190
+            },
+            {
+              "word": "appeared.",
+              "index": 4,
+              "startMs": 1243,
+              "endMs": 1747
+            },
+            {
+              "word": "It",
+              "index": 5,
+              "startMs": 2040,
+              "endMs": 2626
+            },
+            {
+              "word": "was",
+              "index": 6,
+              "startMs": 2666,
+              "endMs": 2786
+            },
+            {
+              "word": "the",
+              "index": 7,
+              "startMs": 2826,
+              "endMs": 2946
+            },
+            {
+              "word": "Kindness",
+              "index": 8,
+              "startMs": 3026,
+              "endMs": 3586
+            },
+            {
+              "word": "Crumb!",
+              "index": 9,
+              "startMs": 3666,
+              "endMs": 4146
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "excited",
+          "audioFile": "page6_seg4_chef_marco.mp3",
+          "duration": 1.353,
+          "wordTimings": [
+            {
+              "word": "[excited]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 255
+            },
+            {
+              "word": "Look",
+              "index": 1,
+              "startMs": 267,
+              "endMs": 315
+            },
+            {
+              "word": "at",
+              "index": 2,
+              "startMs": 421,
+              "endMs": 633
+            },
+            {
+              "word": "that!",
+              "index": 3,
+              "startMs": 761,
+              "endMs": 1353
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "warm",
+          "audioFile": "page6_seg5_narrator.mp3",
+          "duration": 1.516,
+          "wordTimings": [
+            {
+              "word": "said",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 240
+            },
+            {
+              "word": "Marco",
+              "index": 1,
+              "startMs": 306,
+              "endMs": 636
+            },
+            {
+              "word": "with",
+              "index": 2,
+              "startMs": 668,
+              "endMs": 796
+            },
+            {
+              "word": "a",
+              "index": 3,
+              "startMs": 836,
+              "endMs": 876
+            },
+            {
+              "word": "grin.",
+              "index": 4,
+              "startMs": 972,
+              "endMs": 1516
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "pageNumber": 7,
+      "scene": "shadow",
+      "segments": [
+        {
+          "voice": "narrator",
+          "audioFile": "page7_narrator.mp3",
+          "duration": 10.456,
+          "wordTimings": [
+            {
+              "word": "The",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 159
+            },
+            {
+              "word": "next",
+              "index": 1,
+              "startMs": 255,
+              "endMs": 639
+            },
+            {
+              "word": "car",
+              "index": 2,
+              "startMs": 719,
+              "endMs": 959
+            },
+            {
+              "word": "was",
+              "index": 3,
+              "startMs": 1019,
+              "endMs": 1199
+            },
+            {
+              "word": "dark",
+              "index": 4,
+              "startMs": 1327,
+              "endMs": 1839
+            },
+            {
+              "word": "and",
+              "index": 5,
+              "startMs": 1879,
+              "endMs": 1999
+            },
+            {
+              "word": "scary.",
+              "index": 6,
+              "startMs": 2132,
+              "endMs": 2957
+            },
+            {
+              "word": "Isaiah",
+              "index": 7,
+              "startMs": 3128,
+              "endMs": 4154
+            },
+            {
+              "word": "felt",
+              "index": 8,
+              "startMs": 4202,
+              "endMs": 4394
+            },
+            {
+              "word": "afraid.",
+              "index": 9,
+              "startMs": 4485,
+              "endMs": 5111
+            },
+            {
+              "word": "But",
+              "index": 10,
+              "startMs": 5271,
+              "endMs": 5751
+            },
+            {
+              "word": "he",
+              "index": 11,
+              "startMs": 5831,
+              "endMs": 5991
+            },
+            {
+              "word": "walked",
+              "index": 12,
+              "startMs": 6048,
+              "endMs": 6390
+            },
+            {
+              "word": "into",
+              "index": 13,
+              "startMs": 6454,
+              "endMs": 6710
+            },
+            {
+              "word": "the",
+              "index": 14,
+              "startMs": 6730,
+              "endMs": 6790
+            },
+            {
+              "word": "darkness",
+              "index": 15,
+              "startMs": 6852,
+              "endMs": 7348
+            },
+            {
+              "word": "anyway.",
+              "index": 16,
+              "startMs": 7450,
+              "endMs": 8222
+            },
+            {
+              "word": "He",
+              "index": 17,
+              "startMs": 8435,
+              "endMs": 8861
+            },
+            {
+              "word": "had",
+              "index": 18,
+              "startMs": 8961,
+              "endMs": 9261
+            },
+            {
+              "word": "to",
+              "index": 19,
+              "startMs": 9341,
+              "endMs": 9501
+            },
+            {
+              "word": "be",
+              "index": 20,
+              "startMs": 9554,
+              "endMs": 9660
+            },
+            {
+              "word": "brave.",
+              "index": 21,
+              "startMs": 9766,
+              "endMs": 10456
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "pageNumber": 8,
+      "scene": "shadow",
+      "segments": [
+        {
+          "voice": "narrator",
+          "audioFile": "page8_narrator.mp3",
+          "duration": 9.184,
+          "wordTimings": [
+            {
+              "word": "When",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 160
+            },
+            {
+              "word": "Isaiah",
+              "index": 1,
+              "startMs": 240,
+              "endMs": 720
+            },
+            {
+              "word": "kept",
+              "index": 2,
+              "startMs": 768,
+              "endMs": 960
+            },
+            {
+              "word": "walking,",
+              "index": 3,
+              "startMs": 1030,
+              "endMs": 1920
+            },
+            {
+              "word": "the",
+              "index": 4,
+              "startMs": 1940,
+              "endMs": 2000
+            },
+            {
+              "word": "shadows",
+              "index": 5,
+              "startMs": 2070,
+              "endMs": 2560
+            },
+            {
+              "word": "went",
+              "index": 6,
+              "startMs": 2608,
+              "endMs": 2800
+            },
+            {
+              "word": "away!",
+              "index": 7,
+              "startMs": 2912,
+              "endMs": 3440
+            },
+            {
+              "word": "A",
+              "index": 8,
+              "startMs": 3840,
+              "endMs": 4240
+            },
+            {
+              "word": "bright",
+              "index": 9,
+              "startMs": 4308,
+              "endMs": 4716
+            },
+            {
+              "word": "orange",
+              "index": 10,
+              "startMs": 4784,
+              "endMs": 5192
+            },
+            {
+              "word": "spark",
+              "index": 11,
+              "startMs": 5258,
+              "endMs": 5588
+            },
+            {
+              "word": "floated",
+              "index": 12,
+              "startMs": 5658,
+              "endMs": 6148
+            },
+            {
+              "word": "to",
+              "index": 13,
+              "startMs": 6174,
+              "endMs": 6226
+            },
+            {
+              "word": "him.",
+              "index": 14,
+              "startMs": 6306,
+              "endMs": 6626
+            },
+            {
+              "word": "He",
+              "index": 15,
+              "startMs": 6866,
+              "endMs": 7346
+            },
+            {
+              "word": "had",
+              "index": 16,
+              "startMs": 7406,
+              "endMs": 7586
+            },
+            {
+              "word": "found",
+              "index": 17,
+              "startMs": 7639,
+              "endMs": 7904
+            },
+            {
+              "word": "the",
+              "index": 18,
+              "startMs": 7944,
+              "endMs": 8064
+            },
+            {
+              "word": "Courage",
+              "index": 19,
+              "startMs": 8124,
+              "endMs": 8544
+            },
+            {
+              "word": "Spark!",
+              "index": 20,
+              "startMs": 8624,
+              "endMs": 9184
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "pageNumber": 9,
+      "scene": "dream",
+      "segments": [
+        {
+          "voice": "isaiah",
+          "emotion": "curious",
+          "audioFile": "page9_seg1_isaiah.mp3",
+          "duration": 1.992,
+          "wordTimings": [
+            {
+              "word": "[curious]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 74
+            },
+            {
+              "word": "Where",
+              "index": 1,
+              "startMs": 127,
+              "endMs": 392
+            },
+            {
+              "word": "is",
+              "index": 2,
+              "startMs": 552,
+              "endMs": 872
+            },
+            {
+              "word": "the",
+              "index": 3,
+              "startMs": 912,
+              "endMs": 1032
+            },
+            {
+              "word": "Love",
+              "index": 4,
+              "startMs": 1080,
+              "endMs": 1272
+            },
+            {
+              "word": "Seed?",
+              "index": 5,
+              "startMs": 1384,
+              "endMs": 1992
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "gentle",
+          "audioFile": "page9_seg2_narrator.mp3",
+          "duration": 2.712,
+          "wordTimings": [
+            {
+              "word": "Isaiah",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 479
+            },
+            {
+              "word": "asked.",
+              "index": 1,
+              "startMs": 559,
+              "endMs": 1479
+            },
+            {
+              "word": "Marco",
+              "index": 2,
+              "startMs": 1565,
+              "endMs": 1995
+            },
+            {
+              "word": "smiled.",
+              "index": 3,
+              "startMs": 2086,
+              "endMs": 2712
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "loving",
+          "audioFile": "page9_seg3_chef_marco.mp3",
+          "duration": 6.146,
+          "wordTimings": [
+            {
+              "word": "[warm]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 58
+            },
+            {
+              "word": "It",
+              "index": 1,
+              "startMs": 64,
+              "endMs": 76
+            },
+            {
+              "word": "was",
+              "index": 2,
+              "startMs": 116,
+              "endMs": 236
+            },
+            {
+              "word": "with",
+              "index": 3,
+              "startMs": 300,
+              "endMs": 556
+            },
+            {
+              "word": "you",
+              "index": 4,
+              "startMs": 596,
+              "endMs": 716
+            },
+            {
+              "word": "all",
+              "index": 5,
+              "startMs": 756,
+              "endMs": 876
+            },
+            {
+              "word": "along.",
+              "index": 6,
+              "startMs": 982,
+              "endMs": 1912
+            },
+            {
+              "word": "[loving]",
+              "index": 7,
+              "startMs": 2112,
+              "endMs": 2432
+            },
+            {
+              "word": "You",
+              "index": 8,
+              "startMs": 2442,
+              "endMs": 2472
+            },
+            {
+              "word": "love",
+              "index": 9,
+              "startMs": 2552,
+              "endMs": 2872
+            },
+            {
+              "word": "to",
+              "index": 10,
+              "startMs": 2925,
+              "endMs": 3031
+            },
+            {
+              "word": "help",
+              "index": 11,
+              "startMs": 3095,
+              "endMs": 3351
+            },
+            {
+              "word": "others.",
+              "index": 12,
+              "startMs": 3419,
+              "endMs": 3907
+            },
+            {
+              "word": "That",
+              "index": 13,
+              "startMs": 4067,
+              "endMs": 4707
+            },
+            {
+              "word": "is",
+              "index": 14,
+              "startMs": 4840,
+              "endMs": 5106
+            },
+            {
+              "word": "the",
+              "index": 15,
+              "startMs": 5146,
+              "endMs": 5266
+            },
+            {
+              "word": "Love",
+              "index": 16,
+              "startMs": 5330,
+              "endMs": 5586
+            },
+            {
+              "word": "Seed.",
+              "index": 17,
+              "startMs": 5682,
+              "endMs": 6146
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "pageNumber": 10,
+      "scene": "dream",
+      "segments": [
+        {
+          "voice": "narrator",
+          "emotion": "building",
+          "audioFile": "page10_seg1_narrator.mp3",
+          "duration": 2.715,
+          "wordTimings": [
+            {
+              "word": "[building]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 360
+            },
+            {
+              "word": "Isaiah",
+              "index": 1,
+              "startMs": 377,
+              "endMs": 479
+            },
+            {
+              "word": "put",
+              "index": 2,
+              "startMs": 539,
+              "endMs": 719
+            },
+            {
+              "word": "all",
+              "index": 3,
+              "startMs": 799,
+              "endMs": 1039
+            },
+            {
+              "word": "three",
+              "index": 4,
+              "startMs": 1079,
+              "endMs": 1279
+            },
+            {
+              "word": "things",
+              "index": 5,
+              "startMs": 1347,
+              "endMs": 1755
+            },
+            {
+              "word": "into",
+              "index": 6,
+              "startMs": 1819,
+              "endMs": 2075
+            },
+            {
+              "word": "the",
+              "index": 7,
+              "startMs": 2115,
+              "endMs": 2235
+            },
+            {
+              "word": "oven.",
+              "index": 8,
+              "startMs": 2315,
+              "endMs": 2715
+            }
+          ]
+        },
+        {
+          "voice": "narrator",
+          "emotion": "triumphant",
+          "audioFile": "page10_seg2_narrator.mp3",
+          "duration": 4.548,
+          "wordTimings": [
+            {
+              "word": "[dramatic]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 138
+            },
+            {
+              "word": "It",
+              "index": 1,
+              "startMs": 144,
+              "endMs": 156
+            },
+            {
+              "word": "roared",
+              "index": 2,
+              "startMs": 262,
+              "endMs": 714
+            },
+            {
+              "word": "to",
+              "index": 3,
+              "startMs": 740,
+              "endMs": 792
+            },
+            {
+              "word": "life!",
+              "index": 4,
+              "startMs": 936,
+              "endMs": 1832
+            },
+            {
+              "word": "[joyful]",
+              "index": 5,
+              "startMs": 1992,
+              "endMs": 2512
+            },
+            {
+              "word": "Golden",
+              "index": 6,
+              "startMs": 2529,
+              "endMs": 2631
+            },
+            {
+              "word": "pizzas",
+              "index": 7,
+              "startMs": 2722,
+              "endMs": 3268
+            },
+            {
+              "word": "flew",
+              "index": 8,
+              "startMs": 3380,
+              "endMs": 3828
+            },
+            {
+              "word": "out.",
+              "index": 9,
+              "startMs": 3968,
+              "endMs": 4548
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "ecstatic",
+          "audioFile": "page10_seg3_chef_marco.mp3",
+          "duration": 0.875,
+          "wordTimings": [
+            {
+              "word": "[ecstatic]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 60
+            },
+            {
+              "word": "You",
+              "index": 1,
+              "startMs": 64,
+              "endMs": 76
+            },
+            {
+              "word": "did",
+              "index": 2,
+              "startMs": 156,
+              "endMs": 396
+            },
+            {
+              "word": "it!",
+              "index": 3,
+              "startMs": 529,
+              "endMs": 875
+            }
+          ]
+        },
+        {
+          "voice": "chef_marco",
+          "emotion": "grateful",
+          "audioFile": "page10_seg4_chef_marco.mp3",
+          "duration": 1.758,
+          "wordTimings": [
+            {
+              "word": "[grateful]",
+              "index": 0,
+              "startMs": 0,
+              "endMs": 260
+            },
+            {
+              "word": "Thank",
+              "index": 1,
+              "startMs": 270,
+              "endMs": 320
+            },
+            {
+              "word": "you,",
+              "index": 2,
+              "startMs": 360,
+              "endMs": 560
+            },
+            {
+              "word": "little",
+              "index": 3,
+              "startMs": 594,
+              "endMs": 798
+            },
+            {
+              "word": "chef!",
+              "index": 4,
+              "startMs": 926,
+              "endMs": 1758
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

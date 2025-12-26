@@ -98,6 +98,9 @@ function normalizeTextForElevenLabs(text) {
   const raw = String(text || '').trim();
   if (!raw) return raw;
 
+  // Some short tokens can intermittently 500 in ElevenLabs; make them speakable.
+  if (raw.toLowerCase() === 'st') return 'S T';
+
   // ElevenLabs sometimes errors on underscore-heavy tokens; map to a speakable fallback.
   // This is mainly used for phonics patterns like "__ip" in skill practice.
   if (/^_+[A-Za-z]+$/.test(raw)) return raw.replace(/_/g, '');

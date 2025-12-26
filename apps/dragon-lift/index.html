@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐉 THE DRAGON LIFT - Isaiah's Magical Learning Adventure</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐉</text></svg>">
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       MAIN APP CONTAINER
+       ============================================ -->
+  <div class="dragon-lift-app">
+
+    <!-- Ambient Background Effects -->
+    <div class="mystical-background"></div>
+
+    <!-- Ember Particle System -->
+    <div id="emberParticles" class="ember-particles"></div>
+
+    <!-- Scale Sparkle Particles -->
+    <div id="scaleSparkles" class="scale-sparkles"></div>
+
+    <!-- ============================================
+         SCREEN 1: ELEVATOR LOBBY
+         ============================================ -->
+    <div id="elevatorLobby" class="elevator-lobby">
+
+      <!-- Lobby Title -->
+      <h1 class="lobby-title">龙之升降机</h1>
+      <p class="lobby-subtitle">The Dragon Lift</p>
+
+      <!-- Dragon Scale Elevator Doors -->
+      <div id="elevatorDoorsContainer" class="elevator-doors-container">
+
+        <!-- Elevator Frame -->
+        <div class="elevator-frame">
+
+          <!-- Dragon Eye Floor Indicator -->
+          <div class="dragon-eye-indicator">
+            <div class="dragon-eye">
+              <div class="dragon-eye-pupil">地</div>
+            </div>
+          </div>
+
+          <!-- Left Door -->
+          <div class="elevator-door elevator-door-left"></div>
+
+          <!-- Right Door -->
+          <div class="elevator-door elevator-door-right"></div>
+
+          <!-- Elevator Interior (Hidden Initially) -->
+          <div id="elevatorInterior" class="elevator-interior">
+
+            <h2 style="font-family: var(--font-header); font-size: 2rem; color: var(--dragon-teal); text-shadow: 0 0 15px var(--dragon-teal); margin-bottom: 20px;">
+              选择你的楼层
+            </h2>
+            <p style="font-family: var(--font-body); color: #ffffff; margin-bottom: 40px;">
+              Choose Your Floor
+            </p>
+
+            <!-- Floor Buttons -->
+            <div class="floor-buttons">
+              <button class="floor-button" data-floor="1">一</button>
+              <button class="floor-button" data-floor="2">二</button>
+              <button class="floor-button" data-floor="3">三</button>
+              <button class="floor-button" data-floor="4">四</button>
+              <button class="floor-button" data-floor="5">五</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Call Elevator Button -->
+        <button id="callElevatorBtn" class="call-elevator-btn" aria-label="Call Elevator">
+          🔔
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ============================================
+         SCREEN 2: DRAGON LAIR (FLOOR SCREENS)
+         ============================================ -->
+    <div id="dragonLair" class="dragon-lair hidden">
+
+      <!-- Lair Background Effect -->
+      <div class="lair-background"></div>
+
+      <!-- Dragon Character -->
+      <div class="dragon-container">
+        <div id="dragonCharacter" class="dragon-character">🐉</div>
+        <h2 id="dragonName" class="dragon-name">炎龙</h2>
+        <p id="dragonGreeting" class="dragon-greeting">Welcome to my lair, young scholar!</p>
+      </div>
+
+      <!-- Story Section -->
+      <div class="story-container">
+        <h3 id="storyTitle" class="story-title">The Ember Dragon's Hidden Treasure</h3>
+
+        <div id="storyText" class="story-text">
+          <!-- Story content will be dynamically inserted by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Reading Challenge -->
+      <div class="challenge-container">
+        <h3 id="challengeTitle" class="challenge-title">Find and click the 5 glowing sight words!</h3>
+        <p id="challengeProgress" class="challenge-progress">Dragon Scales Found: 0 / 5</p>
+
+        <!-- Dragon Scales Collected Display -->
+        <div class="dragon-scales-collected">
+          <div class="dragon-scale"></div>
+          <div class="dragon-scale"></div>
+          <div class="dragon-scale"></div>
+          <div class="dragon-scale"></div>
+          <div class="dragon-scale"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================
+         DRAGON FIRE REWARD SCREEN
+         ============================================ -->
+    <div id="dragonFireReward" class="dragon-fire-reward">
+
+      <!-- Fire Particles -->
+      <div id="fireParticles" class="fire-particles"></div>
+
+      <!-- Fire Message -->
+      <div id="fireMessage" class="fire-message">
+        Congratulations! 🔥
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+
+  <!-- Story Data -->
+  <script src="pilot-story.js"></script>
+
+  <!-- Main App Logic -->
+  <script src="app.js"></script>
+
+  <!-- Debug Console (Development Only) -->
+  <script>
+    // Helpful debugging shortcuts
+    console.log('%c🐉 THE DRAGON LIFT 🐉', 'font-size: 24px; color: #ff9f1c; font-weight: bold;');
+    console.log('%cWelcome to Isaiah\'s Magical Learning Adventure!', 'font-size: 14px; color: #00f5d4;');
+    console.log('%cAvailable commands:', 'font-weight: bold; color: #ffffff;');
+    console.log('  DragonLiftApp.resetApp() - Return to lobby');
+    console.log('  DragonLiftApp.state - View current app state');
+    console.log('');
+
+    // Expose useful debug functions
+    window.debugDragonLift = {
+      skipToFloor: (floorNum) => {
+        DragonLiftApp.state.currentFloor = floorNum;
+        document.getElementById('elevatorLobby').classList.add('hidden');
+        DragonLiftApp.showDragonLair(floorNum);
+      },
+      completeChallenge: () => {
+        DragonLiftApp.state.sightWordsFound = ['fire', 'come', 'see', 'look', 'read'];
+        DragonLiftApp.completeChallenge();
+      },
+      showReward: () => {
+        DragonLiftApp.showDragonFireReward('Debug Mode: Dragon Fire Activated! 🔥');
+      }
+    };
+
+    console.log('%cDebug functions:', 'font-weight: bold; color: #ff6b35;');
+    console.log('  debugDragonLift.skipToFloor(1) - Skip directly to Floor 1');
+    console.log('  debugDragonLift.completeChallenge() - Complete the challenge instantly');
+    console.log('  debugDragonLift.showReward() - Show the reward screen');
+  </script>
+
+</body>
+</html>

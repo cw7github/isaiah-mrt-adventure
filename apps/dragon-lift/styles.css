@@ -1,0 +1,1054 @@
+/* THE DRAGON LIFT - Luminescent Eastern Fantasy Aesthetic */
+
+/* ============================================
+   GOOGLE FONTS IMPORT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   COLOR PALETTE & ROOT VARIABLES
+   ============================================ */
+:root {
+  /* Dragon Lift Luminescent Eastern Fantasy Colors */
+  --dragon-indigo: #1a1a2e;
+  --dragon-purple: #4a1942;
+  --dragon-amber: #ff9f1c;
+  --dragon-teal: #00f5d4;
+  --dragon-ember: #ff6b35;
+
+  /* Gradient variations */
+  --dragon-scale-gradient: linear-gradient(135deg,
+    var(--dragon-teal) 0%,
+    var(--dragon-purple) 50%,
+    var(--dragon-amber) 100%);
+
+  /* Typography */
+  --font-header: 'Ma Shan Zheng', cursive;
+  --font-body: 'Quicksand', sans-serif;
+
+  /* Glow effects */
+  --ember-glow: 0 0 20px var(--dragon-ember), 0 0 40px rgba(255, 107, 53, 0.5);
+  --jade-glow: 0 0 15px var(--dragon-teal), 0 0 30px rgba(0, 245, 212, 0.4);
+  --dragon-eye-glow: 0 0 25px var(--dragon-amber), 0 0 50px rgba(255, 159, 28, 0.6);
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, var(--dragon-indigo) 0%, var(--dragon-purple) 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ============================================
+   MAIN APP CONTAINER
+   ============================================ */
+.dragon-lift-app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   AMBIENT BACKGROUND EFFECTS
+   ============================================ */
+.mystical-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(0, 245, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 159, 28, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(74, 25, 66, 0.1) 0%, transparent 70%);
+  animation: dragon-breath 8s ease-in-out infinite;
+}
+
+@keyframes dragon-breath {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* ============================================
+   EMBER PARTICLE SYSTEM
+   ============================================ */
+.ember-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ember {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, var(--dragon-ember) 0%, var(--dragon-amber) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--dragon-ember);
+  animation: ember-float 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+.ember:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 7s; }
+.ember:nth-child(2) { left: 25%; animation-delay: 1.2s; animation-duration: 6.5s; }
+.ember:nth-child(3) { left: 40%; animation-delay: 2.5s; animation-duration: 8s; }
+.ember:nth-child(4) { left: 55%; animation-delay: 0.8s; animation-duration: 7.2s; }
+.ember:nth-child(5) { left: 70%; animation-delay: 3s; animation-duration: 6.8s; }
+.ember:nth-child(6) { left: 85%; animation-delay: 1.5s; animation-duration: 7.5s; }
+.ember:nth-child(7) { left: 15%; animation-delay: 2s; animation-duration: 6.3s; }
+.ember:nth-child(8) { left: 60%; animation-delay: 0.5s; animation-duration: 7.8s; }
+
+@keyframes ember-float {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50vh) translateX(20px) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20px) translateX(-10px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   SCALE SPARKLE PARTICLES
+   ============================================ */
+.scale-sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--dragon-teal);
+  border-radius: 50%;
+  box-shadow: 0 0 4px var(--dragon-teal);
+  animation: sparkle-twinkle 3s ease-in-out infinite;
+  opacity: 0;
+}
+
+.sparkle:nth-child(1) { left: 20%; top: 15%; animation-delay: 0s; }
+.sparkle:nth-child(2) { left: 75%; top: 25%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { left: 45%; top: 40%; animation-delay: 1s; }
+.sparkle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1.5s; }
+.sparkle:nth-child(5) { left: 30%; top: 75%; animation-delay: 2s; }
+.sparkle:nth-child(6) { left: 65%; top: 85%; animation-delay: 2.5s; }
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* ============================================
+   ELEVATOR LOBBY
+   ============================================ */
+.elevator-lobby {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.lobby-title {
+  font-family: var(--font-header);
+  font-size: 4rem;
+  color: var(--dragon-amber);
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 20px var(--dragon-amber),
+    0 0 40px rgba(255, 159, 28, 0.5),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  animation: title-glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes title-glow-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px var(--dragon-amber),
+      0 0 40px rgba(255, 159, 28, 0.5),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow:
+      0 0 30px var(--dragon-amber),
+      0 0 60px rgba(255, 159, 28, 0.8),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.lobby-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--dragon-teal);
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   DRAGON SCALE ELEVATOR DOORS
+   ============================================ */
+.elevator-doors-container {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.elevator-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg,
+    rgba(26, 26, 46, 0.8) 0%,
+    rgba(74, 25, 66, 0.6) 100%);
+  border: 3px solid var(--dragon-amber);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 0 30px rgba(255, 159, 28, 0.3),
+    0 10px 50px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(255, 159, 28, 0.2);
+  overflow: hidden;
+}
+
+/* Dragon scale pattern on doors */
+.elevator-door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(0, 245, 212, 0.3) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 159, 28, 0.3) 0%, transparent 40%),
+    linear-gradient(135deg,
+      var(--dragon-purple) 0%,
+      #2d1b3d 25%,
+      var(--dragon-indigo) 50%,
+      #2d1b3d 75%,
+      var(--dragon-purple) 100%);
+  transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: inset 0 0 40px rgba(0, 245, 212, 0.1);
+}
+
+.elevator-door-left {
+  left: 0;
+  border-right: 1.5px solid rgba(0, 245, 212, 0.4);
+}
+
+.elevator-door-right {
+  right: 0;
+  border-left: 1.5px solid rgba(0, 245, 212, 0.4);
+}
+
+/* Dragon scale overlay pattern */
+.elevator-door::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(0, 245, 212, 0.2) 0%, transparent 15%),
+    radial-gradient(circle at 70% 30%, rgba(0, 245, 212, 0.15) 0%, transparent 15%),
+    radial-gradient(circle at 50% 50%, rgba(0, 245, 212, 0.18) 0%, transparent 15%),
+    radial-gradient(circle at 30% 70%, rgba(0, 245, 212, 0.2) 0%, transparent 15%),
+    radial-gradient(circle at 70% 70%, rgba(0, 245, 212, 0.15) 0%, transparent 15%);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px, 0 40px, 40px 0, 20px 20px;
+  animation: dragon-scale-shimmer 4s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes dragon-scale-shimmer {
+  0%, 100% {
+    opacity: 0.6;
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    opacity: 0.9;
+    filter: hue-rotate(10deg) brightness(1.2);
+  }
+}
+
+/* Doors opening animation */
+.elevator-doors-container.opening .elevator-door-left {
+  transform: translateX(-100%);
+}
+
+.elevator-doors-container.opening .elevator-door-right {
+  transform: translateX(100%);
+}
+
+/* Whoosh particle effect when doors open */
+.elevator-doors-container.opening .elevator-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center,
+    rgba(0, 245, 212, 0.4) 0%,
+    transparent 60%);
+  opacity: 0;
+  animation: door-scale-open-whoosh 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes door-scale-open-whoosh {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* ============================================
+   DRAGON EYE FLOOR INDICATOR
+   ============================================ */
+.dragon-eye-indicator {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 50px;
+  z-index: 20;
+}
+
+.dragon-eye {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: radial-gradient(ellipse at center,
+    var(--dragon-amber) 0%,
+    var(--dragon-ember) 40%,
+    var(--dragon-purple) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: var(--dragon-eye-glow);
+  animation: dragon-eye-pulse 2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dragon-eye-pupil {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at 35% 35%,
+    #000000 0%,
+    var(--dragon-indigo) 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  color: var(--dragon-amber);
+  text-shadow: 0 0 8px var(--dragon-amber);
+}
+
+@keyframes dragon-eye-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 25px var(--dragon-amber),
+      0 0 50px rgba(255, 159, 28, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 35px var(--dragon-amber),
+      0 0 70px rgba(255, 159, 28, 0.9);
+    transform: scale(1.08);
+  }
+}
+
+/* ============================================
+   CALL ELEVATOR BUTTON
+   ============================================ */
+.call-elevator-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%,
+    var(--dragon-amber) 0%,
+    var(--dragon-ember) 100%);
+  border: none;
+  border-radius: 50%;
+  box-shadow:
+    0 0 30px var(--dragon-ember),
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 159, 28, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  font-size: 3rem;
+  animation: jade-button-glow 2s ease-in-out infinite;
+}
+
+.call-elevator-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow:
+    0 0 50px var(--dragon-ember),
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 30px rgba(255, 159, 28, 0.7);
+}
+
+.call-elevator-btn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+@keyframes jade-button-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 30px var(--dragon-ember),
+      0 8px 20px rgba(0, 0, 0, 0.5),
+      inset 0 0 20px rgba(255, 159, 28, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 50px var(--dragon-ember),
+      0 8px 20px rgba(0, 0, 0, 0.5),
+      inset 0 0 30px rgba(255, 159, 28, 0.8);
+  }
+}
+
+/* ============================================
+   ELEVATOR INTERIOR
+   ============================================ */
+.elevator-interior {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg,
+    var(--dragon-indigo) 0%,
+    #0f0f1e 50%,
+    var(--dragon-purple) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.elevator-interior.visible {
+  opacity: 1;
+}
+
+/* Shimmer effect on interior walls */
+.elevator-interior::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(0, 245, 212, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(255, 159, 28, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 40%);
+  animation: wall-shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes wall-shimmer {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   JADE ORB FLOOR BUTTONS
+   ============================================ */
+.floor-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.floor-button {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%,
+    var(--dragon-teal) 0%,
+    #00a8b8 100%);
+  border: 3px solid rgba(0, 245, 212, 0.6);
+  border-radius: 50%;
+  box-shadow: var(--jade-glow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--dragon-indigo);
+  text-shadow: 0 0 8px rgba(0, 245, 212, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.floor-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floor-button:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 25px var(--dragon-teal),
+    0 0 50px rgba(0, 245, 212, 0.6);
+}
+
+.floor-button:hover::before {
+  opacity: 1;
+}
+
+.floor-button:active {
+  transform: scale(1.05);
+}
+
+.floor-button.active {
+  background: radial-gradient(circle at 30% 30%,
+    var(--dragon-amber) 0%,
+    var(--dragon-ember) 100%);
+  border-color: rgba(255, 159, 28, 0.8);
+  box-shadow: var(--dragon-eye-glow);
+  animation: floor-button-pulse 0.6s ease;
+}
+
+@keyframes floor-button-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ============================================
+   ELEVATOR RIDE ANIMATION
+   ============================================ */
+.elevator-interior.riding {
+  animation: elevator-ride-shake 3.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+@keyframes elevator-ride-shake {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  5% {
+    transform: translateY(2px) translateX(1px);
+  }
+  10% {
+    transform: translateY(-1.5px) translateX(-0.8px);
+  }
+  20% {
+    transform: translateY(1px) translateX(0.8px);
+  }
+  40% {
+    transform: translateY(-1px) translateX(-0.6px);
+  }
+  60% {
+    transform: translateY(1px) translateX(0.6px);
+  }
+  80% {
+    transform: translateY(-0.5px) translateX(-0.3px);
+  }
+  95% {
+    transform: translateY(0.2px) translateX(0.1px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Riding ember intensification */
+.elevator-interior.riding .ember {
+  animation-duration: 2s !important;
+}
+
+/* ============================================
+   DRAGON LAIR (FLOOR SCREENS)
+   ============================================ */
+.dragon-lair {
+  display: none;
+  min-height: 100vh;
+  position: relative;
+  padding: 40px 20px;
+  z-index: 100;
+}
+
+.dragon-lair.active {
+  display: block;
+  animation: lair-fade-in 1s ease-out;
+}
+
+@keyframes lair-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lair-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 107, 53, 0.2) 0%,
+    transparent 60%);
+  animation: lair-pulse 6s ease-in-out infinite;
+}
+
+@keyframes lair-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================
+   DRAGON CHARACTER
+   ============================================ */
+.dragon-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.dragon-character {
+  font-size: 10rem;
+  animation: dragon-hover 3s ease-in-out infinite;
+  display: inline-block;
+  filter: drop-shadow(0 0 30px var(--dragon-amber));
+}
+
+@keyframes dragon-hover {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+.dragon-name {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  color: var(--dragon-amber);
+  margin-top: 20px;
+  text-shadow: 0 0 20px var(--dragon-amber);
+}
+
+.dragon-greeting {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--dragon-teal);
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/* ============================================
+   STORY SECTION
+   ============================================ */
+.story-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(26, 26, 46, 0.6);
+  border: 2px solid rgba(0, 245, 212, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 30px rgba(0, 245, 212, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.story-title {
+  font-family: var(--font-header);
+  font-size: 2.5rem;
+  color: var(--dragon-amber);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px var(--dragon-amber);
+}
+
+.story-text {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.story-text .word {
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 0 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.story-text .word.sight-word {
+  color: var(--dragon-amber);
+  font-weight: 600;
+  position: relative;
+}
+
+.story-text .word.sight-word:hover {
+  background: rgba(255, 159, 28, 0.2);
+  transform: scale(1.1);
+}
+
+.story-text .word.sight-word.highlighted {
+  background: linear-gradient(135deg,
+    var(--dragon-amber) 0%,
+    var(--dragon-ember) 100%);
+  color: var(--dragon-indigo);
+  box-shadow: 0 4px 15px rgba(255, 159, 28, 0.5);
+  animation: word-highlight-glow 0.6s ease;
+}
+
+@keyframes word-highlight-glow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ============================================
+   READING CHALLENGE
+   ============================================ */
+.challenge-container {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.challenge-title {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--dragon-teal);
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px var(--dragon-teal);
+}
+
+.challenge-progress {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.dragon-scales-collected {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dragon-scale {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(0, 245, 212, 0.3) 0%,
+    transparent 100%);
+  border: 2px solid rgba(0, 245, 212, 0.5);
+  border-radius: 50% 50% 40% 60%;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.dragon-scale.earned {
+  opacity: 1;
+  background: radial-gradient(circle at 30% 30%,
+    var(--dragon-teal) 0%,
+    #00a8b8 100%);
+  border-color: var(--dragon-teal);
+  box-shadow: var(--jade-glow);
+  animation: scale-collect 0.6s ease;
+}
+
+@keyframes scale-collect {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   DRAGON FIRE REWARD
+   ============================================ */
+.dragon-fire-reward {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 107, 53, 0.4) 0%,
+    rgba(26, 26, 46, 0.8) 60%);
+  align-items: center;
+  justify-content: center;
+  animation: fire-reward-fade-in 0.5s ease;
+}
+
+.dragon-fire-reward.active {
+  display: flex;
+}
+
+@keyframes fire-reward-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fire-message {
+  font-family: var(--font-header);
+  font-size: 4rem;
+  color: var(--dragon-amber);
+  text-align: center;
+  text-shadow:
+    0 0 30px var(--dragon-ember),
+    0 0 60px rgba(255, 107, 53, 0.8);
+  animation: fire-text-blaze 1.5s ease infinite;
+  padding: 40px;
+  background: rgba(26, 26, 46, 0.8);
+  border: 3px solid var(--dragon-ember);
+  border-radius: 20px;
+  box-shadow:
+    0 0 50px var(--dragon-ember),
+    inset 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+@keyframes fire-text-blaze {
+  0%, 100% {
+    text-shadow:
+      0 0 30px var(--dragon-ember),
+      0 0 60px rgba(255, 107, 53, 0.8);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 50px var(--dragon-ember),
+      0 0 100px rgba(255, 107, 53, 1);
+    transform: scale(1.05);
+  }
+}
+
+/* Fire particles for reward */
+.fire-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fire-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle,
+    var(--dragon-ember) 0%,
+    var(--dragon-amber) 100%);
+  border-radius: 50%;
+  animation: fire-particle-rise 2s ease-out infinite;
+  opacity: 0;
+}
+
+.fire-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.fire-particle:nth-child(2) { left: 20%; animation-delay: 0.2s; }
+.fire-particle:nth-child(3) { left: 30%; animation-delay: 0.4s; }
+.fire-particle:nth-child(4) { left: 40%; animation-delay: 0.6s; }
+.fire-particle:nth-child(5) { left: 50%; animation-delay: 0.8s; }
+.fire-particle:nth-child(6) { left: 60%; animation-delay: 1s; }
+.fire-particle:nth-child(7) { left: 70%; animation-delay: 1.2s; }
+.fire-particle:nth-child(8) { left: 80%; animation-delay: 1.4s; }
+.fire-particle:nth-child(9) { left: 90%; animation-delay: 1.6s; }
+
+@keyframes fire-particle-rise {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0) scale(1);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(30px) scale(0.5);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .lobby-title {
+    font-size: 2.5rem;
+  }
+
+  .lobby-subtitle {
+    font-size: 1rem;
+  }
+
+  .elevator-doors-container {
+    width: 300px;
+    height: 400px;
+  }
+
+  .dragon-character {
+    font-size: 6rem;
+  }
+
+  .dragon-name {
+    font-size: 2rem;
+  }
+
+  .story-container {
+    padding: 20px;
+  }
+
+  .story-text {
+    font-size: 1.1rem;
+  }
+
+  .fire-message {
+    font-size: 2.5rem;
+    padding: 20px;
+  }
+}

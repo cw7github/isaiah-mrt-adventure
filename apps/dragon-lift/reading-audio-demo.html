@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading & Audio System Demo - Dragon Lift</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       BASE STYLES (from Dragon Lift)
+       ============================================ */
+    :root {
+      --dragon-indigo: #1a1a2e;
+      --dragon-purple: #4a1942;
+      --dragon-amber: #ff9f1c;
+      --dragon-teal: #00f5d4;
+      --dragon-ember: #ff6b35;
+      --font-header: 'Ma Shan Zheng', cursive;
+      --font-body: 'Quicksand', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--dragon-indigo) 0%, var(--dragon-purple) 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .demo-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: var(--font-header);
+      font-size: 2.5rem;
+      color: var(--dragon-amber);
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px var(--dragon-amber);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--dragon-teal);
+      margin-bottom: 30px;
+    }
+
+    /* ============================================
+       AUDIO CONTROLS - Narration Toggle UI
+       ============================================ */
+    .audio-controls {
+      background: rgba(26, 26, 46, 0.9);
+      border: 2px solid rgba(0, 245, 212, 0.3);
+      border-radius: 20px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .controls-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .controls-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dragon-teal);
+    }
+
+    .settings-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .settings-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .audio-controls-main {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Narration Toggle Button - Primary Action */
+    .narration-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      border: 3px solid rgba(255, 159, 28, 0.5);
+      border-radius: 50px;
+      background: linear-gradient(135deg,
+        rgba(255, 107, 53, 0.15) 0%,
+        rgba(255, 159, 28, 0.15) 100%);
+      color: var(--dragon-amber);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .narration-toggle:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 159, 28, 0.3);
+      border-color: var(--dragon-amber);
+    }
+
+    .narration-toggle.active {
+      background: linear-gradient(135deg,
+        var(--dragon-ember) 0%,
+        var(--dragon-amber) 100%);
+      color: var(--dragon-indigo);
+      border-color: var(--dragon-amber);
+      box-shadow: 0 0 30px rgba(255, 159, 28, 0.5);
+    }
+
+    .toggle-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    /* Speaker icon states */
+    .icon-speaker-off::before {
+      content: '';
+    }
+
+    .icon-speaker-on::before {
+      content: '';
+    }
+
+    /* Play/Pause/Stop Buttons */
+    .playback-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .audio-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 245, 212, 0.5);
+      background: rgba(0, 245, 212, 0.1);
+      color: var(--dragon-teal);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .audio-btn:hover:not(:disabled) {
+      background: rgba(0, 245, 212, 0.25);
+      border-color: var(--dragon-teal);
+      transform: scale(1.1);
+    }
+
+    .audio-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .audio-btn.playing {
+      background: var(--dragon-teal);
+      color: var(--dragon-indigo);
+      animation: pulse-playing 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-playing {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(0, 245, 212, 0); }
+    }
+
+    /* Narration Status Bar */
+    .narration-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.3s;
+    }
+
+    .status-indicator.active {
+      background: var(--dragon-teal);
+      box-shadow: 0 0 10px var(--dragon-teal);
+      animation: status-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes status-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .status-text {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ============================================
+       STORY CONTAINER
+       ============================================ */
+    .story-container {
+      background: rgba(26, 26, 46, 0.7);
+      border: 2px solid rgba(0, 245, 212, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .story-title {
+      font-family: var(--font-header);
+      font-size: 2rem;
+      color: var(--dragon-amber);
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px var(--dragon-amber);
+    }
+
+    #storyText {
+      font-size: 1.4rem;
+      line-height: 2.2;
+      color: #ffffff;
+    }
+
+    .story-paragraph {
+      margin-bottom: 24px;
+    }
+
+    /* ============================================
+       WORD STYLING - Base States
+       ============================================ */
+    .word {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 2px 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .word:hover {
+      background: rgba(0, 245, 212, 0.15);
+      transform: scale(1.08);
+    }
+
+    /* Keyboard focus */
+    .word:focus {
+      outline: none;
+    }
+
+    .word:focus-visible {
+      outline: 3px solid var(--dragon-teal);
+      outline-offset: 3px;
+      background: rgba(0, 245, 212, 0.1);
+    }
+
+    /* Sight Words - subtle glow to indicate importance */
+    .word.sight-word {
+      color: var(--dragon-amber);
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(255, 159, 28, 0.4);
+    }
+
+    .word.sight-word:hover {
+      background: rgba(255, 159, 28, 0.15);
+    }
+
+    /* Challenge Words */
+    .word.challenge-word {
+      color: var(--dragon-teal);
+      font-weight: 500;
+      border-bottom: 2px dotted var(--dragon-teal);
+    }
+
+    /* ============================================
+       WORD HIGHLIGHTING - Narration Sync
+       ============================================ */
+
+    /* Currently being read */
+    .word.word-highlighted,
+    .word.word-current {
+      background: linear-gradient(135deg,
+        var(--dragon-amber) 0%,
+        var(--dragon-ember) 100%);
+      color: var(--dragon-indigo);
+      font-weight: 700;
+      transform: scale(1.2);
+      box-shadow:
+        0 4px 20px rgba(255, 159, 28, 0.6),
+        0 0 30px rgba(255, 159, 28, 0.3);
+      z-index: 10;
+      animation: word-highlight-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes word-highlight-pop {
+      0% {
+        transform: scale(1);
+        background: transparent;
+      }
+      50% {
+        transform: scale(1.35);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Already spoken words - fade slightly */
+    .word.word-spoken {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ============================================
+       TAP-TO-HEAR FEEDBACK
+       ============================================ */
+
+    .word.word-tapped {
+      animation: word-tap-burst 0.5s ease-out;
+    }
+
+    @keyframes word-tap-burst {
+      0% {
+        transform: scale(1);
+        background: transparent;
+      }
+      20% {
+        transform: scale(1.4);
+        background: var(--dragon-teal);
+        color: var(--dragon-indigo);
+      }
+      100% {
+        transform: scale(1.1);
+        background: rgba(0, 245, 212, 0.3);
+      }
+    }
+
+    /* Ripple effect */
+    .word.word-tapped::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle,
+        rgba(0, 245, 212, 0.6) 0%,
+        transparent 70%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      animation: ripple-burst 0.6s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes ripple-burst {
+      to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
+
+    /* Touch active state */
+    .word.word-touch-active {
+      background: rgba(0, 245, 212, 0.2);
+      transform: scale(0.95);
+    }
+
+    /* ============================================
+       READING MODE CONTROLS
+       ============================================ */
+    .reading-modes {
+      background: rgba(26, 26, 46, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .modes-label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .mode-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mode-btn {
+      padding: 8px 16px;
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--dragon-teal);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-btn:hover {
+      background: rgba(0, 245, 212, 0.1);
+    }
+
+    .mode-btn.active {
+      background: var(--dragon-teal);
+      color: var(--dragon-indigo);
+    }
+
+    /* Large text mode */
+    .reading-mode-large #storyText {
+      font-size: 1.8rem;
+      line-height: 2.8;
+    }
+
+    .reading-mode-large .word {
+      padding: 8px 12px;
+      margin: 4px 3px;
+    }
+
+    /* ============================================
+       ACCESSIBILITY: Reduced Motion
+       ============================================ */
+    @media (prefers-reduced-motion: reduce) {
+      .word,
+      .word.word-highlighted,
+      .word.word-tapped,
+      .audio-btn,
+      .narration-toggle {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .word.word-highlighted {
+        transform: none;
+        border: 3px solid var(--dragon-amber);
+        background: var(--dragon-amber);
+      }
+
+      .word.word-tapped {
+        transform: none;
+        background: var(--dragon-teal);
+      }
+
+      .word.word-tapped::after {
+        display: none;
+      }
+    }
+
+    /* ============================================
+       ACCESSIBILITY: High Contrast
+       ============================================ */
+    @media (prefers-contrast: high) {
+      .word.word-highlighted {
+        outline: 4px solid #fff;
+        outline-offset: 2px;
+      }
+
+      .word:focus-visible {
+        outline: 4px solid #fff;
+      }
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      .demo-container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .audio-controls {
+        padding: 16px;
+      }
+
+      .narration-toggle {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      .story-container {
+        padding: 20px;
+      }
+
+      #storyText {
+        font-size: 1.2rem;
+      }
+
+      .word {
+        padding: 6px 8px;
+        /* Ensure minimum touch target size */
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+
+    /* ============================================
+       INSTRUCTIONS PANEL
+       ============================================ */
+    .instructions {
+      background: rgba(0, 245, 212, 0.1);
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .instructions h3 {
+      color: var(--dragon-teal);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .instructions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .instructions li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .instructions li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-container">
+    <h1>Reading & Audio Demo</h1>
+    <p class="subtitle">Interactive word-by-word reading system for Grade 1</p>
+
+    <!-- ============================================
+         AUDIO CONTROLS - Narration Toggle UI
+         ============================================ -->
+    <div class="audio-controls" role="region" aria-label="Audio Controls">
+      <div class="controls-header">
+        <span class="controls-title">Listen & Learn</span>
+        <button class="settings-btn" aria-label="Audio Settings">Settings</button>
+      </div>
+
+      <div class="audio-controls-main">
+        <!-- Primary: Narration Toggle (OFF by default) -->
+        <button class="narration-toggle" id="narrationToggle"
+                aria-pressed="false"
+                aria-label="Read to Me - Turn narration on or off">
+          <span class="toggle-icon" aria-hidden="true"></span>
+          <span class="btn-label">Read to Me</span>
+        </button>
+
+        <!-- Playback Controls -->
+        <div class="playback-controls">
+          <button class="audio-btn" id="playPauseBtn" disabled
+                  aria-label="Play narration"
+                  title="Play">
+          </button>
+          <button class="audio-btn" id="stopBtn" disabled
+                  aria-label="Stop narration"
+                  title="Stop">
+          </button>
+        </div>
+      </div>
+
+      <!-- Status Indicator -->
+      <div class="narration-status" role="status" aria-live="polite">
+        <span class="status-indicator" id="statusIndicator"></span>
+        <span class="status-text" id="statusText">Tap any word to hear it pronounced</span>
+      </div>
+    </div>
+
+    <!-- Reading Mode Options -->
+    <div class="reading-modes">
+      <div class="modes-label">Reading Mode:</div>
+      <div class="mode-buttons">
+        <button class="mode-btn active" data-mode="normal">Normal</button>
+        <button class="mode-btn" data-mode="large">Large Text</button>
+      </div>
+    </div>
+
+    <!-- ============================================
+         STORY CONTAINER
+         ============================================ -->
+    <div class="story-container">
+      <h2 class="story-title">The Ember Dragon's Hidden Treasure</h2>
+
+      <div id="storyText" role="region" aria-label="Story text - tap any word to hear it">
+        <!-- Words will be rendered by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+      <h3>How to Use</h3>
+      <ul>
+        <li><strong>Tap any word</strong> to hear it pronounced</li>
+        <li><strong>"Read to Me" button</strong> turns on full narration (OFF by default)</li>
+        <li><strong>Golden words</strong> are important sight words to learn</li>
+        <li><strong>Use arrow keys</strong> to navigate between words (accessibility)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // DEMO STORY DATA WITH WORD TIMING
+    // ============================================
+    const DEMO_STORY = {
+      paragraphs: [
+        {
+          id: "p1",
+          sentences: [
+            {
+              id: "s1",
+              words: [
+                { text: "Long", startTime: 0.0, endTime: 0.35, isSightWord: false },
+                { text: "ago,", startTime: 0.35, endTime: 0.72, isSightWord: false },
+                { text: "deep", startTime: 0.72, endTime: 1.05, isSightWord: false },
+                { text: "in", startTime: 1.05, endTime: 1.20, isSightWord: true },
+                { text: "the", startTime: 1.20, endTime: 1.35, isSightWord: true },
+                { text: "mountain", startTime: 1.35, endTime: 1.85, isSightWord: false },
+                { text: "caves,", startTime: 1.85, endTime: 2.25, isSightWord: false },
+                { text: "there", startTime: 2.25, endTime: 2.50, isSightWord: true },
+                { text: "lived", startTime: 2.50, endTime: 2.85, isSightWord: false },
+                { text: "a", startTime: 2.85, endTime: 2.95, isSightWord: true },
+                { text: "wise", startTime: 2.95, endTime: 3.35, isSightWord: false },
+                { text: "dragon", startTime: 3.35, endTime: 3.90, isSightWord: false },
+                { text: "named", startTime: 3.90, endTime: 4.25, isSightWord: false },
+                { text: "Ember.", startTime: 4.25, endTime: 4.80, isSightWord: false }
+              ]
+            }
+          ]
+        },
+        {
+          id: "p2",
+          sentences: [
+            {
+              id: "s2",
+              words: [
+                { text: "Ember", startTime: 5.0, endTime: 5.45, isSightWord: false },
+                { text: "was", startTime: 5.45, endTime: 5.65, isSightWord: true },
+                { text: "not", startTime: 5.65, endTime: 5.90, isSightWord: true },
+                { text: "like", startTime: 5.90, endTime: 6.20, isSightWord: true },
+                { text: "other", startTime: 6.20, endTime: 6.55, isSightWord: false },
+                { text: "dragons", startTime: 6.55, endTime: 7.10, isSightWord: false },
+                { text: "who", startTime: 7.10, endTime: 7.35, isSightWord: true },
+                { text: "loved", startTime: 7.35, endTime: 7.70, isSightWord: false },
+                { text: "gold", startTime: 7.70, endTime: 8.05, isSightWord: false },
+                { text: "and", startTime: 8.05, endTime: 8.25, isSightWord: true },
+                { text: "jewels.", startTime: 8.25, endTime: 8.80, isSightWord: false }
+              ]
+            }
+          ]
+        },
+        {
+          id: "p3",
+          sentences: [
+            {
+              id: "s3",
+              words: [
+                { text: "No,", startTime: 9.0, endTime: 9.30, isSightWord: true },
+                { text: "Ember", startTime: 9.30, endTime: 9.75, isSightWord: false },
+                { text: "collected", startTime: 9.75, endTime: 10.35, isSightWord: false },
+                { text: "something", startTime: 10.35, endTime: 10.90, isSightWord: false },
+                { text: "far", startTime: 10.90, endTime: 11.15, isSightWord: false },
+                { text: "more", startTime: 11.15, endTime: 11.45, isSightWord: false },
+                { text: "precious", startTime: 11.45, endTime: 12.05, isChallenge: true, isSightWord: false },
+                { text: "-", startTime: 12.05, endTime: 12.15, isSightWord: false },
+                { text: "stories", startTime: 12.15, endTime: 12.65, isSightWord: false },
+                { text: "written", startTime: 12.65, endTime: 13.10, isSightWord: false },
+                { text: "on", startTime: 13.10, endTime: 13.25, isSightWord: true },
+                { text: "ancient", startTime: 13.25, endTime: 13.80, isChallenge: true, isSightWord: false },
+                { text: "scrolls.", startTime: 13.80, endTime: 14.40, isChallenge: true, isSightWord: false }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    // ============================================
+    // SIMPLIFIED AUDIO ENGINE (Demo Version)
+    // ============================================
+    class DemoAudioEngine {
+      constructor() {
+        this.isNarrationEnabled = false;
+        this.isPlaying = false;
+        this.isPaused = false;
+        this.currentWordIndex = 0;
+        this.speechSynthesis = window.speechSynthesis;
+        this.selectedVoice = null;
+        this.ttsRate = 0.85;
+        this.ttsPitch = 1.1;
+
+        this.onWordHighlight = null;
+        this.onNarrationComplete = null;
+
+        this._initVoices();
+      }
+
+      _initVoices() {
+        const setVoice = () => {
+          const voices = this.speechSynthesis.getVoices();
+          const preferred = ['Samantha', 'Karen', 'Google US English', 'Microsoft Zira'];
+          for (const name of preferred) {
+            const voice = voices.find(v => v.name.includes(name));
+            if (voice) {
+              this.selectedVoice = voice;
+              console.log('Selected voice:', voice.name);
+              return;
+            }
+          }
+          this.selectedVoice = voices.find(v => v.lang.startsWith('en')) || voices[0];
+        };
+
+        if (this.speechSynthesis.getVoices().length > 0) {
+          setVoice();
+        } else {
+          this.speechSynthesis.addEventListener('voiceschanged', setVoice, { once: true });
+        }
+      }
+
+      toggleNarration() {
+        this.isNarrationEnabled = !this.isNarrationEnabled;
+        if (!this.isNarrationEnabled && this.isPlaying) {
+          this.stop();
+        }
+        return this.isNarrationEnabled;
+      }
+
+      async speakWord(text) {
+        this.speechSynthesis.cancel();
+
+        return new Promise((resolve) => {
+          const cleanText = text.replace(/[.,!?;:'"()-]/g, '').trim();
+          if (!cleanText) {
+            resolve();
+            return;
+          }
+
+          const utterance = new SpeechSynthesisUtterance(cleanText);
+          if (this.selectedVoice) utterance.voice = this.selectedVoice;
+          utterance.rate = this.ttsRate;
+          utterance.pitch = this.ttsPitch;
+
+          utterance.onend = resolve;
+          utterance.onerror = () => resolve();
+
+          this.speechSynthesis.speak(utterance);
+        });
+      }
+
+      async playNarration(words) {
+        if (!this.isNarrationEnabled) return;
+
+        this.isPlaying = true;
+        this.isPaused = false;
+
+        for (let i = 0; i < words.length; i++) {
+          if (!this.isPlaying) break;
+
+          while (this.isPaused) {
+            await new Promise(r => setTimeout(r, 100));
+            if (!this.isPlaying) return;
+          }
+
+          this.currentWordIndex = i;
+          if (this.onWordHighlight) {
+            this.onWordHighlight(i, words[i]);
+          }
+
+          await this.speakWord(words[i].text);
+          await new Promise(r => setTimeout(r, 50));
+        }
+
+        this.isPlaying = false;
+        if (this.onNarrationComplete) {
+          this.onNarrationComplete();
+        }
+      }
+
+      pause() {
+        this.isPaused = true;
+        this.speechSynthesis.pause();
+      }
+
+      resume() {
+        this.isPaused = false;
+        this.speechSynthesis.resume();
+      }
+
+      stop() {
+        this.isPlaying = false;
+        this.isPaused = false;
+        this.speechSynthesis.cancel();
+      }
+    }
+
+    // ============================================
+    // WORD HIGHLIGHT MANAGER (Demo Version)
+    // ============================================
+    class DemoHighlightManager {
+      constructor(container) {
+        this.container = container;
+        this.wordElements = [];
+        this.currentIndex = -1;
+      }
+
+      renderStory(paragraphs) {
+        this.container.innerHTML = '';
+        this.wordElements = [];
+        let index = 0;
+
+        paragraphs.forEach(para => {
+          const p = document.createElement('p');
+          p.className = 'story-paragraph';
+
+          para.sentences.forEach(sentence => {
+            sentence.words.forEach((word, wIndex) => {
+              const span = document.createElement('span');
+              span.className = 'word';
+              span.textContent = word.text;
+              span.dataset.index = index;
+              span.tabIndex = 0;
+              span.setAttribute('role', 'button');
+              span.setAttribute('aria-label', `Word: ${word.text}. Tap to hear.`);
+              span.wordData = word;
+
+              if (word.isSightWord) span.classList.add('sight-word');
+              if (word.isChallenge) span.classList.add('challenge-word');
+
+              p.appendChild(span);
+
+              const next = sentence.words[wIndex + 1];
+              if (!next?.text.match(/^[.,!?;:()-]$/)) {
+                p.appendChild(document.createTextNode(' '));
+              }
+
+              this.wordElements.push(span);
+              index++;
+            });
+          });
+
+          this.container.appendChild(p);
+        });
+
+        this._setupKeyboard();
+      }
+
+      _setupKeyboard() {
+        this.container.addEventListener('keydown', (e) => {
+          const target = e.target;
+          if (!target.classList.contains('word')) return;
+
+          const idx = parseInt(target.dataset.index);
+
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (idx < this.wordElements.length - 1) {
+              this.wordElements[idx + 1].focus();
+            }
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (idx > 0) {
+              this.wordElements[idx - 1].focus();
+            }
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            target.click();
+          }
+        });
+      }
+
+      highlightWord(index) {
+        // Remove previous
+        if (this.currentIndex >= 0 && this.wordElements[this.currentIndex]) {
+          this.wordElements[this.currentIndex].classList.remove('word-highlighted', 'word-current');
+          this.wordElements[this.currentIndex].classList.add('word-spoken');
+        }
+
+        // Add new
+        if (index >= 0 && index < this.wordElements.length) {
+          const el = this.wordElements[index];
+          el.classList.add('word-highlighted', 'word-current');
+          el.classList.remove('word-spoken');
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          this.currentIndex = index;
+        }
+      }
+
+      clearHighlights() {
+        this.wordElements.forEach(el => {
+          el.classList.remove('word-highlighted', 'word-current', 'word-spoken', 'word-tapped');
+        });
+        this.currentIndex = -1;
+      }
+
+      showTapFeedback(element) {
+        element.classList.add('word-tapped');
+        setTimeout(() => {
+          element.classList.remove('word-tapped');
+        }, 500);
+      }
+
+      getWordElement(index) {
+        return this.wordElements[index];
+      }
+    }
+
+    // ============================================
+    // MAIN CONTROLLER
+    // ============================================
+    class DemoController {
+      constructor() {
+        this.storyContainer = document.getElementById('storyText');
+        this.narrationToggle = document.getElementById('narrationToggle');
+        this.playPauseBtn = document.getElementById('playPauseBtn');
+        this.stopBtn = document.getElementById('stopBtn');
+        this.statusIndicator = document.getElementById('statusIndicator');
+        this.statusText = document.getElementById('statusText');
+
+        this.audioEngine = new DemoAudioEngine();
+        this.highlightManager = new DemoHighlightManager(this.storyContainer);
+
+        this.flatWords = [];
+
+        this._setupCallbacks();
+        this._setupEventListeners();
+        this._init();
+      }
+
+      _init() {
+        // Flatten words
+        DEMO_STORY.paragraphs.forEach(p => {
+          p.sentences.forEach(s => {
+            s.words.forEach(w => this.flatWords.push(w));
+          });
+        });
+
+        // Render story
+        this.highlightManager.renderStory(DEMO_STORY.paragraphs);
+
+        console.log('Demo initialized with', this.flatWords.length, 'words');
+      }
+
+      _setupCallbacks() {
+        this.audioEngine.onWordHighlight = (index, word) => {
+          this.highlightManager.highlightWord(index);
+        };
+
+        this.audioEngine.onNarrationComplete = () => {
+          this.highlightManager.clearHighlights();
+          this._updatePlayButton(false);
+        };
+      }
+
+      _setupEventListeners() {
+        // Narration toggle
+        this.narrationToggle.addEventListener('click', () => {
+          const enabled = this.audioEngine.toggleNarration();
+          this._updateNarrationUI(enabled);
+        });
+
+        // Play/Pause
+        this.playPauseBtn.addEventListener('click', () => {
+          if (!this.audioEngine.isNarrationEnabled) return;
+
+          if (this.audioEngine.isPlaying) {
+            if (this.audioEngine.isPaused) {
+              this.audioEngine.resume();
+              this._updatePlayButton(true, false);
+            } else {
+              this.audioEngine.pause();
+              this._updatePlayButton(true, true);
+            }
+          } else {
+            this.audioEngine.playNarration(this.flatWords);
+            this._updatePlayButton(true, false);
+          }
+        });
+
+        // Stop
+        this.stopBtn.addEventListener('click', () => {
+          this.audioEngine.stop();
+          this.highlightManager.clearHighlights();
+          this._updatePlayButton(false);
+        });
+
+        // Word clicks (tap-to-hear)
+        this.storyContainer.addEventListener('click', async (e) => {
+          const target = e.target;
+          if (!target.classList.contains('word')) return;
+
+          const wordData = target.wordData;
+          if (!wordData) return;
+
+          console.log('Word tapped:', wordData.text);
+
+          // Visual feedback
+          this.highlightManager.showTapFeedback(target);
+
+          // Speak word
+          await this.audioEngine.speakWord(wordData.text);
+        });
+
+        // Touch feedback
+        this.storyContainer.addEventListener('touchstart', (e) => {
+          if (e.target.classList.contains('word')) {
+            e.target.classList.add('word-touch-active');
+          }
+        }, { passive: true });
+
+        this.storyContainer.addEventListener('touchend', (e) => {
+          if (e.target.classList.contains('word')) {
+            e.target.classList.remove('word-touch-active');
+          }
+        }, { passive: true });
+
+        // Reading mode buttons
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+
+            const mode = e.target.dataset.mode;
+            document.body.classList.remove('reading-mode-large');
+            if (mode === 'large') {
+              document.body.classList.add('reading-mode-large');
+            }
+          });
+        });
+      }
+
+      _updateNarrationUI(enabled) {
+        this.narrationToggle.classList.toggle('active', enabled);
+        this.narrationToggle.setAttribute('aria-pressed', enabled);
+
+        const icon = this.narrationToggle.querySelector('.toggle-icon');
+        icon.textContent = enabled ? '' : '';
+
+        this.playPauseBtn.disabled = !enabled;
+        this.stopBtn.disabled = !enabled;
+
+        this.statusIndicator.classList.toggle('active', enabled);
+        this.statusText.textContent = enabled
+          ? 'Narration is ON - Press play to start'
+          : 'Tap any word to hear it pronounced';
+      }
+
+      _updatePlayButton(playing, paused = false) {
+        if (playing && !paused) {
+          this.playPauseBtn.textContent = '';
+          this.playPauseBtn.classList.add('playing');
+          this.playPauseBtn.setAttribute('aria-label', 'Pause narration');
+          this.statusText.textContent = 'Reading...';
+        } else if (playing && paused) {
+          this.playPauseBtn.textContent = '';
+          this.playPauseBtn.classList.remove('playing');
+          this.playPauseBtn.setAttribute('aria-label', 'Resume narration');
+          this.statusText.textContent = 'Paused';
+        } else {
+          this.playPauseBtn.textContent = '';
+          this.playPauseBtn.classList.remove('playing');
+          this.playPauseBtn.setAttribute('aria-label', 'Play narration');
+          this.statusText.textContent = this.audioEngine.isNarrationEnabled
+            ? 'Narration is ON - Press play to start'
+            : 'Tap any word to hear it pronounced';
+        }
+      }
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      window.demoController = new DemoController();
+    });
+  </script>
+
+</body>
+</html>

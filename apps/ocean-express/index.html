@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Ocean Floor Express - Bathysphere Adventure</title>
+
+  <!-- Google Fonts: Cinzel Decorative & Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SURFACE DOCK SCENE -->
+  <div id="surface-dock" class="scene active">
+    <div class="dock-sky"></div>
+    <div class="dock-water"></div>
+    <div class="dock-platform">
+      <h1 class="dock-title">Ocean Floor Express</h1>
+      <p class="dock-subtitle">Descend into the Deep Unknown</p>
+
+      <div class="bathysphere-exterior">
+        <div class="brass-ring"></div>
+        <div class="sphere-body">
+          <div class="porthole-outer">
+            <div class="porthole-glass"></div>
+          </div>
+          <div class="rivet rivet-1"></div>
+          <div class="rivet rivet-2"></div>
+          <div class="rivet rivet-3"></div>
+          <div class="rivet rivet-4"></div>
+        </div>
+        <div class="door-frame">
+          <div class="door-handle"></div>
+        </div>
+      </div>
+
+      <button class="enter-button" onclick="enterBathysphere()">
+        <span class="button-glow"></span>
+        Enter the Bathysphere
+      </button>
+    </div>
+  </div>
+
+  <!-- BATHYSPHERE INTERIOR -->
+  <div id="bathysphere" class="scene">
+    <div class="ocean-background"></div>
+
+    <!-- Instrument Panel -->
+    <div class="instrument-panel">
+      <div class="depth-gauge-container">
+        <h3 class="gauge-label">Depth</h3>
+        <div class="gauge-circle">
+          <div class="gauge-needle" id="depth-needle"></div>
+          <div class="gauge-center"></div>
+        </div>
+        <div class="depth-reading" id="depth-reading">0 m</div>
+      </div>
+
+      <div class="pressure-gauge-container">
+        <h3 class="gauge-label">Pressure</h3>
+        <div class="pressure-bar">
+          <div class="pressure-fill" id="pressure-fill"></div>
+        </div>
+        <div class="pressure-reading" id="pressure-reading">1 ATM</div>
+      </div>
+    </div>
+
+    <!-- Main Porthole Window -->
+    <div class="porthole-main">
+      <div class="porthole-frame">
+        <div class="frame-segment frame-top"></div>
+        <div class="frame-segment frame-right"></div>
+        <div class="frame-segment frame-bottom"></div>
+        <div class="frame-segment frame-left"></div>
+        <div class="bolt bolt-tl"></div>
+        <div class="bolt bolt-tr"></div>
+        <div class="bolt bolt-br"></div>
+        <div class="bolt bolt-bl"></div>
+      </div>
+
+      <div class="porthole-view" id="porthole-view">
+        <div class="water-caustics"></div>
+        <div class="bubbles-container" id="bubbles-container"></div>
+        <div class="creatures-container" id="creatures-container"></div>
+        <div class="zone-label" id="zone-label">Surface</div>
+      </div>
+    </div>
+
+    <!-- Descent Lever -->
+    <div class="lever-container">
+      <div class="lever-base"></div>
+      <div class="lever-handle" id="descent-lever">
+        <div class="lever-grip"></div>
+      </div>
+      <div class="lever-label">Pull to Descend</div>
+    </div>
+
+    <!-- Story Panel -->
+    <div class="story-panel" id="story-panel">
+      <div class="story-content">
+        <h2 class="story-title" id="story-title"></h2>
+        <div class="story-text" id="story-text"></div>
+        <button class="story-continue-btn" id="story-continue-btn" onclick="continueFromStory()">Continue</button>
+      </div>
+    </div>
+
+    <!-- Question Gate -->
+    <div class="question-gate" id="question-gate">
+      <div class="question-content">
+        <h2 class="question-title">Answer to Descend Deeper</h2>
+        <p class="question-text" id="question-text"></p>
+        <div class="question-answers" id="question-answers"></div>
+        <div class="question-feedback" id="question-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Discovery Badge -->
+    <div class="badge-award" id="badge-award">
+      <div class="badge-glow"></div>
+      <div class="badge-container">
+        <div class="badge-icon">🎣</div>
+        <h2 class="badge-title">Discovery Complete!</h2>
+        <p class="badge-text">You've earned the Glowing Anglerfish Badge</p>
+        <p class="badge-subtext">Deep Sea Explorer</p>
+        <button class="badge-return-btn" onclick="returnToSurface()">Return to Surface</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="pilot-story.js"></script>
+</body>
+</html>

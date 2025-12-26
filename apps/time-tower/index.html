@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>The Time Tower - Isaiah's Adventure</title>
+
+  <!-- Google Fonts: Steampunk & Elegant -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TIME LOBBY SCENE -->
+  <div id="timeLobby" class="scene active">
+    <div class="lobby-background">
+      <div class="gear gear-large gear-1"></div>
+      <div class="gear gear-medium gear-2"></div>
+      <div class="gear gear-small gear-3"></div>
+      <div class="gear gear-medium gear-4"></div>
+      <div class="steam-puff steam-1"></div>
+      <div class="steam-puff steam-2"></div>
+      <div class="steam-puff steam-3"></div>
+    </div>
+
+    <div class="lobby-content">
+      <h1 class="time-tower-title">THE TIME TOWER</h1>
+      <p class="time-tower-subtitle">A Journey Through History & Food</p>
+
+      <div class="elevator-exterior">
+        <div class="elevator-frame">
+          <div class="elevator-clock">
+            <div class="clock-face">
+              <div class="clock-hand hour-hand"></div>
+              <div class="clock-hand minute-hand"></div>
+            </div>
+          </div>
+
+          <div class="elevator-doors">
+            <div class="door door-left"></div>
+            <div class="door door-right"></div>
+          </div>
+
+          <div class="gear-panel">
+            <div class="small-gear sg-1"></div>
+            <div class="small-gear sg-2"></div>
+            <div class="small-gear sg-3"></div>
+          </div>
+        </div>
+
+        <button class="enter-elevator-btn" onclick="enterElevator()">
+          <span>Enter the Time Elevator</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELEVATOR INTERIOR SCENE -->
+  <div id="elevatorInterior" class="scene">
+    <div class="elevator-background">
+      <div class="time-vortex"></div>
+      <div class="elevator-walls">
+        <div class="wall-gear wg-1"></div>
+        <div class="wall-gear wg-2"></div>
+        <div class="wall-gear wg-3"></div>
+      </div>
+    </div>
+
+    <div class="elevator-content">
+      <div class="elevator-clock-indicator">
+        <div class="clock-display">
+          <div class="indicator-hand" id="eraIndicator"></div>
+          <div class="era-marker era-1" data-era="1">🦖</div>
+          <div class="era-marker era-2" data-era="2">🏺</div>
+          <div class="era-marker era-3" data-era="3">🏰</div>
+          <div class="era-marker era-4" data-era="4">🎩</div>
+          <div class="era-marker era-5" data-era="5">🚀</div>
+        </div>
+      </div>
+
+      <h2 class="elevator-title">Select Your Era</h2>
+
+      <div class="era-buttons">
+        <button class="pocket-watch-btn" data-floor="1" onclick="selectEra(1)">
+          <div class="watch-case">
+            <div class="watch-face">
+              <div class="watch-icon">🦖</div>
+              <div class="watch-text">
+                <div class="era-name">Dinosaur Age</div>
+                <div class="era-subtitle">65 Million Years Ago</div>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <button class="pocket-watch-btn featured" data-floor="2" onclick="selectEra(2)">
+          <div class="watch-case">
+            <div class="watch-face">
+              <div class="watch-icon">🏺</div>
+              <div class="watch-text">
+                <div class="era-name">Ancient Egypt</div>
+                <div class="era-subtitle">3000 BC</div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-badge">Start Here!</div>
+        </button>
+
+        <button class="pocket-watch-btn locked" data-floor="3">
+          <div class="watch-case">
+            <div class="watch-face">
+              <div class="watch-icon">🏰</div>
+              <div class="watch-text">
+                <div class="era-name">Medieval Times</div>
+                <div class="era-subtitle">1200 AD</div>
+              </div>
+            </div>
+          </div>
+          <div class="lock-overlay">🔒</div>
+        </button>
+
+        <button class="pocket-watch-btn locked" data-floor="4">
+          <div class="watch-case">
+            <div class="watch-face">
+              <div class="watch-icon">🎩</div>
+              <div class="watch-text">
+                <div class="era-name">Victorian Era</div>
+                <div class="era-subtitle">1850 AD</div>
+              </div>
+            </div>
+          </div>
+          <div class="lock-overlay">🔒</div>
+        </button>
+
+        <button class="pocket-watch-btn locked" data-floor="5">
+          <div class="watch-case">
+            <div class="watch-face">
+              <div class="watch-icon">🚀</div>
+              <div class="watch-text">
+                <div class="era-name">The Future</div>
+                <div class="era-subtitle">2500 AD</div>
+              </div>
+            </div>
+          </div>
+          <div class="lock-overlay">🔒</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIME TRAVEL TRANSITION -->
+  <div id="timeTravel" class="scene">
+    <div class="travel-vortex">
+      <div class="vortex-ring ring-1"></div>
+      <div class="vortex-ring ring-2"></div>
+      <div class="vortex-ring ring-3"></div>
+      <div class="vortex-ring ring-4"></div>
+      <div class="vortex-ring ring-5"></div>
+    </div>
+
+    <div class="travel-content">
+      <div class="travel-clock">
+        <div class="spinning-hands">
+          <div class="travel-hand hand-1"></div>
+          <div class="travel-hand hand-2"></div>
+        </div>
+      </div>
+      <h2 class="travel-text" id="travelText">Traveling Through Time...</h2>
+    </div>
+  </div>
+
+  <!-- ANCIENT EGYPT SCENE -->
+  <div id="egyptScene" class="scene era-scene">
+    <div class="egypt-background">
+      <div class="pyramid pyramid-1"></div>
+      <div class="pyramid pyramid-2"></div>
+      <div class="sun egyptian-sun"></div>
+      <div class="sand-dunes"></div>
+      <div class="hieroglyphs-wall">
+        <div class="hieroglyph">𓀀</div>
+        <div class="hieroglyph">𓁐</div>
+        <div class="hieroglyph">𓃾</div>
+        <div class="hieroglyph">𓆼</div>
+      </div>
+    </div>
+
+    <div class="egypt-content">
+      <div class="welcome-banner">
+        <h2 class="era-welcome">Welcome to Ancient Egypt!</h2>
+        <p class="era-intro">3000 BC - Land of Pharaohs & Pyramids</p>
+      </div>
+
+      <div class="chef-introduction">
+        <div class="chef-character egypt-chef">
+          <div class="chef-avatar">👨‍🍳</div>
+          <div class="chef-speech">
+            <p>"Greetings, young traveler! I am Chef Khepri, baker to the Pharaoh. Today, you shall learn the ancient art of making honey bread - a treat enjoyed by kings and queens for thousands of years!"</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="startRecipe()">
+        <span>Begin the Recipe</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- RECIPE READING SCENE -->
+  <div id="recipeScene" class="scene">
+    <div class="egypt-background light">
+      <div class="kitchen-table"></div>
+      <div class="papyrus-scroll"></div>
+    </div>
+
+    <div class="recipe-content">
+      <div class="recipe-scroll">
+        <h2 class="recipe-title">Ancient Egyptian Honey Bread</h2>
+        <div class="recipe-story" id="recipeStory">
+          <!-- Story content will be loaded from pilot-story.js -->
+        </div>
+
+        <div class="reading-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="readingProgress"></div>
+          </div>
+          <p class="progress-text">Read along as Chef Khepri tells the story...</p>
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="startCooking()">
+        <span>Let's Start Cooking!</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- COOKING MINI-GAME SCENE -->
+  <div id="cookingScene" class="scene">
+    <div class="egypt-background light">
+      <div class="kitchen-counter"></div>
+    </div>
+
+    <div class="cooking-content">
+      <h2 class="cooking-title">Time to Make Honey Bread!</h2>
+
+      <div class="ingredient-task" id="ingredientTask">
+        <div class="task-instruction">
+          <p id="taskText">Add 3 scoops of flour to the bowl</p>
+        </div>
+
+        <div class="mixing-bowl">
+          <div class="bowl-contents" id="bowlContents"></div>
+        </div>
+
+        <div class="ingredient-buttons">
+          <button class="ingredient-btn" onclick="addIngredient('flour')">
+            <div class="ingredient-icon">🌾</div>
+            <div class="ingredient-label">Flour</div>
+          </button>
+          <button class="ingredient-btn" onclick="addIngredient('honey')">
+            <div class="ingredient-icon">🍯</div>
+            <div class="ingredient-label">Honey</div>
+          </button>
+          <button class="ingredient-btn" onclick="addIngredient('water')">
+            <div class="ingredient-icon">💧</div>
+            <div class="ingredient-label">Water</div>
+          </button>
+        </div>
+
+        <div class="counter-display">
+          <p>You've added: <span id="ingredientCount">0</span> scoops</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAKING SCENE -->
+  <div id="bakingScene" class="scene">
+    <div class="egypt-background light">
+      <div class="ancient-oven"></div>
+    </div>
+
+    <div class="baking-content">
+      <h2 class="baking-title">Baking Your Honey Bread...</h2>
+
+      <div class="oven-display">
+        <div class="oven-interior">
+          <div class="bread-baking" id="breadBaking">
+            <div class="bread-loaf"></div>
+          </div>
+          <div class="oven-glow"></div>
+        </div>
+      </div>
+
+      <div class="baking-progress">
+        <div class="progress-bar">
+          <div class="progress-fill baking-fill" id="bakingProgress"></div>
+        </div>
+        <p class="progress-text">Watch the bread rise and turn golden...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REWARD SCENE -->
+  <div id="rewardScene" class="scene">
+    <div class="egypt-background golden">
+      <div class="celebration-rays"></div>
+      <div class="floating-hieroglyphs">
+        <div class="float-symbol">𓋹</div>
+        <div class="float-symbol">𓆣</div>
+        <div class="float-symbol">𓇋</div>
+      </div>
+    </div>
+
+    <div class="reward-content">
+      <div class="pharaoh-character">
+        <div class="pharaoh-avatar">🤴</div>
+        <div class="pharaoh-speech">
+          <p>"Magnificent work, young baker! This honey bread is fit for the gods themselves. I bestow upon you the Golden Scarab - the highest honor in all of Egypt!"</p>
+        </div>
+      </div>
+
+      <div class="badge-award">
+        <div class="scarab-badge">
+          <div class="scarab-shine"></div>
+          <div class="scarab-icon">🪲</div>
+        </div>
+        <h2 class="badge-title">Golden Scarab Earned!</h2>
+        <p class="badge-description">Master Baker of Ancient Egypt</p>
+      </div>
+
+      <div class="reward-stats">
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Recipe Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">15</div>
+          <div class="stat-label">Words Read</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">6</div>
+          <div class="stat-label">Measurements Made</div>
+        </div>
+      </div>
+
+      <div class="reward-actions">
+        <button class="action-btn primary" onclick="returnToElevator()">
+          <span>Return to Time Elevator</span>
+        </button>
+        <button class="action-btn secondary" onclick="playAgain()">
+          <span>Bake Again</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load JavaScript -->
+  <script src="pilot-story.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

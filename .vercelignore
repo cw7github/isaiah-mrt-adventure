@@ -1,0 +1,26 @@
+# Vercel deploy hygiene: ship only runtime assets.
+
+# Local-only / archived content
+archive/
+generated_assets/
+test-results/
+examples/
+docs/
+
+# Scratch / screenshots
+tmp_*/
+tmp_*
+
+# Large local references
+*.pdf
+
+# Backups
+index.html.backup*
+index.html.bak*
+index.html.before_optimization
+
+# Tooling / OS noise
+node_modules/
+__pycache__/
+.DS_Store
+*.log

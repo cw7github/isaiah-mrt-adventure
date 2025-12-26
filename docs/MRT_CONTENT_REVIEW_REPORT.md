@@ -5,10 +5,22 @@
 - `content/cpa-grade1-ela/content-pack.v1.json`  
 - `content/cpa-grade1-math/content-pack.v1.json`
 
+## Status (Resolved)
+
+As of **2025-12-23**, all issues listed in this report have been addressed in the current content/runtime:
+
+- ELA: removed unsupported `activitySpec` pages; corrected sight-word bands B–E coherence/hints; fixed minor targetWords/duplicates.
+- Math: removed `numberSentence` from word problems; fixed `1.NBT.C.4` scope violations; corrected/realigned `g_3d_shapes`; expanded review sprints.
+- Runtime: `index.html` no longer displays `numberSentence` on `questionType: "wordProblem"` pages.
+- Validation: `node scripts/validate-content-pack.mjs` ✅, `node scripts/validate-math-content-pack.mjs` ✅
+- TTS: `node scripts/generate-tts-assets.mjs --check` → **Missing: 0** ✅
+
+The issue log below is kept as a historical record of what was found and fixed.
+
 ## Scope Notes (Schema Reality Check)
 
 - `menu` pages in these packs use `prompt` / `menuStory` / `items[{name, icon, description}]` and are **not scored** (no `isCorrect`). The checklist item “exactly one `isCorrect: true`” is **N/A** to these packs.
-- ELA contains `activitySpec` pages (future placeholders per `content/cpa-grade1-ela/SCHEMA.md`). The current app renderer in `index.html` only handles `read | menu | question`, so `activitySpec` pages can soft-lock a station.
+- Older ELA drafts included `activitySpec` pages (future placeholders per `content/cpa-grade1-ela/SCHEMA.md`). The current app renderer in `index.html` only handles `read | menu | question`, so `activitySpec` pages were removed from the current pack until runtime support is added.
 
 ## Issue Log (All Issues Found)
 

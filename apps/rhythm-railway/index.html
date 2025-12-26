@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Rhythm Railway - Musical Train Adventure</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .hub-nav-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .hub-nav-btn:hover {
+      background: rgba(0,0,0,0.7);
+      border-color: rgba(255,255,255,0.7);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Screen Reader Announcements -->
+  <div id="announcer" aria-live="polite" class="sr-only"></div>
+
+
+  <!-- Hub Navigation Button -->
+  <a href="../hub/index.html" class="hub-nav-btn" aria-label="Return to Learning Lobby" title="Back to Hub">🏠</a>
+
+  <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-icon">🎵</div>
+      <h1 class="loading-title">RHYTHM RAILWAY</h1>
+      <p class="loading-subtitle">Loading...</p>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MUSICAL NOTES BACKGROUND -->
+  <div class="music-atmosphere">
+    <div class="floating-note" style="left: 10%; animation-delay: 0s;">♪</div>
+    <div class="floating-note" style="left: 25%; animation-delay: 1.5s;">♫</div>
+    <div class="floating-note" style="left: 40%; animation-delay: 3s;">♪</div>
+    <div class="floating-note" style="left: 55%; animation-delay: 4.5s;">♬</div>
+    <div class="floating-note" style="left: 70%; animation-delay: 2s;">♩</div>
+    <div class="floating-note" style="left: 85%; animation-delay: 5s;">♫</div>
+  </div>
+
+  <!-- MAIN GAME CONTAINER -->
+  <div class="game-container" role="main" id="main-content">
+
+    <!-- HEADER -->
+    <header class="game-header">
+      <h1 class="title">RHYTHM RAILWAY</h1>
+      <div class="combo-display">
+        <div class="combo-label">COMBO</div>
+        <div class="combo-number" id="comboNumber">0</div>
+      </div>
+    </header>
+
+    <!-- STATION DISPLAY -->
+    <div class="station-card" id="stationCard">
+      <div class="station-icon" id="stationIcon">🥁</div>
+      <h2 class="station-name" id="stationName">DRUM DEPOT</h2>
+      <p class="station-description" id="stationDescription">Feel the steady beat!</p>
+    </div>
+
+    <!-- TRAIN VISUALIZATION -->
+    <div class="train-scene">
+      <div class="music-staff">
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+      </div>
+
+      <div class="train" id="train">
+        <div class="train-car engine">
+          <div class="car-body">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+          <div class="smoke-stack">
+            <div class="smoke"></div>
+          </div>
+        </div>
+        <div class="train-car xylophone">
+          <div class="car-body">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <div class="train-car caboose">
+          <div class="car-body">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- RHYTHM PATTERN PREVIEW -->
+    <div class="pattern-preview" id="patternPreview">
+      <!-- Pattern beats will be dynamically inserted here -->
+    </div>
+
+    <!-- VISUAL METRONOME -->
+    <div class="metronome" id="metronome">
+      <div class="metronome-beat"></div>
+    </div>
+
+    <!-- TAP ZONE -->
+    <div class="tap-zone" id="tapZone" role="button" tabindex="0" aria-label="Tap here to play the rhythm">
+      <div class="tap-circle">
+        <div class="tap-ripple"></div>
+        <div class="tap-label">TAP!</div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK DISPLAY -->
+    <div class="feedback" id="feedback"></div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+      <button class="btn btn-listen" id="listenBtn" aria-label="Listen to the rhythm pattern">
+        <span class="btn-icon">👂</span>
+        <span class="btn-text">LISTEN</span>
+      </button>
+      <button class="btn btn-play" id="playBtn" aria-label="Start playing the rhythm" disabled>
+        <span class="btn-icon">🎵</span>
+        <span class="btn-text">PLAY!</span>
+      </button>
+      <button class="btn btn-next" id="nextBtn" aria-label="Go to next station" style="display: none;">
+        <span class="btn-icon">🚂</span>
+        <span class="btn-text">NEXT STATION</span>
+      </button>
+    </div>
+
+    <!-- INSTRUCTIONS -->
+    <div class="instructions" id="instructions">
+      <p>Press LISTEN to hear the rhythm, then TAP to match the beat!</p>
+    </div>
+
+  </div>
+
+  <!-- VICTORY MODAL -->
+  <div class="victory-modal" id="victoryModal">
+    <div class="victory-content">
+      <div class="victory-stars">⭐🌟✨</div>
+      <h2 class="victory-title">PERFECT RHYTHM!</h2>
+      <p class="victory-message">You've powered the train to the next station!</p>
+      <div class="victory-fireworks">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="sounds.js"></script>
+  <script src="patterns.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Loading Screen Handler -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

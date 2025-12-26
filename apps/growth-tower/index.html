@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>The Growth Tower - Isaiah's Plant Adventure</title>
+
+  <!-- Google Fonts: Playfair Display for headers, Source Serif Pro for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Living Background -->
+  <div class="garden-background">
+    <div class="breathing-wall"></div>
+    <div class="vine-border vine-left"></div>
+    <div class="vine-border vine-right"></div>
+    <div class="companion-butterfly butterfly-1"></div>
+    <div class="companion-butterfly butterfly-2"></div>
+    <div class="companion-bee"></div>
+    <div class="companion-ladybug"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="growth-tower-container">
+
+    <!-- SCENE 1: GARDEN LOBBY -->
+    <div class="scene active" id="scene-lobby">
+      <div class="greenhouse-entrance">
+        <div class="glass-panels"></div>
+        <div class="hanging-vines"></div>
+
+        <div class="lobby-content">
+          <h1 class="tower-title">
+            <span class="decorative-leaf">🌿</span>
+            The Growth Tower
+            <span class="decorative-leaf">🌿</span>
+          </h1>
+          <p class="tower-subtitle">A Living Building Where Plants Tell Stories</p>
+
+          <div class="floor-indicator">
+            <div class="floor-badge floor-1">
+              <span class="floor-icon">🌱</span>
+              <span class="floor-name">Seed Floor</span>
+            </div>
+            <div class="floor-badge floor-2">
+              <span class="floor-icon">🌾</span>
+              <span class="floor-name">Root Floor</span>
+            </div>
+            <div class="floor-badge floor-3">
+              <span class="floor-icon">🌿</span>
+              <span class="floor-name">Stem Floor</span>
+            </div>
+            <div class="floor-badge floor-4">
+              <span class="floor-icon">🍃</span>
+              <span class="floor-name">Leaf Floor</span>
+            </div>
+            <div class="floor-badge floor-5">
+              <span class="floor-icon">🌻</span>
+              <span class="floor-name">Flower Floor</span>
+            </div>
+          </div>
+
+          <button class="start-button" onclick="growthTower.startAdventure()">
+            <span class="button-vine">🌿</span>
+            Begin Your Garden Journey
+            <span class="button-vine">🌿</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 2: RECEIVE SEED -->
+    <div class="scene" id="scene-receive-seed">
+      <div class="seed-presentation">
+        <h2 class="scene-title">A Magical Seed Appears!</h2>
+        <div class="seed-gift-box">
+          <div class="gift-lid"></div>
+          <div class="magical-seed"></div>
+          <div class="sparkles"></div>
+        </div>
+        <div class="seed-description">
+          <p class="seed-name">The Storytelling Sunflower</p>
+          <p class="seed-info">This special sunflower will tell you a wonderful story as it grows!</p>
+          <p class="seed-quest">Let's help it grow from a tiny seed to a beautiful flower.</p>
+        </div>
+        <button class="garden-button" onclick="growthTower.enterVineLift()">
+          Take the Seed to the Vine Lift
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 3: VINE LIFT (ELEVATOR) -->
+    <div class="scene" id="scene-vine-lift">
+      <div class="vine-lift-chamber">
+        <h2 class="scene-title">The Vine Lift</h2>
+
+        <div class="vine-pod">
+          <div class="vine-structure">
+            <div class="main-vine"></div>
+            <div class="vine-tendrils">
+              <div class="tendril tendril-1"></div>
+              <div class="tendril tendril-2"></div>
+              <div class="tendril tendril-3"></div>
+            </div>
+          </div>
+
+          <div class="pod-interior">
+            <div class="pod-window"></div>
+            <div class="floor-leaves">
+              <div class="leaf-indicator" data-floor="5">🌻</div>
+              <div class="leaf-indicator" data-floor="4">🍃</div>
+              <div class="leaf-indicator" data-floor="3">🌿</div>
+              <div class="leaf-indicator" data-floor="2">🌾</div>
+              <div class="leaf-indicator active" data-floor="1">🌱</div>
+            </div>
+            <p class="lift-message">Descending to the Seed Floor...</p>
+          </div>
+
+          <div class="traveling-insects">
+            <div class="insect-companion">🐞</div>
+            <div class="insect-companion">🦋</div>
+          </div>
+        </div>
+
+        <button class="garden-button" onclick="growthTower.descendToSeedFloor()">
+          Descend Into the Earth
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 4: SEED FLOOR - PLANTING -->
+    <div class="scene" id="scene-seed-floor">
+      <div class="underground-chamber">
+        <h2 class="scene-title">The Seed Floor</h2>
+        <p class="floor-description">Deep underground where seeds begin their journey</p>
+
+        <div class="soil-cross-section">
+          <div class="soil-layers">
+            <div class="soil-layer topsoil"></div>
+            <div class="soil-layer subsoil"></div>
+            <div class="soil-layer bedrock"></div>
+          </div>
+
+          <div class="planting-area">
+            <div class="planting-hole" id="planting-hole">
+              <p class="hole-prompt">Click to dig a hole</p>
+            </div>
+            <div class="planted-seed hidden" id="planted-seed"></div>
+          </div>
+
+          <div class="underground-friends">
+            <div class="worm">🪱</div>
+            <div class="beetle">🪲</div>
+          </div>
+        </div>
+
+        <div class="planting-instructions">
+          <div class="instruction-step" id="step-dig">
+            <span class="step-number">1</span>
+            <span class="step-text">Dig a hole for your seed</span>
+          </div>
+          <div class="instruction-step" id="step-plant">
+            <span class="step-number">2</span>
+            <span class="step-text">Place the seed gently</span>
+          </div>
+          <div class="instruction-step" id="step-cover">
+            <span class="step-number">3</span>
+            <span class="step-text">Cover with soil</span>
+          </div>
+        </div>
+
+        <button class="garden-button hidden" id="btn-water" onclick="growthTower.waterSeed()">
+          Water the Seed
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 5: WATERING -->
+    <div class="scene" id="scene-watering">
+      <div class="watering-chamber">
+        <h2 class="scene-title">Time to Water!</h2>
+        <p class="water-instruction">Add exactly <strong>5 drops</strong> of water</p>
+
+        <div class="watering-area">
+          <div class="watering-can" id="watering-can">
+            <div class="can-spout"></div>
+            <div class="water-drops">
+              <div class="drop"></div>
+            </div>
+          </div>
+
+          <div class="planted-seed-watering"></div>
+
+          <div class="water-counter">
+            <span class="counter-label">Drops:</span>
+            <span class="counter-value" id="drop-count">0</span>
+            <span class="counter-target">/ 5</span>
+          </div>
+        </div>
+
+        <button class="garden-button" id="btn-add-water" onclick="growthTower.addWaterDrop()">
+          Add Water Drop
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 6: GERMINATION -->
+    <div class="scene" id="scene-germination">
+      <div class="germination-chamber">
+        <h2 class="scene-title">The Seed is Germinating!</h2>
+
+        <div class="germination-animation">
+          <div class="seed-cracking">
+            <div class="seed-shell seed-top"></div>
+            <div class="seed-shell seed-bottom"></div>
+            <div class="emerging-root"></div>
+            <div class="emerging-shoot"></div>
+          </div>
+
+          <div class="germination-labels">
+            <div class="label label-root">
+              <div class="label-arrow"></div>
+              <span>First Root!</span>
+            </div>
+            <div class="label label-shoot">
+              <div class="label-arrow"></div>
+              <span>First Shoot!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="science-fact">
+          <h3>Science Fact!</h3>
+          <p>When a seed gets water, it wakes up and splits open. The first root grows down to find water, and the first shoot grows up to find light!</p>
+        </div>
+
+        <button class="garden-button" onclick="growthTower.seedSpeaks()">
+          Listen to the Seed
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 7: STORY TIME -->
+    <div class="scene" id="scene-story">
+      <div class="story-chamber">
+        <h2 class="scene-title">The Sunflower's Story</h2>
+
+        <div class="story-book">
+          <div class="book-page">
+            <div class="page-illustration">
+              <div class="baby-sunflower talking"></div>
+            </div>
+            <div class="page-text" id="story-text">
+              <!-- Story will be loaded from pilot-story.js -->
+            </div>
+          </div>
+        </div>
+
+        <div class="story-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="story-progress"></div>
+          </div>
+          <p class="progress-label">Reading: <span id="story-percent">0</span>%</p>
+        </div>
+
+        <button class="garden-button" id="btn-continue-story" onclick="growthTower.continueStory()">
+          Continue Reading
+        </button>
+
+        <button class="garden-button hidden" id="btn-grow-up" onclick="growthTower.growUpFloors()">
+          Watch the Sunflower Grow!
+        </button>
+      </div>
+    </div>
+
+    <!-- SCENE 8: GROWING UP (VINE LIFT MONTAGE) -->
+    <div class="scene" id="scene-growing">
+      <div class="growth-montage">
+        <h2 class="scene-title">Growing Through the Floors!</h2>
+
+        <div class="vine-lift-growing">
+          <div class="growth-journey">
+            <div class="journey-floor" data-floor="2">
+              <div class="floor-icon-large">🌾</div>
+              <h3>Root Floor</h3>
+              <p>Roots spreading deep and wide!</p>
+            </div>
+            <div class="journey-floor" data-floor="3">
+              <div class="floor-icon-large">🌿</div>
+              <h3>Stem Floor</h3>
+              <p>Breaking through the soil!</p>
+            </div>
+            <div class="journey-floor" data-floor="4">
+              <div class="floor-icon-large">🍃</div>
+              <h3>Leaf Floor</h3>
+              <p>Leaves catching sunlight!</p>
+            </div>
+          </div>
+
+          <div class="growing-plant">
+            <div class="plant-stem"></div>
+            <div class="plant-leaves"></div>
+          </div>
+        </div>
+
+        <div class="growth-timer">
+          <p>Growing... <span id="growth-timer">3</span> seconds</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 9: FLOWER BLOOMS! -->
+    <div class="scene" id="scene-bloom">
+      <div class="bloom-chamber">
+        <h2 class="scene-title">The Sunflower Blooms!</h2>
+
+        <div class="blooming-sunflower">
+          <div class="sunflower-complete">
+            <div class="flower-center"></div>
+            <div class="flower-petals">
+              <div class="petal petal-1"></div>
+              <div class="petal petal-2"></div>
+              <div class="petal petal-3"></div>
+              <div class="petal petal-4"></div>
+              <div class="petal petal-5"></div>
+              <div class="petal petal-6"></div>
+              <div class="petal petal-7"></div>
+              <div class="petal petal-8"></div>
+            </div>
+            <div class="flower-stem-full"></div>
+            <div class="flower-leaves-full"></div>
+          </div>
+
+          <div class="celebration-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+
+          <div class="pollination-friends">
+            <div class="friend-bee">🐝</div>
+            <div class="friend-butterfly">🦋</div>
+            <div class="friend-bee">🐝</div>
+          </div>
+        </div>
+
+        <div class="completion-message">
+          <h3>Congratulations!</h3>
+          <p>You helped a tiny seed become a beautiful sunflower!</p>
+        </div>
+
+        <div class="badge-earned">
+          <div class="badge-container">
+            <div class="badge-shine"></div>
+            <div class="badge-icon">🌻</div>
+            <p class="badge-name">Sunflower Gardener</p>
+          </div>
+        </div>
+
+        <div class="completion-actions">
+          <button class="garden-button" onclick="growthTower.visitSkyGarden()">
+            Visit the Sky Garden
+          </button>
+          <button class="garden-button secondary" onclick="growthTower.restart()">
+            Grow Another Plant
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BONUS SCENE: SKY GARDEN -->
+    <div class="scene" id="scene-sky-garden">
+      <div class="sky-garden-chamber">
+        <h2 class="scene-title">The Sky Garden!</h2>
+        <p class="sky-description">A rooftop paradise where all your plants live!</p>
+
+        <div class="sky-garden-view">
+          <div class="garden-bed">
+            <div class="grown-sunflower"></div>
+            <div class="garden-path"></div>
+            <div class="garden-fountain"></div>
+          </div>
+
+          <div class="sky-clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+          </div>
+
+          <div class="garden-trains">
+            <div class="mini-train water-train">
+              <span class="train-cargo">💧</span>
+              <span class="train-engine">🚂</span>
+            </div>
+            <div class="mini-train seed-train">
+              <span class="train-cargo">🌱</span>
+              <span class="train-engine">🚂</span>
+            </div>
+            <div class="mini-train sun-train">
+              <span class="train-cargo">☀️</span>
+              <span class="train-engine">🚂</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="garden-stats">
+          <div class="stat">
+            <span class="stat-icon">🌻</span>
+            <span class="stat-value">1</span>
+            <span class="stat-label">Sunflowers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">💧</span>
+            <span class="stat-value">5</span>
+            <span class="stat-label">Water Drops</span>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">📖</span>
+            <span class="stat-value">1</span>
+            <span class="stat-label">Stories Read</span>
+          </div>
+        </div>
+
+        <button class="garden-button" onclick="growthTower.returnToLobby()">
+          Return to Garden Lobby
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="pilot-story.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2850 @@
+/* LOST & FOUND EXPRESS - VINTAGE DETECTIVE AGENCY */
+/* Noir detective meets kid-friendly mystery aesthetic */
+
+/* ===== IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IM+Fell+English+SC&display=swap');
+
+/* ===== COLOR PALETTE - Vintage Detective Office ===== */
+:root {
+  /* Warm Sepia & Paper Tones */
+  --sepia-dark: #3d2817;
+  --sepia-medium: #5c4033;
+  --paper-cream: #f4e8d0;
+  --paper-aged: #e8d5b5;
+  --paper-old: #d4b896;
+
+  /* Mahogany & Wood */
+  --mahogany: #6b3410;
+  --mahogany-dark: #4a2511;
+  --wood-grain: #8b5a3c;
+  --wood-light: #a67c52;
+
+  /* Gold & Brass Accents */
+  --gold: #d4a574;
+  --gold-bright: #e6b87a;
+  --brass: #b8964f;
+  --brass-dark: #9a7b3c;
+
+  /* Ink & Text */
+  --ink-black: #1a1410;
+  --ink-faded: #4a3f35;
+  --stamp-red: #8b1e1e;
+  --stamp-red-bright: #b32828;
+
+  /* Mystery Accents */
+  --clue-highlight: #d4af37;
+  --evidence-tag: #c19a6b;
+  --success-green: #3d5a3c;
+  --leather: #5c3317;
+
+  /* Shadows & Effects */
+  --shadow-soft: 0 4px 12px rgba(26, 20, 16, 0.15);
+  --shadow-medium: 0 8px 24px rgba(26, 20, 16, 0.25);
+  --shadow-hard: 0 12px 40px rgba(26, 20, 16, 0.35);
+  --shadow-inner: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background: var(--sepia-dark);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    linear-gradient(180deg, var(--mahogany-dark) 0%, var(--sepia-dark) 100%);
+  color: var(--ink-black);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Wood Grain Texture Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(0, 0, 0, 0.02) 80px,
+      rgba(0, 0, 0, 0.02) 160px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== GAME CONTAINER ===== */
+#game-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== OFFICE VIEW - Detective's Headquarters ===== */
+.office-view {
+  background: var(--paper-cream);
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 30, 30, 0.05) 0%, transparent 50%);
+  border-radius: 12px;
+  padding: 60px 50px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Paper Texture Overlay */
+.office-view::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.015) 2px,
+      rgba(0, 0, 0, 0.015) 4px
+    );
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Decorative Corner Embellishments */
+.office-view::after {
+  content: '⚜';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5em;
+  color: var(--brass);
+  opacity: 0.4;
+  transform: rotate(15deg);
+}
+
+.office-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.office-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 4.5em;
+  color: var(--mahogany);
+  text-shadow:
+    3px 3px 0 var(--gold),
+    6px 6px 12px rgba(26, 20, 16, 0.3);
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  animation: titleEnter 1s ease;
+}
+
+@keyframes titleEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+    letter-spacing: 8px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 3px;
+  }
+}
+
+.office-subtitle {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.8em;
+  color: var(--stamp-red);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+}
+
+/* Underline Effect */
+.office-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: var(--stamp-red);
+  transform: scaleX(0);
+  animation: underlineGrow 0.8s ease 0.5s forwards;
+}
+
+@keyframes underlineGrow {
+  to { transform: scaleX(1); }
+}
+
+/* ===== DETECTIVE DESK - Three Main Elements ===== */
+.office-desk {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+  perspective: 1000px;
+}
+
+.desk-item {
+  background: linear-gradient(135deg, var(--paper-aged) 0%, var(--paper-cream) 100%);
+  border: 4px solid var(--mahogany);
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: deskItemFloat 0.8s ease forwards;
+  opacity: 0;
+}
+
+.desk-item:nth-child(1) { animation-delay: 0.2s; }
+.desk-item:nth-child(2) { animation-delay: 0.4s; }
+.desk-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes deskItemFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Leather Texture on Desk Items */
+.desk-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.02) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.desk-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(26, 20, 16, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-color: var(--gold-bright);
+}
+
+/* === MAGNIFYING GLASS === */
+.magnifying-glass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.glass-lens {
+  font-size: 7em;
+  filter: drop-shadow(0 8px 16px rgba(26, 20, 16, 0.3));
+  animation: magnifyFloat 4s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-lens:hover {
+  transform: scale(1.15) rotate(15deg);
+  filter: drop-shadow(0 12px 24px rgba(212, 175, 55, 0.5));
+}
+
+@keyframes magnifyFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg) scale(1.05);
+  }
+}
+
+/* === RADIO BOX === */
+.radio-box {
+  text-align: center;
+  position: relative;
+}
+
+.radio-static {
+  width: 100%;
+  height: 80px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--mahogany),
+      var(--mahogany) 2px,
+      var(--brass-dark) 2px,
+      var(--brass-dark) 3px,
+      transparent 3px,
+      transparent 5px
+    );
+  opacity: 0.4;
+  margin-bottom: 25px;
+  animation: radioStatic 0.8s linear infinite;
+  border-radius: 8px;
+  box-shadow: var(--shadow-inner);
+  position: relative;
+}
+
+/* Radio speaker grill effect */
+.radio-static::before {
+  content: '📻';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  opacity: 0.6;
+  animation: radioPulse 2s ease-in-out infinite;
+}
+
+@keyframes radioPulse {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes radioStatic {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 0; }
+}
+
+.radio-button {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--paper-cream);
+  background: linear-gradient(135deg, var(--stamp-red) 0%, var(--stamp-red-bright) 100%);
+  border: none;
+  padding: 22px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button shine effect */
+.radio-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: buttonShine 3s ease-in-out infinite;
+}
+
+@keyframes buttonShine {
+  0%, 100% { transform: translateX(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) rotate(45deg); }
+}
+
+.radio-button:hover {
+  background: linear-gradient(135deg, var(--stamp-red-bright) 0%, #c73434 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 10px 30px rgba(139, 30, 30, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.radio-button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 5px 15px rgba(139, 30, 30, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* === CASE FILE === */
+.case-file {
+  text-align: center;
+  position: relative;
+}
+
+.case-file::before {
+  content: '📁';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em;
+  opacity: 0.2;
+  filter: blur(2px);
+}
+
+.case-file h3 {
+  font-family: 'Special Elite', monospace;
+  color: var(--mahogany);
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.solved-count {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.2em;
+  color: var(--brass);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: countPulse 2s ease-in-out infinite;
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ===== SOLVED CASES WALL - Trophy Display ===== */
+.solved-cases-wall {
+  background: linear-gradient(135deg, var(--mahogany) 0%, var(--mahogany-dark) 100%);
+  padding: 45px 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-hard);
+  border: 6px solid var(--wood-grain);
+  position: relative;
+}
+
+/* Cork board texture */
+.solved-cases-wall::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 85% 75%, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 45% 55%, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+.solved-cases-wall h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--gold-bright);
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 35px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.badges-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  background: var(--paper-cream);
+  background-image:
+    linear-gradient(135deg, var(--paper-aged) 0%, var(--paper-cream) 100%);
+  border: 4px solid var(--brass);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  animation: badgeAppear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+/* Pin at top of badge */
+.badge::before {
+  content: '📌';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8em;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.badge:hover {
+  transform: translateY(-8px) rotateZ(3deg);
+  box-shadow:
+    0 15px 35px rgba(26, 20, 16, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.badge-emoji {
+  font-size: 3.5em;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  display: block;
+  animation: badgeEmojiBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeEmojiBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.badge-name {
+  font-family: 'Special Elite', monospace;
+  font-weight: 600;
+  color: var(--mahogany);
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+@keyframes badgeAppear {
+  0% {
+    transform: scale(0) rotate(-180deg) translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+.no-badges {
+  color: var(--paper-aged);
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3em;
+  padding: 30px;
+  font-family: 'Crimson Text', serif;
+}
+
+/* ===== DETECTIVE BADGE - Identity Card ===== */
+.detective-badge {
+  text-align: center;
+  font-family: 'Special Elite', monospace;
+  font-size: 1.8em;
+  color: var(--paper-cream);
+  font-weight: 700;
+  padding: 25px 40px;
+  background: linear-gradient(135deg, var(--brass-dark) 0%, var(--brass) 100%);
+  border-radius: 12px;
+  box-shadow:
+    var(--shadow-hard),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Badge shine effect */
+.detective-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: badgeShine 4s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
+
+/* ===== CASE ALERT - Urgent News Flash ===== */
+.case-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  animation: fadeIn 0.5s ease;
+}
+
+.alert-box {
+  background: var(--paper-cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+  border: 8px solid var(--stamp-red);
+  border-radius: 16px;
+  padding: 70px 60px;
+  text-align: center;
+  box-shadow:
+    var(--shadow-hard),
+    0 0 0 4px var(--paper-cream),
+    0 0 0 12px var(--mahogany);
+  animation: alertPulse 1.5s ease-in-out infinite;
+  position: relative;
+  max-width: 650px;
+}
+
+/* Corner decorations */
+.alert-box::before,
+.alert-box::after {
+  content: '⚠';
+  position: absolute;
+  font-size: 2em;
+  color: var(--stamp-red);
+  opacity: 0.3;
+}
+
+.alert-box::before {
+  top: 15px;
+  left: 20px;
+  transform: rotate(-15deg);
+}
+
+.alert-box::after {
+  bottom: 15px;
+  right: 20px;
+  transform: rotate(15deg);
+}
+
+@keyframes alertPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      var(--shadow-hard),
+      0 0 0 4px var(--paper-cream),
+      0 0 0 12px var(--mahogany),
+      0 0 30px rgba(139, 30, 30, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow:
+      0 20px 60px rgba(26, 20, 16, 0.45),
+      0 0 0 4px var(--paper-cream),
+      0 0 0 12px var(--mahogany),
+      0 0 50px rgba(139, 30, 30, 0.6);
+  }
+}
+
+.radio-waves {
+  font-size: 6em;
+  animation: radioWaves 2s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(139, 30, 30, 0.3));
+}
+
+@keyframes radioWaves {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+    opacity: 0.7;
+  }
+}
+
+.alert-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 3.5em;
+  color: var(--stamp-red);
+  margin: 25px 0;
+  text-shadow: 3px 3px 0 rgba(139, 30, 30, 0.2);
+  animation: alertTitleFlash 1.5s ease-in-out infinite;
+  letter-spacing: 4px;
+}
+
+@keyframes alertTitleFlash {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.alert-message {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.9em;
+  color: var(--ink-black);
+  margin: 25px 0;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.alert-detail {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.6em;
+  color: var(--sepia-medium);
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+/* ===== CASE BOARD - Evidence Board ===== */
+.case-board-view {
+  background: var(--paper-cream);
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+  border-radius: 12px;
+  padding: 40px 45px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  animation: fadeIn 0.5s ease;
+  position: relative;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 4px double var(--brass);
+  position: relative;
+}
+
+.board-header h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.8em;
+  color: var(--mahogany);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 2px;
+}
+
+/* ===== EVIDENCE BOARD - Cork Board Style ===== */
+.evidence-board {
+  background: linear-gradient(135deg, var(--wood-grain) 0%, var(--wood-light) 100%);
+  padding: 50px 45px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow:
+    var(--shadow-hard),
+    inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 8px solid var(--mahogany);
+  position: relative;
+}
+
+/* Cork texture */
+.evidence-board::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px, 70px 70px, 60px 60px, 80px 80px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.board-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* String connections visual */
+.board-center::before,
+.board-center::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--brass-dark) 0px,
+    var(--brass-dark) 10px,
+    transparent 10px,
+    transparent 15px
+  );
+  opacity: 0.5;
+}
+
+.board-center::before { left: -120px; }
+.board-center::after { right: -120px; }
+
+/* ===== LOST ITEM CARD - Manila Folder Style ===== */
+.lost-item-card {
+  background: linear-gradient(135deg, var(--paper-aged) 0%, var(--paper-cream) 100%);
+  border: 5px solid var(--brass);
+  border-radius: 12px;
+  padding: 40px 35px;
+  text-align: center;
+  box-shadow:
+    var(--shadow-hard),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  min-width: 350px;
+  max-width: 450px;
+  animation: itemAppear 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Paper clip at top */
+.lost-item-card::before {
+  content: '📎';
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-size: 2.5em;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transform: rotate(45deg);
+}
+
+/* Stamp effect */
+.lost-item-card::after {
+  content: 'EVIDENCE';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.9em;
+  color: var(--stamp-red);
+  opacity: 0.4;
+  padding: 5px 10px;
+  border: 2px solid var(--stamp-red);
+  border-radius: 4px;
+  transform: rotate(-15deg);
+  letter-spacing: 2px;
+}
+
+@keyframes itemAppear {
+  0% {
+    transform: scale(0) rotateY(-180deg) translateZ(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotateY(10deg) translateZ(0px);
+  }
+  100% {
+    transform: scale(1) rotateY(0deg) translateZ(0px);
+    opacity: 1;
+  }
+}
+
+.item-emoji {
+  font-size: 5.5em;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+  animation: itemFloat 3s ease-in-out infinite;
+}
+
+@keyframes itemFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.lost-item-card h3 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.3em;
+  color: var(--mahogany);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.lost-item-card p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.4em;
+  color: var(--ink-faded);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ===== ACTION BUTTONS - Investigation Tools ===== */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 45px;
+}
+
+.action-btn {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.35em;
+  font-weight: 600;
+  color: var(--paper-cream);
+  background: linear-gradient(135deg, var(--sepia-medium) 0%, var(--sepia-dark) 100%);
+  border: 3px solid var(--brass);
+  padding: 22px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover glow */
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  border-radius: 50%;
+}
+
+.action-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, var(--brass) 0%, var(--gold) 100%);
+  color: var(--mahogany);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow:
+    0 12px 32px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--gold-bright);
+}
+
+.action-btn:active {
+  transform: translateY(-2px) scale(1);
+  box-shadow:
+    0 6px 16px rgba(212, 175, 55, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CLUES COLLECTED - Evidence Tags ===== */
+.clues-collected {
+  background: var(--paper-cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(212, 165, 116, 0.2) 28px,
+      rgba(212, 165, 116, 0.2) 30px
+    );
+  padding: 35px 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-medium);
+  border: 3px solid var(--brass-dark);
+}
+
+.clues-collected h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.clues-list {
+  display: grid;
+  gap: 18px;
+}
+
+.clue-card {
+  background: linear-gradient(135deg, #fff 0%, var(--paper-aged) 100%);
+  border-left: 6px solid var(--clue-highlight);
+  padding: 18px 22px;
+  border-radius: 8px;
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  animation: clueSlideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Pushpin effect */
+.clue-card::before {
+  content: '📍';
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  font-size: 1.3em;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes clueSlideIn {
+  0% {
+    transform: translateX(-100px) rotate(-5deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.clue-pin {
+  font-size: 1.8em;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  animation: clueSparkle 2s ease-in-out infinite;
+}
+
+@keyframes clueSparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.5));
+  }
+}
+
+.clue-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.3em;
+  color: var(--ink-black);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.no-clues {
+  text-align: center;
+  color: var(--ink-faded);
+  font-style: italic;
+  font-size: 1.2em;
+  padding: 30px 20px;
+}
+
+/* ===== SOLVE BUTTON - Special Call to Action ===== */
+.solve-button {
+  width: 100%;
+  font-size: 2em;
+  padding: 30px;
+  font-family: 'IM Fell English SC', serif;
+  background: linear-gradient(135deg, var(--success-green) 0%, #2d4a2c 100%);
+  color: var(--gold-bright);
+  border: 4px solid var(--gold);
+  animation: solveButtonGlow 2s ease-in-out infinite;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated shine sweep */
+.solve-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  );
+  animation: solveSweep 3s ease-in-out infinite;
+}
+
+@keyframes solveSweep {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
+}
+
+@keyframes solveButtonGlow {
+  0%, 100% {
+    box-shadow:
+      0 8px 24px rgba(61, 90, 60, 0.4),
+      0 0 30px rgba(212, 175, 55, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 12px 40px rgba(61, 90, 60, 0.6),
+      0 0 50px rgba(212, 175, 55, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+  }
+}
+
+.solve-button:hover {
+  background: linear-gradient(135deg, #4d7a4c 0%, var(--success-green) 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== EXAMINE VIEW - Magnifying Glass Investigation ===== */
+.examine-view {
+  background: var(--paper-cream);
+  border-radius: 12px;
+  padding: 50px 45px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  animation: fadeIn 0.5s ease;
+}
+
+.examine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+  border-bottom: 4px double var(--brass);
+}
+
+.examine-header h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.8em;
+  color: var(--mahogany);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.item-closeup {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ===== MAGNIFYING EFFECT - Glass Circle ===== */
+.magnifying-effect {
+  position: relative;
+  display: inline-block;
+  padding: 60px;
+  background:
+    radial-gradient(circle, #fff 0%, var(--paper-cream) 70%, var(--paper-aged) 100%);
+  border: 10px solid var(--brass);
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-hard),
+    inset 0 0 50px rgba(212, 175, 55, 0.2),
+    inset 0 0 100px rgba(255, 255, 255, 0.5);
+  animation: magnifyPulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* Glass reflection effect */
+.magnifying-effect::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.3) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Handle of magnifying glass */
+.magnifying-effect::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 80px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--mahogany) 0%, var(--wood-grain) 100%);
+  border-radius: 40% 40% 60% 60%;
+  transform: rotate(45deg);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--mahogany-dark);
+}
+
+@keyframes magnifyPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      var(--shadow-hard),
+      inset 0 0 50px rgba(212, 175, 55, 0.2),
+      inset 0 0 100px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow:
+      0 20px 60px rgba(26, 20, 16, 0.4),
+      inset 0 0 60px rgba(212, 175, 55, 0.3),
+      inset 0 0 120px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.item-large {
+  font-size: 9em;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  animation: itemZoom 2s ease-in-out infinite;
+}
+
+@keyframes itemZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.item-closeup h3 {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.9em;
+  color: var(--sepia-medium);
+  margin-top: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== EXAMINATION CLUES - Discovery Moments ===== */
+.examination-clues {
+  background: linear-gradient(135deg, var(--wood-grain) 0%, var(--wood-light) 100%);
+  padding: 45px 40px;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  box-shadow: var(--shadow-hard);
+  border: 6px solid var(--mahogany);
+}
+
+.examination-clues h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--gold-bright);
+  font-size: 2.3em;
+  margin-bottom: 35px;
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.clues-reveal {
+  display: grid;
+  gap: 25px;
+}
+
+.clue-item {
+  background: var(--paper-cream);
+  padding: 25px 28px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  animation: clueHighlight 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+  border: 3px solid var(--brass);
+  position: relative;
+}
+
+/* Spotlight effect on clue discovery */
+.clue-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  animation: spotlightReveal 1.5s ease-out forwards;
+  animation-delay: inherit;
+  border-radius: 10px;
+}
+
+@keyframes spotlightReveal {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+@keyframes clueHighlight {
+  0% {
+    transform: translateY(30px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.clue-icon {
+  font-size: 2.5em;
+  animation: ahaSparkle 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4));
+}
+
+@keyframes ahaSparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4));
+  }
+  25% {
+    transform: scale(1.2) rotate(-15deg);
+    filter: drop-shadow(0 6px 12px rgba(212, 175, 55, 0.7));
+  }
+  75% {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 6px 12px rgba(212, 175, 55, 0.7));
+  }
+}
+
+.clue-item p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.5em;
+  color: var(--ink-black);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ===== REPORT VIEW - Official Document ===== */
+.report-view {
+  background: var(--paper-cream);
+  border-radius: 12px;
+  padding: 50px 45px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  animation: fadeIn 0.5s ease;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+  border-bottom: 4px double var(--brass);
+}
+
+.report-header h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.8em;
+  color: var(--mahogany);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== REPORT PAPER - Typewriter Document ===== */
+.report-paper {
+  background: #fff;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 29px,
+      rgba(212, 165, 116, 0.15) 29px,
+      rgba(212, 165, 116, 0.15) 30px
+    );
+  border: 4px solid var(--brass-dark);
+  padding: 50px 45px;
+  border-radius: 10px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 0 0 1px rgba(212, 165, 116, 0.3);
+  margin-bottom: 35px;
+  animation: fileOpen 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+/* Paper holes for filing */
+.report-paper::before,
+.report-paper::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  background: var(--paper-cream);
+  border: 2px solid var(--brass-dark);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.report-paper::before { top: 30px; }
+.report-paper::after { bottom: 30px; }
+
+@keyframes fileOpen {
+  0% {
+    transform: scaleY(0) rotateX(-90deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  60% {
+    transform: scaleY(1.05) rotateX(5deg);
+  }
+  100% {
+    transform: scaleY(1) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.paper-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 3px double var(--brass-dark);
+}
+
+.paper-header p {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.2em;
+  color: var(--ink-black);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.report-content {
+  margin-bottom: 35px;
+}
+
+.report-content h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 1.8em;
+  margin-bottom: 18px;
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-decoration-thickness: 2px;
+}
+
+.report-content p {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.25em;
+  color: var(--ink-black);
+  line-height: 2;
+  margin-bottom: 12px;
+  animation: typewriter 0.05s steps(1) forwards;
+}
+
+.report-content strong {
+  color: var(--stamp-red);
+  font-weight: 700;
+}
+
+/* ===== WITNESS VIEW - Interview Scene ===== */
+.witness-view {
+  background: var(--paper-cream);
+  border-radius: 12px;
+  padding: 50px 45px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  animation: fadeIn 0.5s ease;
+}
+
+.witness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+  border-bottom: 4px double var(--brass);
+}
+
+.witness-header h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.8em;
+  color: var(--mahogany);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.witness-card {
+  background: linear-gradient(135deg, #fff 0%, var(--paper-aged) 100%);
+  border: 5px solid var(--brass);
+  border-radius: 12px;
+  padding: 50px 45px;
+  text-align: center;
+  margin-bottom: 50px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  animation: witnessEnter 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes witnessEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.witness-avatar {
+  font-size: 7em;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  animation: witnessIdle 3s ease-in-out infinite;
+}
+
+@keyframes witnessIdle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
+}
+
+.witness-card h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 2.3em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SPEECH BUBBLE - Witness Testimony ===== */
+.speech-bubble {
+  background: var(--paper-cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(212, 165, 116, 0.1) 28px,
+      rgba(212, 165, 116, 0.1) 30px
+    );
+  border: 4px solid var(--brass);
+  border-radius: 20px;
+  padding: 35px 40px;
+  position: relative;
+  margin-top: 30px;
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Speech bubble pointer */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid var(--brass);
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 22px solid var(--paper-cream);
+}
+
+.speech-bubble p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.5em;
+  color: var(--ink-black);
+  line-height: 1.9;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ===== WITNESS HINTS - Key Information ===== */
+.witness-hints {
+  background: linear-gradient(135deg, var(--wood-grain) 0%, var(--wood-light) 100%);
+  padding: 45px 40px;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  box-shadow: var(--shadow-hard);
+  border: 6px solid var(--mahogany);
+}
+
+.witness-hints h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--gold-bright);
+  font-size: 2.3em;
+  margin-bottom: 35px;
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hint-item {
+  background: var(--paper-cream);
+  padding: 22px 28px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.4em;
+  color: var(--ink-black);
+  font-weight: 600;
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  animation: hintReveal 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+  border-left: 5px solid var(--evidence-tag);
+  line-height: 1.6;
+}
+
+@keyframes hintReveal {
+  0% {
+    transform: translateX(-50px) rotate(-3deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(5px) rotate(1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hint-bullet {
+  color: var(--stamp-red);
+  font-size: 1.6em;
+  margin-right: 12px;
+  font-weight: 700;
+}
+
+/* ===== MATCH VIEW - Suspect Lineup ===== */
+.match-view {
+  background: var(--paper-cream);
+  border-radius: 12px;
+  padding: 50px 45px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  animation: fadeIn 0.5s ease;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+  border-bottom: 4px double var(--brass);
+}
+
+.match-header h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.8em;
+  color: var(--mahogany);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.match-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+/* ===== ITEM TO MATCH - Reference Card ===== */
+.item-to-match {
+  background: linear-gradient(135deg, var(--wood-grain) 0%, var(--wood-light) 100%);
+  padding: 35px 30px;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  box-shadow: var(--shadow-hard);
+  border: 6px solid var(--mahogany);
+}
+
+.item-card {
+  background: linear-gradient(135deg, var(--paper-aged) 0%, var(--paper-cream) 100%);
+  border: 4px solid var(--brass);
+  border-radius: 10px;
+  padding: 30px 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.item-card .item-emoji {
+  font-size: 4.5em;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+.item-card h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 1.8em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CLUES REMINDER - Evidence Summary ===== */
+.clues-reminder {
+  background: var(--paper-cream);
+  padding: 25px 22px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-inner);
+  border: 2px solid var(--brass-dark);
+}
+
+.clues-reminder h4 {
+  font-family: 'Special Elite', monospace;
+  color: var(--mahogany);
+  margin-bottom: 18px;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.clue-reminder {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.15em;
+  color: var(--ink-black);
+  margin-bottom: 10px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* ===== SUSPECTS LIST - Lineup Cards ===== */
+.suspects-list h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 2.3em;
+  margin-bottom: 35px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.suspect-card {
+  background: linear-gradient(135deg, #fff 0%, var(--paper-aged) 100%);
+  border: 4px solid var(--brass-dark);
+  border-radius: 12px;
+  padding: 30px 28px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  display: flex;
+  gap: 25px;
+  position: relative;
+  animation: suspectAppear 0.5s ease forwards;
+  opacity: 0;
+}
+
+.suspect-card:nth-child(1) { animation-delay: 0.1s; }
+.suspect-card:nth-child(2) { animation-delay: 0.2s; }
+.suspect-card:nth-child(3) { animation-delay: 0.3s; }
+.suspect-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes suspectAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.suspect-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.suspect-card:hover {
+  transform: translateX(15px) scale(1.02);
+  box-shadow:
+    0 12px 32px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border-color: var(--brass);
+}
+
+.suspect-card:hover::before {
+  opacity: 1;
+}
+
+/* ===== SELECTED SUSPECT - Highlighted Choice ===== */
+.suspect-card.selected {
+  border: 5px solid var(--success-green);
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4e7d4 100%);
+  transform: scale(1.05) translateX(10px);
+  box-shadow:
+    0 16px 40px rgba(61, 90, 60, 0.4),
+    0 0 0 4px var(--gold),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+  animation: selectedPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes selectedPulse {
+  0%, 100% {
+    box-shadow:
+      0 16px 40px rgba(61, 90, 60, 0.4),
+      0 0 0 4px var(--gold),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow:
+      0 20px 50px rgba(61, 90, 60, 0.6),
+      0 0 0 6px var(--gold-bright),
+      inset 0 2px 0 rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Checkmark for selected */
+.suspect-card.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 3em;
+  color: var(--success-green);
+  animation: checkmarkAppear 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.suspect-avatar {
+  font-size: 5em;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+  flex-shrink: 0;
+}
+
+.suspect-info {
+  flex: 1;
+  position: relative;
+}
+
+.suspect-info h4 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 1.9em;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.suspect-report {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.3em;
+  color: var(--ink-black);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.suspect-clues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ===== CLUE TAGS - Evidence Labels ===== */
+.clue-tag {
+  background: var(--gold);
+  color: var(--mahogany);
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-family: 'Special Elite', monospace;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--brass-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.suspect-card:hover .clue-tag {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+.suspect-card.selected .clue-tag {
+  background: var(--success-green);
+  color: var(--paper-cream);
+  border-color: #2d4a2c;
+}
+
+/* ===== SUCCESS VIEW - Case Solved Celebration ===== */
+.success-view {
+  background: var(--paper-cream);
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(61, 90, 60, 0.1) 0%, transparent 50%);
+  border-radius: 12px;
+  padding: 70px 60px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-animation {
+  margin-bottom: 60px;
+}
+
+/* ===== STAMP EFFECT - Case Closed ===== */
+.stamp-effect {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 4.5em;
+  color: var(--stamp-red);
+  transform: rotate(-12deg);
+  border: 10px solid var(--stamp-red);
+  padding: 35px 70px;
+  display: inline-block;
+  border-radius: 15px;
+  animation: caseStamp 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow:
+    0 15px 40px rgba(139, 30, 30, 0.4),
+    inset 0 0 20px rgba(139, 30, 30, 0.1);
+  position: relative;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* Stamp texture */
+.stamp-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+  border-radius: 5px;
+}
+
+@keyframes caseStamp {
+  0% {
+    transform: scale(0) rotate(-360deg) translateY(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15) rotate(-8deg) translateY(0px);
+  }
+  100% {
+    transform: scale(1) rotate(-12deg) translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ===== REUNION SCENE - Happy Ending ===== */
+.reunion-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 60px;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #fff5e1 0%, #ffe4b5 100%);
+  border-radius: 20px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  border: 4px solid var(--gold);
+}
+
+.happy-owner {
+  text-align: center;
+}
+
+.owner-avatar {
+  font-size: 7em;
+  margin-bottom: 25px;
+  animation: happyBounce 1s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes happyBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.08); }
+}
+
+.happy-owner h2 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 2.8em;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.success-bubble {
+  max-width: 450px;
+  animation: bubbleGrow 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bubbleGrow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-bubble p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.item-returned {
+  animation: happyReunion 2s ease-in-out infinite;
+}
+
+@keyframes happyReunion {
+  0%, 100% { transform: rotate(-12deg) scale(1); }
+  50% { transform: rotate(12deg) scale(1.15); }
+}
+
+.item-returned .item-emoji {
+  font-size: 7em;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25));
+}
+
+/* ===== REWARD SECTION - Badge Award ===== */
+.reward-section {
+  margin-bottom: 50px;
+}
+
+.reward-section h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 2.8em;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.badge-earned {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+  border: 6px solid var(--brass-dark);
+  border-radius: 20px;
+  padding: 50px 60px;
+  display: inline-block;
+  box-shadow:
+    var(--shadow-hard),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.4);
+  animation: badgeEarned 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+/* Badge ribbons */
+.badge-earned::before,
+.badge-earned::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  width: 40px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--stamp-red) 0%, var(--stamp-red-bright) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.badge-earned::before { left: 30%; }
+.badge-earned::after { right: 30%; }
+
+@keyframes badgeEarned {
+  0% {
+    transform: scale(0) rotate(-360deg) translateY(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15) rotate(15deg) translateY(0px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translateY(0px);
+    opacity: 1;
+  }
+}
+
+.badge-earned .badge-emoji {
+  font-size: 6em;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  animation: badgeSparkle 2s ease-in-out infinite;
+}
+
+@keyframes badgeSparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+    filter: drop-shadow(0 12px 24px rgba(212, 175, 55, 0.6));
+  }
+}
+
+.badge-earned p {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.3em;
+  color: var(--mahogany);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== BUTTONS - Primary & Secondary ===== */
+.btn-primary {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: var(--paper-cream);
+  background: linear-gradient(135deg, var(--success-green) 0%, #2d4a2c 100%);
+  border: none;
+  padding: 25px 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4d7a4c 0%, var(--success-green) 100%);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 12px 32px rgba(61, 90, 60, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-secondary {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--mahogany);
+  background: var(--paper-aged);
+  border: 3px solid var(--brass-dark);
+  padding: 15px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.btn-secondary:hover {
+  background: var(--brass);
+  color: var(--paper-cream);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 8px 20px rgba(184, 150, 79, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ===== HINT BUTTON - Help System ===== */
+.btn-hint {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--mahogany);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+  border: 4px solid var(--brass-dark);
+  padding: 18px 35px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-hint:hover {
+  background: linear-gradient(135deg, var(--gold-bright) 0%, #f0c86a 100%);
+  transform: scale(1.08);
+  box-shadow:
+    0 10px 30px rgba(212, 175, 55, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ===== HINT POPUP - Detective Tip ===== */
+.hint-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--gold);
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  border: 6px solid var(--brass-dark);
+  border-radius: 20px;
+  padding: 50px 55px;
+  box-shadow:
+    var(--shadow-hard),
+    0 0 0 4px var(--gold-bright),
+    0 0 60px rgba(212, 175, 55, 0.6);
+  z-index: 1000;
+  animation: hintAppear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 650px;
+}
+
+@keyframes hintAppear {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hint-popup.fade-out {
+  animation: hintFade 0.5s ease forwards;
+}
+
+@keyframes hintFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.hint-content h4 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hint-content p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.7em;
+  color: var(--ink-black);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* ===== TRY AGAIN OVERLAY - Mistake Handler ===== */
+.try-again-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 20, 16, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.try-again-box {
+  background: var(--paper-cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+  border: 8px solid var(--stamp-red);
+  border-radius: 20px;
+  padding: 60px 70px;
+  text-align: center;
+  box-shadow:
+    var(--shadow-hard),
+    0 0 0 4px var(--paper-cream);
+  animation: shake 0.6s ease;
+  max-width: 600px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-15px) rotate(-2deg); }
+  50% { transform: translateX(15px) rotate(2deg); }
+  75% { transform: translateX(-10px) rotate(-1deg); }
+}
+
+.try-again-box h3 {
+  font-family: 'IM Fell English SC', serif;
+  color: var(--mahogany);
+  font-size: 3em;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.try-again-box p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.6em;
+  color: var(--ink-black);
+  margin-bottom: 35px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.try-again-box .btn-primary,
+.try-again-box .btn-secondary {
+  margin: 12px;
+  display: inline-block;
+}
+
+.try-again-box .btn-secondary {
+  padding: 18px 35px;
+  font-size: 1.3em;
+}
+
+/* ===== VICTORY VIEW - All Cases Complete ===== */
+.victory-view {
+  background: var(--paper-cream);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(61, 90, 60, 0.15) 0%, transparent 50%);
+  border-radius: 12px;
+  padding: 70px 60px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--mahogany);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.victory-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 4.5em;
+  color: var(--success-green);
+  margin-bottom: 35px;
+  text-shadow:
+    4px 4px 0 var(--gold),
+    8px 8px 12px rgba(0, 0, 0, 0.3);
+  animation: victoryBounce 1.5s ease-in-out infinite;
+  letter-spacing: 4px;
+}
+
+@keyframes victoryBounce {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+}
+
+.victory-message {
+  font-family: 'Special Elite', monospace;
+  font-size: 2.2em;
+  color: var(--mahogany);
+  margin-bottom: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ===== ALL BADGES DISPLAY - Trophy Wall ===== */
+.all-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 35px;
+  margin-bottom: 60px;
+  padding: 50px 45px;
+  background: linear-gradient(135deg, var(--mahogany) 0%, var(--mahogany-dark) 100%);
+  border-radius: 20px;
+  box-shadow: var(--shadow-hard);
+  border: 8px solid var(--wood-grain);
+}
+
+.badge-display {
+  background: linear-gradient(135deg, var(--paper-aged) 0%, var(--paper-cream) 100%);
+  border: 5px solid var(--brass);
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow:
+    var(--shadow-medium),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  animation: badgeFloat 3s ease-in-out infinite;
+  position: relative;
+}
+
+.badge-display::before {
+  content: '⭐';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 2em;
+  filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.5));
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.7; transform: scale(1.2) rotate(180deg); }
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.badge-display .badge-emoji {
+  font-size: 4.5em;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+.badge-display p {
+  font-family: 'Special Elite', monospace;
+  font-weight: 700;
+  color: var(--mahogany);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ===== MOBILE & TOUCH OPTIMIZATIONS ===== */
+
+/* Touch-friendly tap targets - ensure all clickable elements are at least 44x44px */
+button, .btn, [role="button"], .action-btn, .radio-button, .desk-item,
+.start-shift-btn, .start-investigation-btn, .examine-btn, .report-btn,
+.submit-report-btn, .talk-btn, .submit-answer-btn, .choice-btn,
+.match-option, .submit-match-btn, .celebrate-btn, .solve-another-btn,
+.grand-celebration-btn, .return-btn, .badge, .clue-card {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Disable hover effects on touch devices and replace with active states */
+@media (hover: none) {
+  .desk-item:hover,
+  .badge:hover,
+  .clue-card:hover,
+  .action-btn:hover,
+  .radio-button:hover,
+  .choice-btn:hover,
+  .match-option:hover {
+    transform: none;
+    box-shadow: var(--shadow-medium);
+    border-color: inherit;
+  }
+
+  .desk-item:active,
+  .action-btn:active,
+  .badge:active {
+    transform: scale(0.95);
+  }
+
+  .radio-button:active {
+    transform: scale(0.95);
+  }
+
+  .choice-btn:active,
+  .match-option:active {
+    transform: scale(0.95);
+  }
+
+  .glass-lens:hover {
+    transform: none;
+    filter: drop-shadow(0 8px 16px rgba(26, 20, 16, 0.3));
+  }
+
+  .glass-lens:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Touch action for interactive elements */
+button, .choice-btn, .match-option {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Safe area insets for notched devices */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Prevent zoom on inputs */
+input, select, textarea {
+  font-size: 16px; /* Prevents iOS zoom */
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .office-title {
+    font-size: 3.5em;
+  }
+
+  .match-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .item-to-match {
+    position: relative;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #game-container {
+    padding: 20px 15px;
+  }
+
+  .office-view,
+  .case-board-view,
+  .examine-view,
+  .report-view,
+  .witness-view,
+  .match-view,
+  .success-view,
+  .victory-view {
+    padding: 35px 25px;
+    border-width: 5px;
+  }
+
+  .office-title {
+    font-size: 2.8em;
+    text-shadow: 2px 2px 0 var(--gold);
+  }
+
+  .office-subtitle {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+  }
+
+  .office-desk {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .alert-box {
+    padding: 40px 30px;
+  }
+
+  .alert-title {
+    font-size: 2.5em;
+  }
+
+  .board-header h2,
+  .examine-header h2,
+  .report-header h2,
+  .witness-header h2,
+  .match-header h2 {
+    font-size: 2em;
+  }
+
+  .board-header,
+  .examine-header,
+  .report-header,
+  .witness-header,
+  .match-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .lost-item-card {
+    min-width: 280px;
+    padding: 30px 25px;
+  }
+
+  .item-emoji {
+    font-size: 4.5em;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .magnifying-effect {
+    padding: 40px;
+  }
+
+  .item-large {
+    font-size: 6em;
+  }
+
+  .reunion-scene {
+    flex-direction: column;
+    gap: 35px;
+    padding: 35px 25px;
+  }
+
+  .stamp-effect {
+    font-size: 3em;
+    padding: 25px 50px;
+    border-width: 6px;
+  }
+
+  .victory-title {
+    font-size: 3em;
+  }
+
+  .all-badges {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .suspect-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hint-popup {
+    max-width: 90%;
+    padding: 35px 30px;
+  }
+
+  .try-again-box {
+    max-width: 90%;
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .office-title {
+    font-size: 2.2em;
+  }
+
+  .glass-lens {
+    font-size: 5em;
+  }
+
+  .radio-button {
+    font-size: 1.1em;
+    padding: 18px 25px;
+  }
+
+  .solved-count {
+    font-size: 1.8em;
+  }
+
+  .alert-title {
+    font-size: 2em;
+  }
+
+  .alert-message {
+    font-size: 1.4em;
+  }
+
+  .btn-primary {
+    font-size: 1.4em;
+    padding: 20px 35px;
+  }
+
+  .btn-secondary {
+    font-size: 1.1em;
+    padding: 12px 22px;
+  }
+
+  .victory-title {
+    font-size: 2.5em;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 10000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Focus Styles for Accessibility */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 3px solid #ffd60a;
+  outline-offset: 3px;
+}
+
+.draggable:focus-visible {
+  outline: 3px solid #00d9ff;
+  outline-offset: 2px;
+}

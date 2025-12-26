@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Starport Station - Galactic Delivery Mission</title>
+
+  <!-- Google Fonts: Russo One + Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" class="screen active">
+    <div class="starfield-bg"></div>
+    <div class="loading-content">
+      <div class="station-logo">
+        <div class="logo-star"></div>
+        <div class="logo-ring"></div>
+        <div class="logo-text">STARPORT</div>
+        <div class="logo-subtitle">GALACTIC DELIVERY SERVICE</div>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+      <div class="loading-text">INITIALIZING TELEPORT SYSTEMS...</div>
+    </div>
+  </div>
+
+  <!-- LOBBY SCREEN -->
+  <div id="lobby-screen" class="screen">
+    <div class="starfield-bg slow"></div>
+
+    <div class="lobby-header">
+      <div class="station-badge">
+        <div class="badge-star"></div>
+        <div class="badge-text">STARPORT STATION</div>
+      </div>
+      <div class="delivery-count">
+        <span class="count-number" id="delivery-count">0</span>
+        <span class="count-label">DELIVERIES</span>
+      </div>
+    </div>
+
+    <div class="lobby-content">
+      <div class="mission-briefing">
+        <div class="briefing-header">
+          <div class="briefing-icon">📦</div>
+          <h2>NEW DELIVERY MISSION</h2>
+        </div>
+        <div class="briefing-body" id="mission-text">
+          Welcome to Starport Station, Cadet! Are you ready for your first galactic delivery?
+        </div>
+        <div class="package-display" id="package-display"></div>
+      </div>
+
+      <div class="teleport-tube">
+        <div class="tube-frame">
+          <div class="tube-stars"></div>
+          <div class="tube-swirl"></div>
+          <div class="tube-label">TELEPORT TUBE</div>
+        </div>
+
+        <div class="control-panel">
+          <div class="panel-header">DESTINATION SELECTOR</div>
+          <div class="planet-buttons" id="planet-buttons">
+            <button class="planet-button" data-planet="lunara" disabled>
+              <div class="planet-icon lunara-icon"></div>
+              <div class="planet-name">LUNARA</div>
+              <div class="planet-subtitle">Moon Colony</div>
+            </button>
+            <button class="planet-button" data-planet="verdania" disabled>
+              <div class="planet-icon verdania-icon"></div>
+              <div class="planet-name">VERDANIA</div>
+              <div class="planet-subtitle">Jungle World</div>
+            </button>
+            <button class="planet-button" data-planet="aquarix" disabled>
+              <div class="planet-icon aquarix-icon"></div>
+              <div class="planet-name">AQUARIX</div>
+              <div class="planet-subtitle">Ocean Domes</div>
+            </button>
+            <button class="planet-button" data-planet="zorbax" disabled>
+              <div class="planet-icon zorbax-icon"></div>
+              <div class="planet-name">ZORBAX</div>
+              <div class="planet-subtitle">Party Planet</div>
+            </button>
+            <button class="planet-button" data-planet="nebulox" disabled>
+              <div class="planet-icon nebulox-icon"></div>
+              <div class="planet-name">NEBULOX</div>
+              <div class="planet-subtitle">Cloud Isles</div>
+            </button>
+          </div>
+
+          <button class="launch-button" id="launch-button" disabled>
+            <div class="launch-light"></div>
+            <div class="launch-text">LAUNCH</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button class="start-mission-button" id="start-mission-button">
+      START DELIVERY MISSION
+    </button>
+  </div>
+
+  <!-- TELEPORT ANIMATION SCREEN -->
+  <div id="teleport-screen" class="screen">
+    <div class="teleport-tunnel">
+      <div class="star-zoom"></div>
+      <div class="star-zoom delay-1"></div>
+      <div class="star-zoom delay-2"></div>
+    </div>
+    <div class="teleport-message">TELEPORTING TO <span id="destination-name"></span>...</div>
+  </div>
+
+  <!-- PLANET SCREEN -->
+  <div id="planet-screen" class="screen">
+    <div class="planet-bg" id="planet-bg"></div>
+
+    <div class="planet-header">
+      <button class="back-button" id="back-to-lobby">← RETURN TO STATION</button>
+      <div class="planet-title" id="planet-title">PLANET</div>
+    </div>
+
+    <div class="planet-content">
+      <div class="district-map" id="district-map">
+        <!-- Districts will be populated by JS -->
+      </div>
+
+      <div class="delivery-panel">
+        <div class="panel-title">DELIVERY INSTRUCTIONS</div>
+        <div class="delivery-instructions" id="delivery-instructions"></div>
+        <div class="delivery-task" id="delivery-task"></div>
+      </div>
+    </div>
+
+    <div class="alien-container" id="alien-container">
+      <!-- Alien will appear here -->
+    </div>
+  </div>
+
+  <!-- CELEBRATION SCREEN -->
+  <div id="celebration-screen" class="screen">
+    <div class="confetti-container" id="confetti-container"></div>
+    <div class="celebration-content">
+      <div class="celebration-badge">
+        <div class="badge-star earned"></div>
+        <div class="badge-text">DELIVERY COMPLETE!</div>
+      </div>
+
+      <div class="celebration-message" id="celebration-message">
+        Amazing work, Space Cadet!
+      </div>
+
+      <div class="celebration-stats">
+        <div class="stat">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-label">Stars Earned</div>
+          <div class="stat-value" id="stars-earned">1</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">📦</div>
+          <div class="stat-label">Packages Delivered</div>
+          <div class="stat-value" id="packages-delivered">1</div>
+        </div>
+      </div>
+
+      <button class="continue-button" id="continue-button">
+        NEXT MISSION
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="pilot-story.js"></script>
+</body>
+</html>
