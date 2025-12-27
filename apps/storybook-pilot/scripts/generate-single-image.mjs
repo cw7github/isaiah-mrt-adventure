@@ -11,7 +11,13 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+
+if (!OPENROUTER_API_KEY) {
+  console.error('❌ Error: OPENROUTER_API_KEY environment variable is not set');
+  console.error('   Run: export OPENROUTER_API_KEY=your-key-here');
+  process.exit(1);
+}
 
 const IMAGE_PROMPTS = {
   1: `Interior view of a child's cozy bedroom at midnight. A young Asian American boy (Isaiah, age 6) sits up in bed, looking out a frost-covered window. Moonlight streams in, casting silvery blue light. The room has warm wood paneling, vintage toys, a brass bedside lamp. Outside the window, distant train tracks glow mysteriously. Warm pajamas, quilted blanket with train pattern.`,

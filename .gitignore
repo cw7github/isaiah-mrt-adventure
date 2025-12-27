@@ -1,9 +1,10 @@
 # Vercel
 .vercel
 
-# Environment variables
-.env*.local
-.env.local
+# Environment variables (NEVER commit API keys!)
+.env
+.env.*
+!.env.example
 
 # Dependencies
 node_modules/

@@ -1116,11 +1116,11 @@ async function generateGhibliScene(description) {
 
 ```bash
 # === REQUIRED ===
-ELEVENLABS_API_KEY=d9728b78525b8401450af1acaa97be4bf07cf2faec9624539f5043af6501faea
+ELEVENLABS_API_KEY=your-elevenlabs-api-key-here
 ELEVENLABS_VOICE_ID=lqydY2xVUkg9cEIFmFMU  # Angela (English)
 ELEVENLABS_MODEL_ID=eleven_v3
 
-OPENROUTER_API_KEY=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
+OPENROUTER_API_KEY=your-openrouter-api-key-here
 
 # === OPTIONAL ===
 GOOGLE_CLOUD_TTS_API_KEY=       # For Google Cloud TTS

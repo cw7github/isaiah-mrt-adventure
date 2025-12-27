@@ -23,10 +23,24 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
 // ============================================
-// API CONFIGURATION
+// API CONFIGURATION (from environment variables)
 // ============================================
-const ELEVENLABS_API_KEY = '70c942190c7127b43c0f585835bee0912270615aa3248cf5d16cbb689efefd88';
-const OPENROUTER_API_KEY = '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';
+const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+
+// Validate required API keys based on what's being generated
+function validateApiKeys(mode) {
+  if ((mode === 'audio' || mode === 'sfx' || mode === 'all') && !ELEVENLABS_API_KEY) {
+    console.error('❌ Error: ELEVENLABS_API_KEY environment variable is not set');
+    console.error('   Run: export ELEVENLABS_API_KEY=your-key-here');
+    process.exit(1);
+  }
+  if ((mode === 'images' || mode === 'all') && !OPENROUTER_API_KEY) {
+    console.error('❌ Error: OPENROUTER_API_KEY environment variable is not set');
+    console.error('   Run: export OPENROUTER_API_KEY=your-key-here');
+    process.exit(1);
+  }
+}
 
 // ElevenLabs Voice Configuration - Multiple characters!
 // ElevenLabs v3 requires stability values of exactly 0.0, 0.5, or 1.0

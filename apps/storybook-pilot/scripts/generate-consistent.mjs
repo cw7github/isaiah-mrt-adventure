@@ -13,7 +13,13 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+
+if (!OPENROUTER_API_KEY) {
+  console.error('❌ Error: OPENROUTER_API_KEY environment variable is not set');
+  console.error('   Run: export OPENROUTER_API_KEY=your-key-here');
+  process.exit(1);
+}
 
 // Very explicit character description to embed in EVERY prompt
 const ISAIAH_DESC = `Isaiah is a 6-year-old ASIAN AMERICAN boy with SHORT BLACK HAIR, warm BROWN EYES, ROUND face with ROSY CHEEKS, wearing BLUE PAJAMAS with train pattern. He has a cute button nose and slightly chubby cheeks typical of a young child.`;
