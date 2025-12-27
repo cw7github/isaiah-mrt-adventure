@@ -31,7 +31,8 @@ const AppState = {
   gameScore: 0,
   readingStartTime: null,
   totalReadingTime: 0,
-  imageManifest: null
+  imageManifest: null,
+  pendingComprehensionCheck: null
 };
 
 // Speech synthesis setup (fallback)
@@ -346,13 +347,11 @@ function loadPage(pageNumber) {
   // Announce for screen readers
   announce(`Page ${pageNumber}. ${pageData.text}`);
 
-  // Check for comprehension question after a delay
+  // Store pending comprehension check - will be shown after narration completes
   if (pageData.comprehensionCheck) {
-    // Wait until narration would be complete before showing question
-    const totalDuration = pageData.words.reduce((sum, w) => Math.max(sum, w.start + w.duration), 0);
-    setTimeout(() => {
-      showComprehensionCheck(pageData.comprehensionCheck);
-    }, totalDuration + 1500);
+    AppState.pendingComprehensionCheck = pageData.comprehensionCheck;
+  } else {
+    AppState.pendingComprehensionCheck = null;
   }
 }
 
@@ -464,6 +463,13 @@ function startNarration(words) {
       onComplete: () => {
         AppState.isNarrating = false;
         clearAllHighlights();
+        // Show comprehension check after narration completes
+        if (AppState.pendingComprehensionCheck) {
+          setTimeout(() => {
+            showComprehensionCheck(AppState.pendingComprehensionCheck);
+            AppState.pendingComprehensionCheck = null;
+          }, 1000);
+        }
       }
     });
     return;
@@ -496,6 +502,13 @@ function startNarration(words) {
   currentUtterance.onend = () => {
     AppState.isNarrating = false;
     clearAllHighlights();
+    // Show comprehension check after narration completes
+    if (AppState.pendingComprehensionCheck) {
+      setTimeout(() => {
+        showComprehensionCheck(AppState.pendingComprehensionCheck);
+        AppState.pendingComprehensionCheck = null;
+      }, 1000);
+    }
   };
 
   currentUtterance.onerror = () => {

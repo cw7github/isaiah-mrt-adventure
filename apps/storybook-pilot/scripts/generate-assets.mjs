@@ -26,7 +26,7 @@ const ROOT = path.resolve(__dirname, '..');
 // API CONFIGURATION
 // ============================================
 const ELEVENLABS_API_KEY = '70c942190c7127b43c0f585835bee0912270615aa3248cf5d16cbb689efefd88';
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 
 // ElevenLabs Voice Configuration - Multiple characters!
 // ElevenLabs v3 requires stability values of exactly 0.0, 0.5, or 1.0

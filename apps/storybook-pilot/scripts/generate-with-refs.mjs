@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 
 // Character definitions for reference sheets
 const CHARACTERS = {

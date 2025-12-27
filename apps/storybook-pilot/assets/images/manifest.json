@@ -74,77 +74,43 @@
     }
   },
   "page1": {
-    "file": "page1_scene.png",
-    "generated": "2025-12-26T20:45:19.870Z",
-    "withRefs": [
-      "isaiah"
-    ]
+    "file": "page1_scene.jpeg",
+    "generated": "2025-12-27T00:19:38.824Z"
   },
   "page2": {
     "file": "page2_scene.jpeg",
-    "generated": "2025-12-26T20:45:42.351Z",
-    "withRefs": []
+    "generated": "2025-12-27T00:20:01.420Z"
   },
   "page3": {
-    "file": "page3_scene.png",
-    "generated": "2025-12-26T20:46:06.708Z",
-    "withRefs": [
-      "isaiah",
-      "chef_marco"
-    ]
+    "file": "page3_scene.jpeg",
+    "generated": "2025-12-27T00:20:22.597Z"
   },
   "page4": {
     "file": "page4_scene.png",
-    "generated": "2025-12-26T20:46:30.399Z",
-    "withRefs": [
-      "chef_marco"
-    ]
+    "generated": "2025-12-27T00:20:49.758Z"
   },
   "page5": {
-    "file": "page5_scene.jpeg",
-    "generated": "2025-12-26T20:46:59.545Z",
-    "withRefs": [
-      "isaiah",
-      "mouse"
-    ]
+    "file": "page5_scene.png",
+    "generated": "2025-12-27T00:21:17.519Z"
   },
   "page6": {
     "file": "page6_scene.png",
-    "generated": "2025-12-26T20:50:31.945Z",
-    "withRefs": [
-      "isaiah",
-      "mouse",
-      "chef_marco"
-    ]
+    "generated": "2025-12-27T00:21:44.203Z"
   },
   "page7": {
-    "file": "page7_scene.png",
-    "generated": "2025-12-26T20:49:26.320Z",
-    "withRefs": [
-      "isaiah"
-    ]
+    "file": "page7_scene.jpeg",
+    "generated": "2025-12-27T00:22:10.336Z"
   },
   "page8": {
-    "file": "page8_scene.png",
-    "generated": "2025-12-26T20:47:52.551Z",
-    "withRefs": [
-      "isaiah"
-    ]
+    "file": "page8_scene.jpeg",
+    "generated": "2025-12-27T00:22:41.506Z"
   },
   "page9": {
-    "file": "page9_scene.jpeg",
-    "generated": "2025-12-26T20:48:23.930Z",
-    "withRefs": [
-      "isaiah",
-      "chef_marco"
-    ]
+    "file": "page9_scene.png",
+    "generated": "2025-12-27T00:23:54.207Z"
   },
   "page10": {
     "file": "page10_scene.jpeg",
-    "generated": "2025-12-26T20:48:47.364Z",
-    "withRefs": [
-      "isaiah",
-      "chef_marco"
-    ]
+    "generated": "2025-12-27T00:23:18.841Z"
   }
 }
